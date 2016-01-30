@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tbnamed</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <!-- INSERT NAV ICON / OPTIONS HERE -->
+    <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <button type="button" class="btn btn-block btn-success">
+        <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+      </button>
+      <button type="button" class="btn btn-block btn-success">
+        <!-- %= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %> -->
+        <%= link_to "Sign up for an account", new_user_registration_path %>
+      </button>
+    <% end %>
+  </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="container-fluid">
+
+<%= yield %>
+</div>
+</body>
+</html>
