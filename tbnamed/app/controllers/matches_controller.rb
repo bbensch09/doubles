@@ -3,7 +3,20 @@ class MatchesController < ApplicationController
     # GET api/matches
     def index
       #return JSON of a user's matches profile information
-      render :text => "Match index"
+      # render :text => "Match index"
+      user = User.find(1)
+      match_ids = []
+      user.first_user_matches.each do |match|
+        match_ids << match.second_user_id
+      end
+      user.second_user_matches.each do |match|
+        match_ids << match.first_user_id
+      end
+      @matches = []
+      match_ids.each do |id|
+        @matches << User.find(id)
+      end
+      render 'index'
       # user = User.find(2) #need to pull user_id from Devise
       # respond_with user.matches
     end
