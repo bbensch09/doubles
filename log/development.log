@@ -11499,3 +11499,411 @@ Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
   [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
   [1m[35mMatch Load (0.4ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1  [["first_user_id", 5]]
   [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1[0m  [["second_user_id", 5]]
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" IN (0, 1)
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."id" IN (0, 1)[0m
+  [1m[35mActivity Load (0.4ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."id" = $1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35mActivity Load (0.4ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "activity_blurbs" ON "users"."id" = "activity_blurbs"."user_id" WHERE "activity_blurbs"."activity_id" = $1  [["activity_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 1], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 2], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 3], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 4], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 5], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 6], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 7], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 8], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 9], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 10], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 11], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 12], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 13], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 14], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 15], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 16], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 17], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 18], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 19], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 20], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 21], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 22], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 23], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 24], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 25], ["name", "Racquetball"]]
+  [1m[36mActivity Load (3.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 26], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 27], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 28], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 29], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 30], ["name", "Racquetball"]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 1], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 2], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 3], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 4], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 5], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 6], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 7], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 8], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 9], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 10], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 11], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 12], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 13], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 14], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 15], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 16], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 17], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 18], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 19], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 20], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 21], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 22], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 23], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 24], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 25], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 26], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 27], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 28], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 29], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 30], ["name", "Racquetball"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 1], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 2], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 3], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 4], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 5], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 6], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 7], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 8], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 9], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 10], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 11], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 12], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 13], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 14], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 15], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 16], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 17], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 18], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 19], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 20], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 21], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.3ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 22], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 23], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 24], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 25], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 26], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.3ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 27], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 28], ["name", "Racquetball"]]
+  [1m[35mActivity Load (0.2ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2  [["user_id", 29], ["name", "Racquetball"]]
+  [1m[36mActivity Load (0.2ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1 AND "activities"."name" = $2[0m  [["user_id", 30], ["name", "Racquetball"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mMatch Load (0.3ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 5]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Tennis"], ["created_at", "2016-01-30 23:28:07.918856"], ["updated_at", "2016-01-30 23:28:07.918856"]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Soccer"], ["created_at", "2016-01-30 23:29:52.202397"], ["updated_at", "2016-01-30 23:29:52.202397"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Soccer"], ["created_at", "2016-01-30 23:30:21.679337"], ["updated_at", "2016-01-30 23:30:21.679337"]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mActivity Load (0.3ms)[0m  SELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "activity_blurbs" ON "users"."id" = "activity_blurbs"."user_id" WHERE "activity_blurbs"."activity_id" = $1[0m  [["activity_id", 1]]
+  [1m[35mActivityBlurb Load (0.4ms)[0m  SELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mActivityBlurb Load (0.4ms)[0m  [1mSELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 1]]
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (8.3ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))[0m
+  [1m[35m (5.7ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 12]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 14]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 16]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 19]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 20]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 22]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 23]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 24]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 25]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 26]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 27]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 28]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 29]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 30]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities"
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35mActivityBlurb Load (0.6ms)[0m  SELECT  "activity_blurbs".* FROM "activity_blurbs"  ORDER BY "activity_blurbs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "activity_blurbs" ("activity_id", "text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["activity_id", 5], ["text", "test"], ["user_id", 6], ["created_at", "2016-01-30 23:50:07.686812"], ["updated_at", "2016-01-30 23:50:07.686812"]]
+  [1m[36m (16.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActivityBlurb Load (0.4ms)[0m  SELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("activity_id", "text", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["activity_id", 5], ["text", "testing"], ["user_id", 5], ["created_at", "2016-01-30 23:51:25.544489"], ["updated_at", "2016-01-30 23:51:25.544489"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35mActivityBlurb Load (0.3ms)[0m  SELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "activity_blurbs" WHERE "activity_blurbs"."id" = $1  [["id", 7]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActivityBlurb Load (0.4ms)[0m  SELECT  "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1  ORDER BY "activity_blurbs"."id" ASC LIMIT 1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "activity_blurbs" WHERE "activity_blurbs"."id" = $1  [["id", 8]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mActivityBlurb Load (0.4ms)[0m  [1mSELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mActivityBlurb Load (0.6ms)[0m  SELECT "activity_blurbs".* FROM "activity_blurbs" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36m (0.5ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36m (0.4ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 16]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 19]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 20]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 22]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 23]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 24]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 25]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 26]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 27]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 28]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 29]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 30]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ((
+          (ACOS(least(1,COS(0.658996182980263)*COS(-2.138164469374709)*COS(RADIANS(users.latitude))*COS(RADIANS(users.longitude))+
+          COS(0.658996182980263)*SIN(-2.138164469374709)*COS(RADIANS(users.latitude))*SIN(RADIANS(users.longitude))+
+          SIN(0.658996182980263)*SIN(RADIANS(users.latitude))))*3963.1899999999996)
+          <= 5))
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 7]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 10]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 11]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 13]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 14]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[35m (0.1ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 16]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 18]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 19]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 20]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 22]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 23]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 24]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 25]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 26]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 27]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 28]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 29]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 30]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[35m (0.4ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 10]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 14]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 15]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 17]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 18]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 19]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 21]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 23]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 24]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 25]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 26]]
+  [1m[35m (0.3ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 27]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 28]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 29]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 30]]
+  [1m[35m (0.4ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 5]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 7]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 10]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 13]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 14]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 15]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 17]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 18]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 19]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 21]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 23]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 24]]
+  [1m[35m (0.5ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 25]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 26]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 27]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 28]]
+  [1m[35m (0.2ms)[0m  SELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1  [["user_id", 29]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "activities"."id" FROM "activities" INNER JOIN "activity_blurbs" ON "activities"."id" = "activity_blurbs"."activity_id" WHERE "activity_blurbs"."user_id" = $1[0m  [["user_id", 30]]
