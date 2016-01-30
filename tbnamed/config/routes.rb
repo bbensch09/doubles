@@ -11,9 +11,24 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  resources :matches
-  resources :swipes
 
+  post 'swipes'=> 'swipes#create'
+
+
+  # For picking sports and writing bio
+  get 'users/new' => 'users#create'
+
+  # Look at another users' profile
+  get 'users/:id' => 'users#show'
+
+  # Show a user all their matches
+  get 'users/:id/matches' => 'matches#index'
+
+
+  get 'users/:id/feed' => 'swipes#show'
+
+  get 'conversations/:id' => 'conversations#show'
+  post 'conversations' => 'conversations#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
