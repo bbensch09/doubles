@@ -10362,3 +10362,665 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-01-30 12:33:48 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-30 12:47:48 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError - 
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+:
+  activerecord (4.2.5.1) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5.1) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.5.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/757acb71a8b48cfa/variables" for 127.0.0.1 at 2016-01-30 12:47:48 -0800
+  [1m[36m (5048.7ms)[0m  [1mDROP DATABASE IF EXISTS "tbnamed_development"[0m
+  [1m[35m (181.2ms)[0m  DROP DATABASE IF EXISTS "tbnamed_test"
+  [1m[36m (0.7ms)[0m  [1mCREATE DATABASE "tbnamed_development" ENCODING = 'unicode'[0m
+  [1m[35m (623.2ms)[0m  CREATE DATABASE "tbnamed_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (31.4ms)[0m  DROP TABLE "activities" CASCADE
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  DROP TABLE "activity_blurbs" CASCADE
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "activity_blurbs" ("id" serial primary key, "user_id" integer NOT NULL, "activity_id" integer NOT NULL, "text" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "matches" CASCADE
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "matches" ("id" serial primary key, "first_user_id" integer NOT NULL, "second_user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  DROP TABLE "messages" CASCADE
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "messages" ("id" serial primary key, "match_id" integer NOT NULL, "message_text" text NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "swipes" CASCADE
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "swipes" ("id" serial primary key, "swiper_id" integer NOT NULL, "swipee_id" integer NOT NULL, "swiped_yes" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.6ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (12.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "age" integer, "gender" character varying, "location" character varying, "latitude" decimal(7,4) NOT NULL, "longitude" decimal(7,4) NOT NULL, "bio" text NOT NULL, "profile_picture_url" character varying NOT NULL, "access_token" character varying, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp, "updated_at" timestamp, "provider" character varying, "uid" character varying) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160130040935')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "activities" ("id" serial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "activity_blurbs" ("id" serial primary key, "user_id" integer NOT NULL, "activity_id" integer NOT NULL, "text" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "matches" ("id" serial primary key, "first_user_id" integer NOT NULL, "second_user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "messages" ("id" serial primary key, "match_id" integer NOT NULL, "message_text" text NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "swipes" ("id" serial primary key, "swiper_id" integer NOT NULL, "swipee_id" integer NOT NULL, "swiped_yes" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "age" integer, "gender" character varying, "location" character varying, "latitude" decimal(7,4) NOT NULL, "longitude" decimal(7,4) NOT NULL, "bio" text NOT NULL, "profile_picture_url" character varying NOT NULL, "access_token" character varying, "username" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp, "updated_at" timestamp, "provider" character varying, "uid" character varying) 
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160130040935')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160130011925')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160130012019')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160130012046')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160130012103')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160130012110')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160130012115')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tennis"], ["created_at", "2016-01-30 20:48:10.937634"], ["updated_at", "2016-01-30 20:48:10.937634"]]
+  [1m[35m (16.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Golf"], ["created_at", "2016-01-30 20:48:10.958044"], ["updated_at", "2016-01-30 20:48:10.958044"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activities" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Racquetball"], ["created_at", "2016-01-30 20:48:10.976860"], ["updated_at", "2016-01-30 20:48:10.976860"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'tom@myspace.com' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tom@myspace.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Tom"], ["last_name", "Likes Everyone"], ["email", "tom@myspace.com"], ["gender", "Male"], ["age", 40], ["bio", "Welcome to EverythingButSex. I will be your friend for everything but sex."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg"], ["encrypted_password", "$2a$10$y5ymAjTNWtfm/VicIahgUuy3ANOgJFAUBk8S7Hl0ZdWbgN.0C9pJe"], ["created_at", "2016-01-30 20:48:11.169130"], ["updated_at", "2016-01-30 20:48:11.169130"]]
+  [1m[36mMatch Load (0.5ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 1]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 1]]
+  [1m[36m (16.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "I've been playing #<Activity:0x007fd2a7c6c628> since 1999."], ["activity_id", 0], ["user_id", 1], ["created_at", "2016-01-30 20:48:11.231104"], ["updated_at", "2016-01-30 20:48:11.231104"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["text", "I've been playing #<Activity:0x007fd2a7cbc9c0> since 1999."], ["activity_id", 1], ["user_id", 1], ["created_at", "2016-01-30 20:48:11.234273"], ["updated_at", "2016-01-30 20:48:11.234273"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "I've been playing #<Activity:0x007fd2a7ccec60> since 1999."], ["activity_id", 2], ["user_id", 1], ["created_at", "2016-01-30 20:48:11.236611"], ["updated_at", "2016-01-30 20:48:11.236611"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mark@facebook.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mark@facebook.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Mark"], ["last_name", "Likes_Harvard"], ["email", "mark@facebook.com"], ["gender", "Male"], ["age", 40], ["bio", "I like to hack"], ["location", "Menlo Park"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "http://tctechcrunch2011.files.wordpress.com/2012/09/mark.jpeg"], ["encrypted_password", "$2a$10$DyQIIVDQvMReJ6X54NxfYuOukdXiW1RrpNJZsuw1AvMHTVx5hfcSm"], ["created_at", "2016-01-30 20:48:11.332313"], ["updated_at", "2016-01-30 20:48:11.332313"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 2]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "I've been playing Racquetball since I dropped out of Harvard."], ["activity_id", 3], ["user_id", 2], ["created_at", "2016-01-30 20:48:11.338529"], ["updated_at", "2016-01-30 20:48:11.338529"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kristin_moriette@jakubowski.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kristin_moriette@jakubowski.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Kade"], ["last_name", "Ortiz"], ["email", "kristin_moriette@jakubowski.com"], ["gender", "m"], ["age", 28], ["bio", "Beard whatever forage thundercats next level diy chicharrones chartreuse. Keytar five dollar toast pop-up. Pitchfork banjo chillwave pinterest semiotics put a bird on it jean shorts vinyl. Crucifix beard thundercats vinegar squid trust fund."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/ipsumexdolorem.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$xWI1Xzmhtn08vjqxqntdaOx/pEKgr3LlaKVLciTPuuwlIKCe9HyOu"], ["created_at", "2016-01-30 20:48:12.121863"], ["updated_at", "2016-01-30 20:48:12.121863"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 3]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 3], ["created_at", "2016-01-30 20:48:12.127126"], ["updated_at", "2016-01-30 20:48:12.127126"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mustafa@grantblanda.io' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mustafa@grantblanda.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Araceli"], ["last_name", "Weimann"], ["email", "mustafa@grantblanda.io"], ["gender", "f"], ["age", 79], ["bio", "Aesthetic before they sold out gentrify cornhole. Master swag asymmetrical stumptown marfa mustache ennui. Irony vinegar umami banh mi echo blue bottle. Tattooed wolf flannel sriracha gastropub."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/quiadignissimosdebitis.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$Kx/GmOoaxbE590S5HqncT.cvNHWD5/4jN53nz5wUSxVsNeQPSrh7e"], ["created_at", "2016-01-30 20:48:12.225560"], ["updated_at", "2016-01-30 20:48:12.225560"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 4]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 4]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 4], ["created_at", "2016-01-30 20:48:12.230242"], ["updated_at", "2016-01-30 20:48:12.230242"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'violette@schneider.name' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'violette@schneider.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Tyree"], ["last_name", "Gislason"], ["email", "violette@schneider.name"], ["gender", "m"], ["age", 68], ["bio", "Dreamcatcher wayfarers put a bird on it you probably haven't heard of them neutra hashtag ethical. Craft beer next level meditation occupy fashion axe iphone you probably haven't heard of them. Forage kitsch blue bottle pitchfork umami keffiyeh. Actually wolf lumbersexual church-key."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/sitremad.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$ILCfs9iGDeCAWGTu/Sz/XOg8tzo/2hsOpGLEU398fKR/RW2jUXPga"], ["created_at", "2016-01-30 20:48:12.328005"], ["updated_at", "2016-01-30 20:48:12.328005"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 5]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 5]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 5], ["created_at", "2016-01-30 20:48:12.332844"], ["updated_at", "2016-01-30 20:48:12.332844"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'hailie.wunsch@homenickdeckow.io' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hailie.wunsch@homenickdeckow.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Citlalli"], ["last_name", "Jast"], ["email", "hailie.wunsch@homenickdeckow.io"], ["gender", "m"], ["age", 42], ["bio", "Gastropub williamsburg cornhole fap next level banh mi you probably haven't heard of them forage. Pork belly health mlkshk offal. Migas shabby chic cred mlkshk post-ironic offal bushwick lo-fi. Selvage xoxo deep v selfies."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/placeatvoluptatemdolore.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$RXNNTY.5/vL4X.LR9MiEnuVGeGRATRhWSMvYu96IR/KatEfsB4qli"], ["created_at", "2016-01-30 20:48:12.428241"], ["updated_at", "2016-01-30 20:48:12.428241"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 6]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 6]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 6], ["created_at", "2016-01-30 20:48:12.433329"], ["updated_at", "2016-01-30 20:48:12.433329"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'nikita.yundt@schneider.io' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nikita.yundt@schneider.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Marcellus"], ["last_name", "Schmitt"], ["email", "nikita.yundt@schneider.io"], ["gender", "f"], ["age", 42], ["bio", "Marfa cred shoreditch yolo +1. Jean shorts actually hoodie sriracha chartreuse sartorial. Chicharrones brooklyn humblebrag. Taxidermy banh mi blue bottle lo-fi deep v."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/quiquaeratconsectetur.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$XIA7rd.ZgBB1ZGJS2eFoyuqIME4O0Di4QLnIUeuj4y2ckt8lWLziW"], ["created_at", "2016-01-30 20:48:12.532174"], ["updated_at", "2016-01-30 20:48:12.532174"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 7]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 7]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 7], ["created_at", "2016-01-30 20:48:12.537758"], ["updated_at", "2016-01-30 20:48:12.537758"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ladarius.streich@gusikowskimcglynn.biz' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ladarius.streich@gusikowskimcglynn.biz' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Quinton"], ["last_name", "Herman"], ["email", "ladarius.streich@gusikowskimcglynn.biz"], ["gender", "m"], ["age", 26], ["bio", "Dreamcatcher polaroid you probably haven't heard of them freegan lumbersexual. Pork belly lumbersexual chambray narwhal kickstarter cold-pressed forage. Deep v five dollar toast heirloom blue bottle offal tofu cred. Viral ramps single-origin coffee lomo."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/quioccaecatiaut.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$1JXL/Df/70ZuSGPZXGWwVecNJmmbu.oQrK9MdV7S6RAJul03QB3fi"], ["created_at", "2016-01-30 20:48:12.630143"], ["updated_at", "2016-01-30 20:48:12.630143"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 8]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 8]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 8], ["created_at", "2016-01-30 20:48:12.636670"], ["updated_at", "2016-01-30 20:48:12.636670"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'marlen_mayert@bruen.info' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'marlen_mayert@bruen.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Freeman"], ["last_name", "Fisher"], ["email", "marlen_mayert@bruen.info"], ["gender", "f"], ["age", 46], ["bio", "Flannel aesthetic yuccie heirloom. Craft beer cliche letterpress. Salvia semiotics photo booth. Narwhal food truck chicharrones asymmetrical."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/velcumqueconsequatur.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$WcNgn.qRqfcch6uh6EhzwOiKhMqx5Ct0cyHbqEx55tQ.BKAWGUrzi"], ["created_at", "2016-01-30 20:48:12.735830"], ["updated_at", "2016-01-30 20:48:12.735830"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 9]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 9]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 9], ["created_at", "2016-01-30 20:48:12.740608"], ["updated_at", "2016-01-30 20:48:12.740608"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'caleigh@schinnergleason.biz' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'caleigh@schinnergleason.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Tyrel"], ["last_name", "Reinger"], ["email", "caleigh@schinnergleason.biz"], ["gender", "m"], ["age", 21], ["bio", "Organic deep v yr brunch ennui. Roof tacos wolf park waistcoat before they sold out. Fanny pack neutra ugh disrupt actually crucifix squid williamsburg. Blog vinegar brooklyn forage iphone truffaut meh yuccie."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/autautdolor.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$eCt4rypALGkiQyuDLNGsyOrTPDZbl4VxVd6bdBumNlWUX73.T7YDC"], ["created_at", "2016-01-30 20:48:12.839456"], ["updated_at", "2016-01-30 20:48:12.839456"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 10]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 10]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 1], ["user_id", 10], ["created_at", "2016-01-30 20:48:12.844175"], ["updated_at", "2016-01-30 20:48:12.844175"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'althea@hirthe.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'althea@hirthe.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Raheem"], ["last_name", "Olson"], ["email", "althea@hirthe.com"], ["gender", "m"], ["age", 47], ["bio", "Church-key quinoa whatever. Aesthetic intelligentsia craft beer pork belly mixtape kogi authentic drinking. Waistcoat skateboard mustache vinyl goth xoxo deep v chillwave. Cornhole fap leggings."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/sedprovidentvel.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$Iydv/w5SR4CjHMdBV1MDKuqNe.JQ9UbHFyFR8g651y52EjkI4bfIa"], ["created_at", "2016-01-30 20:48:12.943874"], ["updated_at", "2016-01-30 20:48:12.943874"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 11]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 11]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 11], ["created_at", "2016-01-30 20:48:12.948976"], ["updated_at", "2016-01-30 20:48:12.948976"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'karolann@kemmer.net' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'karolann@kemmer.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Keven"], ["last_name", "Keeling"], ["email", "karolann@kemmer.net"], ["gender", "m"], ["age", 28], ["bio", "Humblebrag 8-bit chia try-hard retro. Echo williamsburg banh mi. 8-bit banjo literally forage. Next level artisan everyday shoreditch offal listicle."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/fugiatutmollitia.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$2PbcKrk6/8aUiHAAo0F03OlfqHzEuxCzO2XbQunEcBxJnrIYsYIsm"], ["created_at", "2016-01-30 20:48:13.046173"], ["updated_at", "2016-01-30 20:48:13.046173"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 12]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 12]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 12], ["created_at", "2016-01-30 20:48:13.051855"], ["updated_at", "2016-01-30 20:48:13.051855"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'nichole@farrell.info' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nichole@farrell.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Dessie"], ["last_name", "Wyman"], ["email", "nichole@farrell.info"], ["gender", "m"], ["age", 74], ["bio", "Hoodie thundercats humblebrag selvage plaid gastropub. Mixtape distillery gentrify try-hard organic schlitz. Twee master typewriter taxidermy pug yr occupy cred. Venmo etsy ennui direct trade plaid tilde."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/voluptatemquiin.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$dJLQT09UQtcFDHezVHb82OqV4.pLcw9taquLsW4TCFTwBAwpVpqWK"], ["created_at", "2016-01-30 20:48:13.151110"], ["updated_at", "2016-01-30 20:48:13.151110"]]
+  [1m[36mMatch Load (0.4ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 13]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 13]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 13], ["created_at", "2016-01-30 20:48:13.156911"], ["updated_at", "2016-01-30 20:48:13.156911"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alexa@oconnerschmitt.co' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alexa@oconnerschmitt.co' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Louvenia"], ["last_name", "Anderson"], ["email", "alexa@oconnerschmitt.co"], ["gender", "f"], ["age", 60], ["bio", "Cleanse williamsburg try-hard hammock actually. Pbr&b microdosing bicycle rights chartreuse. Salvia chartreuse brunch five dollar toast keffiyeh mlkshk farm-to-table. Normcore crucifix trust fund mumblecore tattooed."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/nesciuntarchitectoet.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$Dm4zfiy.5a0KbGCttZtE/.0hC8zmObLMEKwQ6UH2dm9A7Hfy01OW."], ["created_at", "2016-01-30 20:48:13.256884"], ["updated_at", "2016-01-30 20:48:13.256884"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 14]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 14]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 14], ["created_at", "2016-01-30 20:48:13.261849"], ["updated_at", "2016-01-30 20:48:13.261849"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'edward@hilllwisoky.org' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'edward@hilllwisoky.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Jeffery"], ["last_name", "Glover"], ["email", "edward@hilllwisoky.org"], ["gender", "m"], ["age", 58], ["bio", "Fanny pack forage normcore hashtag ramps kinfolk kogi typewriter. Everyday normcore seitan brunch. Quinoa synth freegan viral poutine chartreuse. Organic lo-fi twee."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/estcorporissunt.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$cDn5jMhOigvbTZoxJgm9c.XC2asPsVgZ2BnEpGFWk..ze6onQSyNu"], ["created_at", "2016-01-30 20:48:13.359125"], ["updated_at", "2016-01-30 20:48:13.359125"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 15]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 15]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 15], ["created_at", "2016-01-30 20:48:13.363904"], ["updated_at", "2016-01-30 20:48:13.363904"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adolfo.wintheiser@kuhic.biz' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'adolfo.wintheiser@kuhic.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Benton"], ["last_name", "Zboncak"], ["email", "adolfo.wintheiser@kuhic.biz"], ["gender", "m"], ["age", 24], ["bio", "Mixtape before they sold out wolf. Fanny pack mustache xoxo small batch craft beer direct trade bushwick shoreditch. Whatever tousled ugh mlkshk green juice +1 everyday farm-to-table. Tousled vice asymmetrical pug."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/remsuntnihil.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$re9F1ZZ06iw4sclUG89ZluoKoVNbXxs7HL5ZSsyQQyPEeeJtwly9e"], ["created_at", "2016-01-30 20:48:13.459477"], ["updated_at", "2016-01-30 20:48:13.459477"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 16]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 16]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 16], ["created_at", "2016-01-30 20:48:13.464364"], ["updated_at", "2016-01-30 20:48:13.464364"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'tristin.berge@dickibednar.org' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tristin.berge@dickibednar.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Roy"], ["last_name", "Goyette"], ["email", "tristin.berge@dickibednar.org"], ["gender", "m"], ["age", 61], ["bio", "Kogi sustainable loko tacos narwhal master shoreditch. Echo ugh mixtape actually banh mi. Organic umami williamsburg pickled banh mi aesthetic park lumbersexual. Godard humblebrag forage small batch cardigan."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/euminventorefugit.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$ziUqUsLWXrbKkHCjZ1NlIuwHwzcW9eq4Jtvjw1yYVzU2WxoXrWtk."], ["created_at", "2016-01-30 20:48:13.559469"], ["updated_at", "2016-01-30 20:48:13.559469"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 17]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 17]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 17], ["created_at", "2016-01-30 20:48:13.564984"], ["updated_at", "2016-01-30 20:48:13.564984"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'abe.moen@harber.name' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'abe.moen@harber.name' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Elmo"], ["last_name", "Dickens"], ["email", "abe.moen@harber.name"], ["gender", "m"], ["age", 48], ["bio", "Cliche squid waistcoat selfies seitan gentrify. Keffiyeh five dollar toast polaroid quinoa carry. Post-ironic you probably haven't heard of them hammock narwhal. Sriracha drinking austin craft beer."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/eosdoloremducimus.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$7Qq2GJn7LrsQlWG9xZxZ0.aWYvqy.diTuiRjRjh56cXyyvf6d9uhC"], ["created_at", "2016-01-30 20:48:13.657493"], ["updated_at", "2016-01-30 20:48:13.657493"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 18]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 18]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 1], ["user_id", 18], ["created_at", "2016-01-30 20:48:13.663824"], ["updated_at", "2016-01-30 20:48:13.663824"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'sammy@corkery.org' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sammy@corkery.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Ezequiel"], ["last_name", "Abbott"], ["email", "sammy@corkery.org"], ["gender", "m"], ["age", 55], ["bio", "Flannel readymade organic austin hashtag. Fap sriracha semiotics single-origin coffee five dollar toast literally sustainable. Hashtag ramps lomo wayfarers pop-up. Small batch portland pour-over."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/autemeosexplicabo.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$bL3GarnWoTZyrqvtCwPWRONs9pn3tngnCKM2KyyZg90zyfRtwV1ba"], ["created_at", "2016-01-30 20:48:13.763945"], ["updated_at", "2016-01-30 20:48:13.763945"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 19]]
+  [1m[35mMatch Load (0.2ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 19]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 19], ["created_at", "2016-01-30 20:48:13.773618"], ["updated_at", "2016-01-30 20:48:13.773618"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'napoleon_abbott@ko.info' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'napoleon_abbott@ko.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Desiree"], ["last_name", "Feest"], ["email", "napoleon_abbott@ko.info"], ["gender", "f"], ["age", 39], ["bio", "8-bit small batch kitsch keytar. Vinyl park cronut street. Humblebrag drinking hella post-ironic diy williamsburg. Green juice helvetica venmo locavore."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/laboriosamtemporaharum.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$K5bW.znSWIonDsTVa/rBVOnoZUbESI.CWORoNWZ4KTtl7v7y17QUi"], ["created_at", "2016-01-30 20:48:13.874766"], ["updated_at", "2016-01-30 20:48:13.874766"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 20]]
+  [1m[35mMatch Load (0.3ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 20]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 20], ["created_at", "2016-01-30 20:48:13.881716"], ["updated_at", "2016-01-30 20:48:13.881716"]]
+  [1m[35m (16.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'verner_baumbach@littleconroy.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'verner_baumbach@littleconroy.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Maritza"], ["last_name", "Huel"], ["email", "verner_baumbach@littleconroy.com"], ["gender", "f"], ["age", 65], ["bio", "Pop-up five dollar toast kitsch biodiesel health roof kombucha intelligentsia. Cleanse knausgaard vegan gentrify austin hoodie next level small batch. Skateboard 3 wolf moon vice diy fap +1. Cronut sriracha cray vice tumblr."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/autemeumsint.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$D5V0pk4L5cD6qHdx6qXiTuLV8/EAUmQJWd3/r0iBTKw3lISLewxji"], ["created_at", "2016-01-30 20:48:13.999463"], ["updated_at", "2016-01-30 20:48:13.999463"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 21]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 21]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 1], ["user_id", 21], ["created_at", "2016-01-30 20:48:14.004560"], ["updated_at", "2016-01-30 20:48:14.004560"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alberta@kovacekkris.io' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alberta@kovacekkris.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Ardella"], ["last_name", "Homenick"], ["email", "alberta@kovacekkris.io"], ["gender", "m"], ["age", 66], ["bio", "Ennui viral echo polaroid retro kickstarter tacos. Paleo viral cray ugh yr etsy banh mi next level. Vegan carry echo bitters wolf. Retro asymmetrical chillwave kinfolk slow-carb farm-to-table tacos paleo."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/doloremqueetsimilique.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$B4ZOZX93ysWa5qn1h9Cc7.vHjh4ccs1wQ8OUSBMVb2VkW7Jwavazi"], ["created_at", "2016-01-30 20:48:14.106097"], ["updated_at", "2016-01-30 20:48:14.106097"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 22]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 22]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 22], ["created_at", "2016-01-30 20:48:14.111430"], ["updated_at", "2016-01-30 20:48:14.111430"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jason_goodwin@hegmann.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jason_goodwin@hegmann.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Hortense"], ["last_name", "Schulist"], ["email", "jason_goodwin@hegmann.com"], ["gender", "f"], ["age", 72], ["bio", "Jean shorts wayfarers squid etsy gastropub organic goth. Humblebrag tumblr kickstarter fap. Yolo locavore post-ironic hoodie poutine lo-fi. Messenger bag artisan truffaut lo-fi chambray photo booth street forage."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/nemominimanon.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$LWydA8t.6KNAxBrydYjkXO/3DzeIailp909NiRVsUtQv1BcSGqXlG"], ["created_at", "2016-01-30 20:48:14.207370"], ["updated_at", "2016-01-30 20:48:14.207370"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 23]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 23]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 1], ["user_id", 23], ["created_at", "2016-01-30 20:48:14.213333"], ["updated_at", "2016-01-30 20:48:14.213333"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mekhi@stracke.co' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mekhi@stracke.co' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Domenica"], ["last_name", "Strosin"], ["email", "mekhi@stracke.co"], ["gender", "m"], ["age", 68], ["bio", "Authentic pop-up tofu humblebrag occupy distillery. Vegan heirloom cronut slow-carb pickled lo-fi street pug. Actually chicharrones banh mi. Bushwick dreamcatcher locavore freegan shabby chic selfies brooklyn."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/mollitiavoluptateex.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$8nIRZyvjoY2JYnij52oSVeE/KsUZl4vwy0cK1qeffTr64JxWQICTW"], ["created_at", "2016-01-30 20:48:14.313644"], ["updated_at", "2016-01-30 20:48:14.313644"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 24]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 24]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 24], ["created_at", "2016-01-30 20:48:14.318637"], ["updated_at", "2016-01-30 20:48:14.318637"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'merritt.watsica@pfannerstillernser.co' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'merritt.watsica@pfannerstillernser.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Darrick"], ["last_name", "Frami"], ["email", "merritt.watsica@pfannerstillernser.co"], ["gender", "f"], ["age", 55], ["bio", "Narwhal cold-pressed trust fund. Shabby chic beard master schlitz. Craft beer disrupt lumbersexual kale chips wolf fixie austin. Blue bottle plaid aesthetic vhs skateboard jean shorts portland humblebrag."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/voluptatemrationeenim.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$yMRImbqmAcm1Ip.zmIrPGePS4AHJxJS5vrc8nU65iS5zhOy8zbZ0u"], ["created_at", "2016-01-30 20:48:14.419719"], ["updated_at", "2016-01-30 20:48:14.419719"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 25]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 25]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 25], ["created_at", "2016-01-30 20:48:14.425579"], ["updated_at", "2016-01-30 20:48:14.425579"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'crawford@hauck.name' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'crawford@hauck.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Chaim"], ["last_name", "Mraz"], ["email", "crawford@hauck.name"], ["gender", "f"], ["age", 46], ["bio", "Typewriter fingerstache beard farm-to-table tofu banjo. Shabby chic sartorial loko helvetica next level organic. Put a bird on it umami loko fashion axe. Flexitarian knausgaard deep v small batch pickled pop-up squid."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/vitaeeteius.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$WC4fk2N4656ugEha32VuceCG7rFTVAd6deBI1SYshc.bhJR38x2Uy"], ["created_at", "2016-01-30 20:48:14.523113"], ["updated_at", "2016-01-30 20:48:14.523113"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 26]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 26]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 1], ["user_id", 26], ["created_at", "2016-01-30 20:48:14.528212"], ["updated_at", "2016-01-30 20:48:14.528212"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carey@pfefferwelch.io' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'carey@pfefferwelch.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Jaeden"], ["last_name", "Gaylord"], ["email", "carey@pfefferwelch.io"], ["gender", "f"], ["age", 62], ["bio", "Direct trade blog yuccie authentic taxidermy pork belly cleanse. Seitan godard knausgaard flannel gentrify. Gastropub deep v before they sold out leggings portland blue bottle. Street letterpress swag."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/voluptatemautquia.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$ykAOZkQTrxFTRhV1vXk9AerBTegALC8S9O/MCASz3agQq4EQCy4yK"], ["created_at", "2016-01-30 20:48:14.624140"], ["updated_at", "2016-01-30 20:48:14.624140"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 27]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 27]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 27], ["created_at", "2016-01-30 20:48:14.629084"], ["updated_at", "2016-01-30 20:48:14.629084"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kiarra@wehner.net' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kiarra@wehner.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Quentin"], ["last_name", "Hamill"], ["email", "kiarra@wehner.net"], ["gender", "m"], ["age", 54], ["bio", "Cray small batch health listicle chartreuse. Aesthetic selfies keffiyeh keytar pop-up loko wayfarers 8-bit. Sustainable flannel paleo. Bushwick pug whatever."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/mollitiaetperspiciatis.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$PbsSR6RYV2lMIgNSyfvLjeTmfQaNxttQnmMrK/mfYQJw2mwihpAve"], ["created_at", "2016-01-30 20:48:14.725683"], ["updated_at", "2016-01-30 20:48:14.725683"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 28]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 28]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 28], ["created_at", "2016-01-30 20:48:14.730067"], ["updated_at", "2016-01-30 20:48:14.730067"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'isabel@johnsonledner.com' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'isabel@johnsonledner.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Lorenz"], ["last_name", "Kautzer"], ["email", "isabel@johnsonledner.com"], ["gender", "m"], ["age", 33], ["bio", "Beard cardigan master. Raw denim taxidermy fap. Pop-up echo fingerstache shoreditch bespoke sustainable quinoa venmo. Park bushwick shoreditch paleo schlitz."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/atliberoipsum.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$X4tVXVo.mxJdOhfqSWZCjeW.QnpQpXc6gUgMgJXidgMtDOxIQEUOe"], ["created_at", "2016-01-30 20:48:14.829020"], ["updated_at", "2016-01-30 20:48:14.829020"]]
+  [1m[36mMatch Load (0.2ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 29]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 29]]
+  [1m[36m (23.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 2], ["user_id", 29], ["created_at", "2016-01-30 20:48:14.858274"], ["updated_at", "2016-01-30 20:48:14.858274"]]
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'darrin@turcottemann.info' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'darrin@turcottemann.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "gender", "age", "bio", "location", "latitude", "longitude", "profile_picture_url", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["first_name", "Jessy"], ["last_name", "Koelpin"], ["email", "darrin@turcottemann.info"], ["gender", "f"], ["age", 44], ["bio", "Hammock marfa fingerstache tilde. Fap cardigan street helvetica tacos fanny pack blog. Pop-up bespoke yolo biodiesel offal. Cred 90's jean shorts deep v blog roof celiac chillwave."], ["location", "San Francisco"], ["latitude", "37.7577"], ["longitude", "-122.5078"], ["profile_picture_url", "https://robohash.org/nisivoluptatemrerum.png?size=300x300&set=set1"], ["encrypted_password", "$2a$10$Gl6GoZgT3fGC4SOn6QeHN.0C9JKyB94Tgz73h4qg1FDMoIgU29u1."], ["created_at", "2016-01-30 20:48:14.961259"], ["updated_at", "2016-01-30 20:48:14.961259"]]
+  [1m[36mMatch Load (0.1ms)[0m  [1mSELECT "matches".* FROM "matches" WHERE "matches"."first_user_id" = $1[0m  [["first_user_id", 30]]
+  [1m[35mMatch Load (0.1ms)[0m  SELECT "matches".* FROM "matches" WHERE "matches"."second_user_id" = $1  [["second_user_id", 30]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activity_blurbs" ("text", "activity_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "sample text about activity"], ["activity_id", 3], ["user_id", 30], ["created_at", "2016-01-30 20:48:14.965816"], ["updated_at", "2016-01-30 20:48:14.965816"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 2], ["created_at", "2016-01-30 20:48:14.978115"], ["updated_at", "2016-01-30 20:48:14.978115"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 2 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (32.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 3], ["created_at", "2016-01-30 20:48:15.126486"], ["updated_at", "2016-01-30 20:48:15.126486"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 3 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 4], ["created_at", "2016-01-30 20:48:15.133861"], ["updated_at", "2016-01-30 20:48:15.133861"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 4 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 5], ["created_at", "2016-01-30 20:48:15.139290"], ["updated_at", "2016-01-30 20:48:15.139290"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 5 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 6], ["created_at", "2016-01-30 20:48:15.144091"], ["updated_at", "2016-01-30 20:48:15.144091"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 6 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 7], ["created_at", "2016-01-30 20:48:15.148780"], ["updated_at", "2016-01-30 20:48:15.148780"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 7 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 8], ["created_at", "2016-01-30 20:48:15.153436"], ["updated_at", "2016-01-30 20:48:15.153436"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 8 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 9], ["created_at", "2016-01-30 20:48:15.158098"], ["updated_at", "2016-01-30 20:48:15.158098"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 9 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 10], ["created_at", "2016-01-30 20:48:15.162677"], ["updated_at", "2016-01-30 20:48:15.162677"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 10 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 11], ["created_at", "2016-01-30 20:48:15.167494"], ["updated_at", "2016-01-30 20:48:15.167494"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 11 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 12], ["created_at", "2016-01-30 20:48:15.172115"], ["updated_at", "2016-01-30 20:48:15.172115"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 12 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 13], ["created_at", "2016-01-30 20:48:15.176682"], ["updated_at", "2016-01-30 20:48:15.176682"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 13 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 14], ["created_at", "2016-01-30 20:48:15.181278"], ["updated_at", "2016-01-30 20:48:15.181278"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 14 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 15], ["created_at", "2016-01-30 20:48:15.185886"], ["updated_at", "2016-01-30 20:48:15.185886"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 15 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 16], ["created_at", "2016-01-30 20:48:15.190537"], ["updated_at", "2016-01-30 20:48:15.190537"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 16 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 17], ["created_at", "2016-01-30 20:48:15.195914"], ["updated_at", "2016-01-30 20:48:15.195914"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 17 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 18], ["created_at", "2016-01-30 20:48:15.200671"], ["updated_at", "2016-01-30 20:48:15.200671"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 18 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 19], ["created_at", "2016-01-30 20:48:15.205895"], ["updated_at", "2016-01-30 20:48:15.205895"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mSwipe Load (0.3ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 19 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 20], ["created_at", "2016-01-30 20:48:15.211161"], ["updated_at", "2016-01-30 20:48:15.211161"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 20 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 21], ["created_at", "2016-01-30 20:48:15.215858"], ["updated_at", "2016-01-30 20:48:15.215858"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 21 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 22], ["created_at", "2016-01-30 20:48:15.220298"], ["updated_at", "2016-01-30 20:48:15.220298"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 22 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 23], ["created_at", "2016-01-30 20:48:15.224941"], ["updated_at", "2016-01-30 20:48:15.224941"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 23 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 24], ["created_at", "2016-01-30 20:48:15.229521"], ["updated_at", "2016-01-30 20:48:15.229521"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 24 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 25], ["created_at", "2016-01-30 20:48:15.234036"], ["updated_at", "2016-01-30 20:48:15.234036"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 25]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 25 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 26], ["created_at", "2016-01-30 20:48:15.238928"], ["updated_at", "2016-01-30 20:48:15.238928"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 26 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 27], ["created_at", "2016-01-30 20:48:15.243373"], ["updated_at", "2016-01-30 20:48:15.243373"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 27 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 28], ["created_at", "2016-01-30 20:48:15.247884"], ["updated_at", "2016-01-30 20:48:15.247884"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 28 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 29], ["created_at", "2016-01-30 20:48:15.252476"], ["updated_at", "2016-01-30 20:48:15.252476"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 29]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 29 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 1], ["swipee_id", 30], ["created_at", "2016-01-30 20:48:15.257445"], ["updated_at", "2016-01-30 20:48:15.257445"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 30 AND "swipes"."swipee_id" = 1[0m  [["swiped_yes", "t"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "swipes" ("swiped_yes", "swiper_id", "swipee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["swiped_yes", "t"], ["swiper_id", 2], ["swipee_id", 1], ["created_at", "2016-01-30 20:48:15.262026"], ["updated_at", "2016-01-30 20:48:15.262026"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSwipe Load (0.2ms)[0m  [1mSELECT "swipes".* FROM "swipes" WHERE "swipes"."swiped_yes" = $1 AND "swipes"."swiper_id" = 1 AND "swipes"."swipee_id" = 2[0m  [["swiped_yes", "t"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "matches" ("first_user_id", "second_user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_user_id", 1], ["second_user_id", 2], ["created_at", "2016-01-30 20:48:15.270619"], ["updated_at", "2016-01-30 20:48:15.270619"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("match_id", "user_id", "message_text", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["match_id", 1], ["user_id", 2], ["message_text", "Want to play Racquetball this weekend?"], ["created_at", "2016-01-30 20:48:15.285391"], ["updated_at", "2016-01-30 20:48:15.285391"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-30 12:51:00 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Geokit is using the domain: localhost
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2805ms (Views: 2795.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/converstaions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/matches.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/swipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/converstaions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/matches.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/swipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-01-30 12:51:03 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-01-30 12:51:10 -0800
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-01-30 12:51:10 -0800
