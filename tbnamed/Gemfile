@@ -28,6 +28,17 @@ gem 'active_model_serializers', '~> 0.8.3'
 gem 'devise', '~> 3.4.1'
 gem 'thin'
 
+gem 'geokit-rails'
+gem 'httparty'
+
+
+# sidekiq gems
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
