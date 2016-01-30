@@ -13,8 +13,8 @@
   <nav>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    Signed in as <strong><%= current_user.email %></strong>!
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
     <% else %>
       <button type="button" class="btn btn-block btn-success">
         <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
