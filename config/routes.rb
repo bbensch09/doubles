@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
-
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', omniauth_callbacks: "users/omniauth_callbacks"}
+  # sessions: 'sessions',
+  # , omniauth_callbacks: "users/omniauth_callbacks"
 
 # FOR CANCELING FB SIGNUP
   # devise_scope :user do
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   post 'swipes'=> 'swipes#create'
 
-
+  get '/auth/:facebook/callback' => 'sessions#create'
   # For picking sports and writing bio
   get 'users/new' => 'users#create'
 
