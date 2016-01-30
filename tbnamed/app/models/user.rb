@@ -52,7 +52,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   private
 
   def update_access_token!

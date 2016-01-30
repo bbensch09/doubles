@@ -4,6 +4,8 @@ class MatchesController < ApplicationController
     def index
       #return JSON of a user's matches profile information
       # render :text => "Match index"
+
+      #THIS SHOULD PROBABLY BE MOVED TO MODEL
       user = User.find(1)
       match_ids = []
       user.first_user_matches.each do |match|
