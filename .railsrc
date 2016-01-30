@@ -1,0 +1,7 @@
+--database=postgresql
+--skip-spring
+--skip-test
+--skip-bundle
+--skip-sprockets
+--no-rc
+--skip-action-cable
