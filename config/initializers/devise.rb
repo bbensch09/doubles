@@ -6,7 +6,7 @@ Dotenv.load
 Devise.setup do |config|
 
   config.omniauth :facebook, ENV['API_ID'], ENV['APP_SECRET'],
-      callback_url: "http://localhost:3000/users/new", scope: "email,user_location,public_profile", :display => 'page', :image_size => 'square'
+      callback_url: ENV['LOCAL_HOST_NAME'], scope: "email,user_location,public_profile", :display => 'page', :image_size => 'square'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
