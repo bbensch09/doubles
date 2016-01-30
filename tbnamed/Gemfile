@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -29,7 +30,7 @@ gem 'devise', '~> 3.4.1'
 gem 'thin'
 gem 'omniauth-facebook'
 # ENV MANAGER FOR KEYS
-gem 'dotenv-rails', :groups => [:development, :test]
+
 
 
 # Use ActiveModel has_secure_password
