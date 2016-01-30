@@ -6,18 +6,21 @@ class MatchesController < ApplicationController
       # render :text => "Match index"
 
       #THIS SHOULD PROBABLY BE MOVED TO MODEL
-      user = User.find(1)
-      match_ids = []
-      user.first_user_matches.each do |match|
-        match_ids << match.second_user_id
-      end
-      user.second_user_matches.each do |match|
-        match_ids << match.first_user_id
-      end
-      @matches = []
-      match_ids.each do |id|
-        @matches << User.find(id)
-      end
+      # user = User.find(1)
+      # match_ids = []
+      # user.first_user_matches.each do |match|
+      #   match_ids << match.second_user_id
+      # end
+      # user.second_user_matches.each do |match|
+      #   match_ids << match.first_user_id
+      # end
+      # @matches = []
+      # match_ids.each do |id|
+      #   @matches << User.find(id)
+      # end
+      # render 'index'
+
+      @matches = current_user.matches
       render 'index'
       # user = User.find(2) #need to pull user_id from Devise
       # respond_with user.matches

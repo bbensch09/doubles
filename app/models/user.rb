@@ -18,43 +18,43 @@ class User < ActiveRecord::Base
 
   has_many :activity_blurbs
   has_many :activities, through: :activity_blurbs
-  after_save :matches
+
 
 # this method just for testing purposes. plan to move to background worker
-  def update_geolocation
-    api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=",{})
-    response = api_response.parsed_response
-    lat = response["location"]["lat"]
-    lng = response["location"]["lng"]
-    self.update_attributes(:latitude => lat, :longitude => lng)
-  end
+def update_geolocation
+  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=",{})
+  response = api_response.parsed_response
+  lat = response["location"]["lat"]
+  lng = response["location"]["lng"]
+  self.update_attributes(:latitude => lat, :longitude => lng)
+end
 
-  def users_in_radius
-    geo_location = [self.latitude, self.longitude]
-    User.within(5, :origin => geo_location)
-  end
+def users_in_radius
+  geo_location = [self.latitude, self.longitude]
+  User.within(5, :origin => geo_location)
+end
 
-  def matches
-    self.first_user_matches + self.second_user_matches
-  end
+def array_of_matches
+  self.first_user_matches + self.second_user_matches
+end
 
-  def potential_matches
+def potential_matches
     # should return a list of users based on same matches and where there isn't already a swipe id
     # unseen_potential_matches = geo_activity_matches - current_user.swipees
   end
 
   def self.from_omniauth(auth)
-  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name   # assuming the user model has a name
     user.image = auth.info.image # assuming the user model has an image
-    end
   end
+end
 
-  private
+private
 
-  def update_access_token!
-    self.access_token = "#{self.id}:#{Devise.friendly_token}"
-  end
+def update_access_token!
+  self.access_token = "#{self.id}:#{Devise.friendly_token}"
+end
 end
