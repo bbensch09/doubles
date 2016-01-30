@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
 
   after_create :update_access_token!
 
-  validates :username, presence: true
   validates :email, presence: true, uniqueness: true
 
   has_many :swipes, :foreign_key => "swiper_id", :class_name => "Swipe"
