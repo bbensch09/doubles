@@ -20,7 +20,8 @@
         <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
       </button>
       <button type="button" class="btn btn-block btn-success">
-        <%= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %>
+        <!-- %= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %> -->
+        <%= link_to "Sign up for an account", new_user_registration_path %>
       </button>
     <% end %>
   </nav>
