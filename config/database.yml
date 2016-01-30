@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: tbnamed_production
-  username: tbnamed
-  password: <%= ENV['TBNAMED_DATABASE_PASSWORD'] %>
+  # database: tbnamed_production
+  # username: tbnamed
+  password: <%= ENV['DATABASE_PASSWORD'] %>
