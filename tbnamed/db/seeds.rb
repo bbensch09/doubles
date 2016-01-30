@@ -14,9 +14,8 @@ end
 #Create Tom
 tom = User.create!({
                     first_name: "Tom",
-                    last_name: "Likes_Everyone",
+                    last_name: "Likes Everyone",
                     email: 'tom@myspace.com',
-                    username: 'tom',
                     gender: 'Male',
                     age: 40,
                     bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
@@ -40,7 +39,6 @@ mark = User.create!({
                     first_name: "Mark",
                     last_name: "Likes_Harvard",
                     email: 'mark@facebook.com',
-                    username: 'mark',
                     gender: 'Male',
                     age: 40,
                     bio: 'I like to hack',
@@ -65,7 +63,6 @@ ActivityBlurb.create!({
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     email: Faker::Internet.email,
-                    username: Faker::Name.first_name,
                     gender: ['m','f'].sample,
                     age: rand(18..80),
                     bio: Faker::Hipster.sentences(4).join(' '),
