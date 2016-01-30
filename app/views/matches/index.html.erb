@@ -1,0 +1,20 @@
+<h1>See all of your matches below:</h1>
+
+<p>
+  Congrats, you have <%= @matches.length %> matches!
+</p>
+
+<% @matches.each do |match| %>
+<h2> Name: <%= match.first_name %> </h2>
+<h3> Activities:
+  <% match.activities.each do |activity| %>
+  <button>
+    <span class="activity-button">
+      <%= activity.name %>
+    </span>
+  </button>
+  <% end %>
+</h3>
+<h4> Bio: <%= match.bio %> </h2>
+<hr />
+<% end %>
