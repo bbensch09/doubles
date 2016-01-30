@@ -26,6 +26,8 @@
       </button>
     <% end %>
   </nav>
+<p class="notice"><%= notice %></p><% if notice %>
+<p class="alert"><%= alert %></p><% if alert %>
 
 <div class="container-fluid">
 <%= yield %>
