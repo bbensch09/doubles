@@ -11,9 +11,18 @@
 <body>
 
   <nav>
-    <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
-    <br>
-    <%= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %>      
+    <!-- INSERT NAV ICON / OPTIONS HERE -->
+    <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <button type="button" class="btn btn-block btn-success">
+        <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+      </button>
+      <button type="button" class="btn btn-block btn-success">
+        <%= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %>
+      </button>
+    <% end %>
   </nav>
 
   <p class="notice"><%= notice %></p>

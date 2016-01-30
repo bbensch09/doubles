@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   # add geokit within radius method used in User#users_in_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
-
   after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
