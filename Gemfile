@@ -42,6 +42,9 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 
+#move faker into normal gemfile loading
+gem 'faker'
+
 
 
 # Use ActiveModel has_secure_password
@@ -54,7 +57,6 @@ gem 'slim'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'faker'
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
