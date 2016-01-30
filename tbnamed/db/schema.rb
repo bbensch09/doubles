@@ -59,11 +59,12 @@ ActiveRecord::Schema.define(version: 20160130012115) do
     t.integer  "age"
     t.string   "gender"
     t.string   "location"
-    t.decimal  "latitude",               precision: 7, scale: 4 #,              null: false
-    t.decimal  "longitude",              precision: 7, scale: 4 #,              null: false
-    t.text     "bio"#, null: false
-    t.string   "profile_picture_url"#, null: false
+    t.decimal  "latitude",               precision: 7, scale: 4,              null: false
+    t.decimal  "longitude",              precision: 7, scale: 4,              null: false
+    t.text     "bio",                                                         null: false
+    t.string   "profile_picture_url",                                         null: false
     t.string   "access_token"
+    t.string   "username"
     t.string   "email",                                          default: "", null: false
     t.string   "encrypted_password",                             default: "", null: false
     t.string   "reset_password_token"
