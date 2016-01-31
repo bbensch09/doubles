@@ -36,6 +36,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p session[:user_id] = user.id
       p flash[:success] = "Welcome, #{user.email}!"
       current_user = @user
+      p "=============background_process================="
+
+      current_user.update_geolocation
+      # background-process
+      # p GetGeoLocatorWorker.perform_async(current_user.id)
+
       sign_in(user)
       redirect_to edit_user_registration_url
     end
