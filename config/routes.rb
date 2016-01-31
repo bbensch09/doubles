@@ -27,12 +27,12 @@ Rails.application.routes.draw do
   get 'users/:id/matches' => 'matches#index'
 
 
-  get 'users/:id/feed' => 'swipes#show'
+  get 'users/:id/feed' => 'swipes#feed'
 
   get 'conversations/:id' => 'conversations#show'
   post 'conversations' => 'conversations#create'
 
-  get 'cards' => 'swipes#cards'
+  get '/users/:current_user_id/feed' => 'swipes#feed'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

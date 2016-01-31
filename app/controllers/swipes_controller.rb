@@ -18,10 +18,14 @@ class SwipesController < ApplicationController
         ## how to show match/no-match?
     end
 
-    def cards
+    def feed
       p current_user
       p current_user.narrow_users
 
-      @available_users = current_user.narrow_users
+      # send all unswiped users near you with shared activity
+      # @available_users = current_user.narrow_users
+
+      # send just first unswiped user near you with shared act...
+      @next_available_user = current_user.narrow_users.first
     end
 end
