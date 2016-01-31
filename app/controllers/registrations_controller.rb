@@ -1,5 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  # HACKY_SHIT
+  # temp action to test tutorial slider
   def show_tutorial
     render 'users/step4'
   end
