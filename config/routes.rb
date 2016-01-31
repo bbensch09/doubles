@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get 'cards' => 'swipes#cards'
 
   resources :activity_blurbs
-  get 'activities' => 'activity_blurbs#new'
+  get 'activities' => 'activity_blurbs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
