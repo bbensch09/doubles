@@ -1,14 +1,15 @@
-<% @unseen_users.each do |user| %>
-<h1><%= user.name%></h1>
-<ul>
-  <li></li>
-   <li></li>
-    <li></li>
-     <li></li>
-      <li></li>
-       <li></li>
+<% if @unseen_users %>
+  <% @unseen_users.each do |user| %>
 
+    <h1><%= user.first_name%></h1>
+    <ul>
+      <li><%= user.age %></li>
+      <li><%= user.gender %></li>
+      <li><%= user.bio %></li>
+    </ul>
 
-</ul>
+  <%end %>
+<% else %>
+<h1>No people matching your interests near you</h1>
+<% end %>
 
-<%end %>
