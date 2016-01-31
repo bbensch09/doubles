@@ -1,0 +1,18 @@
+<div class="show-card-container">
+  <img class="show-card-picture" src="<%=user.profile_picture_url%>">
+  <h1 class="card-name"><%= user.first_name %></h1>
+  <h3 class="card-bio"><%= user.bio%></h3>
+  <% user.activities.each do |activity| %>
+  <h4 class="card-activities"><%= activity.name %></h3>
+  <% end %>
+</div>
+
+<a href="/swipe_yes/<%=user.id%>">
+<div class="card-swipe-yes">
+</div>
+</a>
+
+<a href="/swipe_no/<%=user.id%>">
+<div class="card-swipe-no">
+</div>
+</a>

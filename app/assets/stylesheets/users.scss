@@ -1,3 +1,33 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile_picture {
+  width: 100%;
+}
+
+.left-align {
+  text-align: left;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.profile_sports {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.clearfix {
+  clear:both;
+}
+
+.profile_headline {
+  height: 50px;
+}
+
+.blurb_text {
+  color: white;
+  font-size: 1.5em;
+}
+

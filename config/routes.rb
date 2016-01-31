@@ -27,16 +27,29 @@ Rails.application.routes.draw do
   get 'users/:id/matches' => 'matches#index'
 
 
-  get 'users/:id/feed' => 'swipes#show'
+  get 'users/:id/feed' => 'swipes#feed'
 
   get 'matches/:id/chat' => 'conversations#show'
   post 'matches/:id/chat' => 'conversations#create'
 
-  get 'cards' => 'swipes#cards'
-
+  # HACKY_SHIT
+  # temp route to test tutorial slider
   devise_scope :user do
     get "/step4" => 'registrations#show_tutorial'
   end
+
+  get '/users/:current_user_id/feed' => 'swipes#feed'
+
+  # HACKY_SHIT
+  # temp routes to test swiping
+  get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
+  get '/swipe_no/:user_id' => 'swipes#swipe_no'
+
+
+
+
+
+>>>>>>> 0df62f720a19ad88461ba1a1016dcbc944d76980
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
