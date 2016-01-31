@@ -5,16 +5,18 @@ class ActivityBlurbsController < ApplicationController
     end
 
     def new
+      @all_sports = Activity.all
       @activity_blurb = ActivityBlurb.new
     end
 
     def create
-      @activity_blurb = ActivityBlurb.new(activity_params)
+      @user = current_user
+      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
       @activity_blurb.user_id = current_user.id if current_user
       if @activity_blurb.save
-        redirect_to activity_blurbs_path
+        render json: @activity_blurb
       else
-        render 'new'
+        render json: @activity_blurb
       end
     end
 
