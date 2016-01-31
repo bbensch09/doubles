@@ -1,2 +1,5 @@
 <h1 class="page-head">Chat with <%= @matched_user.first_name %></h1>
 <h4>Matched <%= time_ago_in_words(@match.created_at) %> ago</h4>
+<div id="content"></div>
+
+<script type="text/babel" src="/javascripts/messaging.js.jsx"></script>
