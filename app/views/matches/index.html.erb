@@ -1,6 +1,6 @@
 <h1 class="page-head">All Your Matches</h1>
 
-<div class="text-center block-text">
+<div class="text-center">
   <% if @matches.length == 0 %>
   Sorry, no matches yet, check back again later!
   <% else %>
@@ -9,7 +9,7 @@
 </div>
 
 <% @matches.each do |match| %>
-<div class="row block-text">
+<div class="row">
   <% if match.first_user_id == current_user.id %>
     <% matched_user = match.second_user %>
   <% elsif match.second_user_id == current_user.id %>
