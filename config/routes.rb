@@ -45,11 +45,6 @@ Rails.application.routes.draw do
   get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
   get '/swipe_no/:user_id' => 'swipes#swipe_no'
 
-
-
-
-
->>>>>>> 0df62f720a19ad88461ba1a1016dcbc944d76980
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
