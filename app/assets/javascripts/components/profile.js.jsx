@@ -1,19 +1,4 @@
 
-// // Will replace the current data model when server is live
-//   loadMessagesFromServer: function() {
-//     $.ajax({
-//       url: this.props.url,
-//       dataType: 'json',
-//       cache: false,
-//       success: function(data) {
-//         this.setState({user: data['user']});
-//       }.bind(this),
-//       error: function(xhr, status, error) {
-//         console.error(this.props.url, status, error.toString());
-//       }.bind(this)
-//     });
-
-
 
 var Profile = React.createClass({
   render: function() {
