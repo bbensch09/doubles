@@ -8,10 +8,10 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
+log/*
 !/log/.keep
-/tmp/*
+tmp/*
 .env
-/config/secrets.yml
+config/secrets.yml
 Gemfile.lock
-.DS_Store
+**/.DS_Store

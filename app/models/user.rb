@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
 
-  # add geokit within radius method used in User#users_in_radius
+  # add geokit within radius method used in User#users_within_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
   after_create :update_access_token!
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   has_many :activity_blurbs
   has_many :activities, through: :activity_blurbs
-  after_save :matches
+
 
 # this method just for testing purposes. plan to move to background worker
   def update_geolocation
@@ -29,36 +29,42 @@ class User < ActiveRecord::Base
     self.update_attributes(:latitude => lat, :longitude => lng)
   end
 
-  def users_in_radius
-    geo_location = [self.latitude, self.longitude]
-    User.within(5, :origin => geo_location)
-  end
-
   def matches
     self.first_user_matches + self.second_user_matches
   end
 
-  def potential_matches
-    # should return a list of users based on same matches and where there isn't already a swipe id
-    # unseen_potential_matches = geo_activity_matches - current_user.swipees
+
+  def narrow_users
+    narrowed_users = self.users_within_radius
+    narrowed_users = unswiped_users(narrowed_users)
+    narrowed_users = users_with_shared_activities(narrowed_users)
+    narrowed_users
   end
 
-  def self.from_omniauth(auth)
-    puts "-----------START self.from_omniauth--------"
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    user.url = auth['info']['urls'][user.provider.capitalize]
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
-    user.first_name = auth.info.first_name   # assuming the user model has a name
-    user.last_name = auth.info.last_name # assuming the user model has an image
-    puts user
-    puts "-----------END self.from_omniauth--------"
+  def users_within_radius
+    geo_location = [self.latitude, self.longitude]
+    other_users = User.where.not(id: self.id)
+    close_users = other_users.within(5, :origin => geo_location)
+  end
+
+  def unswiped_users(user_objects)
+    user_objects.select{|user|self.matches.exclude?(user)}
+  end
+
+  def users_with_shared_activities(user_objects)
+    my_activity_ids = self.activities.pluck(:id)
+    user_objects = user_objects.select do |user_object|
+      other_user_activity_ids = user_object.activities.pluck(:id)
+      (other_user_activity_ids & my_activity_ids).any?
     end
+    user_objects
   end
 
-  private
+end
 
-  def update_access_token!
-    self.access_token = "#{self.id}:#{Devise.friendly_token}"
-  end
+private
+
+def update_access_token!
+  self.access_token = "#{self.id}:#{Devise.friendly_token}"
+end
 end
