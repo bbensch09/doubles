@@ -69,9 +69,11 @@ def self.from_omniauth(auth)
   end
 end
 
+
 private
 
 def update_access_token!
   self.access_token = "#{self.id}:#{Devise.friendly_token}"
 end
 
+end
