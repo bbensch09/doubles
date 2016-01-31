@@ -19,6 +19,7 @@ class SwipesController < ApplicationController
     end
 
     def cards
+      p current_user
       p current_user.narrow_users
 
       @available_users = current_user.narrow_users
