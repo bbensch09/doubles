@@ -5,7 +5,7 @@ class GeoLocatorWorker
   def perform(user_id)
     user = User.find(user_id)
 
-    api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=",{})
+    api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
     response = api_response.parsed_response
     lat = response["location"]["lat"]
     lng = response["location"]["lng"]
