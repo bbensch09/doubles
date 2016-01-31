@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'conversations/:id' => 'conversations#show'
   post 'conversations' => 'conversations#create'
+
+  get 'cards' => 'swipes#cards'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
