@@ -31,7 +31,12 @@ var MessageBox = React.createClass({
 
   componentDidMount: function() {
     this.loadMessagesFromServer();
-    setInterval(this.loadMessagesFromServer, this.props.updateInterval);
+    this.loadInterval = setInterval(this.loadMessagesFromServer, this.props.updateInterval);
+  },
+
+  componentWillUnmount: function() {
+    this.loadInterval && clearInterval(this.loadInterval);
+    this.loadInterval = false;
   },
 
   render: function () {
