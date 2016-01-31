@@ -20,10 +20,8 @@
       <%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn btn-danger btn-xs" %>
       <%= link_to "Matches", "/users/#{current_user.id}/matches", :class=>"btn btn-warning pull-right btn-xs" %>
       <%= link_to "Swipes", "/users/#{current_user.id}/feed", :class=>"btn btn-warning pull-left btn-xs" %>
-
     </div>
     <% else %>
-
       <button type="button" class="login_register_button">
         <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
       </button>
