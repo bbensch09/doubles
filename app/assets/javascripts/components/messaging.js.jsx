@@ -24,7 +24,7 @@ var MessageBox = React.createClass({
       type: "POST",
       dataType: "json",
       success: function ( data ) {
-        this.setState({ messages: data });
+        this.setState(data);
       }.bind(this)
     });
   },
@@ -47,7 +47,6 @@ var MessageBox = React.createClass({
 
 var MessageList = React.createClass({
   render: function () {
-    console.log(messageNodes);
     var messageNodes = this.props.messages.map(function ( message ) {
       return <Message author={ message.sender_name } text={ message.message_text } key={ message.id } />
     });

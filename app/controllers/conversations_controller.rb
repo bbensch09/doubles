@@ -5,9 +5,10 @@ include MatchesHelper
 class ConversationsController < ApplicationController
   def create
     Message.create(match_id: params[:id], message_text: params[:text], user_id: params[:author], sender_name: User.find(params[:author]).first_name)
-    if request.xhr?
-      render :json => generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
-    end
+    p "+++++++++++++++++"
+    p presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
+    p "+++++++++++++++++"
+    render :json => presenter
   end
 
   def show
