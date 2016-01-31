@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tbnamed</title>
+  <title>Doubles</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
@@ -11,7 +11,6 @@
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-
   <nav>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
@@ -19,6 +18,7 @@
       Hello <%= current_user.first_name %>!
       <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class=>"btn btn-danger btn-xs" %>
       <%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn btn-danger btn-xs" %>
+      <%= link_to "Activities", activity_blurbs_path, :class=>"btn btn-danger btn-xs" %>
       <%= link_to "Matches", "/users/#{current_user.id}/matches", :class=>"btn btn-warning pull-right btn-xs" %>
       <%= link_to "Swipes", "/users/#{current_user.id}/feed", :class=>"btn btn-warning pull-left btn-xs" %>
     </div>
@@ -28,8 +28,6 @@
       </button>
     <% end %>
   </nav>
-
-
 <div class="container-fluid">
 <%= yield %>
 </div>

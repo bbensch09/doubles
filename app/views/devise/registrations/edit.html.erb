@@ -1,53 +1,61 @@
-<h2 class="page-head">Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+
+<div class="edit-profile   col-md-12">
+
+<% if current_user.sign_in_count > 1 %>
+<h2>Modify your profile </h2>
+<!-- Total Visits:  %= current_user.sign_in_count %> -->
+<% else %>
+<h2>Complete your profile </h2>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  <div class="visible-text">
-Update your profile below
-  <div class="field">
-    <%= f.label :first_name %><br />
+<div class="form-inline">
+  <div class="form-group">
+    <%= f.label :first_name, :class=>"col-md-4" %>
     <%= f.text_field :first_name, autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :last_name %><br />
+  <div class="form-group">
+    <%= f.label :last_name, :class=>"col-md-4" %>
     <%= f.text_field :last_name, autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="form-group">
+    <%= f.label :email, :class=>"col-md-4" %>
     <%= f.email_field :email, autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :profile_picture_url %><br />
-    <img src=<%= resource.profile_picture_url %> >
-    <%= f.text_field :profile_picture_url, :size=>"40", autofocus: true %>
+  <div class="form-group">
+    <img class="profile-img" src=<%= resource.profile_picture_url %> ><br>
+    <%= f.label :profile_picture_url, "Update profile image URL" %>
+    <%= f.text_field :profile_picture_url, autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio, size: "35x6", autofocus: true %>
+  <div class="form-group">
+    <%= f.label :bio %> <br>
+    <%= f.text_area :bio, size: "25x5", autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :gender %><br />
+  <div class="form-group">
+    <%= f.label :gender, :class=>"col-md-4" %>
     <%= f.text_field :gender, autofocus: true %>
   </div>
-  <br>
-  <div class="field">
-    <%= f.label :age %><br />
+  <div class="form-group">
+    <%= f.label :age, :class=>"col-md-4" %>
     <%= f.text_field :age, autofocus: true %>
   </div>
-  <br>
+  <div class="form-group">
+    <%= f.label :location, :class=>"col-md-4" %>
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 </div>
 <% end %>
+</div>
 
 <!-- <h3>Cancel my account</h3>
 
 <p>Unhappy? %= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 %= link_to "Back", :back %> -->
+</div>
