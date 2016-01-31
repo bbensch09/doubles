@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
 # this method just for testing purposes. plan to move to background worker
 def update_geolocation
-  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=",{})
+  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
   response = api_response.parsed_response
   lat = response["location"]["lat"]
   lng = response["location"]["lng"]
@@ -44,7 +44,7 @@ end
 def users_within_radius
   geo_location = [self.latitude, self.longitude]
   other_users = User.where.not(id: self.id)
-  close_users = other_users.within(5, :origin => geo_location)
+  close_users = other_users.within(20, :origin => geo_location)
 end
 
 def unswiped_users(user_objects)
