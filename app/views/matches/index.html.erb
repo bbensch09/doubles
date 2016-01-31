@@ -10,11 +10,7 @@
 
 <% @matches.each do |match| %>
 <div class="row block-text">
-  <% if match.first_user_id == current_user.id %>
-    <% matched_user = match.second_user %>
-  <% elsif match.second_user_id == current_user.id %>
-    <% matched_user = match.first_user %>
-  <% end %>
+  <% matched_user = get_matched_user(match, current_user) %>
 <h2> Name: <%= matched_user.first_name %> </h2>
 <h3> Activities:
   <% matched_user.activities.each do |activity| %>
