@@ -35,12 +35,6 @@ Rails.application.routes.draw do
   get 'matches/:id/chat' => 'conversations#show'
   post 'matches/:id/chat' => 'conversations#create'
 
-  # HACKY_SHIT
-  # temp route to test tutorial slider
-  devise_scope :user do
-    get "/step4" => 'registrations#show_tutorial'
-  end
-
   get 'cards' => 'swipes#cards'
 
   resources :activity_blurbs
@@ -53,5 +47,8 @@ Rails.application.routes.draw do
   get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
   get '/swipe_no/:user_id' => 'swipes#swipe_no'
 
-
+  # temp route to test tutorial slider
+  devise_scope :user do
+    get "/step4" => 'registrations#show_tutorial'
+  end
 end
