@@ -27,6 +27,9 @@
     <% end %>
   </nav>
 
+<% if current_user %>
+Visits count: <%= current_user.sign_in_count %>
+<% end %>
 
 <div class="container-fluid">
 <%= yield %>
