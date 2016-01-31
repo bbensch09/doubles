@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   # Look at another users' profile
   get 'users/:id' => 'users#show'
 
+  # Look at your own profile that will have links to edit, edit activities, and logout
+  get 'users/:id/profile' => 'users#profile'
+
   # Show a user all their matches
   get 'users/:id/matches' => 'matches#index'
 
