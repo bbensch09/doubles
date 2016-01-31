@@ -44,13 +44,15 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    puts "-----------START self.from_omniauth--------"
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.url = auth['info']['urls'][user.provider.capitalize]
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.first_name = auth.info.first_name   # assuming the user model has a name
     user.last_name = auth.info.last_name # assuming the user model has an image
     puts user
+    puts "-----------END self.from_omniauth--------"
     end
   end
 
