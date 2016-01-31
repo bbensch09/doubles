@@ -11,12 +11,17 @@ class ActivityBlurbsController < ApplicationController
 
     def create
       @user = current_user
-      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
-      @activity_blurb.user_id = current_user.id if current_user
-      if @activity_blurb.save
+      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_blurb][:activity_id], text: params[:activity_blurb][:text], user_id: @user.id)
+
+      if request.xhr?
         render json: @activity_blurb
       else
-        render json: @activity_blurb
+        if @activity_blurb.save
+          redirect_to activity_blurbs_path
+        else
+          @errors = @activity_blurb.errors
+          redirect_to activity_blurbs_path
+        end
       end
     end
 

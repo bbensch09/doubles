@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # add geokit within radius method used in User#users_within_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
-  after_create :update_access_token!
+  after_create :update_access_token!, :update_geolocation
 
   validates :email, presence: true, uniqueness: true
 
@@ -18,6 +18,15 @@ class User < ActiveRecord::Base
 
   has_many :activity_blurbs
   has_many :activities, through: :activity_blurbs
+
+# HACKY_SHIT method for development purposes
+def everyone_swipes_you
+  everyone_else = User.all
+  everyone_else.each do |user|
+    user.swipes.create(swipee_id: self.id, swiped_yes: [true,false].sample)
+  end
+  return "everyone swiped you!"
+end
 
 
 # this method just for testing purposes. plan to move to background worker
@@ -35,10 +44,10 @@ end
 
 
 def narrow_users
-  narrowed_users = self.users_within_radius
-  narrowed_users = unswiped_users(narrowed_users)
-  narrowed_users = users_with_shared_activities(narrowed_users)
-  narrowed_users
+  users_nearby = self.users_within_radius
+  unswiped_users_nearby = unswiped_users(users_nearby)
+  shared_activity_unswiped_users_nearby = users_with_shared_activities(unswiped_users_nearby)
+  shared_activity_unswiped_users_nearby
 end
 
 def users_within_radius
