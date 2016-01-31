@@ -44,6 +44,7 @@
   margin-left: 2px;
   margin-right: 2px;
   width: 35px;
+  background-color: white;
 }
 
 .glyphicon {
@@ -51,7 +52,7 @@
 }
 
 body {
-  background: url(/assets/golf_course.png) no-repeat center center fixed;
+  background: url(/assets/field.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -65,9 +66,9 @@ body {
 }
 
 .signed-in-greeting {
-  margin-top: 2px;
+  padding-top: 2px;
   padding-bottom: 4px;
-  border-bottom: 2px solid black;
+  border: 2px solid black;
   text-align: center;
   font-family: 'Russo One', sans-serif;
 }
