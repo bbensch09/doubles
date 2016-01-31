@@ -94,33 +94,7 @@ User.all.each do |user|
     })
 end
 
-#Tom likes all users
-
-User.all.each do |swipee|
-  Swipe.create!({
-    swiped_yes: true,
-    swiper_id: 1,
-    swipee_id: swipee.id
-    })
-end
-
-
-#Mark likes Tom
-Swipe.create!({
-  swiped_yes: true,
-  swiper_id: 2,
-  swipee_id: 1
-  })
-
-#Mark sends Tom a message
-message = Message.create({
-  match_id: 1,
-  user_id: 2,
-  message_text: "Want to play Racquetball this weekend?"
-  # message_text: Faker::Hipster.sentences(2).join(' ')
-  })
-
-#everyone swipes on you (all but last user)
+#everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
   everyone = User.all
   you = [User.last]
