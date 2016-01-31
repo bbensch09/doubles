@@ -14,6 +14,7 @@ var MessageBox = React.createClass({
   },
 
   getInitialState: function() {
+    console.log(this.props.presenter);
     return JSON.parse(this.props.presenter);
   },
 
@@ -48,7 +49,7 @@ var MessageBox = React.createClass({
 var MessageList = React.createClass({
   render: function () {
     var messageNodes = this.props.messages.map(function ( message ) {
-      return <Message author={ message.author } text={ message.text } key={ message.id } />
+      return <Message author={ message.user_id } text={ message.message_text } key={ message.id } />
     });
 
     return (
