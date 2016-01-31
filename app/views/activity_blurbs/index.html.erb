@@ -1,0 +1,11 @@
+<h1>Your Activities</h1>
+<% @activity_blurbs.each do |activity_blurb| %>
+Activity: <%= Activity.find(activity_blurb.activity_id).name %>
+<br>
+Your Experience: <%= activity_blurb.text %>
+<br>
+<% end %>
+
+<h1>Select a new activity</h1>
+
+<%= render partial: 'new', locals: {activity_blurb: @activity_blurb} %>

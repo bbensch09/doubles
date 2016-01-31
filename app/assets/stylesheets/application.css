@@ -144,6 +144,9 @@ body {
   top:1px;
 }
 
+.hide {  display:none;}
+.profile-img {height:100px;}
+
 /*TEMP STYLING FOR "USERS/_SHOW_CARD" */
 .show-card-container {
   width: 290px;
