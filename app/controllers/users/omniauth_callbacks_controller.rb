@@ -43,7 +43,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # p GetGeoLocatorWorker.perform_async(current_user.id)
 
       sign_in(user)
-      redirect_to edit_user_registration_url
+      @activity_blub = ActivityBlurb.new
+      redirect_to activity_blurbs_path
     end
 
   end

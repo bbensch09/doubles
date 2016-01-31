@@ -33,6 +33,10 @@ Rails.application.routes.draw do
   post 'conversations' => 'conversations#create'
 
   get 'cards' => 'swipes#cards'
+
+  resources :activity_blurbs
+  get 'activities' => 'activity_blurbs#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -40,7 +44,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    # resources :products
 
   # Example resource route with options:
   #   resources :products do

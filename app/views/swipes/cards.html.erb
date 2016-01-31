@@ -1,4 +1,5 @@
-<% if @available_users %>
+<% if @available_users.length > 0 %>
+Number of users: <%= @available_users.length %>
   <% @available_users.each do |user| %>
 
     <h1><%= user.first_name%></h1>
@@ -12,4 +13,3 @@
 <% else %>
 <h1>No people matching your interests near you</h1>
 <% end %>
-

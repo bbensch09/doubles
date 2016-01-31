@@ -139,3 +139,5 @@ body {
   position:relative;
   top:1px;
 }
+.hide {  display:none;}
+.profile-img {height:100px;}
