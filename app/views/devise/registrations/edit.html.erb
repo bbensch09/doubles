@@ -1,9 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+
+<div class="col-md-12">
+<% if current_user.sign_in_count > 1 %>
+<h2>Update  your profile <% resource_name.to_s.humanize %></h2>
+<!-- Previous visits: %= current_user.sign_in_count %> -->
+<% else %>
+<h2>Complete your profile </h2>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-Here is some text!
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>
@@ -42,9 +49,11 @@ Here is some text!
     <%= f.submit "Update" %>
   </div>
 <% end %>
+</div>
 
 <!-- <h3>Cancel my account</h3>
 
 <p>Unhappy? %= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 %= link_to "Back", :back %> -->
+</div>
