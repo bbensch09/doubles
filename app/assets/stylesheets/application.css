@@ -52,7 +52,7 @@
 }
 
 body {
-  background: url(/assets/field.jpg) no-repeat center center fixed;
+  background: url(/assets/field_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -75,6 +75,17 @@ body {
 
 .greeting {
   font-size: 1.1em;
+  margin-left: -2em;
+}
+
+.match-row {
+  padding-bottom: 12px;
+  border-bottom: 1px solid grey;
+}
+
+.disable-button {
+  opacity: 1 !important;
+  border: 1px solid darkgreen !important;
 }
 
 .visible-text {
@@ -88,8 +99,8 @@ body {
 
 .down-arrow {
   font-size: 2em;
-  margin-top: 40vh;
-  color: #B59400;
+  margin-top: 43vh;
+  color: #402D19;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
@@ -108,6 +119,7 @@ body {
 .home-pic {
   height: 25vh;
   width: 43vw;
+  border-radius: 15px;
 }
 
 .front-page {
@@ -163,23 +175,14 @@ body {
   text-decoration:none;
   text-shadow: 0px 0 lightgray, 0 1px lightgray, 0px 0 lightgray, 0 0px lightgray;
 }
-.login_register_button:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dba70d), color-stop(1, #fae7ad));
-  background:-moz-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-webkit-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-o-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-ms-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:linear-gradient(to bottom, #dba70d 5%, #fae7ad 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dba70d', endColorstr='#fae7ad',GradientType=0);
-  background-color:#dba70d;
-}
-.login_register_button:active {
-  position:relative;
-  top:1px;
+
+.hide {
+  display:none;
 }
 
-.hide {  display:none;}
-.profile-img {height:100px;}
+.profile-img {
+  height:100px;
+}
 
 /*TEMP STYLING FOR "USERS/_SHOW_CARD" */
 .show-card-container {
