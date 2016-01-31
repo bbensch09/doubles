@@ -1,10 +1,15 @@
-<h1>See all of your matches below:</h1>
+<h1 class="page-head">All Your Matches</h1>
 
-<p>
+<div class="text-center block-text">
+  <% if @matches.length == 0 %>
+  Sorry, no matches yet, check back again later!
+  <% else %>
   Congrats, you have <%= @matches.length %> matches!
-</p>
+  <% end %>
+</div>
 
 <% @matches.each do |match| %>
+<div class="row block-text">
 <h2> Name: <%= match.first_name %> </h2>
 <h3> Activities:
   <% match.activities.each do |activity| %>
@@ -15,6 +20,7 @@
   </button>
   <% end %>
 </h3>
-<h4> Bio: <%= match.bio %> </h2>
-<hr />
+<h4> Bio: <%= match.bio %> </h4>
+<%= link_to "Chat", conversation_show_path, :class=>"btn btn-warning btn-xs" %>
+</div>
 <% end %>

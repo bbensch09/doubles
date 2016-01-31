@@ -14,9 +14,14 @@
   <nav>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
-    Signed in as <strong><%= current_user.email %></strong>!
-    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-    <%= link_to "Edit Profile", edit_user_registration_path %>
+    <div class="signed-in-greeting">
+      Hello <%= current_user.first_name %>!
+      <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class=>"btn btn-danger btn-xs" %>
+      <%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn btn-danger btn-xs" %>
+      <%= link_to "Matches", "/users/#{current_user.id}/matches", :class=>"btn btn-warning pull-right btn-xs" %>
+      <%= link_to "Swipes", "/users/#{current_user.id}/feed", :class=>"btn btn-warning pull-left btn-xs" %>
+
+    </div>
     <% else %>
 
       <button type="button" class="login_register_button">
