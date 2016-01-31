@@ -16,11 +16,35 @@
 
 
 body {
-  background: url(/assets/Doubles_background_pic.png) no-repeat center center fixed;
+  background: url(/assets/golf_course.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.page-head {
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Russo One', sans-serif;
+}
+
+.signed-in-greeting {
+  text-align: center;
+  font-family: 'Russo One', sans-serif;
+}
+
+.visible-text {
+  font-family: 'Russo One', sans-serif;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+.visible-text label {
+  text-decoration: underline;
+}
+
+.block-text {
+  font-family: 'Russo One', sans-serif;
 }
 
 .down-arrow {
@@ -32,7 +56,7 @@ body {
 
 .home-text {
   font-family: 'Russo One', sans-serif;
-  font-size: 1.15em;
+  font-size: 1.1em;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -49,7 +73,7 @@ body {
 }
 
 .front-page {
-  height: 80vh;
+  height: 85vh;
 }
 
 .home-subtitle {
