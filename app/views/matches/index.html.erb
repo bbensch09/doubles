@@ -9,23 +9,23 @@
 </div>
 
 <% @matches.each do |match| %>
-<div class="row">
+<div class="match-row">
   <% if match.first_user_id == current_user.id %>
     <% matched_user = match.second_user %>
   <% elsif match.second_user_id == current_user.id %>
     <% matched_user = match.first_user %>
   <% end %>
-<h2> Name: <%= matched_user.first_name %> </h2>
-<h3> Activities:
+<h2> <u>Name</u>: <%= matched_user.first_name %> </h2>
+<h4> <u>Activities</u>:
   <% matched_user.activities.each do |activity| %>
-  <button>
+  <button class="btn btn-xs disable-button btn-success" disabled>
     <span class="activity-button">
       <%= activity.name %>
     </span>
   </button>
   <% end %>
-</h3>
-<h4> Bio: <%= matched_user.bio %> </h4>
-<%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"btn btn-warning btn-xs" %>
+</h4>
+<h5> <u>Bio</u>: <%= matched_user.bio %> </h5>
+<%= link_to "Chat with #{matched_user.first_name}", "/matches/#{match.id}/chat", :class=>"btn btn-primary btn-sm" %>
 </div>
 <% end %>
