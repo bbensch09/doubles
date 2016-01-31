@@ -1,24 +1,36 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
-    user_hash = request.env['omniauth.auth'].to_yaml
-    p "----------\n USER HASH IS:"
-    p user_hash
-    p "-----------"
-    begin
-    @user = User.from_omniauth(request.env['omniauth.auth'])
-    session[:user_id] = @user.id
-    flash[:success] = "Welcome, #{@user.email}!"
-    rescue
-      flash[:warning] = "There was an error while trying to authenticate you..."
+    auth = request.env['omniauth.auth']
+    # @user = User.find_for_facebook_oauth
+    if @user = User.where(email:auth.info.email).first
+      # sign_in_and_redirect_to root_path @user, :event => :authentication #this will throw if @user is not activated
+      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    else
+    session["devise.facebook_data"] = request.env["omniauth.auth"]
+    # @user = User.from_omniauth(request.env['omniauth.auth'])
+    user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
+    # user.url = auth['info']['urls'][user.provider.capitalize]
+    p user.email = auth.info.email
+    user.password = Devise.friendly_token[0,20]
+    p user.first_name = auth.info.first_name
+    p user.last_name = auth.info.last_name
+    p user.profile_picture_url = auth.info.image
+    p user.gender = auth.extra.raw_info.gender
+    p user.age = auth.extra.raw_info.age_range.min[1]
+    p user.bio = "temp bio"
+    # p user.save!
+    @user = user
+    p "---------USER CREATED?"
+    p "the user from FB Data is #{user}"
+    p session[:user_id] = user.id
+    p flash[:success] = "Welcome, #{user.email}!"
+    current_user = @user
+    redirect_to edit_user_registration_url
+    binding.pry
     end
-    redirect_to root_path
-  end
 
-  # def facebook
-  #   # You need to implement the method below in your model (e.g. app/models/user.rb)
-  #   @user = User.from_omniauth(request.env["omniauth.auth"])
-  #   sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+  end
 
 # EXTRA VALIDATION FOUND IN omniauth-facebook gem
     # if @user.persisted?
@@ -31,7 +43,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
 
   def failure
-    puts "error with sign in"
+    puts "----------error with sign in"
     redirect_to root_path
   end
 end
