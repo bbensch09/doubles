@@ -1,12 +1,10 @@
 var MessageBox = React.createClass({
   loadMessagesFromServer: function() {
-    console.log("loading from server...");
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(data);
         this.setState(data);
       }.bind(this),
       error: function(xhr, status, error) {
@@ -16,7 +14,6 @@ var MessageBox = React.createClass({
   },
 
   getInitialState: function() {
-    console.log(this.props.presenter);
     return JSON.parse(this.props.presenter);
   },
 
@@ -51,7 +48,7 @@ var MessageBox = React.createClass({
 var MessageList = React.createClass({
   render: function () {
     var messageNodes = this.props.messages.map(function ( message ) {
-      return <Message author={ message.user_id } text={ message.message_text } key={ message.id } />
+      return <Message author={ message.sender_name } text={ message.message_text } key={ message.id } />
     });
 
     return (
@@ -85,7 +82,7 @@ var MessageForm = React.createClass({
       <form ref="form" className="form-horizontal message-form" action={ this.props.form.action } acceptCharset="UTF-8" method="post" onSubmit={ this.handleSubmit }>
         <div className="input-group">
           <input type="hidden" name={ this.props.form.csrf_param } value={ this.props.form.csrf_token } />
-          <input type="hidden" ref="author" name="message[author]" value="test" placeholder="" />
+          <input type="hidden" ref="author" name="message[author]" value="" />
           <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control input-md" required="" />
           <span className="input-group-btn">
             <button id="submit" type="submit" name="submit" className="btn btn-success">Send</button>
