@@ -10,9 +10,14 @@
 
 <% @matches.each do |match| %>
 <div class="row block-text">
-<h2> Name: <%= match.first_name %> </h2>
+  <% if match.first_user_id == current_user.id %>
+    <% matched_user = match.second_user %>
+  <% elsif match.second_user_id == current_user.id %>
+    <% matched_user = match.first_user %>
+  <% end %>
+<h2> Name: <%= matched_user.first_name %> </h2>
 <h3> Activities:
-  <% match.activities.each do |activity| %>
+  <% matched_user.activities.each do |activity| %>
   <button>
     <span class="activity-button">
       <%= activity.name %>
@@ -20,7 +25,7 @@
   </button>
   <% end %>
 </h3>
-<h4> Bio: <%= match.bio %> </h4>
-<%= link_to "Chat", conversation_show_path, :class=>"btn btn-warning btn-xs" %>
+<h4> Bio: <%= matched_user.bio %> </h4>
+
 </div>
 <% end %>
