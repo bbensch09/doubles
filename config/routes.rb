@@ -32,14 +32,17 @@ Rails.application.routes.draw do
   get 'conversations/:id' => 'conversations#show'
   post 'conversations' => 'conversations#create'
 
+  get 'cards' => 'swipes#cards'
+
+  resources :activity_blurbs
+  get 'activities' => 'activity_blurbs#index'
+
   get '/users/:current_user_id/feed' => 'swipes#feed'
 
   # HACKY_SHIT
   # temp routes to test swiping
   get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
   get '/swipe_no/:user_id' => 'swipes#swipe_no'
-
-
 
 
 
@@ -50,7 +53,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    # resources :products
 
   # Example resource route with options:
   #   resources :products do
