@@ -1,11 +1,14 @@
 <h1>Your Activities</h1>
+<div class="col-md-12">
 <% @activity_blurbs.each do |activity_blurb| %>
+<div class="col-md-4">
 Activity: <%= Activity.find(activity_blurb.activity_id).name %>
-<br>
+</div>
+<div class="col-md-8">
 Your Experience: <%= activity_blurb.text %>
-<br>
+</div>
 <% end %>
-
+</div>
 <h1>Select a new activity</h1>
 
 <%= render partial: 'new', locals: {activity_blurb: @activity_blurb} %>
