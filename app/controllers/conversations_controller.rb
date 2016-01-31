@@ -2,7 +2,7 @@ include MatchesHelper
 
 class ConversationsController < ApplicationController
   def create
-
+    p "creating message..."
   end
 
   def show
