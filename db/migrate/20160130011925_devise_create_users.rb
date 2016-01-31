@@ -7,8 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :age
       t.string :gender
       t.string :location
-      t.decimal :latitude, precision: 7, scale: 4 #, null: false
-      t.decimal :longitude, precision: 7, scale: 4#, null: false
+      t.decimal :latitude, precision: 7, scale: 4
+      t.decimal :longitude, precision: 7, scale: 4
       t.text :bio
       t.string :profile_picture_url, null: false
       t.string :access_token
