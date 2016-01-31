@@ -60,11 +60,10 @@ class User < ActiveRecord::Base
     user_objects
   end
 
-end
-
 private
 
 def update_access_token!
   self.access_token = "#{self.id}:#{Devise.friendly_token}"
 end
+
 end
