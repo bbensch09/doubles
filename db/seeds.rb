@@ -3,7 +3,7 @@
 #Tom (user1) plays all activities, and has swiped yes on all users.
 #Mark (user2) plays Racquetball, and has liked Tom, so they are a match.
 
-# User.delete_all
+User.delete_all
 Activity.delete_all
 ActivityBlurb.delete_all
 Swipe.delete_all
