@@ -29,10 +29,14 @@ Rails.application.routes.draw do
 
   get 'users/:id/feed' => 'swipes#show'
 
-  get 'conversations/:id' => 'conversations#show'
-  post 'conversations' => 'conversations#create'
+  get 'matches/:id/chat' => 'conversations#show'
+  post 'matches/:id/chat' => 'conversations#create'
 
   get 'cards' => 'swipes#cards'
+
+  devise_scope :user do
+    get "/step4" => 'registrations#show_tutorial'
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

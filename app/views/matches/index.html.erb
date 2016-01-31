@@ -26,6 +26,6 @@
   <% end %>
 </h3>
 <h4> Bio: <%= matched_user.bio %> </h4>
-
+<%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"btn btn-warning btn-xs" %>
 </div>
 <% end %>

@@ -1,5 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def show_tutorial
+    render 'users/step4'
+  end
+
   private
 
   def sign_up_params
