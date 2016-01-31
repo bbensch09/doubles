@@ -5,6 +5,9 @@ class CreateSwipes < ActiveRecord::Migration
       t.integer :swipee_id, null: false
       t.boolean :swiped_yes, null: false
       t.timestamps null: false
+
+
+
     end
   end
 end
