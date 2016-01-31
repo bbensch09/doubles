@@ -1,0 +1,15 @@
+<% if @available_users.length > 0 %>
+Number of users: <%= @available_users.length %>
+  <% @available_users.each do |user| %>
+
+    <h1><%= user.first_name%></h1>
+    <ul>
+      <li><%= user.age %></li>
+      <li><%= user.gender %></li>
+      <li><%= user.bio %></li>
+    </ul>
+
+  <%end %>
+<% else %>
+<h2 class="text-center block-text">No people matching your interests near you</h2>
+<% end %>

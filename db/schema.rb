@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130040935) do
+ActiveRecord::Schema.define(version: 20160131215714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160130040935) do
     t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "sender_name"
   end
 
   create_table "swipes", force: :cascade do |t|
@@ -59,14 +60,14 @@ ActiveRecord::Schema.define(version: 20160130040935) do
     t.integer  "age"
     t.string   "gender"
     t.string   "location"
-    t.decimal  "latitude",               precision: 7, scale: 4,              null: false
-    t.decimal  "longitude",              precision: 7, scale: 4,              null: false
-    t.text     "bio",                                                         null: false
+    t.decimal  "latitude",               precision: 7, scale: 4
+    t.decimal  "longitude",              precision: 7, scale: 4
+    t.text     "bio"
     t.string   "profile_picture_url",                                         null: false
     t.string   "access_token"
     t.string   "username"
     t.string   "email",                                          default: "", null: false
-    t.string   "encrypted_password",                             default: "", null: false
+    t.string   "encrypted_password"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
