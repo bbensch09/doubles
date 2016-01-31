@@ -3,14 +3,14 @@
 <head>
   <title>Doubles</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-
   <nav>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
@@ -26,11 +26,6 @@
       </button>
     <% end %>
   </nav>
-
-<% if current_user %>
-Visits count: <%= current_user.sign_in_count %>
-<% end %>
-
 <div class="container-fluid">
 <%= yield %>
 </div>
