@@ -5,7 +5,8 @@
 
 
 # Create activities
-activity_names = ['Tennis', 'Golf', 'Racquetball']
+activity_names = [
+"billiards / darts / foosball (bar games)","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing / snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 activity_names.each do |activity|
   activities << Activity.create(name: activity)
@@ -16,7 +17,7 @@ tom = User.create!({
                     first_name: "Tom",
                     last_name: "Likes Everyone",
                     email: 'tom@myspace.com',
-                    gender: 'Male',
+                    gender: 'male',
                     age: 40,
                     bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
                     location: "San Francisco",
@@ -39,7 +40,7 @@ mark = User.create!({
                     first_name: "Mark",
                     last_name: "Likes_Harvard",
                     email: 'mark@facebook.com',
-                    gender: 'Male',
+                    gender: 'male',
                     age: 40,
                     bio: 'I like to hack',
                     location: "Menlo Park",
@@ -51,7 +52,7 @@ mark = User.create!({
 
 ActivityBlurb.create!({
       text: "I've been playing Racquetball since I dropped out of Harvard.",
-      activity_id: 3,
+      activity_id: 11,
       user_id: 2
       })
 
@@ -63,7 +64,7 @@ ActivityBlurb.create!({
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     email: Faker::Internet.email,
-                    gender: ['m','f'].sample,
+                    gender: ['male','female'].sample,
                     age: rand(18..80),
                     bio: Faker::Hipster.sentences(4).join(' '),
                     location: "San Francisco",
@@ -75,14 +76,47 @@ ActivityBlurb.create!({
 
   ActivityBlurb.create!({
       text: "sample text about activity",
-      activity_id: [1,2,3].sample,
+      activity_id: (1..10).to_a.sample
+      user_id: user.id
+      })
+  ActivityBlurb.create!({
+      text: "sample text about activity",
+      activity_id: (11..20).to_a.sample
       user_id: user.id
       })
 end
 
+#create Brian, Abe, Nil, Trevor, Greg as Users
+brian = User.create!({
+                  first_name: "Brian",
+                  last_name: "Bensch",
+                  email: "bbensch@gmail.com",
+                  gender: "male",
+                  age: rand(25..35),
+                  bio: "I grew up in Santa Clara and have now lived in San Francisco for the last 7 years.",
+                  location: "San Francisco",
+                  latitude: 37.7576792,
+                  longitude: -122.5078123,
+                  profile_picture_url: "https://scontent-sea1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/883728_944546868346_1007231685_o.jpg",
+                  password: 'password'
+                    })
+
+ActivityBlurb.create!({
+    text: "I've been skiing since I was 5 and rent a Tahoe house near Squaw every winter.",
+    activity_id: 15,
+    user_id: brian.id
+    })
+
+ActivityBlurb.create!({
+    text: "I've been skiing since I was 5 and rent a Tahoe house near Squaw every winter.",
+    activity_id: 15,
+    user_id: brian.id
+    })
+
+
 #Tom likes all users
 
-(2..30).each do |swipee_id|
+Users.all.each do |swipee_id|
   Swipe.create!({
     swiped_yes: true,
     swiper_id: 1,
@@ -98,19 +132,6 @@ Swipe.create!({
   swipee_id: 1
   })
 
-#FOR TESTING User.matches method
-    #Mark likes User3
-    # Swipe.create!({swiped_yes: true, swiper_id: 2, swipee_id: 3})
-
-    # #User3 likes Mark
-    # Swipe.create!({swiped_yes: true, swiper_id: 2, swipee_id: 3})
-
-
-    # #User10 likes User9 (bug behavior: when User9 swipes yes, user 10 will not see it as a first_user match)
-    # Swipe.create!({swiped_yes: true, swiper_id: 10, swipee_id: 9 })
-
-
-
 #Mark sends Tom a message
 message = Message.create({
   match_id: 1,
@@ -118,10 +139,3 @@ message = Message.create({
   message_text: "Want to play Racquetball this weekend?"
   # message_text: Faker::Hipster.sentences(2).join(' ')
   })
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
