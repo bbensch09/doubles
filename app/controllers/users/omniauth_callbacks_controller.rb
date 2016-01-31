@@ -17,11 +17,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p user.last_name = auth.info.last_name
       p user.profile_picture_url = auth.info.image
       p user.gender = auth.extra.raw_info.gender
-      birthday_string = auth.extra.raw_info.birthday
-      birthday = Date.strptime(birthday_string,"%m/%d/%Y")
-      now = Time.now.to_date
-      age = now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
-      p user.age = age
+      if auth.extra.raw_info.birthday
+        birthday_string = auth.extra.raw_info.birthday
+        birthday = Date.strptime(birthday_string,"%m/%d/%Y")
+        now = Time.now.to_date
+        age = now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
+        p user.age = age
+        else user.age = "Please share your age."
+      end
 
       if auth.extra.raw_info.location
         p user.location = auth.extra.raw_info.location.name
