@@ -19,8 +19,40 @@
           box-sizing: border-box;
 }
 
+.container-fluid {
+  font-family: 'Russo One', sans-serif;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+.container-fluid .btn {
+  text-shadow: none !important;
+}
+
+.container-fluid input {
+  font-family: sans-serif;
+  text-shadow: none !important;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+}
+
+.handshake-button {
+  border: 1px solid black !important;
+  color: black;
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 35px;
+  background-color: white;
+}
+
+.glyphicon {
+  top: 2px !important;
+}
+
 body {
-  background: url(/assets/golf_course.png) no-repeat center center fixed;
+  background: url(/assets/field.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -34,8 +66,15 @@ body {
 }
 
 .signed-in-greeting {
+  padding-top: 2px;
+  padding-bottom: 4px;
+  border: 2px solid black;
   text-align: center;
   font-family: 'Russo One', sans-serif;
+}
+
+.greeting {
+  font-size: 1.1em;
 }
 
 .visible-text {
@@ -47,20 +86,15 @@ body {
   text-decoration: underline;
 }
 
-.block-text {
-  font-family: 'Russo One', sans-serif;
-}
-
 .down-arrow {
   font-size: 2em;
-  margin-top: 32vh;
+  margin-top: 40vh;
   color: #B59400;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
 .home-text {
   font-family: 'Russo One', sans-serif;
-  font-size: 1.1em;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
