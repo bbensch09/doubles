@@ -18,7 +18,9 @@ class SwipesController < ApplicationController
         ## how to show match/no-match?
     end
 
-    def show
-      render :text => "Page to swipe people"
+    def cards
+      p current_user.narrow_users
+
+      @available_users = current_user.narrow_users
     end
 end
