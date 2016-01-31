@@ -1,12 +1,7 @@
 <div class="container">
 
 <div class="col-md-12">
-<% if current_user.sign_in_count > 1 %>
-<h2>Update  your profile <% resource_name.to_s.humanize %></h2>
-<!-- Previous visits: %= current_user.sign_in_count %> -->
-<% else %>
-<h2>Complete your profile </h2>
-<% end %>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>

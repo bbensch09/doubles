@@ -39,8 +39,7 @@ gem 'httparty'
 
 # sidekiq gems
 gem 'sidekiq'
-gem 'sinatra', require: false
-gem 'slim'
+
 
 #move faker into normal gemfile loading
 gem 'faker'
