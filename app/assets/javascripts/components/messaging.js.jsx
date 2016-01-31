@@ -1,11 +1,13 @@
 var MessageBox = React.createClass({
   loadMessagesFromServer: function() {
+    console.log("loading from server...");
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({ messages: data });
+        console.log(data);
+        this.setState(data);
       }.bind(this),
       error: function(xhr, status, error) {
         console.error(this.props.url, status, error.toString());
