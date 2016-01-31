@@ -39,9 +39,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p session[:user_id] = user.id
       p flash[:success] = "Welcome, #{user.email}!"
       current_user = @user
-      p "=============background_process================="
 
-      current_user.update_geolocation
+      # p "=============background_process================="
       # background-process
       # p GetGeoLocatorWorker.perform_async(current_user.id)
 
