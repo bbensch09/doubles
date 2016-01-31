@@ -47,6 +47,7 @@ var MessageBox = React.createClass({
 
 var MessageList = React.createClass({
   render: function () {
+    console.log(messageNodes);
     var messageNodes = this.props.messages.map(function ( message ) {
       return <Message author={ message.sender_name } text={ message.message_text } key={ message.id } />
     });
@@ -60,30 +61,35 @@ var MessageList = React.createClass({
 });
 
 var MessageForm = React.createClass({
+  getInitialState: function() {
+    return {author: this.props.form.sender_id, matched_user_id: this.props.form.matched_user_id, text: ''};
+  },
+
+  handleTextChange: function(event) {
+    this.setState({text: event.target.value});
+  },
+
   handleSubmit: function ( event ) {
     event.preventDefault();
-
-    var author = this.refs.author.getDOMNode().value.trim();
-    var text = this.refs.text.getDOMNode().value.trim();
-
+    var text = this.state.text.trim();
+    var author = this.state.author;
+    var matched_user_id = this.state.matched_user_id;
     // validate
     if (!text) {
       return false;
     }
-
     // submit
-    var formData = $( this.refs.form.getDOMNode() ).serialize();
-    this.props.onMessageSubmit( formData, this.props.form.action );
-
-    this.refs.text.getDOMNode().value = "";
+    this.props.onMessageSubmit( {matched_user_id: matched_user_id, author: author, text: text}, this.props.form.action );
+    this.setState({text: ''});
   },
   render: function () {
     return (
       <form ref="form" className="form-horizontal message-form" action={ this.props.form.action } acceptCharset="UTF-8" method="post" onSubmit={ this.handleSubmit }>
         <div className="input-group">
           <input type="hidden" name={ this.props.form.csrf_param } value={ this.props.form.csrf_token } />
-          <input type="hidden" ref="author" name="message[author]" value="" />
-          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control input-md" required="" />
+          <input type="hidden" ref="author" name="message[author]" value={this.state.author} readOnly />
+          <input type="hidden" ref="matched_user_id" name="message[matched_user_id]" value={this.state.matched_user_id} readOnly />
+          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control input-md" required="" value={this.state.text} onChange={this.handleTextChange} />
           <span className="input-group-btn">
             <button id="submit" type="submit" name="submit" className="btn btn-success">Send</button>
           </span>
