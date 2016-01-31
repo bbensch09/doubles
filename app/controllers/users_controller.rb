@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to root_path
+    @displayed_user = User.find(params[:id])
+    @sports = @displayed_user.activities
   end
 end
