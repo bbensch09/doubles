@@ -48,7 +48,7 @@ def users_within_radius
 end
 
 def unswiped_users(user_objects)
-  user_objects.select{|user|self.matches.exclude?(user)}
+  user_objects.select{|user|self.swipees.exclude?(user)}
 end
 
 def users_with_shared_activities(user_objects)

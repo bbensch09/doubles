@@ -27,12 +27,22 @@ Rails.application.routes.draw do
   get 'users/:id/matches' => 'matches#index'
 
 
-  get 'users/:id/feed' => 'swipes#show'
+  get 'users/:id/feed' => 'swipes#feed'
 
   get 'conversations/:id' => 'conversations#show'
   post 'conversations' => 'conversations#create'
 
-  get 'cards' => 'swipes#cards'
+  get '/users/:current_user_id/feed' => 'swipes#feed'
+
+  # HACKY_SHIT
+  # temp routes to test swiping
+  get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
+  get '/swipe_no/:user_id' => 'swipes#swipe_no'
+
+
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
