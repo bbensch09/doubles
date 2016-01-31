@@ -9,4 +9,5 @@ class UsersController < ApplicationController
     @displayed_user = User.find(params[:id])
     @sports = @displayed_user.activities
   end
+
 end
