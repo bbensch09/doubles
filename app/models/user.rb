@@ -29,22 +29,29 @@ class User < ActiveRecord::Base
     self.update_attributes(:latitude => lat, :longitude => lng)
   end
 
-  def array_of_matches
+  def matches
     self.first_user_matches + self.second_user_matches
+  end
+
+
+  def narrow_users
+    narrowed_users = self.users_within_radius
+    narrowed_users = unswiped_users(narrowed_users)
+    narrowed_users = users_with_shared_activities(narrowed_users)
+    narrowed_users
   end
 
   def users_within_radius
     geo_location = [self.latitude, self.longitude]
-    User.within(5, :origin => geo_location)
+    other_users = User.where.not(id: self.id)
+    close_users = other_users.within(5, :origin => geo_location)
   end
 
   def unswiped_users(user_objects)
-
-    # should return a list of users based on same matches and where there isn't already a swipe id
-    # unseen_potential_matches = geo_activity_matches - current_user.swipees
+    user_objects.select{|user|self.matches.exclude?(user)}
   end
 
-  def shared_activities(user_objects)
+  def users_with_shared_activities(user_objects)
     my_activity_ids = self.activities.pluck(:id)
     user_objects = user_objects.select do |user_object|
       other_user_activity_ids = user_object.activities.pluck(:id)
@@ -53,13 +60,6 @@ class User < ActiveRecord::Base
     user_objects
   end
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-    user.name = auth.info.name   # assuming the user model has a name
-    user.image = auth.info.image # assuming the user model has an image
-  end
 end
 
 private

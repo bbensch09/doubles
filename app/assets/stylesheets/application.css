@@ -16,53 +16,61 @@
 
 
 body {
-  background: url(https://static.pexels.com/photos/28215/pexels-photo.jpg) no-repeat center center fixed;
+  background: url(/assets/Doubles_background_pic.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+.down-arrow {
+  font-size: 2em;
+  margin-top: 32vh;
+  color: #B59400;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
 .home-text {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Russo One', sans-serif;
   font-size: 1.15em;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .home-text img {
-  margin-right: 5px;
-  margin-bottom: 25px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 10vh;
 }
 
 .home-pic {
-  height: 140px;
-  width: 45%;
+  height: 25vh;
+  width: 43vw;
 }
 
 .front-page {
-  height: 100vh;
+  height: 80vh;
 }
 
 .home-subtitle {
   text-align: center;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Russo One', sans-serif;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #home-title {
   text-align: center;
   text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-  margin-top: 40%;
-  margin-bottom: 22%;
+  margin-top: 15vh;
+  margin-bottom: 12vh;
   font-size: 4em;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Russo One', sans-serif;
   text-shadow: 1px 2px lightgrey;
 }
 
 .login_register_button a {
   color: black !important;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Russo One', sans-serif;
 }
 
 
