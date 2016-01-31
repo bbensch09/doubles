@@ -9,25 +9,31 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in(@user)
       redirect_to root_path
     else
-    session["devise.facebook_data"] = request.env["omniauth.auth"]
-    user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
-    p user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
-    p user.first_name = auth.info.first_name
-    p user.last_name = auth.info.last_name
-    p user.profile_picture_url = auth.info.image
-    p user.gender = auth.extra.raw_info.gender
-    p user.age = auth.extra.raw_info.age_range.min[1]
-    p user.location = auth.extra.raw_info.location.name
-    p user.save!
-    @user = user
-    p "---------USER CREATED?"
-    p "the user from FB Data is #{user}"
-    p session[:user_id] = user.id
-    p flash[:success] = "Welcome, #{user.email}!"
-    current_user = @user
-    sign_in(user)
-    redirect_to edit_user_registration_url
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
+      p user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      p user.first_name = auth.info.first_name
+      p user.last_name = auth.info.last_name
+      p user.profile_picture_url = auth.info.image
+      p user.gender = auth.extra.raw_info.gender
+      p user.age = auth.extra.raw_info.age_range.min[1]
+
+      if auth.extra.raw_info.location
+        p user.location = auth.extra.raw_info.location.name
+      else
+        user.location = "unknown"
+      end
+
+      p user.save!
+      @user = user
+      p "---------USER CREATED?"
+      p "the user from FB Data is #{user}"
+      p session[:user_id] = user.id
+      p flash[:success] = "Welcome, #{user.email}!"
+      current_user = @user
+      sign_in(user)
+      redirect_to edit_user_registration_url
     end
 
   end
