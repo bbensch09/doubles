@@ -6,11 +6,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user = User.where(email:auth.info.email).first
       # sign_in_and_redirect_to root_path @user, :event => :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+      sign_in(@user)
+      redirect_to root_path
     else
     session["devise.facebook_data"] = request.env["omniauth.auth"]
-    # @user = User.from_omniauth(request.env['omniauth.auth'])
     user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
-    # user.url = auth['info']['urls'][user.provider.capitalize]
     p user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     p user.first_name = auth.info.first_name
@@ -18,16 +18,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     p user.profile_picture_url = auth.info.image
     p user.gender = auth.extra.raw_info.gender
     p user.age = auth.extra.raw_info.age_range.min[1]
-    p user.bio = "temp bio"
-    # p user.save!
+    p user.location = auth.extra.raw_info.location.name
+    p user.save!
     @user = user
     p "---------USER CREATED?"
     p "the user from FB Data is #{user}"
     p session[:user_id] = user.id
     p flash[:success] = "Welcome, #{user.email}!"
     current_user = @user
+    sign_in(user)
     redirect_to edit_user_registration_url
-    binding.pry
     end
 
   end
