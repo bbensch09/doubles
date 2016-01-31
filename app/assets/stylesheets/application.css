@@ -227,3 +227,7 @@ body {
   border: 2px dashed black;
 }
 /*END OF TEMP STYLING FOR "USERS/_SHOW_CARD"*/
+.center {
+  margin: auto;
+  text-align: center;
+}
