@@ -28,4 +28,13 @@ class SwipesController < ApplicationController
       # send just first unswiped user near you with shared act...
       @next_available_user = current_user.narrow_users.first
     end
+
+    def swipe_yes
+      current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: true)
+      redirect_to "/users/#{current_user.id}/feed"
+    end
+    def swipe_no
+      current_user.swipes.create(swipee_id: params[:user_id],swiped_yes: false)
+      redirect_to "/users/#{current_user.id}/feed"
+    end
 end

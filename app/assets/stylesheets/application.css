@@ -151,6 +151,7 @@ body {
   background-color: white;
   overflow: auto;
   padding:10px;
+  heigth: ;
 }
 .show-card-picture {
   width: 270px;
@@ -169,6 +170,23 @@ body {
   padding-right: 5px;
   margin-right: 5px;
   background-color: orange;
-
+}
+.card-swipe-yes {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 50vh;
+  right: 0;
+  background-color: green;
+  border: 2px dashed black;
+}
+.card-swipe-no {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 50vh;
+  left: 0;
+  background-color: red;
+  border: 2px dashed black;
 }
 /*END OF TEMP STYLING FOR "USERS/_SHOW_CARD"*/
