@@ -19,6 +19,32 @@
           box-sizing: border-box;
 }
 
+.container-fluid {
+  font-family: 'Russo One', sans-serif;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+.container-fluid .btn {
+  text-shadow: none !important;
+}
+
+.container-fluid input {
+  font-family: sans-serif;
+  text-shadow: none !important;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+}
+
+.handshake-button {
+  border: 1px solid black !important;
+  color: black;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
 body {
   background: url(/assets/golf_course.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -34,8 +60,15 @@ body {
 }
 
 .signed-in-greeting {
+  margin-top: 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid black;
   text-align: center;
   font-family: 'Russo One', sans-serif;
+}
+
+.greeting {
+  font-size: 1.1em;
 }
 
 .visible-text {
