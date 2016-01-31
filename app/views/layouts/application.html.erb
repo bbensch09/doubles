@@ -14,15 +14,13 @@
   <nav>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    Signed in as <strong><%= current_user.email %></strong>!
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+    <%= link_to "Edit Profile", edit_user_registration_path %>
     <% else %>
+
       <button type="button" class="login_register_button">
         <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
-      </button>
-      <button type="button" class="login_register_button">
-        <!-- %= link_to "Sign up with Facebook", new_user_registration_url(:facebook) %> -->
-        <%= link_to "Sign Up", new_user_registration_path %>
       </button>
     <% end %>
   </nav>
