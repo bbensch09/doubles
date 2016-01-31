@@ -3,6 +3,12 @@
 #Tom (user1) plays all activities, and has swiped yes on all users.
 #Mark (user2) plays Racquetball, and has liked Tom, so they are a match.
 
+User.all.destroy
+Activity.all.destroy
+ActivityBlurb.all.destroy
+Swipe.all.destroy
+Match.all.destroy
+Message.all.destroy
 
 # Create activities
 activity_names = [
@@ -86,7 +92,7 @@ ActivityBlurb.create!({
       })
 end
 
-#create Brian, Abe, Nil, Trevor, Greg as Users
+#create Brian
 brian = User.create!({
                   first_name: "Brian",
                   last_name: "Bensch",
@@ -108,11 +114,17 @@ ActivityBlurb.create!({
     })
 
 ActivityBlurb.create!({
-    text: "I've been skiing since I was 5 and rent a Tahoe house near Squaw every winter.",
-    activity_id: 15,
+    text: "I'm really good at bar games, at least the drinking part.",
+    activity_id: 1,
     user_id: brian.id
     })
 
+#Brian likes Tom
+Swipe.create!({
+      swiped_yes: true,
+      swiper_id: brian.id,
+      swipee_id: tom.id
+      })
 
 #Tom likes all users
 
@@ -139,3 +151,12 @@ message = Message.create({
   message_text: "Want to play Racquetball this weekend?"
   # message_text: Faker::Hipster.sentences(2).join(' ')
   })
+
+#AUTOGENERATE MESSAGE WITH EACH MATCH from the original user
+Match.all.each do |match|
+  Message.create!({
+  match_id: match.id
+  user_id: match.first_user_id
+  message_text: "(This message is auto generated): It's cool to see we have something in common. Want to meet up?"
+  })
+end
