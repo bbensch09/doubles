@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130040935) do
+ActiveRecord::Schema.define(version: 20160131215714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160130040935) do
   create_table "activity_blurbs", force: :cascade do |t|
     t.integer  "user_id",     null: false
     t.integer  "activity_id", null: false
-    t.text     "text",        null: false
+    t.text     "text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160130040935) do
     t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "sender_name"
   end
 
   create_table "swipes", force: :cascade do |t|
