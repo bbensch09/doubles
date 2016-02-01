@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+
+body {
+  background: url(/assets/Doubles_background_pic.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.down-arrow {
+  font-size: 2em;
+  margin-top: 32vh;
+  color: #B59400;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
+.home-text {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.15em;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.home-text img {
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 10vh;
+}
+
+.home-pic {
+  height: 25vh;
+  width: 43vw;
+}
+
+.front-page {
+  height: 80vh;
+}
+
+.home-subtitle {
+  text-align: center;
+  font-family: 'Russo One', sans-serif;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#home-title {
+  text-align: center;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  margin-top: 15vh;
+  margin-bottom: 12vh;
+  font-size: 4em;
+  font-family: 'Russo One', sans-serif;
+  text-shadow: 1px 2px lightgrey;
+}
+
+.login_register_button a {
+  color: black !important;
+  font-family: 'Russo One', sans-serif;
+}
+
+
+.login_register_button {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fae7ad), color-stop(1, #dba70d));
+  background:-moz-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
+  background:-webkit-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
+  background:-o-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
+  background:-ms-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
+  background:linear-gradient(to bottom, #fae7ad 5%, #dba70d 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fae7ad', endColorstr='#dba70d',GradientType=0);
+  background-color:#fae7ad;
+  color: black;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #ebce75;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Arial;
+  font-size:16px;
+  font-weight:bold;
+  width: 80%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  margin-top: 4%;
+  margin-left: 10%;
+  text-decoration:none;
+  text-shadow: 0px 0 lightgray, 0 1px lightgray, 0px 0 lightgray, 0 0px lightgray;
+}
+.login_register_button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dba70d), color-stop(1, #fae7ad));
+  background:-moz-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
+  background:-webkit-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
+  background:-o-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
+  background:-ms-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
+  background:linear-gradient(to bottom, #dba70d 5%, #fae7ad 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dba70d', endColorstr='#fae7ad',GradientType=0);
+  background-color:#dba70d;
+}
+.login_register_button:active {
+  position:relative;
+  top:1px;
+}

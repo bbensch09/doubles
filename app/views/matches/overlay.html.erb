@@ -1,0 +1,10 @@
+<div>
+<h1>You found a double!!!!!!!!</h1>
+<img src="<%=@matched_user.profile_picture_url%>">
+<h2><%=@matched_user.first_name%></h2>
+<% @matched_user.activities.each do |activity| %>
+<h3><%=activity.name%></h3>
+<% end %>
+<a href="/users/<%=current_user.id%>/matches">send <%=@matched_user.first_name%> a message!</a>
+<a href="/users/<%=current_user.id%>/feed">Back to swiping</a>
+</div>

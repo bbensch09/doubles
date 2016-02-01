@@ -1,0 +1,19 @@
+<div class="center">
+<%= link_to "Find Matches", "/users/#{current_user.id}/feed", :class=>"btn btn-success btn-lg" %>
+</div>
+  <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+  <img src=<%= "#{@user.profile_picture_url}" %>/>
+  <h5><u>Email</u>: <%= @user.email %></h5>
+  <h4><u>Age</u>: <%= @user.age %></h4>
+  <h5>
+    <% if @user.location != "unknown" %>
+    <u>Location</u>: <%= @user.location %>
+    <% else %>
+    Click the Edit profile button below to add your location!
+    <% end %>
+  </h5>
+  <p><u>About me</u>: <%= @user.bio %></p>
+<%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> Logout"), destroy_user_session_path, :method => :delete, :class=>"btn btn-danger btn-sm" %>
+<%= link_to "Edit Activities", activity_blurbs_path, :class=>"btn btn-primary btn-sm" %>
+
+<%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn btn-primary btn-sm" %>
