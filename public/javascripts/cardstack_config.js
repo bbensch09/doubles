@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     stack.on('throwout', function (e) {
         e.target.classList.remove('in-deck');
+        console.log("card thrown out")
     });
 
     stack.on('throwin', function (e) {
