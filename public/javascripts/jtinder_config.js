@@ -3,8 +3,9 @@ $("#cards").jTinder({
   onDislike: function (item) {
     // set the status text
     $.ajax({
-      url: '/swipe_no/' + item.attr('id'),
-      type: 'GET',
+      url: '/swipes',
+      type: 'POST',
+      data: {type: "no", user_id: item.attr('id')},
       success: function(data) {
         console.log(data);
       },
@@ -17,8 +18,9 @@ $("#cards").jTinder({
 	// like callback
   onLike: function (item) {
     $.ajax({
-      url: '/swipe_yes/' + item.attr('id'),
-      type: 'GET',
+      url: '/swipes',
+      type: 'POST',
+      data: {type: "yes", user_id: item.attr('id')},
       success: function(data) {
         console.log(data);
       },
