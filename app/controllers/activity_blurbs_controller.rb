@@ -1,5 +1,5 @@
 class ActivityBlurbsController < ApplicationController
-    before_action :authenciate_user!
+    before_action :authenticate_user!
 
     def index
       @activity_blurbs = current_user.activity_blurbs

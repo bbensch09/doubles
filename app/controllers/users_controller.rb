@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenciate_user!, :except => [:create]
+  before_action :authenticate_user!, :except => [:create]
 
   def create
     oAuth_info = request.env["omniauth.auth"]
