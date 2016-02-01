@@ -20,23 +20,30 @@ gem 'thin'
 gem 'omniauth-facebook'
 gem 'react-rails', '~> 1.5.0'
 
-
 gem 'geokit-rails'
 gem 'httparty'
 
-
 gem 'sidekiq'
-
 
 gem 'faker'
 gem 'hirb'
 
-
-
-
-
-
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
+end
+
+group :test do
+  gem 'webmock'
+end
+
+
+
+group :development do
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
