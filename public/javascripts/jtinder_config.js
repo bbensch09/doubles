@@ -2,12 +2,30 @@ $("#cards").jTinder({
 	// dislike callback
   onDislike: function (item) {
     // set the status text
-    $('#status').html('Dislike image ' + (item.index()+1));
+    $.ajax({
+      url: '/swipe_no/' + item.attr('id'),
+      type: 'GET',
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data) {
+        console.log(data);
+      },
+    });
+
     },
 	// like callback
   onLike: function (item) {
-    // set the status text
-    $('#status').html('Like image ' + (item.index()+1));
+    $.ajax({
+      url: '/swipe_yes/' + item.attr('id'),
+      type: 'GET',
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data) {
+        console.log(data);
+      },
+    });
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
