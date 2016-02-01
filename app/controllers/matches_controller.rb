@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+    before_action :login_user
+
     # respond_to :json
     # GET api/matches
     def index

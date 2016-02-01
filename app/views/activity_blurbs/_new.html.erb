@@ -7,11 +7,11 @@
     <%= f.collection_select :activity_id, Activity.all, :id, :name %>
   </div>
   <div class="form-group">
-    <%= f.label :Experience_level, :class=>"col-md-4" %>
+    <%= f.label :text, "Experience Level", :class=>"col-md-4" %>
     <%= f.text_field :text, autofocus: true %>
   </div>
-  <div class="actions">
-    <%= f.submit "Update Activities" %>
+  <div class="actions center">
+    <%= f.submit "Add Activity" %>
   </div>
 </div>
 

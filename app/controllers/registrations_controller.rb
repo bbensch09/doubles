@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_action :login_user, :except => [:show_tutorial]
 
   # HACKY_SHIT
   # temp action to test tutorial slider

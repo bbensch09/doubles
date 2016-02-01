@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  get 'login' => 'welcome#force_login'
 
   post 'swipes'=> 'swipes#create'
 

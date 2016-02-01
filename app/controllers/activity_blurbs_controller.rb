@@ -1,4 +1,6 @@
 class ActivityBlurbsController < ApplicationController
+    before_action :login_user
+
     def index
       @activity_blurbs = current_user.activity_blurbs
       @activity_blurb = ActivityBlurb.new

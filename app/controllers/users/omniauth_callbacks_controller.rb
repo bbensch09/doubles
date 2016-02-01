@@ -46,7 +46,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       sign_in(user)
       @activity_blub = ActivityBlurb.new
-      redirect_to activity_blurbs_path
+      redirect_to "/walkthru"
     end
 
   end
