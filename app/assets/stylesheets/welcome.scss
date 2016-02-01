@@ -18,4 +18,59 @@
 }
 #background-img{
   background-image: url("skiing-blur.jpeg");
+  // background-image: url("tennis.jpeg");
+}
+
+.home-text {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 18px;
+}
+
+.home-text img {
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 10vh;
+}
+
+.home-pic {
+  height: 25vh;
+  width: 43vw;
+  border-radius: 15px;
+}
+
+.front-page {
+  height: 50vh;
+}
+
+.home-subtitle {
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+  text-decoration: none;
+}
+
+#home-title {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  font-size: 4em;
+  text-shadow: 1px 1px 2px lightgrey;
+}
+.btn-home-cta{
+  background-color: #11AD09;
+}
+.home-cta{
+  height: 15vh;
+}
+.outer-carousel{
+  height:85vh;
+}
+.carousel-control{
+  margin-top: 65vh;
+}
+.cl-b{clear:both}
+.carousel-inner div div span{
+color:#11AD09;
 }
