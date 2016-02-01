@@ -6,26 +6,25 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-  <nav>
+  <div class="row">
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
-    <div class="signed-in-greeting">
-      <%= link_to raw("<span class='glyphicon glyphicon-cog'></span>"), "/profile", :class=>"btn pull-right handshake-button btn-secondary btn-xs" %>
-      <span class="greeting">Hello <%= current_user.first_name %>!</span>
-      <%= link_to raw("<img src='/assets/handshake_icon.jpg' class='icon'/>"), "/matches", :class=>"btn handshake-button btn-secondary pull-left btn-xs" %>
-      <%= link_to raw("<span class='glyphicon glyphicon-resize-horizontal'></span>"), "/feed", :class=>"btn handshake-button btn-secondary pull-left btn-xs" %>
-    </div>
+      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></button>
+      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></button>
+      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
+    </button>
     <% else %>
       <button type="button" class="login_register_button">
-        <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
+        <li><%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
       </button>
     <% end %>
-  </nav>
+  </div>
 <div class="container-fluid">
 <%= yield %>
 </div>
