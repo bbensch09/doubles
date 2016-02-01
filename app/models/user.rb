@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # add geokit within radius method used in User#users_within_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
-  after_create :update_access_token!, :update_geolocation
+  after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
 
@@ -32,15 +32,18 @@ end
 # this method just for testing purposes. plan to move to background worker
 def update_geolocation
   api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
-      response = api_response.parsed_response
-  if response.empty?
-      lat = response["location"]["lat"]
-      lng = response["location"]["lng"]
-      self.update_attributes(:latitude => lat, :longitude => lng)
-  else #set location to DevBootcamp in SF
-    lat = "37.4705"
-    lng = "-122.2349"
-    self.update_attributes(:latitude => lat, :longitude => lng)
+  response = api_response.parsed_response
+  p "=======GeoLocationAPI======="
+  p response
+  if response["location"]["lat"]
+    lat = response["location"]["lat"]
+    lng = response["location"]["lng"]
+    return true if self.update_attributes(:latitude => lat, :longitude => lng)
+  elsif self.zip
+    api_response = HTTParty.post("https://maps.googleapis.com/maps/api/geocode/json?postal_code=#{self.zip}&key=#{ENV['GOOGLE_API']}")
+    p response
+  else
+    return false
   end
 end
 
