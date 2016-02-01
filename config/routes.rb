@@ -24,22 +24,16 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
 
   # Look at your own profile that will have links to edit, edit activities, and logout
-  get 'users/:id/profile' => 'users#profile'
-
+  get 'users/:id' => 'users#show'
+  get 'profile' => 'users#profile'
   # Show a user all their matches
-  get 'users/:id/matches' => 'matches#index'
-
-
-  get 'users/:id/feed' => 'swipes#feed'
+  get 'matches' => 'matches#index'
+  get 'feed' => 'swipes#feed'
 
   get 'matches/:id/chat' => 'conversations#show'
   post 'matches/:id/chat' => 'conversations#create'
 
-  get 'cards' => 'swipes#cards'
-
   resources :activity_blurbs
-
-  get '/users/:current_user_id/feed' => 'swipes#feed'
 
   # HACKY_SHIT
   # temp routes to test swiping

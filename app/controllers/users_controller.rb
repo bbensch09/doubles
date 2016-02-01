@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @sports = @displayed_user.activities
   end
 
-  def profile
-    @user = User.find(params[:id])
+  def profile    
+    @user = current_user
   end
 
 end
