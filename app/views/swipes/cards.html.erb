@@ -1,3 +1,4 @@
+<div>
 <% if @available_users.length > 0 %>
 Number of users: <%= @available_users.length %>
   <% @available_users.each do |user| %>
@@ -13,3 +14,4 @@ Number of users: <%= @available_users.length %>
 <% else %>
 <h2 class="text-center block-text">No people matching your interests near you</h2>
 <% end %>
+</div>
