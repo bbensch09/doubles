@@ -1,6 +1,6 @@
 <div>
 <h1>You found a double!!!!!!!!</h1>
-<img src="<%=@matched_user.profile_picture_url%>">
+<img class="home-pic" src="<%=@matched_user.profile_picture_url%>">
 <h2><%=@matched_user.first_name%></h2>
 <% @matched_user.activities.each do |activity| %>
 <h3><%=activity.name%></h3>
