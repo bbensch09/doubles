@@ -14,6 +14,20 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'login' => 'welcome#force_login'
+  get '/finish_profile' => 'users#finish_profile'
+  put '/finish_profile' => 'users#update'
+  get '/walkthrough' => 'users#walkthrough'
+
+  #Normal user-profile CRUD abilities (outside of devise to keep all in one place) of full profile
+  get '/profile' => 'users#profile'
+  get '/edit_profile' => 'users#edit_profile'
+  put '/update_profile' => 'users#update'
+  # Show a user all their matches
+  get '/matches' => 'matches#index'
+  get '/feed' => 'swipes#feed'
+  #First-Time User Experience
+  get '/pick-sports' => 'activity_blurbs#index'
+  post '/pick-sports' => 'activity_blurbs#create'
 
   post 'swipes'=> 'swipes#create'
 
@@ -24,12 +38,8 @@ Rails.application.routes.draw do
   # Look at another users' profile
   get 'users/:id' => 'users#show'
 
-  # Look at your own profile that will have links to edit, edit activities, and logout
-  get 'users/:id' => 'users#show'
-  get 'profile' => 'users#profile'
-  # Show a user all their matches
-  get 'matches' => 'matches#index'
-  get 'feed' => 'swipes#feed'
+
+
 
   get 'matches/:id/chat' => 'conversations#show'
   post 'matches/:id/chat' => 'conversations#create'
