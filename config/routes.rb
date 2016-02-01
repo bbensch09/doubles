@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/finish_profile' => 'users#finish_profile'
   put '/finish_profile' => 'users#update'
   get '/walkthrough' => 'users#walkthrough'
+  get '/complete_walkthrough' => 'users#complete_walkthrough'
 
   #Normal user-profile CRUD abilities (outside of devise to keep all in one place) of full profile
   get '/profile' => 'users#profile'
