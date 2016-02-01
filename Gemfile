@@ -29,6 +29,7 @@ gem 'sidekiq'
 
 
 gem 'faker'
+gem 'hirb'
 
 
 
@@ -40,6 +41,5 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring'
-  gem 'hirb'
   gem 'web-console', '~> 2.0'
 end
