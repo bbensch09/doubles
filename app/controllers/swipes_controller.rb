@@ -8,8 +8,6 @@ class SwipesController < ApplicationController
       if User.find(swipee_id).swipes.where(swipee_id: current_user.id, swiped_yes: true)
         current_user.matches.new()
       end
-
-      render :text => "Create swipe"
       # input: swiper_id, swipee_id
       # create instance of swiper
       # if match, return JSON
