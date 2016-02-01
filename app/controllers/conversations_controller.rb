@@ -1,7 +1,7 @@
 include MatchesHelper
 
 class ConversationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :login_user
 
   def create
     Message.create(match_id: params[:id], message_text: params[:text], user_id: params[:author], sender_name: User.find(params[:author]).first_name)
