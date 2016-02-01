@@ -155,17 +155,229 @@ golf_girl = User.create!({
     longitude: -122.5078123,
     profile_picture_url: "https://www.threeriversparks.org/~/media/Parks%20and%20Trails/Hyland/Hyland%20Disc%20Golf%20Course/08022005_disc1.ashx",
     password: 'password'
+
+
+golf_girl = User.create!({
+    first_name: "Francis",
+    last_name: "Fairway",
+    email: "golf_girl@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://golfgurls.com/wp-content/uploads/2010/02/young_golfer_visor-e1266850768252.jpg",
+    password: 'password'
   })
 
-User.all.each do |user|
+handball_hannah = User.create!({
+    first_name: "Hannah",
+    last_name: "Handball",
+    email: "handball_hannah@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.olympic.org/Assets/MediaPlayer/Videos/2008/08/23/lot1-2008%20handball%20w%20final/Handball_Video_BIG_630.jpg",
+    password: 'password'
+  })
+
+hiking_harry = User.create!({
+    first_name: "Harry",
+    last_name: "Hikerberry",
+    email: "hiking_harry@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://farm4.static.flickr.com/3508/3871896186_ede8169835.jpg",
+    password: 'password'
+  })
+
+ping = User.create!({
+    first_name: "Ping",
+    last_name: "Pong",
+    email: "ping@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://cdn.evbuc.com/eventlogos/28972529/pingpong.jpg",
+    password: 'password'
+  })
+
+racquet_roger = User.create!({
+    first_name: "Rocket",
+    last_name: "Roger",
+    email: "racquet_roger@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.rowan.edu/studentaffairs/rec/intramurals/images/racquetball-01.jpg",
+    password: 'password'
+  })
+
+rock_climing_rachel = User.create!({
+    first_name: "Rachel",
+    last_name: "Roche",
+    email: "rock_climing_rachel@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://s-media-cache-ak0.pinimg.com/236x/e0/7a/ca/e07aca14f0c77283688666ed5858f0e3.jpg",
+    password: 'password'
+  })
+
+running_rena = User.create!({
+    first_name: "Rena",
+    last_name: "Runner",
+    email: "running_rena@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.runningshoesguru.com/wp-content/uploads/2014/10/runningmag1.jpg",
+    password: 'password'
+  })
+
+sailing_sam = User.create!({
+    first_name: "Sam",
+    last_name: "Sailor",
+    email: "sailing_sam@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.freedomsailingadventures.com/wp-content/uploads/2012/01/the_captain_7_300w.jpg",
+    password: 'password'
+  })
+
+skiergal = User.create!({
+    first_name: "Lindsey",
+    last_name: "VonnSkier",
+    email: "skiergal@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://img2-1.timeinc.net/people/i/2010/news/100301/lindsey-vonn-240.jpg",
+    password: 'password'
+  })
+
+snowboard_gal = User.create!({
+    first_name: "Snow",
+    last_name: "Bunny",
+    email: "snowboard_gal@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://d1vh373dea9f1i.cloudfront.net/blog/wp-content/uploads/Torah-Bright.jpg",
+    password: 'password'
+  })
+
+squash_snap = User.create!({
+    first_name: "SnapThat",
+    last_name: "squash",
+    email: "squash_snap@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.squashnz.co.nz/content/images/players/evanwilliams/Evan%20Williams%20photoshoot%202011%202.jpg",
+    password: 'password'
+  })
+
+surfer_sam = User.create!({
+    first_name: "Sam",
+    last_name: "Mavericks",
+    email: "surfer_sam@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.vivaboo.com/wp-content/uploads/2010/10/surfer-surfing.jpg",
+    password: 'password'
+  })
+
+tennis_gal = User.create!({
+    first_name: "Tanya",
+    last_name: "Tenis",
+    email: "tennis_gal@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://lh5.googleusercontent.com/7dAaPmzgkuRkaZjLZHOaAS8iXx3in-ku3P9oPB55b2ZJznZldIhQ64jjgJUSg-REbPSJrNmx-j2aV8rSdO6UD4gbiu2rIbHzlvULreJq0mngTqiroDJEHi7jbrmD5sTi58hBIek",
+    password: 'password'
+  })
+
+wrestling_will = User.create!({
+    first_name: "Will",
+    last_name: "Wrestler",
+    email: "wrestling_will@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://unitedworldwrestling.org/sites/default/files/media/image/article/img_0017.jpg",
+    password: 'password'
+  })
+
+yogie = User.create!({
+    first_name: "Yasmine",
+    last_name: "Yogie",
+    email: "yogie@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://hotlantayoga.com/wp-content/uploads/2014/01/yoga-mp-balatsinos.png",
+    password: 'password'
+  })
+
+(1..22).to_a.each do |activity_id|
+  activity_name = Activity.find(activity_id).name
   ActivityBlurb.create!({
-    text: "sample text about activity",
-    activity_id: (1..10).to_a.sample,
-    user_id: user.id
+    text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
+    activity_id: activity_id,
+    user_id: activity_id
     })
+  other_activities = (1..22).to_a - activity_id
   ActivityBlurb.create!({
-    text: "sample text about activity",
-    activity_id: (11..20).to_a.sample,
+    text: "I'm just a beginner looking to learn more.",
+    activity_id: (1..22).to_a.sample,
     user_id: user.id
     })
 end
@@ -309,13 +521,11 @@ ActivityBlurb.create!({
 #everyone swipes Greg
 everyone_swipes_you
 
-
-
-#AUTOGENERATE MESSAGE WITH EACH MATCH from the original user
-Match.all.each do |match|
-  Message.create!({
-  match_id: match.id,
-  user_id: match.first_user_id,
-  message_text: "(This message is auto generated): It's cool to see we have something in common. Want to meet up?"
-  })
-end
+# #AUTOGENERATE MESSAGE WITH EACH MATCH from the original user
+# Match.all.each do |match|
+#   Message.create!({
+#   match_id: match.id,
+#   user_id: match.first_user_id,
+#   message_text: "(This message is auto generated): It's cool to see we have something in common. Want to meet up?"
+#   })
+# end
