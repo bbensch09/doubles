@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+  devise :database_authenticatable, :registerable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
 
   # add geokit within radius method used in User#users_within_radius
