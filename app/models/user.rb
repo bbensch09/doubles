@@ -29,21 +29,36 @@ def everyone_swipes_you
 end
 
 
-# this method just for testing purposes. plan to move to background worker
-def update_geolocation
+def update_lat_lng
+  if lat_lng_by_geolocation
+    true
+  elsif self.zipcode
+    lat_lng_by_zipcode
+  else
+    false
+  end
+end
+
+def lat_lng_by_geolocation
   api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
   response = api_response.parsed_response
-  p "=======GeoLocationAPI======="
-  p response
-  if response["location"]["lat"]
+  if response["location"]
     lat = response["location"]["lat"]
     lng = response["location"]["lng"]
     return true if self.update_attributes(:latitude => lat, :longitude => lng)
-  elsif self.zip
-    api_response = HTTParty.post("https://maps.googleapis.com/maps/api/geocode/json?postal_code=#{self.zip}&key=#{ENV['GOOGLE_API']}")
-    p response
+  end
+end
+
+def lat_lng_by_zipcode
+  api_response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.zipcode}&key=#{ENV['GOOGLE_API']}")
+  response = api_response.parsed_response
+
+  if response["status"] == "OK"
+    lat = response["results"][0]["geometry"]["location"]["lat"]
+    lng = response["results"][0]["geometry"]["location"]["lng"]
+    return true if self.update_attributes(:latitude => lat, :longitude => lng)
   else
-    return false
+    false
   end
 end
 
