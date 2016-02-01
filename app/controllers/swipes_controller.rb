@@ -19,17 +19,11 @@ class SwipesController < ApplicationController
     end
 
     def feed
-      # p current_user
-      # p current_user.narrow_users
-
-      # send all unswiped users near you with shared activity
-      # @available_users = current_user.narrow_users
-
-      # send just first unswiped user near you with shared act...
       @next_available_user = current_user.narrow_users.first
     end
 
     def swipe_yes
+
       new_swipe = current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: true)
       if ( User.find(params[:user_id]).swipes.where(swipee_id: current_user.id, swiped_yes: true).length > 0 )
         @matched_user = User.find(params[:user_id])
