@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :login_user
 
     # respond_to :json
     # GET api/matches
