@@ -23,7 +23,7 @@ class SwipesController < ApplicationController
         redirect_to '/finish_profile'
       elsif
         unless session[:walkthrough_status]
-          redirect_to '/walkthrough' 
+          redirect_to '/walkthrough'
         end
         # send just first unswiped user near you with shared act...
       else
@@ -32,6 +32,7 @@ class SwipesController < ApplicationController
     end
 
     def swipe_yes
+
       new_swipe = current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: true)
       if ( User.find(params[:user_id]).swipes.where(swipee_id: current_user.id, swiped_yes: true).length > 0 )
         @matched_user = User.find(params[:user_id])
