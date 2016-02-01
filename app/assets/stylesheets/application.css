@@ -13,13 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-$light: #C2C2C2;
-$medium: #808080;
-$dark: #383838;
-$green-highlight: #11AD09;
-
-
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
