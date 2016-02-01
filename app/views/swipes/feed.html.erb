@@ -6,7 +6,7 @@
 <div id="cards">
   <ul>
     <% @next_five_users.each do |user| %>
-    <li>
+    <li id="<%= user.id %>">
       <%= render :partial => "users/show_card", :locals => {:user => user } %>
     </li>
     <% end %>
