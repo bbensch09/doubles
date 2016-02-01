@@ -1,4 +1,7 @@
 class MatchesController < ApplicationController
+    before_action do
+      redirect_to '/login' unless current_user
+    end
     # respond_to :json
     # GET api/matches
     def index

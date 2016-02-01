@@ -1,5 +1,8 @@
 class SwipesController < ApplicationController
-	    # POST /api/swipes
+    before_action do
+      redirect_to '/login' unless current_user
+    end
+      # POST /api/swipes
     def create
       swipee_id = params[:swipee_id]
       new_swipe = current_user.swipes.new(swipee_id: swipee_id, swiped_yes: params[:swiped_yes])

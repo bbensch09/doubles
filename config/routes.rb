@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  get 'login' => 'welcome#force_login'
 
   post 'swipes'=> 'swipes#create'
 
@@ -43,6 +44,6 @@ Rails.application.routes.draw do
 
   # temp route to test tutorial slider
   devise_scope :user do
-    get "/step4" => 'registrations#show_tutorial'
+    get "/walkthru" => 'registrations#show_tutorial'
   end
 end

@@ -1,4 +1,8 @@
 class ActivityBlurbsController < ApplicationController
+    before_action do
+      redirect_to '/login' unless current_user
+    end
+  
     def index
       @activity_blurbs = current_user.activity_blurbs
       @activity_blurb = ActivityBlurb.new
