@@ -36,12 +36,12 @@ class SwipesController < ApplicationController
         @matched_user = User.find(params[:user_id])
         render '/matches/overlay' and return
       else
-        redirect_to "/users/#{current_user.id}/feed"
+        redirect_to "/feed"
       end
     end
 
     def swipe_no
       current_user.swipes.create(swipee_id: params[:user_id],swiped_yes: false)
-      redirect_to "/users/#{current_user.id}/feed"
+      redirect_to "/feed"
     end
 end
