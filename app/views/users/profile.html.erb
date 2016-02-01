@@ -1,6 +1,6 @@
 <div>
 <div class="center">
-<%= link_to "Find Matches", "/users/#{current_user.id}/feed", :class=>"btn btn-success btn-lg" %>
+<%= link_to "Start Swiping", "/feed", :class=>"btn btn-success btn-lg" %>
 </div>
   <h3><%= @user.first_name %> <%= @user.last_name %></h3>
   <img class="home-pic" src=<%= "#{@user.profile_picture_url}" %>/>
