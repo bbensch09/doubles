@@ -6,12 +6,10 @@ class ConversationsController < ApplicationController
   before_action do
     redirect_to '/login' unless current_user
   end
-  
+
   def create
     Message.create(match_id: params[:id], message_text: params[:text], user_id: params[:author], sender_name: User.find(params[:author]).first_name)
-    p "+++++++++++++++++"
-    p presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
-    p "+++++++++++++++++"
+    presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
     render :json => presenter
   end
 
