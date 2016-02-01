@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+$light: #C2C2C2;
+$medium: #808080;
+$dark: #383838;
+$green-highlight: #11AD09;
+
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -22,6 +29,8 @@
 
 
 .container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
   font-family: 'Open Sans', sans-serif;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
@@ -153,46 +162,6 @@ body {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.home-text {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 18px;
-}
-
-.home-text img {
-  margin-right: 4px;
-  margin-left: 4px;
-  margin-bottom: 10vh;
-}
-
-.home-pic {
-  height: 25vh;
-  width: 43vw;
-  border-radius: 15px;
-}
-
-.front-page {
-  height: 50vh;
-}
-
-.home-subtitle {
-  text-align: center;
-  font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-  text-decoration: none;
-}
-
-#home-title {
-  text-align: center;
-  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-  margin-top: 5vh;
-  margin-bottom: 2vh;
-  font-size: 4em;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 2px lightgrey;
-}
 
 .login_register_button a {
   color: white !important;
@@ -283,8 +252,4 @@ body {
 }
 .bio-input {
   color: #000000;
-}
-.cl-b{clear:both}
-.carousel-inner div div span{
-color:#4cae4c;
 }
