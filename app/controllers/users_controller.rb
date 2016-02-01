@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
-  before_action except: [:create] do
-    redirect_to '/login' unless current_user
-  end
-  
+  before_action :login_user, :except => [:create]
+
   def create
     oAuth_info = request.env["omniauth.auth"]
-    p oAuth_info
   end
 
   def show

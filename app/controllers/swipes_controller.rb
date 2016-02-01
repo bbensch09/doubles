@@ -1,7 +1,6 @@
 class SwipesController < ApplicationController
-    before_action do
-      redirect_to '/login' unless current_user
-    end
+    before_action :login_user
+
       # POST /api/swipes
     def create
       swipee_id = params[:swipee_id]
