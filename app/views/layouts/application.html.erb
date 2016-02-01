@@ -29,5 +29,21 @@
 <%= yield %>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</body>
-</html>
+<% if flash[:show_modal] %>
+<!-- Modal -->
+<style type="text/css">
+.modal-content {
+  width: 95vw;
+}
+</style>
+<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="myModal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= render flash[:modal_to_show] %>
+    </div>
+  </div>
+</div>
+<script>
+$('#myModal').modal('show');
+</script>
+<% end %>
