@@ -525,3 +525,21 @@ greg = User.create!({
 
 #everyone swipes Greg
 everyone_swipes_you
+
+#FORCE MATCHES AMONG TEAM MEMBERS
+#brian likes everyone
+(24..27).to_a.each do |user_id|
+  Swipe.create!({
+    swiped_yes: true,
+    swiper_id: 23,
+    swipee_id: user_id
+    })
+end
+#everyone else likes brian
+(24..27).to_a.each do |user_id|
+  Swipe.create!({
+    swiped_yes: true,
+    swiper_id: user_id,
+    swipee_id: 23
+    })
+end
