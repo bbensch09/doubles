@@ -19,14 +19,13 @@ class SwipesController < ApplicationController
     end
 
     def feed
-      # p current_user
-      # p current_user.narrow_users
-
-      # send all unswiped users near you with shared activity
-      # @available_users = current_user.narrow_users
-
-      # send just first unswiped user near you with shared act...
+      if current_user.bio.empty?
+        redirect_to '/finish_profile'
+      elsif current_user.swipes.count == 0
+        redirect_to '/walkthrough'
+        # send just first unswiped user near you with shared act...
       @next_available_user = current_user.narrow_users.first
+      end
     end
 
     def swipe_yes
