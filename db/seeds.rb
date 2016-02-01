@@ -97,11 +97,12 @@ end
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
   seed_users = User.where("id <= 30")
+  you = User.last
   seed_users.each do |user|
       Swipe.create!({
         swiped_yes: [true,false].sample,
         swiper_id: user.id,
-        swipee_id: you.first.id
+        swipee_id: you.id
         })
   end
 end
