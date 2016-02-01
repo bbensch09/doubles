@@ -30,6 +30,11 @@
   text-shadow: none !important;
 }
 
+.container-fluid a {
+  color: black;
+  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+}
+
 .container-fluid .btn-success {
   color: black;
 }
@@ -37,11 +42,12 @@
 .container-fluid input {
   font-family: sans-serif;
   text-shadow: none !important;
+  color: black;
 }
 
 .container-fluid div {
   background-color: #106582;
-  padding-left: 6px;
+  padding: 4px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -49,6 +55,13 @@
 .icon {
   height: 30px;
   width: 30px;
+}
+
+.group-btn .btn {
+  margin-right: 1px;
+  margin-left: 1px;
+  border: 1px solid black;
+  color: white;
 }
 
 .handshake-button {
@@ -245,7 +258,7 @@ body {
   position: fixed;
   bottom: 50vh;
   right: 0;
-  background-color: green;
+  background-color: green !important;
   border: 2px dashed black;
 }
 
@@ -255,7 +268,7 @@ body {
   position: fixed;
   bottom: 50vh;
   left: 0;
-  background-color: red;
+  background-color: red !important;
   border: 2px dashed black;
 }
 
