@@ -1,20 +1,29 @@
-<h1>See all of your matches below:</h1>
+<div>
+<h1 class="page-head">All Your Matches</h1>
 
-<p>
+<div class="text-center">
+  <% if @matches.length == 0 %>
+  Sorry, no matches yet, check back again later!
+  <% else %>
   Congrats, you have <%= @matches.length %> matches!
-</p>
+  <% end %>
+</div>
 
 <% @matches.each do |match| %>
-<h2> Name: <%= match.first_name %> </h2>
-<h3> Activities:
-  <% match.activities.each do |activity| %>
-  <button>
-    <span class="activity-button">
-      <%= activity.name %>
-    </span>
-  </button>
-  <% end %>
-</h3>
-<h4> Bio: <%= match.bio %> </h2>
-<hr />
+<% matched_user = get_matched_user(match, current_user) %>
+<div class="match-row">
+  <h2> <u>Name</u>: <%= matched_user.first_name %> </h2>
+  <h4> <u>Activities</u>:
+    <% matched_user.activities.each do |activity| %>
+    <button class="btn btn-xs disable-button btn-success" disabled>
+      <span class="activity-button">
+        <%= activity.name %>
+      </span>
+    </button>
+        <% end %>
+  </h4>
+        <h5> <u>Bio</u>: <%= matched_user.bio %> </h5>
+        <%= link_to "Chat with #{matched_user.first_name}", "/matches/#{match.id}/chat", :class=>"btn btn-primary btn-sm" %>
+</div>
 <% end %>
+</div>

@@ -1,0 +1,19 @@
+
+<%= form_for :activity_blurb do |f| %>
+
+<div class="form-inline">
+  <div class="form-group">
+    <%= f.label :activity, :class=>"col-sm-8" %>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :text, "Experience Level", :class=>"col-md-4" %>
+    <%= f.text_field :text, autofocus: true %>
+  </div>
+  <div class="actions center">
+    <%= f.submit "Add Activity" %>
+  </div>
+</div>
+
+<% end %>
+<!-- DISPLAY CURRENT ACTIVITIES -->

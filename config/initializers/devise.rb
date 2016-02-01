@@ -6,7 +6,7 @@ Dotenv.load
 Devise.setup do |config|
 
   config.omniauth :facebook, ENV['API_ID'], ENV['APP_SECRET'],
-      callback_url: ENV['LOCAL_HOST_NAME'], scope: "email,user_location,public_profile", :display => 'page', :image_size => 'square'
+      scope: "email,user_location,public_profile,user_birthday", info_fields: 'id,first_name,last_name,about,birthday,age_range,gender,email,location'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -146,7 +146,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..128
+  config.password_length = 2..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly

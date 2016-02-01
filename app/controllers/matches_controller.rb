@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+    before_action :login_user
+
     # respond_to :json
     # GET api/matches
     def index
@@ -20,8 +22,11 @@ class MatchesController < ApplicationController
       # end
       # render 'index'
 
-      @matches = current_user.matches
-      render 'index'
+      if current_user
+        @matches = current_user.matches
+        render 'index'
+      else
+      end
       # user = User.find(2) #need to pull user_id from Devise
       # respond_with user.matches
     end

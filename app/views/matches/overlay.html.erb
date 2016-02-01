@@ -1,0 +1,10 @@
+<div class="text-center">
+<h1>You found a double!!!!!!!!</h1>
+<img class="home-pic" src="<%=@matched_user.profile_picture_url%>">
+<h2><%=@matched_user.first_name%></h2>
+<% @matched_user.activities.each do |activity| %>
+<button style="width:100%" class="btn disable-button btn-md btn-success" disable><%=activity.name%></button>
+<% end %>
+<a href="/matches">Chat with <%=@matched_user.first_name%>!</a>
+<a class="pull-right" href="/feed">Continue swiping</a>
+</div>
