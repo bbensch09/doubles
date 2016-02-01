@@ -37,7 +37,7 @@ class SwipesController < ApplicationController
       p "+" * 40
       p json
       p "+" * 40
-      @next_five_users = current_user.narrow_users
+      @next_five_users = current_user.narrow_users[0..4]
     end
 
     def swipe_yes
