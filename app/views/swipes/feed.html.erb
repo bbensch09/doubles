@@ -1,6 +1,15 @@
+<link rel="stylesheet" href="/stylesheets/cardstack_config.css">
+<script src="/javascripts/swing.js"></script>
+<script src="/javascripts/cardstack_config.js"></script>
 <div>
-<% if @next_available_user %>
-<%= render :partial => "users/show_card", :locals => {:user => @next_available_user } %>
+<% if @next_five_users %>
+<div id="viewport">
+  <ul class="stack">
+  <% @next_five_users.each do |user| %>
+    <li class="<%= user.first_name %>"><%= render :partial => "users/show_card", :locals => {:user => user } %></li>
+  <% end %>
+  </ul>
+</div>
 <% else %>
 <h2 class="text-center block-text">No people matching your interests near you.</h2>
 <% end %>
