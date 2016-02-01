@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'sessions', omniauth_callbacks: "users/omniauth_callbacks"}
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: "users/omniauth_callbacks"}
   # sessions: 'sessions',
   # , omniauth_callbacks: "users/omniauth_callbacks"
 
@@ -24,28 +24,16 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
 
   # Look at your own profile that will have links to edit, edit activities, and logout
-  get 'users/:id/profile' => 'users#profile'
-
+  get 'users/:id' => 'users#show'
+  get 'profile' => 'users#profile'
   # Show a user all their matches
-  get 'users/:id/matches' => 'matches#index'
-
-
-  get 'users/:id/feed' => 'swipes#feed'
+  get 'matches' => 'matches#index'
+  get 'feed' => 'swipes#feed'
 
   get 'matches/:id/chat' => 'conversations#show'
   post 'matches/:id/chat' => 'conversations#create'
 
-  # HACKY_SHIT
-  # temp route to test tutorial slider
-  devise_scope :user do
-    get "/step4" => 'registrations#show_tutorial'
-  end
-
-  get 'cards' => 'swipes#cards'
-
   resources :activity_blurbs
-
-  get '/users/:current_user_id/feed' => 'swipes#feed'
 
   # HACKY_SHIT
   # temp routes to test swiping
@@ -53,5 +41,8 @@ Rails.application.routes.draw do
   get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
   get '/swipe_no/:user_id' => 'swipes#swipe_no'
 
-
+  # temp route to test tutorial slider
+  devise_scope :user do
+    get "/step4" => 'registrations#show_tutorial'
+  end
 end

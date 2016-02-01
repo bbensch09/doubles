@@ -1,9 +1,9 @@
-<div class="show-card-container">
+<div class="show-card-container container-fluid">
   <img class="show-card-picture" src="<%=user.profile_picture_url%>">
-  <h1 class="card-name"><%= user.first_name %></h1>
-  <h3 class="card-bio"><%= user.bio%></h3>
+  <h1 class="card-name center"><%= user.first_name %></h1>
+  <p><%= user.bio%></p>
   <% user.activities.each do |activity| %>
-  <h4 class="card-activities"><%= activity.name %></h3>
+  <button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
   <% end %>
 </div>
 

@@ -28,14 +28,18 @@
   text-shadow: none !important;
 }
 
+.container-fluid .btn-success {
+  color: black;
+}
+
 .container-fluid input {
   font-family: sans-serif;
   text-shadow: none !important;
 }
 
 .icon {
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
 }
 
 .handshake-button {
@@ -43,16 +47,23 @@
   color: black;
   margin-left: 2px;
   margin-right: 2px;
-  width: 35px;
+  width: 40px;
+  height: 35px;
   background-color: white;
 }
 
 .glyphicon {
+  top: 4px !important;
+  font-size: 2em;
+}
+
+.glyphicon-log-out, .glyphicon-chevron-down {
   top: 2px !important;
+  font-size: 1.2em;
 }
 
 body {
-  background: url(/assets/field.jpg) no-repeat center center fixed;
+  background: url(/assets/field_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -67,14 +78,39 @@ body {
 
 .signed-in-greeting {
   padding-top: 2px;
-  padding-bottom: 4px;
+  padding-bottom: 1.4vh;
   border: 2px solid black;
   text-align: center;
   font-family: 'Russo One', sans-serif;
+  background-color: #0E3C5D;
 }
 
 .greeting {
-  font-size: 1.1em;
+  font-size: 1.25em;
+  margin-left: -2em;
+  display: inline-block;
+  margin-top: 4px;
+  color: white;
+}
+
+.activity-row {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-bottom: 1px solid grey;
+}
+
+.activity-row2 {
+  padding-top: 3px;
+}
+
+.match-row {
+  padding-bottom: 12px;
+  border-bottom: 1px solid grey;
+}
+
+.disable-button {
+  opacity: .8 !important;
+  border: 1px solid darkgreen !important;
 }
 
 .visible-text {
@@ -86,17 +122,21 @@ body {
   text-decoration: underline;
 }
 
+.messages {
+  text-align: right;
+  display: block;
+}
+
 .down-arrow {
   font-size: 2em;
-  margin-top: 40vh;
-  color: #B59400;
+  margin-top: 30vh;
+  color: #dba70d;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
 .home-text {
   font-family: 'Russo One', sans-serif;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .home-text img {
@@ -108,6 +148,7 @@ body {
 .home-pic {
   height: 25vh;
   width: 43vw;
+  border-radius: 15px;
 }
 
 .front-page {
@@ -163,51 +204,30 @@ body {
   text-decoration:none;
   text-shadow: 0px 0 lightgray, 0 1px lightgray, 0px 0 lightgray, 0 0px lightgray;
 }
-.login_register_button:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dba70d), color-stop(1, #fae7ad));
-  background:-moz-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-webkit-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-o-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:-ms-linear-gradient(top, #dba70d 5%, #fae7ad 100%);
-  background:linear-gradient(to bottom, #dba70d 5%, #fae7ad 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dba70d', endColorstr='#fae7ad',GradientType=0);
-  background-color:#dba70d;
-}
-.login_register_button:active {
-  position:relative;
-  top:1px;
+
+.hide {
+  display:none;
 }
 
-.hide {  display:none;}
-.profile-img {height:100px;}
+.profile-img {
+  height:100px;
+}
 
 /*TEMP STYLING FOR "USERS/_SHOW_CARD" */
 .show-card-container {
-  width: 290px;
+  width: 86%;
+  margin-left: 7%;
+  margin-right: 7%;
   margin-top: 25px;
   background-color: white;
   overflow: auto;
   padding:10px;
-  heigth: ;
 }
+
 .show-card-picture {
   width: 270px;
 }
 
-.card-name {
-  width: 200px;
-  float:left;
-}
-.card-bio {
-  font-size: 1.5em;
-}
-.card-activities {
-  float:left;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-right: 5px;
-  background-color: orange;
-}
 .card-swipe-yes {
   width: 50px;
   height: 50px;
@@ -217,6 +237,7 @@ body {
   background-color: green;
   border: 2px dashed black;
 }
+
 .card-swipe-no {
   width: 50px;
   height: 50px;
@@ -226,4 +247,9 @@ body {
   background-color: red;
   border: 2px dashed black;
 }
+
 /*END OF TEMP STYLING FOR "USERS/_SHOW_CARD"*/
+.center {
+  margin: auto;
+  text-align: center;
+}
