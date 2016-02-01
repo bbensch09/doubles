@@ -10,6 +10,8 @@ Swipe.delete_all
 Match.delete_all
 Message.delete_all
 
+
+
 # Create activities
 activity_names = [
 "billiards / darts / foosball (bar games)","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing / snowboarding","squash","surfing","tennis","wrestling","yoga"]
