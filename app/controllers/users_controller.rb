@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @sports = @displayed_user.activities
   end
 
-  def profile    
+  def profile
     @user = current_user
   end
 
