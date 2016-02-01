@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action do
+  before_action except: [:show_tutorial] do
     redirect_to '/login' unless current_user
   end
 
