@@ -19,11 +19,14 @@ class SwipesController < ApplicationController
     end
 
     def feed
-      if current_user.bio.empty?
+      if current_user.bio.nil?
         redirect_to '/finish_profile'
-      elsif current_user.swipes.count == 0
-        redirect_to '/walkthrough'
+      elsif
+        unless session[:walkthrough_status]
+          redirect_to '/walkthrough' 
+        end
         # send just first unswiped user near you with shared act...
+      else
       @next_available_user = current_user.narrow_users.first
       end
     end

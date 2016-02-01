@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def complete_walkthrough
+    session[:walkthrough_status] = 'completed'
+    puts "walkthrough status now completed"
+    redirect_to '/feed'
+  end
+
   def profile_update_params
     params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email)
   end
