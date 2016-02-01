@@ -15,7 +15,9 @@
   </h5>
   <p><u>About me</u>: <%= @user.bio %></p>
 </div>
+<div class="group-btn">
 <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> Logout"), destroy_user_session_path, :method => :delete, :class=>"btn btn-danger btn-sm" %>
-<%= link_to "Edit Activities", activity_blurbs_path, :class=>"btn btn-primary btn-sm" %>
+<%= link_to "Add Activities", activity_blurbs_path, :class=>"btn btn-primary btn-sm" %>
 
-<%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn btn-primary btn-sm" %>
+<%= link_to "Edit Profile", edit_user_registration_path, :class=>"btn pull-right btn-primary btn-sm" %>
+</div>
