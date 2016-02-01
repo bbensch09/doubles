@@ -353,8 +353,9 @@ yogie = User.create!({
     password: 'password'
   })
 
+#Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
 activity_ids = (1..22).to_a
- activity_ids.each do |activity_id|
+activity_ids.each do |activity_id|
   activity_name = Activity.find(activity_id).name
   ActivityBlurb.create!({
     text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
@@ -364,9 +365,15 @@ activity_ids = (1..22).to_a
   current_activity = []
   current_activity.push(activity_id)
   other_activity_ids = activity_ids - current_activity
-  ActivityBlurb.create!({
+  2.times do ActivityBlurb.create!({
     text: "I'm just a beginner looking to learn more.",
     activity_id: other_activity_ids.sample,
+    user_id: activity_id
+    })
+  end
+  ActivityBlurb.create!({
+    text: "Like everyone else, I love drinking & billiards.",
+    activity_id: 1,
     user_id: activity_id
     })
 end
@@ -405,11 +412,13 @@ ActivityBlurb.create!({
     user_id: brian.id
     })
 
-ActivityBlurb.create!({
+(1..14).to_a.each do |activity_id|
+  ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
-    activity_id: 1,
+    activity_id: activity_id,
     user_id: brian.id
     })
+  end
 
 #everyone swipes Brian
 everyone_swipes_you
@@ -429,11 +438,13 @@ nil_thacker = User.create!({
                   password: 'password'
                     })
 
-ActivityBlurb.create!({
-    text: "I will crush you at foosball.",
-    activity_id: 1,
+(1..22).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: "I'm really good at bar games, at least the drinking part.",
+    activity_id: activity_id,
     user_id: nil_thacker.id
     })
+  end
 
 #everyone swipes Nil
 everyone_swipes_you
@@ -453,11 +464,13 @@ trevor = User.create!({
                   password: 'password'
                     })
 
-ActivityBlurb.create!({
-    text: "Let's play some darts!",
-    activity_id: 1,
+(1..22).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: "I'm really good at bar games, at least the drinking part.",
+    activity_id: activity_id,
     user_id: trevor.id
     })
+  end
 
 #everyone swipes Trevor
 everyone_swipes_you
@@ -477,12 +490,13 @@ abe = User.create!({
                   password: 'password'
                     })
 
-ActivityBlurb.create!({
-    text: "I may not drink much, but when I play bar games, I crush.",
-    activity_id: 1,
+(1..22).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: "I'm really good at bar games, at least the drinking part.",
+    activity_id: activity_id,
     user_id: abe.id
     })
-
+  end
 #everyone swipes Greg
 everyone_swipes_you
 
@@ -501,20 +515,13 @@ greg = User.create!({
                   password: 'password'
                     })
 
-ActivityBlurb.create!({
-    text: "Professional billiards champion.",
-    activity_id: 1,
+(1..22).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: "I'm really good at bar games, at least the drinking part.",
+    activity_id: activity_id,
     user_id: greg.id
     })
+  end
 
 #everyone swipes Greg
 everyone_swipes_you
-
-# #AUTOGENERATE MESSAGE WITH EACH MATCH from the original user
-# Match.all.each do |match|
-#   Message.create!({
-#   match_id: match.id,
-#   user_id: match.first_user_id,
-#   message_text: "(This message is auto generated): It's cool to see we have something in common. Want to meet up?"
-#   })
-# end
