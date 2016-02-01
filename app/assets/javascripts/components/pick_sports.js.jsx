@@ -1,5 +1,5 @@
 // find_sport -- helper function to perform regex search
-// PickSports >> SportsOptions, MySports
+// PickSports >> SportsOptions, ChosenSport
 //
 
 
@@ -15,6 +15,15 @@ var find_sport = function(wordToMatch, array_of_objects_to_query) {
   return results
 }
 
+  // saveSport: function(sport_object_id) {
+  //   $.post( '/activity_blurbs',
+  //           {activity_id: sport_object_id, text: " "},
+  //           function(data) {
+  //       console.log(data);
+  //     });
+  //   }
+
+
 var PickSports = React.createClass({
   getInitialState: function() {
     return {value: '', mySports: []};
@@ -27,36 +36,20 @@ var PickSports = React.createClass({
     var value = event.target.value;
     this.refs.sports_list.setState({sports: find_sport(value, this.props.sports)});
   },
-  setMySports: function(sportToAdd) {
-  currentSports = this.state.mySports.slice()
-   if (currentSports.indexOf(sportToAdd) > -1) {
-    return
-    } else {
-    var sportToAdd, currentSports
-
-    currentSports.push(sportToAdd)
-    this.setState({mySports: currentSports})
-    this.saveSport(sportToAdd.id)
-    }
+  setChosenSport: function(sportToAdd) {
+    this.setState({chosenSport: sportToAdd})
   },
   render: function() {
     return(
       <div>
-        <ChosenSports mySports={this.state.mySports} ref="mySports"/>
         <h4>Add an activity</h4>
-        <hr />
         <input className="input" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
-        <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setMySports}/>
+        <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
+        <hr />
+        <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport"/>
       </div>
       )
-  },
-  saveSport: function(sport_object_id) {
-    $.post( '/activity_blurbs',
-            {activity_id: sport_object_id, text: " "},
-            function(data) {
-        console.log(data);
-      });
-    }
+  }
 })
 
 var SportsOptions = React.createClass({
@@ -80,34 +73,45 @@ var SportsOptions = React.createClass({
   }
 });
 
-var ChosenSports = React.createClass({
-  // getInitialState: function() {
-  //     return { mySports: this.props.mySports };
-  //   },
+var ChosenSport = React.createClass({
   render: function() {
-      if(this.props.mySports.length) {
+      if(this.props.chosenSport) {
       return(
         <div>
           <div>
-          <h4 className="pull-left">My Activities</h4>
-          <a href="/activity_blurbs"><span className="btn btn-warning pull-right">Next</span></a>
+          <h4 className="pull-left">Selected Sport:</h4>
           </div>
-          <ul>{this.props.mySports.map(function(sport, i) {
-              return (
-                <li className="btn btn-success sport_options" key={i} onClick={this.handleClick.bind(this, i)}>{sport.name}</li>
-                );
-              }, this)}
-          </ul>
+          <span className="btn btn-success sport_options" onClick={this.handleClick.bind(null, this)}>
+            {this.props.chosenSport.name}
+          </span>
         <hr />
         </div>
        )
     } else { return null };
   },
-  handleClick: function(i) {
-    // TBU - show your blurb?
+  handleClick: function() {
+
   }
 })
 
+// Beginner: 0 , Intermediate: 1, Advanced: 2
 
+var SkillLevel = React.createClass({
+  getInitialState: function() {
+      return { selected: '0'};
+    },
+  render: function() {
+      return(
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">Left</button>
+          <button type="button" class="btn btn-default">Middle</button>
+          <button type="button" class="btn btn-default">Right</button>
+        </div>
+       )
+  },
+  handleClick: function(i) {
+
+  }
+});
 
 

@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get '/matches' => 'matches#index'
   get '/feed' => 'swipes#feed'
   #First-Time User Experience
-  get '/pick-sports' => 'activity_blurbs#index'
+  get '/pick-sports' => 'activity_blurbs#new'
   post '/pick-sports' => 'activity_blurbs#create'
 
   post 'swipes'=> 'swipes#create'
