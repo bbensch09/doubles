@@ -14,74 +14,148 @@ Message.delete_all
 
 # Create activities
 activity_names = [
-"billiards / darts / foosball (bar games)","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing / snowboarding","squash","surfing","tennis","wrestling","yoga"]
+"billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 activity_names.each do |activity|
   activities << Activity.create(name: activity)
 end
 
 #Create Tom
-tom = User.create!({
-                    first_name: "Tom",
-                    last_name: "Likes Everyone",
-                    email: 'tom@myspace.com',
-                    gender: 'male',
-                    age: 40,
-                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-                    location: "San Francisco",
-                    latitude: 37.7576792,
-                    longitude: -122.5078123,
-                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-                    password: 'password'
-                      })
-
-activities.each_with_index do |activity, index|
-  ActivityBlurb.create!({
-      text: "I've been playing #{activity} since 1999.",
-      activity_id: index,
-      user_id: 1
-      })
-end
-
-#create Mark
-mark = User.create!({
-                    first_name: "Mark",
-                    last_name: "Likes_Harvard",
-                    email: 'mark@facebook.com',
-                    gender: 'male',
-                    age: 40,
-                    bio: 'I like to hack',
-                    location: "Menlo Park",
-                    latitude: 37.7576792,
-                    longitude: -122.5078123,
-                    profile_picture_url: "http://tctechcrunch2011.files.wordpress.com/2012/09/mark.jpeg",
-                    password: 'password'
-                      })
-
-ActivityBlurb.create!({
-      text: "I've been playing Racquetball since I dropped out of Harvard.",
-      activity_id: 11,
-      user_id: 2
-      })
+# tom = User.create!({
+#                     first_name: "Tom",
+#                     last_name: "Likes Everyone",
+#                     email: 'tom@myspace.com',
+#                     gender: 'male',
+#                     age: 40,
+#                     bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+#                     location: "San Francisco",
+#                     latitude: 37.7576792,
+#                     longitude: -122.5078123,
+#                     profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+#                     password: 'password'
+#                       })
+#
+# activities.each_with_index do |activity, index|
+#   ActivityBlurb.create!({
+#       text: "I've been playing #{activity} since 1999.",
+#       activity_id: index,
+#       user_id: 1
+#       })
+# end
 
 # Create other users
-28.times do
-  # random = [true, false].sample
 
-  user = User.create!({
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      gender: ['male','female'].sample,
-      age: rand(18..80),
-      bio: Faker::Hipster.sentences(4).join(' '),
-      location: "San Francisco",
-      latitude: 37.7576792,
-      longitude: -122.5078123,
-      profile_picture_url: Faker::Avatar.image,
-      password: 'password'
-        })
-end
+pool_peter = User.create!({
+    first_name: "Peter",
+    last_name: "Poolshark",
+    email: "pool_peter@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://img.khelnama.com/sites/default/files/styles/content_full_width/public/previewimage/news/2012/Oct/Pankaj%20Advani1.jpg",
+    password: 'password'
+  })
+
+bocce_britney = User.create!({
+    first_name: "Britney",
+    last_name: "Boccelli",
+    email: "bocce_britney@example.com",
+    gender: "female",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.outmotoring.com/images/D/MIN_bocce_detail_1.jpg",
+    password: 'password'
+  })
+
+bowling_bernie = User.create!({
+    first_name: "Bernie",
+    last_name: "Bowler",
+    email: "bowling_bernie@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://www.ew.com/sites/default/files/i/imgs/060126//145251__kingpin_l.jpg",
+    password: 'password'
+  })
+
+cycling_cat = User.create!({
+    first_name: "Cat",
+    last_name: "Cycletonr",
+    email: "cycling_cat@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://prexamples.com/wp-content/uploads/2012/12/foxy-bingo-hair-dye-peter-wright.jpg",
+    password: 'password'
+  })
+
+darts_dan = User.create!({
+    first_name: "Dan",
+    last_name: "Dartsmouth",
+    email: "darts_dan@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "http://prexamples.com/wp-content/uploads/2012/12/foxy-bingo-hair-dye-peter-wright.jpg",
+    password: 'password'
+  })
+
+scubasteve = User.create!({
+    first_name: "Steve",
+    last_name: "Scuber",
+    email: "scubasteve@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://manchebo-674702.c.cdn77.org/photos/Aruba-Scuba-Diver-Turtle.jpg",
+    password: 'password'
+  })
+
+frisbee_golfer = User.create!({
+    first_name: "Fris",
+    last_name: "Begolfer",
+    email: "frisbee_golfer@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://www.threeriversparks.org/~/media/Parks%20and%20Trails/Hyland/Hyland%20Disc%20Golf%20Course/08022005_disc1.ashx",
+    password: 'password'
+  })
+
+golf_girl = User.create!({
+    first_name: "Felicia",
+    last_name: "Fairway",
+    email: "golf_girl@example.com",
+    gender: "male",
+    age: rand(18..40),
+    bio: Faker::Hipster.sentences(4).join(' '),
+    location: "San Francisco",
+    latitude: 37.7576792,
+    longitude: -122.5078123,
+    profile_picture_url: "https://www.threeriversparks.org/~/media/Parks%20and%20Trails/Hyland/Hyland%20Disc%20Golf%20Course/08022005_disc1.ashx",
+    password: 'password'
+  })
 
 User.all.each do |user|
   ActivityBlurb.create!({
