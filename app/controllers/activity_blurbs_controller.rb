@@ -9,6 +9,7 @@ class ActivityBlurbsController < ApplicationController
     def new
       @all_sports = Activity.all
       @activity_blurb = ActivityBlurb.new
+      render '/users/pick-sports'
     end
 
     def create
