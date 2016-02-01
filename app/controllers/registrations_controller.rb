@@ -1,12 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action except: [:show_tutorial] do
-    redirect_to '/login' unless current_user
-  end
+  before_action :login_user, :except => [:show_tutorial]
 
   # HACKY_SHIT
   # temp action to test tutorial slider
   def show_tutorial
-    render 'users/walkthru'
+    render 'users/step4'
   end
 
   private

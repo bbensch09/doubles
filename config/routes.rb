@@ -44,6 +44,6 @@ Rails.application.routes.draw do
 
   # temp route to test tutorial slider
   devise_scope :user do
-    get "/walkthru" => 'registrations#show_tutorial'
+    get "/step4" => 'registrations#show_tutorial'
   end
 end
