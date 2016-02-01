@@ -1,16 +1,25 @@
-<link rel="stylesheet" href="/stylesheets/cardstack_config.css">
-<script src="/javascripts/swing.js"></script>
-<script src="/javascripts/cardstack_config.js"></script>
-<div>
+<link rel="stylesheet" href="/stylesheets/jTinder.css">
+<script type="text/javascript" src="/javascripts/jquery.transform2d.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.jTinder.js"></script>
+
 <% if @next_five_users %>
-<div id="viewport">
-  <ul class="stack">
-  <% @next_five_users.each do |user| %>
-    <li class="<%= user.first_name %>"><%= render :partial => "users/show_card", :locals => {:user => user } %></li>
-  <% end %>
+<div id="cards">
+  <ul>
+    <% @next_five_users.each do |user| %>
+    <li>
+      <%= render :partial => "users/show_card", :locals => {:user => user } %>
+    </li>
+    <% end %>
   </ul>
 </div>
+<!-- <div class="actions">
+  <a href="#" class="dislike"><i></i></a>
+  <a href="#" class="like"><i></i></a>
+</div> -->
+<!-- <div id="status"></div> -->
+<script type="text/javascript" src="/javascripts/jquery.transform2d.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.jTinder.js"></script>
+<script type="text/javascript" src="/javascripts/jtinder_config.js"></script>
 <% else %>
 <h2 class="text-center block-text">No people matching your interests near you.</h2>
 <% end %>
-</div>
