@@ -1,5 +1,5 @@
 class SwipesController < ApplicationController
-    before_action :authenciate_user!
+    before_action :authenticate_user!
 
       # POST /api/swipes
     def create
