@@ -22,7 +22,7 @@
 
 
 .container-fluid {
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
@@ -45,8 +45,8 @@
   color: black;
 }
 
-.container-fluid div {
-  background-color: #106582;
+.container-fluid .text-div {
+  background-color: rgba(49,51,51,0.8);
   padding: 4px;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -95,7 +95,7 @@ body {
 .page-head {
   text-align: center;
   text-decoration: underline;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .signed-in-greeting {
@@ -103,7 +103,7 @@ body {
   padding-bottom: 1.4vh;
   border: 2px solid black;
   text-align: center;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #0E3C5D;
 }
 
@@ -136,7 +136,7 @@ body {
 }
 
 .visible-text {
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -151,16 +151,19 @@ body {
 }
 
 .down-arrow {
+  position: fixed;
+  bottom: 0vh;
+  left: 45%;
   font-size: 2em;
-  margin-top: 30vh;
   color: #dba70d;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .home-text {
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 18px;
 }
 
 .home-text img {
@@ -176,45 +179,47 @@ body {
 }
 
 .front-page {
-  height: 85vh;
+  height: 50vh;
 }
 
 .home-subtitle {
   text-align: center;
-  font-family: 'Russo One', sans-serif;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+  text-decoration: none;
 }
 
 #home-title {
   text-align: center;
   text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-  margin-top: 15vh;
-  margin-bottom: 12vh;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
   font-size: 4em;
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-shadow: 1px 2px lightgrey;
 }
 
 .login_register_button a {
-  color: black !important;
-  font-family: 'Russo One', sans-serif;
+  color: white !important;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
 .login_register_button {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fae7ad), color-stop(1, #dba70d));
-  background:-moz-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
-  background:-webkit-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
-  background:-o-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
-  background:-ms-linear-gradient(top, #fae7ad 5%, #dba70d 100%);
-  background:linear-gradient(to bottom, #fae7ad 5%, #dba70d 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fae7ad', endColorstr='#dba70d',GradientType=0);
-  background-color:#fae7ad;
-  color: black;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #42b8fc), color-stop(1, #43609c));
+  background:-moz-linear-gradient(top, #42b8fc 5%, #43609c 100%);
+  background:-webkit-linear-gradient(top, #42b8fc 5%, #43609c 100%);
+  background:-o-linear-gradient(top, #42b8fc 5%, #43609c 100%);
+  background:-ms-linear-gradient(top, #42b8fc 5%, #43609c 100%);
+  background:linear-gradient(to bottom, #42b8fc 5%, #43609c 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#42b8fc', endColorstr='#43609c',GradientType=0);
+  background-color:#43609c;
+  color: white;
   -moz-border-radius:6px;
   -webkit-border-radius:6px;
   border-radius:6px;
-  border:1px solid #ebce75;
+  border:1px solid #43609c;
   display:inline-block;
   cursor:pointer;
   font-family:Arial;
@@ -223,7 +228,8 @@ body {
   width: 80%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
-  margin-top: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   margin-left: 10%;
   text-decoration:none;
   text-shadow: 0px 0 lightgray, 0 1px lightgray, 0px 0 lightgray, 0 0px lightgray;
@@ -277,6 +283,14 @@ body {
   margin: auto;
   text-align: center;
 }
+.home-cta{
+  margin-top:20px;
+  margin-bottom:10px;
+}
 .bio-input {
   color: #000000;
+}
+.cl-b{clear:both}
+.carousel-inner div div span{
+color:#4cae4c;
 }
