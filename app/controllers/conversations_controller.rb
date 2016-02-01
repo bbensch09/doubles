@@ -1,17 +1,11 @@
-# matched_user_id\"=>\"2\", \"author\"=>\"31\", \"text\"=>\"test!\", \"controller\"=>\"conversations\", \"action\"=>\"create\", \"id\"=>\"3\"}"
-
 include MatchesHelper
 
 class ConversationsController < ApplicationController
-  before_action do
-    redirect_to '/login' unless current_user
-  end
-  
+  before_action :login_user
+
   def create
     Message.create(match_id: params[:id], message_text: params[:text], user_id: params[:author], sender_name: User.find(params[:author]).first_name)
-    p "+++++++++++++++++"
-    p presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
-    p "+++++++++++++++++"
+    presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
     render :json => presenter
   end
 
