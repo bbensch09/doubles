@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+$light: #C2C2C2;
+$medium: #808080;
+$dark: #383838;
+$green-highlight: #11AD09;
+
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -22,6 +29,8 @@
 
 
 .container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
   font-family: 'Open Sans', sans-serif;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
