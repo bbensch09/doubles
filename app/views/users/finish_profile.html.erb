@@ -5,7 +5,7 @@
 <h2 class="text-center">Modify your profile </h2>
 <!-- Total Visits:  %= current_user.sign_in_count %> -->
 <% else %>
-<h2>Complete your profile </h2>
+<h2>First finish your profile </h2>
 <% end %>
 
 <%= form_for(@user, url: '/finish_profile', html: { method: :put }) do |f| %>
@@ -19,8 +19,8 @@
     <%= f.text_area :bio, size: "25x5", :class => "bio-input", autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="actions center">
+    <%= f.submit "Start Swiping", :class=>"btn btn-success btn-lg" %>
   </div>
 
 </div>
