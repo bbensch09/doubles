@@ -12,3 +12,11 @@
 <h3 class="text-center">Select a new activity</h3>
 
 <%= render partial: 'new', locals: {activity_blurb: @activity_blurb} %>
+
+<% if @activity_blurbs.length > 0 %>
+
+  <div class="center">
+  <%= link_to "Find Matches", "/users/#{current_user.id}/feed", :class=>"btn btn-success btn-lg" %>
+  </div>
+
+<% end %>
