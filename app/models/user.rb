@@ -39,7 +39,7 @@ def update_geolocation
       self.update_attributes(:latitude => lat, :longitude => lng)
   else #set location to DevBootcamp in SF
     lat = "37.4705"
-    lng = "122.2349"
+    lng = "-122.2349"
     self.update_attributes(:latitude => lat, :longitude => lng)
   end
 end
