@@ -1,11 +1,9 @@
-<!-- <div class="show-card-container container-fluid"> -->
-  <img class="show-card-picture" src="<%=user.profile_picture_url%>" height="50%">
-  <h1 class="card-name center"><%= user.first_name %></h1>
-  <p><%= user.bio%></p>
-  <% user.activities.each do |activity| %>
-  <button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
-  <% end %>
-<!-- </div> -->
+<img src="<%=user.profile_picture_url%>" height="40%">
+<h1><%= user.first_name %></h1>
+<p><%= user.bio %></p>
+<% user.activities.each do |activity| %>
+<button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
+<% end %>
 
 <!-- <a href="/swipe_yes/<%=user.id%>">
 <div class="card-swipe-yes">

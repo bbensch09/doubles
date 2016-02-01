@@ -10,19 +10,19 @@ li {
     width: 100%;
     height: 100%;
     border: 10px;
-    margin: 100px auto 0;
+    margin: 10% auto 0;
     position: relative;
 }
 
 #viewport .stack {
     width: 100%;
-    height: 90%;
+    height: 40em;
     border-radius: 10px;
 }
 
 #viewport li {
     width: 100%;
-    height: 400px;
+    height: 100%;
     list-style: none;
     background: #fff;
     border-radius: 5px;
@@ -33,6 +33,7 @@ li {
     text-align: center;
     border: 10px solid #ECECEC;
     box-sizing: border-box;
+    padding: 10px;
     cursor: default;
 }
 
