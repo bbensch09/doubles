@@ -51,8 +51,6 @@ Rails.application.routes.draw do
   # HACKY_SHIT
   # temp routes to test swiping
   get 'activities' => 'activity_blurbs#index'
-  get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
-  get '/swipe_no/:user_id' => 'swipes#swipe_no'
 
   # temp route to test tutorial slider
   devise_scope :user do

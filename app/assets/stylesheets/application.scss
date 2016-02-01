@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 $light: #C2C2C2;
 $medium: #808080;
 $dark: #383838;
@@ -26,7 +29,32 @@ $green-highlight: #11AD09;
           box-sizing: border-box;
 }
 
+.nav-button {
+  background-color: #383838;
+  border: none !important;
+}
 
+.fa {
+  color: white;
+  font-size: 2em !important;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+.fa-hand-pointer-o {
+  padding-right: 10%;
+}
+
+.fa-user {
+  padding-left: 15%;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 .container-fluid {
   padding-right: 0px !important;
@@ -67,25 +95,9 @@ $green-highlight: #11AD09;
   color: white;
 }
 
-.handshake-button {
-  border: 1px solid black !important;
-  color: black;
-  margin-left: 2px;
-  margin-right: 2px;
-  width: 40px;
-  height: 35px;
-  background-color: white;
-}
 
-.glyphicon {
-  top: 4px !important;
-  font-size: 2em;
-}
 
-.glyphicon-log-out, .glyphicon-chevron-down {
-  top: 2px !important;
-  font-size: 1.2em;
-}
+
 
 body {
   background: url(/assets/field_background.jpg) no-repeat center center fixed;
@@ -95,28 +107,8 @@ body {
   background-size: cover;
 }
 
-.page-head {
-  text-align: center;
-  text-decoration: underline;
-  font-family: 'Open Sans', sans-serif;
-}
 
-.signed-in-greeting {
-  padding-top: 2px;
-  padding-bottom: 1.4vh;
-  border: 2px solid black;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #0E3C5D;
-}
 
-.greeting {
-  font-size: 1.25em;
-  margin-left: -2em;
-  display: inline-block;
-  margin-top: 4px;
-  color: white;
-}
 
 .activity-row {
   padding-bottom: 3px;
@@ -225,8 +217,8 @@ body {
   width: 50px;
   height: 50px;
   position: fixed;
-  bottom: 50vh;
-  right: 0;
+  bottom: 5vh;
+  right: 10vw;
   background-color: green !important;
   border: 2px dashed black;
 }
@@ -235,8 +227,8 @@ body {
   width: 50px;
   height: 50px;
   position: fixed;
-  bottom: 50vh;
-  left: 0;
+  bottom: 5vh;
+  left: 10vw;
   background-color: red !important;
   border: 2px dashed black;
 }
