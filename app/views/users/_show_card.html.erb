@@ -1,13 +1,13 @@
-<div class="show-card-container container-fluid">
-  <img class="show-card-picture" src="<%=user.profile_picture_url%>">
-  <h1 class="card-name center"><%= user.first_name %></h1>
-  <p><%= user.bio%></p>
-  <% user.activities.each do |activity| %>
-  <button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
-  <% end %>
-</div>
+<img src="<%=user.profile_picture_url%>">
+<h1><%= user.first_name %></h1>
+<p><%= user.bio %></p>
+<% user.activities.each do |activity| %>
+<button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
+<% end %>
+<div class="like"></div>
+<div class="dislike"></div>
 
-<a href="/swipe_yes/<%=user.id%>">
+<!-- <a href="/swipe_yes/<%=user.id%>">
 <div class="card-swipe-yes">
 </div>
 </a>
@@ -15,4 +15,4 @@
 <a href="/swipe_no/<%=user.id%>">
 <div class="card-swipe-no">
 </div>
-</a>
+</a> -->
