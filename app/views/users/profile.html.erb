@@ -1,3 +1,4 @@
+<div>
 <div class="center">
 <%= link_to "Find Matches", "/users/#{current_user.id}/feed", :class=>"btn btn-success btn-lg" %>
 </div>
@@ -13,6 +14,7 @@
     <% end %>
   </h5>
   <p><u>About me</u>: <%= @user.bio %></p>
+</div>
 <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> Logout"), destroy_user_session_path, :method => :delete, :class=>"btn btn-danger btn-sm" %>
 <%= link_to "Edit Activities", activity_blurbs_path, :class=>"btn btn-primary btn-sm" %>
 
