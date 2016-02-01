@@ -21,12 +21,9 @@
       <%= link_to raw("<span class='glyphicon glyphicon-resize-horizontal'></span>"), "/feed", :class=>"btn handshake-button btn-secondary pull-left btn-xs" %>
     </div>
     <% else %>
-      <button type="button" class="login_register_button">
-        <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %>
-      </button>
     <% end %>
   </nav>
-<div class="container-fluid">
+<div class="">
 <%= yield %>
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
