@@ -148,7 +148,7 @@ nil_thacker = User.create!({
                   location: "San Francisco",
                   latitude: 37.7576792,
                   longitude: -122.5078123,
-                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hprofile-xpa1/v/t1.0-1/c22.1.185.185/s160x160/250208_10150270016197149_6234017_n.jpg",
+                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hprofile-xpa1/v/t1.0-1/c22.1.185.185/250208_10150270016197149_6234017_n.jpg?oh=470ad2ef3ab3388683e2648e98f0f23f&oe=57432F14",
                   password: 'password'
                     })
 
@@ -172,7 +172,7 @@ trevor = User.create!({
                   location: "Mountain View",
                   latitude: 37.7576792,
                   longitude: -122.5078123,
-                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hprofile-xpa1/v/t1.0-1/p160x160/11429970_10152944610704562_3007318549682082835_n.jpg",
+                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11429970_10152944610704562_3007318549682082835_n.jpg?oh=deccbf78e11984599490132a727d8ced&oe=576F4914",
                   password: 'password'
                     })
 
@@ -196,7 +196,7 @@ abe = User.create!({
                   location: "Diamond Heights",
                   latitude: 37.7576792,
                   longitude: -122.5078123,
-                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hprofile-xlf1/v/t1.0-1/p160x160/12509300_10156395860765273_5982743154224695433_n.jpg",
+                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hphotos-xlf1/v/t1.0-9/12509300_10156395860765273_5982743154224695433_n.jpg?oh=09f8888d193e1b85c332ff163aee8694&oe=572462F7",
                   password: 'password'
                     })
 
@@ -220,7 +220,7 @@ greg = User.create!({
                   location: "San Francisco",
                   latitude: 37.7576792,
                   longitude: -122.5078123,
-                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hprofile-xat1/v/t1.0-1/p160x160/12063360_10106705349412900_4054142801918383241_n.jpg",
+                  profile_picture_url: "https://scontent-lga3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/12063360_10106705349412900_4054142801918383241_n.jpg?oh=624af745e985d10e7eba82a14ce7c050&oe=574413B1",
                   password: 'password'
                     })
 
