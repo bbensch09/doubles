@@ -45,12 +45,6 @@
   color: black;
 }
 
-.container-fluid .text-div {
-  background-color: rgba(49,51,51,0.8);
-  padding: 4px;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
 
 .icon {
   height: 30px;
