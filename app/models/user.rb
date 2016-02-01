@@ -32,10 +32,16 @@ end
 # this method just for testing purposes. plan to move to background worker
 def update_geolocation
   api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
-  response = api_response.parsed_response
-  lat = response["location"]["lat"]
-  lng = response["location"]["lng"]
-  self.update_attributes(:latitude => lat, :longitude => lng)
+      response = api_response.parsed_response
+  if response.empty?
+      lat = response["location"]["lat"]
+      lng = response["location"]["lng"]
+      self.update_attributes(:latitude => lat, :longitude => lng)
+  else #set location to DevBootcamp in SF
+    lat = "37.4705"
+    lng = "122.2349"
+    self.update_attributes(:latitude => lat, :longitude => lng)
+  end
 end
 
 def matches
