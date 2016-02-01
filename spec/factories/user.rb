@@ -1,10 +1,10 @@
 FactoryGirl.define do
-  factory :first_user, :class => 'User' do
-    first_name 'John'
+  factory :first_login_user, :class => 'User' do
+    first_name 'Michelle'
     last_name 'Doe'
     age 30
-    gender "male"
-    location "Atlanta"
+    gender "female"
+    location "NYC"
     latitude 37.7841
     longitude -122.3957
     bio "Young professional looking for some competition"
@@ -12,7 +12,9 @@ FactoryGirl.define do
     email Faker::Internet.email
     password 'password'
     password_confirmation 'password'
+    sign_in_count 1
   end
+
   factory :user, :class => 'User' do
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
@@ -23,5 +25,7 @@ FactoryGirl.define do
     email Faker::Internet.email
     password 'password'
     password_confirmation 'password'
+    confirmed_at = Time.now
+    sign_in_count 2
   end
 end
