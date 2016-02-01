@@ -38,8 +38,8 @@
 }
 
 .icon {
-  height: 15px;
-  width: 15px;
+  height: 30px;
+  width: 30px;
 }
 
 .handshake-button {
@@ -47,12 +47,19 @@
   color: black;
   margin-left: 2px;
   margin-right: 2px;
-  width: 35px;
+  width: 40px;
+  height: 35px;
   background-color: white;
 }
 
 .glyphicon {
+  top: 4px !important;
+  font-size: 2em;
+}
+
+.glyphicon-log-out, .glyphicon-chevron-down {
   top: 2px !important;
+  font-size: 1.2em;
 }
 
 body {
@@ -71,15 +78,29 @@ body {
 
 .signed-in-greeting {
   padding-top: 2px;
-  padding-bottom: 4px;
+  padding-bottom: 1.4vh;
   border: 2px solid black;
   text-align: center;
   font-family: 'Russo One', sans-serif;
+  background-color: #0E3C5D;
 }
 
 .greeting {
-  font-size: 1.1em;
+  font-size: 1.25em;
   margin-left: -2em;
+  display: inline-block;
+  margin-top: 4px;
+  color: white;
+}
+
+.activity-row {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-bottom: 1px solid grey;
+}
+
+.activity-row2 {
+  padding-top: 3px;
 }
 
 .match-row {
@@ -88,7 +109,7 @@ body {
 }
 
 .disable-button {
-  opacity: 1 !important;
+  opacity: .8 !important;
   border: 1px solid darkgreen !important;
 }
 
@@ -108,15 +129,14 @@ body {
 
 .down-arrow {
   font-size: 2em;
-  margin-top: 43vh;
-  color: #402D19;
+  margin-top: 30vh;
+  color: #dba70d;
   text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
 .home-text {
   font-family: 'Russo One', sans-serif;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .home-text img {
