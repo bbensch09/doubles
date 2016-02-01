@@ -26,7 +26,18 @@ class SwipesController < ApplicationController
       # @available_users = current_user.narrow_users
 
       # send just first unswiped user near you with shared act...
-      @next_available_user = current_user.narrow_users.first
+      next_available_user = current_user.narrow_users.first
+      json = {
+        :first_name => next_available_user.first_name,
+        :bio => next_available_user.bio,
+        :activities => next_available_user.activities,
+        :id => next_available_user.id,
+        :profile_picture_url => next_available_user.profile_picture_url
+        }.to_json
+      p "+" * 40
+      p json
+      p "+" * 40
+      @next_five_users = current_user.narrow_users
     end
 
     def swipe_yes
