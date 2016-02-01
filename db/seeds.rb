@@ -17,7 +17,7 @@ activity_names = [
 "billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 activity_names.each do |activity|
-  activities << Activity.create(name: activity)
+  activities << Activity.create!(name: activity)
 end
 
 #Create Tom
@@ -45,10 +45,10 @@ end
 
 # Create other users
 
-pool_peter = User.create!({
-    first_name: "Peter",
+billiards_bill = User.create!({
+    first_name: "Bill",
     last_name: "Poolshark",
-    email: "pool_peter@example.com",
+    email: "billiards_bill@example.com",
     gender: "male",
     age: rand(18..40),
     bio: Faker::Hipster.sentences(4).join(' '),
@@ -88,8 +88,8 @@ bowling_bernie = User.create!({
   })
 
 cycling_cat = User.create!({
-    first_name: "Cat",
-    last_name: "Cycletonr",
+    first_name: "Catwheel",
+    last_name: "Cycleton",
     email: "cycling_cat@example.com",
     gender: "male",
     age: rand(18..40),
@@ -97,7 +97,7 @@ cycling_cat = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://prexamples.com/wp-content/uploads/2012/12/foxy-bingo-hair-dye-peter-wright.jpg",
+    profile_picture_url: "http://img2.timeinc.net/ew/dynamic/imgs/060126/145251__kingpin_l.jpg",
     password: 'password'
   })
 
@@ -155,20 +155,6 @@ golf_girl = User.create!({
     longitude: -122.5078123,
     profile_picture_url: "https://www.threeriversparks.org/~/media/Parks%20and%20Trails/Hyland/Hyland%20Disc%20Golf%20Course/08022005_disc1.ashx",
     password: 'password'
-
-
-golf_girl = User.create!({
-    first_name: "Francis",
-    last_name: "Fairway",
-    email: "golf_girl@example.com",
-    gender: "female",
-    age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
-    location: "San Francisco",
-    latitude: 37.7576792,
-    longitude: -122.5078123,
-    profile_picture_url: "http://golfgurls.com/wp-content/uploads/2010/02/young_golfer_visor-e1266850768252.jpg",
-    password: 'password'
   })
 
 handball_hannah = User.create!({
@@ -199,10 +185,10 @@ hiking_harry = User.create!({
     password: 'password'
   })
 
-ping = User.create!({
+ping_pong = User.create!({
     first_name: "Ping",
     last_name: "Pong",
-    email: "ping@example.com",
+    email: "ping_pong@example.com",
     gender: "male",
     age: rand(18..40),
     bio: Faker::Hipster.sentences(4).join(' '),
@@ -367,24 +353,27 @@ yogie = User.create!({
     password: 'password'
   })
 
-(1..22).to_a.each do |activity_id|
+activity_ids = (1..22).to_a
+ activity_ids.each do |activity_id|
   activity_name = Activity.find(activity_id).name
   ActivityBlurb.create!({
     text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
     activity_id: activity_id,
     user_id: activity_id
     })
-  other_activities = (1..22).to_a - activity_id
+  current_activity = []
+  current_activity.push(activity_id)
+  other_activity_ids = activity_ids - current_activity
   ActivityBlurb.create!({
     text: "I'm just a beginner looking to learn more.",
-    activity_id: (1..22).to_a.sample,
-    user_id: user.id
+    activity_id: other_activity_ids.sample,
+    user_id: activity_id
     })
 end
 
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
-  seed_users = User.where("id <= 30")
+  seed_users = User.where("id <= 22")
   you = User.last
   seed_users.each do |user|
       Swipe.create!({
