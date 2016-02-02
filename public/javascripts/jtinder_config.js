@@ -1,6 +1,27 @@
+var totalSwipes = 0
+console.log(totalSwipes);
+
+function checkForMore() {
+  if (totalSwipes == 5) {
+    $.ajax({
+      url: '/swipes/more',
+      type: 'GET',
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data) {
+        console.log(data);
+      },
+    });
+    totalSwipes = 0;
+  }
+};
+
 $("#cards").jTinder({
+
 	// dislike callback
   onDislike: function (item) {
+    totalSwipes++;
     // set the status text
     $.ajax({
       url: '/swipes',
@@ -13,10 +34,11 @@ $("#cards").jTinder({
         console.log(data);
       },
     });
-
-    },
+    checkForMore();
+  },
 	// like callback
   onLike: function (item) {
+    totalSwipes++;
     $.ajax({
       url: '/swipes',
       type: 'POST',
@@ -29,7 +51,9 @@ $("#cards").jTinder({
         console.log(data);
       },
     });
-    },
+    checkForMore();
+  },
+
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
 	threshold: 1,

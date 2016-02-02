@@ -54,7 +54,7 @@ class SwipesController < ApplicationController
     def swipe_no
       current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: false)
       if request.xhr?
-        render :text => "no"
+        head :ok, content_type: "text/html"
       else
         redirect_to "/feed"
       end
