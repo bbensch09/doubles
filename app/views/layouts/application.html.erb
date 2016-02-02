@@ -19,7 +19,7 @@
     <% if current_user %>
       <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></button>
       <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></button>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
+      <button id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
     </button>
     <% else %>
     <% end %>
