@@ -1,31 +1,13 @@
-<<<<<<< HEAD
+
 <h1><%=flash[:modal_to_show]%></h1>
 
-<div>
-<div class="center">
-<%= link_to "Start Swiping", "/feed", :class=>"btn btn-success btn-lg" %>
-</div>
-  <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-  <img class="home-pic" src=<%= "#{@user.profile_picture_url}" %>/>
-  <h5><u>Email</u>: <%= @user.email %></h5>
-  <h4><u>Age</u>: <%= @user.age %></h4>
-  <h5>
-    <% if @user.location != "unknown" %>
-    <u>Location</u>: <%= @user.location %>
-    <% else %>
-    Click the Edit profile button below to edit your full profile!
-    <% end %>
-  </h5>
-  <p><u>About me</u>: <%= @user.bio %></p>
-</div>
-<div class="row footer">
-=======
+
 
 <%= render 'profile_pic_name_and_age' %>
 <%= render 'profile_bio' %>
 <%= render 'profile_sports' %>
 <div class="footer">
->>>>>>> 2260f31dab1da9facc5f1c928149e42e36db7ace
+
 <button class="col-xs-6"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></button>
 <button class="col-xs-6"><%= link_to "Edit Profile", '/edit_profile' %></button>
 </div>
