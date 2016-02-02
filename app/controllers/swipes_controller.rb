@@ -22,10 +22,12 @@ class SwipesController < ApplicationController
       if current_user.bio.nil?
         redirect_to '/finish_profile'
       elsif
-        unless session[:walkthrough_status] || current_user.swipes.count > 0
+        unless session[:swipes_explanation] || (current_user.swipes.count > 0)
           # redirect_to '/walkthrough'
           flash[:show_modal] = true
           flash[:modal_to_show]= 'users/swipes_explanation'
+          session[:swipes_explanation] = true;
+          @next_five_users = current_user.narrow_users[0..4]
         end
         # send just first unswiped user near you with shared act...
       else
