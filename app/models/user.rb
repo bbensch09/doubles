@@ -28,6 +28,14 @@ def everyone_swipes_you
   return "everyone swiped you!"
 end
 
+# HACKY_SHIT cuz nil is tired of manually doing things
+def reset_swipes
+  self.swipes.each {|swipe| swipe.destroy}
+  p "swipes deleted"
+  self.everyone_swipes_you
+  p "errbody swiped you"
+end
+
 
 def update_lat_lng
   if lat_lng_by_geolocation
