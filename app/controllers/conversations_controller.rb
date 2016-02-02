@@ -25,8 +25,21 @@ class ConversationsController < ApplicationController
     match = Match.find( options.fetch(:match_id) )
     sender = User.find( options.fetch(:sender_id) )
     matched_user = get_matched_user(match, sender)
+    raw_messages = Message.where(match_id: match.id).order('created_at ASC')
+    formatted_messages = []
+    raw_messages.each do |message|
+      formatted_messages << {
+        id: message.id,
+        message_text: message.message_text,
+        sender_name: message.sender_name,
+        created_at: message.created_at,
+        css_class: current_user.id == message.user_id ? "message-right" : "message-left",
+        css_bubble: current_user.id == message.user_id ? "bubble2" : "bubble3"
+      }
+    end
+
     return {
-          :messages => Message.where(match_id: match.id).order('created_at ASC'),
+          :messages => formatted_messages,
           :form => {
             :action => "/matches/#{match.id}/chat",
             :csrf_param => request_forgery_protection_token,
