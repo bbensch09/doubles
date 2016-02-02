@@ -8,6 +8,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
@@ -25,9 +26,52 @@
       </button>
     <% end %>
   </div>
+<% if flash[:success] %>
+<div class="alert alert-success" role="alert">
+  <%= flash[:success] %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<% end %>
+<% if flash[:info] %>
+<div class="alert alert-info" role="alert">
+  <%= flash[:info] %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<% end %>
+<% if flash[:warning] %>
+<div class="alert alert-warning" role="alert">
+  <%= flash[:warning] %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<% end %>
+<% if flash[:danger] %>
+<div class="alert alert-danger" role="alert">
+  <%= flash[:danger] %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<% end %>
 <div class="container-fluid">
 <%= yield %>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<% if flash[:show_modal] %>
+<!-- Modal -->
+<style type="text/css">
+.modal-content {
+  width: 95vw;
+}
+</style>
+<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="myModal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= render flash[:modal_to_show] %>
+    </div>
+  </div>
+</div>
+<script>
+$('#myModal').modal('show');
+</script>
+<% flash.discard(:show_modal) %>
+<% flash.discard(:modal_to_show) %>
+<% end %>
 </body>
 </html>
