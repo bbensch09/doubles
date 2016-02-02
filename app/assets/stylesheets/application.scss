@@ -25,8 +25,9 @@ $green-highlight: #11AD09;
 
 * {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 .nav-button {
@@ -51,59 +52,48 @@ $green-highlight: #11AD09;
 
 .footer {
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
+  width: 100%;
+}
+
+.footer button {
+  background-color: #383838;
+  color: white;
+  border-top: 2px solid #808080;
+  border-bottom: none !important;
+  border-right: 1px solid #808080;
+  border-left: 1px solid #808080;
+}
+
+.footer button a {
+  color: white;
+  font-size:1.3em;
 }
 
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
 }
 
-.container-fluid .btn {
-  text-shadow: none !important;
+.profile-pic {
+  height: 40vh;
+  width: 100vw;
+  padding: 10px;
 }
 
-.container-fluid a {
-  color: black;
-  text-shadow: -1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray;
+.profile-card {
+  padding-left: 5px;
 }
 
-.container-fluid .btn-success {
-  color: black;
+.profile-text {
+  margin-bottom: 0 !important;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.container-fluid input {
-  font-family: sans-serif;
-  text-shadow: none !important;
-  color: black;
+.name-age {
+  font-size: 2em;
 }
-
-.container-fluid .text-div {
-  background-color: rgba(49,51,51,0.8);
-  padding: 4px;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.icon {
-  height: 30px;
-  width: 30px;
-}
-
-.group-btn .btn {
-  margin-right: 1px;
-  margin-left: 1px;
-  border: 1px solid black;
-  color: white;
-}
-
-
-
-
 
 body {
   background: url(/assets/field_background.jpg) no-repeat center center fixed;
@@ -112,9 +102,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
-
-
 
 .activity-row {
   padding-bottom: 3px;
@@ -131,109 +118,18 @@ body {
   border-bottom: 1px solid grey;
 }
 
-.disable-button {
-  opacity: .8 !important;
-  border: 1px solid darkgreen !important;
-}
 
-.visible-text {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
 
-.visible-text label {
-  text-decoration: underline;
-}
 
 .messages {
   text-align: right;
   display: block;
 }
 
-.down-arrow {
-  position: fixed;
-  bottom: 0vh;
-  left: 45%;
-  font-size: 2em;
-  color: #dba70d;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
 
-.home-text {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 18px;
-}
-
-.home-text img {
-  margin-right: 4px;
-  margin-left: 4px;
-  margin-bottom: 10vh;
-}
-
-.home-pic {
-  height: 25vh;
-  width: 43vw;
-  border-radius: 15px;
-}
 
 .front-page {
   height: 50vh;
-}
-
-.home-subtitle {
-  text-align: center;
-  font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-  text-decoration: none;
-}
-
-#home-title {
-  text-align: center;
-  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
-  margin-top: 5vh;
-  margin-bottom: 2vh;
-  font-size: 4em;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 2px lightgrey;
-}
-
-.login_register_button a {
-  color: white !important;
-  font-family: 'Open Sans', sans-serif;
-}
-
-
-.login_register_button {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #42b8fc), color-stop(1, #43609c));
-  background:-moz-linear-gradient(top, #42b8fc 5%, #43609c 100%);
-  background:-webkit-linear-gradient(top, #42b8fc 5%, #43609c 100%);
-  background:-o-linear-gradient(top, #42b8fc 5%, #43609c 100%);
-  background:-ms-linear-gradient(top, #42b8fc 5%, #43609c 100%);
-  background:linear-gradient(to bottom, #42b8fc 5%, #43609c 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#42b8fc', endColorstr='#43609c',GradientType=0);
-  background-color:#43609c;
-  color: white;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #43609c;
-  display:inline-block;
-  cursor:pointer;
-  font-family:Arial;
-  font-size:16px;
-  font-weight:bold;
-  width: 80%;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 10%;
-  text-decoration:none;
-  text-shadow: 0px 0 lightgray, 0 1px lightgray, 0px 0 lightgray, 0 0px lightgray;
 }
 
 .hide {
