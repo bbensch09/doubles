@@ -46,7 +46,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       sign_in(user)
       @activity_blub = ActivityBlurb.new
-      redirect_to "/pick-sports"
+      redirect_to "/profile"
     end
 
   end
