@@ -95,6 +95,21 @@ $green-highlight: #11AD09;
   font-size: 2em;
 }
 
+.sport-button-container {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.sport-button {
+  border: 2px solid yellow;
+  background-color: yellow;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
 body {
   background: url(/assets/field_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;

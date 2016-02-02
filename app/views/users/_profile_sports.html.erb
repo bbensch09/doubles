@@ -1,0 +1,5 @@
+<div class="sport-button-container">
+<% @user.activities.each do |activity| %>
+  <div class="sport-button"><%= activity.name %></div>
+  <% end %>
+</div>
