@@ -20,6 +20,7 @@ class WelcomeController < ApplicationController
         redirect_to "/feed"
       end
     # not registered
+
     else
       render 'index'
     end
