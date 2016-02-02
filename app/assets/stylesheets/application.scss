@@ -81,6 +81,28 @@ $green-highlight: #11AD09;
   padding: 10px;
 }
 
+.img-circle {
+  height: 80px;
+  width: 80px;
+}
+
+.match-name {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.btn-match {
+  float: right;
+  margin-top: 6vh;
+}
+
+.match-row {
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 5px;
+  border-bottom: 1px solid #808080;
+}
+
 .profile-card {
   padding-left: 5px;
 }
@@ -148,24 +170,6 @@ body {
   padding-top: 3px;
 }
 
-.match-row {
-  padding-bottom: 12px;
-  border-bottom: 1px solid grey;
-}
-
-
-
-
-.messages {
-  text-align: right;
-  display: block;
-}
-
-
-
-.front-page {
-  height: 50vh;
-}
 
 .hide {
   display:none;
@@ -225,4 +229,21 @@ body {
 .cl-b{clear:both}
 .carousel-inner div div span{
 color:#4cae4c;
+}
+
+
+
+
+.bubble {
+  position: relative;
+  top: 152.5px;
+  width: 90px;
+  height: 45px;
+  background: #fff;
+  border: #bbb solid 0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 9px;
+  border-width: 3px;
+  margin: 0 auto;
 }
