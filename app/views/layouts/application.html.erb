@@ -14,7 +14,6 @@
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-  <div class="row">
     <!-- INSERT NAV ICON / OPTIONS HERE -->
     <% if current_user %>
       <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></button>
@@ -23,7 +22,6 @@
     </button>
     <% else %>
     <% end %>
-  </div>
 <% if flash[:success] %>
 <div class="alert alert-success" role="alert">
   <%= flash[:success] %>
