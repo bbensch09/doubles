@@ -31,7 +31,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         user.location = "unknown"
       end
-
+# binding.pry
       p user.save!
       @user = user
       p "---------USER CREATED?"
