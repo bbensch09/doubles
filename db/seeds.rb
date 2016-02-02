@@ -368,6 +368,7 @@ def everyone_swipes_you
   end
 end
 
+=begin
 #create Brian
 brian = User.create!({
                   first_name: "Brian",
@@ -520,3 +521,4 @@ end
     swipee_id: 23
     })
 end
+=end
