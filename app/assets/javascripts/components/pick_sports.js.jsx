@@ -47,13 +47,12 @@ var PickSports = React.createClass({
             function(data) {
         console.log(data);
         console.log("activity successfully updated via react");
+        location.reload();
         this.backToProfile
       });
   },
   backToProfile: function() {
     $('#omniModal').modal('hide')
-    location.reload();
-
   }
 })
 
