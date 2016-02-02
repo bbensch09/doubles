@@ -19,10 +19,10 @@ class ActivityBlurbsController < ApplicationController
       @user = current_user
       @activity_blurb = ActivityBlurb.create(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
 
-      # if request.xhr?
-      #   flash.discard(:show_modal)
-      #   render json: @activity_blurb
-      # else
+      if request.xhr?
+        flash.discard(:show_modal)
+        render json: @activity_blurb
+      else
         if @activity_blurb.save
           redirect_to '/profile'
         else

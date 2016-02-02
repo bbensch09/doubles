@@ -46,11 +46,14 @@ var PickSports = React.createClass({
             {activity_id: chosenSport.id, text: skill_level},
             function(data) {
         console.log(data);
+        console.log("activity successfully updated via react");
         this.backToProfile
       });
   },
   backToProfile: function() {
     $('#omniModal').modal('hide')
+    location.reload();
+
   }
 })
 
@@ -121,6 +124,3 @@ var SkillLevel = React.createClass({
     this.props.saveSport(skill_level)
   }
 });
-
-
-
