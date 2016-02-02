@@ -12,12 +12,13 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+
     unless @user.bio
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/add_bio'
     end
 
-    unless @user.activity_blurbs
+    unless @user.activity_blurbs.length > 1
       already_chosen_activities = @user.activities
       @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
