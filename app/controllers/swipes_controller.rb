@@ -14,12 +14,13 @@ class SwipesController < ApplicationController
     def feed
       @next_five_users = current_user.narrow_users[0..4] if current_user
       if request.xhr?
-        cards = render :parial => 'swipes/generate_cards', :locals => {:next_five_users => @next_five_users }
+        p "\n\n\n\n\nAJAX\n\n\n\n\n"
+        send back all the rendered cards and their count to the ajax call as json
+        {
+        num_cards: @next_five_users.length,
+        cards: (render :parial => 'swipes/generate_cards', :locals => {:next_five_users => @next_five_users })
+        }.to_json
 
-        render :json => {
-          num_cards: @next_five_users.length,
-          cards: cards
-          }
       else
         if current_user.bio.nil?
           redirect_to '/finish_profile'

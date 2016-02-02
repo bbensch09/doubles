@@ -11,7 +11,7 @@ function checkForMore() {
         console.log(data);
       },
       error: function(data) {
-        console.log(data);
+        console.error(data);
       },
     });
     totalSwipes = 0;
