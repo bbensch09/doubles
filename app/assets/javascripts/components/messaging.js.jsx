@@ -53,7 +53,7 @@ var MessageBox = React.createClass({
 var MessageList = React.createClass({
   render: function () {
     var messageNodes = this.props.messages.map(function ( message ) {
-      return <Message cssClass={ message.css_class } author={ message.sender_name } text={ message.message_text } key={ message.id } />
+      return <Message cssBubble={ message.css_bubble } cssClass={ message.css_class } author={ message.sender_name } text={ message.message_text } key={ message.id } />
     });
 
     return (
@@ -107,8 +107,8 @@ var Message = React.createClass({
   render: function () {
     return (
       <div className={ this.props.cssClass }>
-        <h4><u>{ this.props.author } said</u>:</h4>
-        <p>{ this.props.text }</p>
+        <h4 className="chat-author"><u>{ this.props.author } said</u>:</h4>
+        <p className={ this.props.cssBubble }>{ this.props.text }</p>
       </div>
     )
   }
