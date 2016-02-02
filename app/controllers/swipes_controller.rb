@@ -19,17 +19,27 @@ class SwipesController < ApplicationController
       # @available_users = current_user.narrow_users
 
       # send just first unswiped user near you with shared act...
-      if current_user.bio.nil?
-        redirect_to '/finish_profile'
-      elsif
-        unless session[:walkthrough_status] || current_user.swipes.count > 0
-          # redirect_to '/walkthrough'
-          flash[:show_modal] = true
-          flash[:modal_to_show]= 'users/swipes_explanation'
-        end
-        # send just first unswiped user near you with shared act...
-      else
+      if request.xhr?
         @next_five_users = current_user.narrow_users[0..4]
+        cards = render :parial => 'swipes/generate_cards', :locals => {:next_five_users => @next_five_users }
+
+        render :json => {
+          num_cards: @next_five_users.length,
+          cards: cards
+          }
+      else
+        if current_user.bio.nil?
+          redirect_to '/finish_profile'
+        elsif
+          unless session[:walkthrough_status] || current_user.swipes.count > 0
+            # redirect_to '/walkthrough'
+            flash[:show_modal] = true
+            flash[:modal_to_show]= 'users/swipes_explanation'
+          end
+          # send just first unswiped user near you with shared act...
+        else
+          @next_five_users = current_user.narrow_users[0..4]
+        end
       end
     end
 
