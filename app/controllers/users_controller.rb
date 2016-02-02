@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     elsif  @user.bio.nil?
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/add_bio'
-      p "-------modal set--------"
+      p "-------bio modal set--------"
       # render 'profile'
 
     elsif @user.activities.empty?
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       @activity_blurb = ActivityBlurb.new
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/pick_sports'
-      p "-------modal set--------"
+      p "-------activity modal set--------"
     end
 
   end
@@ -45,10 +45,11 @@ class UsersController < ApplicationController
     @user = current_user
     if request.xhr?
       @user.update(bio: params[:bio])
+      current_user.update_lat_lng
       puts 'success!!!!!!!!!!!!!!!!!!'
-      # render json: @user
-      redirect_to '/profile'
+      render json: @user
     elsif @user.update(profile_update_params)
+      current_user.update_lat_lng
       redirect_to '/profile'
     else
       p "could not save updates"
