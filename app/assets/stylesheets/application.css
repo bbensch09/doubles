@@ -105,8 +105,9 @@ a:active {
 }
 
 .sport-button-container {
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 3px;
 }
 
 .sports-beginner {
@@ -162,7 +163,27 @@ body {
   border-bottom: 1px solid grey;
 }
 
+.img-circle {
+  height: 80px;
+  width: 80px;
+}
 
+.match-name {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.btn-match {
+  float: right;
+  margin-top: 6vh;
+}
+
+.match-row {
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 5px;
+  border-bottom: 1px solid #808080;
+}
 
 
 .messages {
@@ -182,41 +203,6 @@ body {
 
 .profile-img {
   height:100px;
-}
-
-/*TEMP STYLING FOR "USERS/_SHOW_CARD" */
-.show-card-container {
-  width: 86%;
-  margin-left: 7%;
-  margin-right: 7%;
-  margin-top: 25px;
-  background-color: white;
-  overflow: auto;
-  padding:10px;
-}
-
-.show-card-picture {
-  width: 270px;
-}
-
-.card-swipe-yes {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  bottom: 50vh;
-  right: 0;
-  background-color: green !important;
-  border: 2px dashed black;
-}
-
-.card-swipe-no {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  bottom: 50vh;
-  left: 0;
-  background-color: red !important;
-  border: 2px dashed black;
 }
 
 /*END OF TEMP STYLING FOR "USERS/_SHOW_CARD"*/
