@@ -2,9 +2,9 @@
 <% @user.activity_blurbs.each do |activity_blurb| %>
   <% if activity_blurb.text == "beginner" %>
     <div class="sports-beginner"><%= activity_blurb.activity.name %></div>
-    <% elsif activity_blurb.text == "intermediate" %>
+  <% elsif activity_blurb.text == "intermediate" %>
     <div class="sports-intermediate"><%= activity_blurb.activity.name %></div>
-    <% else %>
+  <% else %>
     <div class="sports-advanced"><%= activity_blurb.activity.name %></div>
   <% end %>
 <% end %>
