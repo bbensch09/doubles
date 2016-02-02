@@ -50,25 +50,18 @@
 <div class="container-fluid">
 <%= yield %>
 </div>
-<% if flash[:show_modal] %>
 <!-- Modal -->
 <style type="text/css">
 .modal-content {
   width: 95vw;
 }
 </style>
-<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="omniModal" id="omniModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <%= render flash[:modal_to_show] %>
-    </div>
-  </div>
-</div>
-<script>
-$('#omniModal').modal('show');
-</script>
-<% flash.discard(:show_modal) %>
-<% flash.discard(:modal_to_show) %>
-<% end %>
+      <% if flash[:show_modals] %>
+        <% index = 0 %>
+        <% flash[:modals_to_show].each do |modal_route| %>
+          <%= render partial: 'layouts/modal_partial', :locals => {index: index, route: modal_route} %>
+
+        <% end %>
+      <% end %>
 </body>
 </html>

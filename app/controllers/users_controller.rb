@@ -13,19 +13,30 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
 
-    unless @user.bio
-      flash[:show_modal] = true
-      flash[:modal_to_show] = '/users/add_bio'
-    end
-
-    unless @user.activity_blurbs.length > 1
+    unless @user.activity_blurbs.length > 0
       already_chosen_activities = @user.activities
       @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
-      flash[:show_modal] = true
-      flash[:modal_to_show] = '/users/pick_sports'
+      flash[:show_modals] = true
+      # To be refactored
+      if flash[:modals_to_show]
+        flash[:modals_to_show].push('/users/pick_sports')
+      else
+        flash[:modals_to_show] = ['/users/pick_sports']
+      end
     end
 
+    unless @user.bio
+      flash[:show_modals] = true
+      # If there is already something to show, add to the array
+      # Otherwise, just create the array of length = 1
+      # To be refactored
+      if flash[:modals_to_show]
+        flash[:modals_to_show].push('/users/add_bio')
+      else
+      flash[:modals_to_show] = ['/users/add_bio']
+      end
+    end
   end
 
   def edit_profile

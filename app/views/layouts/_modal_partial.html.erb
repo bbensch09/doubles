@@ -1,0 +1,15 @@
+<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="omniModal" id="omniModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <%= render route %>
+    </div>
+  </div>
+</div>
+<script>
+$(".modal").modal('show');
+</script>
+
+<% flash.discard(:show_modals) if :modals_to_show.length < 2 %>
+<% flash.discard(:modals_to_show) if :modals_to_show.length < 2 %>
+</script>
