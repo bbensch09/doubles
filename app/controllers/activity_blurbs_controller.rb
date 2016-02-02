@@ -11,6 +11,7 @@ class ActivityBlurbsController < ApplicationController
       already_chosen_activities = @user.activities
       @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
+
       render '/users/pick-sports'
     end
 
@@ -19,6 +20,7 @@ class ActivityBlurbsController < ApplicationController
       @activity_blurb = ActivityBlurb.create(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
 
       if request.xhr?
+        flash.discard(:show_modal)
         render json: @activity_blurb
       else
         if @activity_blurb.save
