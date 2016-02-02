@@ -20,9 +20,6 @@
       <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
     </button>
     <% else %>
-      <button type="button" class="login_register_button">
-        <li><%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-      </button>
     <% end %>
   </div>
 <div class="container-fluid">
