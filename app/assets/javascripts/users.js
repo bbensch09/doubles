@@ -13,7 +13,9 @@ $(document).on('submit', '#update_bio',function(e) {
 
   request.done(function(data) {
       console.log(data);
+      console.log("bio successfully updated via ajax");
       $('#omniModal').modal('hide')
+      location.reload();
   });
 
 })

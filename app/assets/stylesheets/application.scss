@@ -22,60 +22,11 @@ $medium: #808080;
 $dark: #383838;
 $green-highlight: #11AD09;
 
-// gregg add this stuff
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
-}
-
-a:hover{
-  text-decoration: none !important;
-}
-a:active {
-  text-decoration: none !important;
-}
-// end of stuff gregg added
-
-.nav-button {
-  background-color: #383838;
-  border: none !important;
-}
-
-.fa {
-  color: white;
-  font-size: 2em !important;
-  padding-top: 3px;
-  padding-bottom: 1px;
-}
-
-.fa-hand-pointer-o {
-  padding-right: 10%;
-}
-
-.fa-user {
-  padding-left: 15%;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer button {
-  background-color: #383838;
-  color: white;
-  border-top: 2px solid #808080;
-  border-bottom: none !important;
-  border-right: 1px solid #808080;
-  border-left: 1px solid #808080;
-}
-
-.footer button a {
-  color: white;
-  font-size:1.3em;
 }
 
 .container-fluid {
@@ -84,97 +35,8 @@ a:active {
     background-color: #EBEBEB;
 }
 
-.profile-pic {
-  height: 40vh;
-  width: 100vw;
-  padding: 10px;
-}
-
-.profile-card {
-  padding-left: 5px;
-}
-
-.profile-text {
-  margin-bottom: 0 !important;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.name-age {
-  font-size: 2em;
-}
-
-.sport-button-container {
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 3px;
-}
-
-.sports-beginner {
-  border: 1px solid green;
-  background-color: #ABE0A6;
-  text-align: center;
-  display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
-}
-
-.sports-intermediate {
-  border: 1px solid yellow;
-  background-color: #E1E3A3;
-  text-align: center;
-  display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
-}
-
-.sports-advanced {
-  border: 1px solid red;
-  background-color: #E3A3A3;
-  text-align: center;
-  display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
-}
-
-body {
-  // background: url(/assets/field_background.jpg) no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-}
-
-.activity-row {
-  padding-bottom: 3px;
-  padding-top: 3px;
-  border-bottom: 1px solid grey;
-}
-
-.activity-row2 {
-  padding-top: 3px;
-}
-
-.match-row {
-  padding-bottom: 12px;
-  border-bottom: 1px solid grey;
-}
-
-
-
-
-.messages {
-  text-align: right;
-  display: block;
-}
-
-
-
-.front-page {
-  height: 50vh;
+a:hover, a:active{
+  text-decoration: none !important;
 }
 
 .hide {
