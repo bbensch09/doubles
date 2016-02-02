@@ -1,9 +1,49 @@
 .input {
   width: 100%;
   max-width: 500px;
+  height: 50px;
+  font-size: 1.5em;
 }
+
 
 .sport_options {
   width: 100%;
   max-width: 500px;
+  line-height: 1.5em;
 }
+
+.sport_item {
+  height: 50px;
+  font-size: 1.5em;
+}
+
+.sport-highlight {
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+
+.flex {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#beginner {
+  border: 0;
+  height: 50px;
+}
+
+#intermediate {
+height: 50px;
+ border: 0;
+}
+
+#advanced {
+height: 50px;
+border: 0;
+}
+
+

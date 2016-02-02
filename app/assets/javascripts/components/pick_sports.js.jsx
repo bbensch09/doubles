@@ -37,15 +37,17 @@ var PickSports = React.createClass({
     this.refs.sports_list.setState({sports: find_sport(value, this.props.sports)});
   },
   setChosenSport: function(sportToAdd) {
-    this.setState({chosenSport: sportToAdd})
+    this.setState({chosenSport: sportToAdd, value: ''})
+    this.refs.sports_list.setState({sports: []})
   },
   render: function() {
     return(
       <div>
-        <h4>Add an activity</h4>
-        <input className="input" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
+        <div className="flex">
+          <h2 className="large_center">Add an Activity</h2>
+        </div>
+        <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
         <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
-        <hr />
         <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport"/>
       </div>
       )
@@ -61,7 +63,10 @@ var SportsOptions = React.createClass({
       return(
           <ul>{this.state.sports.map(function(sport, i) {
               return (
-                <li type="button" className="btn btn-info sport_options" key={i} onClick={this.handleClick.bind(this, i)}>{sport.name}</li>
+                <li type="button" className="btn btn-info sport_options" key={i} onClick={this.handleClick.bind(this, i)}>
+                <span className="pull-left icon fa fa-plus-circle"></span>
+                <span className="pull-left sport_item">{sport.name}</span>
+                </li>
                 );
               }, this)}
           </ul>
@@ -78,19 +83,22 @@ var ChosenSport = React.createClass({
       if(this.props.chosenSport) {
       return(
         <div>
-          <div>
-          <h4 className="pull-left">Selected Sport:</h4>
+          <div className="sport-highlight flex">
+            <h2 className="large_center">
+              {this.props.chosenSport.name}
+            </h2>
+            <br />
+            <br />
           </div>
-          <span className="btn btn-success sport_options" onClick={this.handleClick.bind(null, this)}>
-            {this.props.chosenSport.name}
-          </span>
-        <hr />
+          <div className="flex">
+            <h2 className="center ">
+              What is your skill level?
+            </h2>
+          </div>
+        <SkillLevel ref="SkillLevel"/>
         </div>
        )
     } else { return null };
-  },
-  handleClick: function() {
-
   }
 })
 
@@ -102,11 +110,11 @@ var SkillLevel = React.createClass({
     },
   render: function() {
       return(
-        <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">Left</button>
-          <button type="button" class="btn btn-default">Middle</button>
-          <button type="button" class="btn btn-default">Right</button>
-        </div>
+      <div className="row activity_level">
+        <button id="beginner" className="col-xs-4 alert-success">Beginner</button>
+        <button id="intermediate" className="col-xs-4 alert-info">Intermediate</button>
+        <button id="advanced" className="col-xs-4 alert-warning">Advanced</button>
+      </div>
        )
   },
   handleClick: function(i) {
