@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(profile_update_params)
+      current_user.update_lat_lng
       redirect_to '/feed'
     else
       p "could not save updates"
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def profile_update_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email)
+    params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email, :zipcode)
   end
 
 end
