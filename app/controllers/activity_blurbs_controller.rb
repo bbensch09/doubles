@@ -7,14 +7,16 @@ class ActivityBlurbsController < ApplicationController
     end
 
     def new
-      @all_sports = Activity.all
+      @user = current_user
+      already_chosen_activities = @user.activities
+      @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
       render '/users/pick-sports'
     end
 
     def create
       @user = current_user
-      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
+      @activity_blurb = ActivityBlurb.create(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
 
       if request.xhr?
         render json: @activity_blurb
