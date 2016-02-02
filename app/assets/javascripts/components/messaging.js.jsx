@@ -93,7 +93,7 @@ var MessageForm = React.createClass({
           <input type="hidden" name={ this.props.form.csrf_param } value={ this.props.form.csrf_token } />
           <input type="hidden" ref="author" name="message[author]" value={this.state.author} readOnly />
           <input type="hidden" ref="matched_user_id" name="message[matched_user_id]" value={this.state.matched_user_id} readOnly />
-          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control input-md" required="" value={this.state.text} onChange={this.handleTextChange} />
+          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control chat-box input-md" required="" value={this.state.text} onChange={this.handleTextChange} />
           <span className="input-group-btn">
             <button id="submit" type="submit" name="submit" className="btn btn-success">Send</button>
           </span>
