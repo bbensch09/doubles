@@ -27,6 +27,8 @@ class SwipesController < ApplicationController
         end
         # send just first unswiped user near you with shared act...
       else
+        flash[:show_modal] = true
+        flash[:modal_to_show] = 'users/test_modal'
         @next_five_users = current_user.narrow_users[0..4]
       end
     end
