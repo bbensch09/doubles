@@ -60,7 +60,7 @@
   width: 95vw;
 }
 </style>
-<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="myModal" id="myModal">
+<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="omniModal" id="omniModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <%= render flash[:modal_to_show] %>
@@ -68,7 +68,7 @@
   </div>
 </div>
 <script>
-$('#myModal').modal('show');
+$('#omniModal').modal('show');
 </script>
 <% flash.discard(:show_modal) %>
 <% flash.discard(:modal_to_show) %>
