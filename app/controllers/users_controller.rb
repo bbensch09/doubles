@@ -12,21 +12,17 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    if @user.activity_blurbs.length < 1
-      @user = current_user
+    unless @user.bio
+      flash[:show_modal] = true
+      flash[:modal_to_show] = '/users/add_bio'
+    end
+
+    unless @user.activity_blurbs
       already_chosen_activities = @user.activities
       @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/pick_sports'
-    end
-    unless @user.bio.length > 1
-      # @user = current_user
-      # already_chosen_activities = @user.activities
-      # @all_sports = Activity.all - already_chosen_activities
-      # @activity_blurb = ActivityBlurb.new
-      # flash[:show_modal] = true
-      # flash[:modal_to_show] = 'users/pick_sports'
     end
 
   end
@@ -41,7 +37,11 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(profile_update_params)
+    if request.xhr?
+      @user.update(bio: params[:bio])
+      puts 'success!!!!!!!!!!!!!!!!!!'
+      render json: @user
+    elsif @user.update(profile_update_params)
       redirect_to '/feed'
     else
       p "could not save updates"
