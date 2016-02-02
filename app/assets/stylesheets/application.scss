@@ -95,6 +95,41 @@ $green-highlight: #11AD09;
   font-size: 2em;
 }
 
+.sport-button-container {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.sports-beginner {
+  border: 1px solid green;
+  background-color: #ABE0A6;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.sports-intermediate {
+  border: 1px solid yellow;
+  background-color: #E1E3A3;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.sports-advanced {
+  border: 1px solid red;
+  background-color: #E3A3A3;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
 body {
   background: url(/assets/field_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
