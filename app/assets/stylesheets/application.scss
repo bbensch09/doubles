@@ -287,14 +287,16 @@ color:#4cae4c;
 
   .bubble2 {
     position: relative;
+
     width: auto;
+    max-width: 225px;
     height: auto;
     padding: 0px;
     background: #11AD09;
     border: #11AD09 solid 4px;
-    -webkit-border-radius: 11px;
-    -moz-border-radius: 11px;
-    border-radius: 11px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
     float: right;
     color: white;
 }
@@ -303,7 +305,7 @@ color:#4cae4c;
     content: "";
     position: absolute;
     bottom: -11px;
-    right: 5px;
+    right: 1px;
     border-style: solid;
     border-width: 11px 8px 0;
     border-color: #11AD09 transparent;
@@ -331,10 +333,10 @@ color:#4cae4c;
     padding: 0px;
     background: #808080;
     border: #808080 solid 4px;
-    -webkit-border-radius: 11px;
-    -moz-border-radius: 11px;
-    border-radius: 11px;
-    float: right;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    float: left;
     color: white;
 }
 
@@ -342,7 +344,7 @@ color:#4cae4c;
     content: "";
     position: absolute;
     bottom: -11px;
-    left: 5px;
+    left: 1px;
     border-style: solid;
     border-width: 11px 8px 0;
     border-color: #808080 transparent;
@@ -365,5 +367,9 @@ color:#4cae4c;
 
 .chat-author {
   width: 100%;
+  clear: both;
+}
+
+.input-group {
   clear: both;
 }
