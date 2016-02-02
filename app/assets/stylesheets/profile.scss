@@ -24,32 +24,49 @@
   margin-top: 3px;
 }
 
-.sports-beginner {
-  border: 1px solid green;
-  background-color: #ABE0A6;
-  text-align: center;
+.sports {
   display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
+  text-align: center;
+  float: left;
+  background-color: black;
+  height: 50px;
+  font-size: 1.5em;
+  line-height: 50px;
+  padding: 0 20px;
+
+}
+
+.fa-plus-circle {
+  color: #337AB7;
+}
+
+.add_sport {
+  display: inline-block;
+  height: 50px;
+  margin-left: 10px;
+  padding: 10 20px;
+  line-height: 50px;
+  float: left;
+
+}
+
+.sports-beginner {
+  background-color: #8AC1A1;
+  border: 2px solid #8AC1A1;
+  border: 2px solid white;
 }
 
 .sports-intermediate {
-  border: 1px solid yellow;
-  background-color: #E1E3A3;
-  text-align: center;
-  display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
+ background-color: #348A5D;
+ border: 2px solid #348A5D;
+ border: 2px solid white;
 }
 
 .sports-advanced {
-  border: 1px solid red;
-  background-color: #E3A3A3;
-  text-align: center;
-  display: inline-block;
-  margin: 2px;
-  padding: 1px;
-  border-radius: 5px;
+  background-color: #016844;
+  border: 2px solid #016844;
+  border: 2px solid white;
 }
+
+/* Bootstrap colors */
+/* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */
