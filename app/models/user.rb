@@ -40,7 +40,7 @@ def update_lat_lng
 end
 
 def lat_lng_by_geolocation
-  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_AP']}",{})
+  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
   response = api_response.parsed_response
   if response["location"]
     lat = response["location"]["lat"]

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = current_user
     if request.xhr?
       @user.update(bio: params[:bio])
-      current_user.update_lat_lng
+      zip_code_modal unless current_user.update_lat_lng
       puts 'success!!!!!!!!!!!!!!!!!!'
       render json: @user
     elsif @user.update(profile_update_params)
