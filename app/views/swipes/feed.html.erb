@@ -2,7 +2,7 @@
 <script type="text/javascript" src="/javascripts/jquery.transform2d.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.jTinder.js"></script>
 
-<% if @next_five_users %>
+<% if @next_five_users.length > 0 %>
 <div id="cards">
   <ul>
     <% @next_five_users.each do |user| %>
