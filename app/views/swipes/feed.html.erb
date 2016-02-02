@@ -6,7 +6,7 @@
 <div id="cards">
   <ul>
     <% @next_five_users.each do |user| %>
-    <li>
+    <li id="<%= user.id %>">
       <%= render :partial => "users/show_card", :locals => {:user => user } %>
     </li>
     <% end %>
@@ -21,5 +21,5 @@
 <script type="text/javascript" src="/javascripts/jquery.jTinder.js"></script>
 <script type="text/javascript" src="/javascripts/jtinder_config.js"></script>
 <% else %>
-<h2 class="text-center block-text">No people matching your interests near you.</h2>
+<h2 class="text-center">No people matching your interests near you.</h2>
 <% end %>

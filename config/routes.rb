@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get 'index2' => 'welcome#index2'
   root 'welcome#index'
   get 'login' => 'welcome#force_login'
   get '/finish_profile' => 'users#finish_profile'
@@ -23,11 +24,12 @@ Rails.application.routes.draw do
   get '/profile' => 'users#profile'
   get '/edit_profile' => 'users#edit_profile'
   put '/update_profile' => 'users#update'
+  put '/users/:id' => 'users#update'
   # Show a user all their matches
   get '/matches' => 'matches#index'
   get '/feed' => 'swipes#feed'
   #First-Time User Experience
-  get '/pick-sports' => 'activity_blurbs#index'
+  get '/pick-sports' => 'activity_blurbs#new'
   post '/pick-sports' => 'activity_blurbs#create'
 
   post 'swipes'=> 'swipes#create'
@@ -50,8 +52,6 @@ Rails.application.routes.draw do
   # HACKY_SHIT
   # temp routes to test swiping
   get 'activities' => 'activity_blurbs#index'
-  get '/swipe_yes/:user_id' => 'swipes#swipe_yes'
-  get '/swipe_no/:user_id' => 'swipes#swipe_no'
 
   # temp route to test tutorial slider
   devise_scope :user do
