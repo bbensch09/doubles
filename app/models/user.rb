@@ -31,9 +31,11 @@ end
 
 def update_lat_lng
   if lat_lng_by_geolocation
+    p "successfully pulled lat-long from users' geolcation"
     true
   elsif self.zipcode
     lat_lng_by_zipcode
+    p "successfully pulled lat-long from users' inputted zipcode"
   else
     false
   end
