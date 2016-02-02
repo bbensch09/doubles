@@ -85,6 +85,7 @@ def self.from_omniauth(auth)
 end
 
 def unread_messages
+  return 0 unless current_user
   unread_messages = Message.where(user_id: current_user.id).where("created_at > ?", current_user.current_sign_in_at)
 end
 
