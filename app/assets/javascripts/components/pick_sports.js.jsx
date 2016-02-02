@@ -34,9 +34,6 @@ var PickSports = React.createClass({
   render: function() {
     return(
       <div>
-        <div className="flex">
-          <h2 className="large_center">Add an Activity</h2>
-        </div>
         <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
         <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
         <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport" saveSport={this.saveSport}/>
@@ -53,7 +50,7 @@ var PickSports = React.createClass({
       });
   },
   backToProfile: function() {
-    // CLOSE MODAL
+    $('#omniModal').modal('hide')
   }
 })
 
@@ -114,9 +111,9 @@ var SkillLevel = React.createClass({
   render: function() {
       return(
       <div className="row activity_level">
-        <button id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4 alert-success">Beginner</button>
-        <button id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4 alert-info">Intermediate</button>
-        <button id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4 alert-warning">Advanced</button>
+        <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4 alert-success">Beginner</button>
+        <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4 alert-info">Intermediate</button>
+        <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4 alert-warning">Advanced</button>
       </div>
        )
   },
