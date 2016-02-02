@@ -22,7 +22,7 @@ class SwipesController < ApplicationController
       if current_user.bio.nil?
         redirect_to '/finish_profile'
       elsif
-        unless session[:walkthrough_status]
+        unless session[:walkthrough_status] || current_user.swipes.count > 0
           redirect_to '/walkthrough'
         end
         # send just first unswiped user near you with shared act...
