@@ -67,4 +67,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email, :zipcode)
   end
 
+  def profile_test
+    @user = current_user
+    @already_chosen_activities = @user.activities
+    @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurb = ActivityBlurb.new
+  end
+
 end
