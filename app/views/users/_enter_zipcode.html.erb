@@ -8,7 +8,7 @@
   <%= form_for(current_user, url: '/update_profile', html: { method: :put }) do |f| %>
     <div class="actions">
       <%= f.label :zipcode %>
-      <%= f.text_field :zipcode, autofocus: true %>
+      <%= f.text_field :zipcode, autofocus: true, autocorrect: "off", pattern: "[0-9]*"%>
       <%= f.submit "Update" %>
     </div>
   <%end%>
