@@ -107,7 +107,7 @@ var Message = React.createClass({
   render: function () {
     return (
       <div className={ this.props.cssClass }>
-        <h4>{ this.props.author } said:</h4>
+        <h4><u>{ this.props.author } said</u>:</h4>
         <p>{ this.props.text }</p>
       </div>
     )
