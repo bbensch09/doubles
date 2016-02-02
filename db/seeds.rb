@@ -20,6 +20,29 @@ activity_names.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
+# Create Tom
+tom = User.create!({
+                    first_name: "Tom",
+                    last_name: "Likes Everyone",
+                    email: 'tom@myspace.com',
+                    gender: 'male',
+                    age: 40,
+                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+                    location: "San Francisco",
+                    latitude: 37.7576792,
+                    longitude: -122.5078123,
+                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+                    password: 'password'
+                      })
+
+activities.each_with_index do |activity, index|
+  ActivityBlurb.create!({
+      text: "I've been playing #{activity} since 1999.",
+      activity_id: index,
+      user_id: 1
+      })
+end
+
 # Create other users
 
 billiards_bill = User.create!({
@@ -368,6 +391,17 @@ def everyone_swipes_you
   end
 end
 
+def tom_likes_everyone
+  seed_users = User.where("id > 1")
+  seed_users.each do |user|
+      Swipe.create!({
+        swiped_yes: true,
+        swiper_id: 1,
+        swipee_id: user.id
+        })
+  end
+end
+
 =begin
 #create Brian
 brian = User.create!({
@@ -521,4 +555,5 @@ end
     swipee_id: 23
     })
 end
+tom_likes_everyone
 =end

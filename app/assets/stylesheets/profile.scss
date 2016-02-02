@@ -1,18 +1,55 @@
 .profile-pic {
   width: 100%;
+  height: 40vh;
   padding: 0 !important;
 }
 
-div.sport-button-container{
-  padding-left: 10px;
-  div {
-    margin: 0 !important;
-    margin-top: 10px !important;
-    margin-left: -3px !important;
-    border-radius: 0;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    padding: 3px;
-    line-height: 2em;
-  }
+.profile-card {
+  padding-left: 5px;
+}
+
+.profile-text {
+  margin-bottom: 0 !important;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.name-age {
+  font-size: 2em;
+}
+
+.sport-button-container {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.sports-beginner {
+  border: 1px solid green;
+  background-color: #ABE0A6;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.sports-intermediate {
+  border: 1px solid yellow;
+  background-color: #E1E3A3;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.sports-advanced {
+  border: 1px solid red;
+  background-color: #E3A3A3;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  padding: 1px;
+  border-radius: 5px;
 }
