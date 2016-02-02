@@ -4,22 +4,13 @@ class WelcomeController < ApplicationController
   def index
     # first time user
     if current_user && current_user.sign_in_count == 1
-      if current_user.update_lat_lng
+      zip_code_modal unless current_user.update_lat_lng
         redirect_to "/profile"
-      else
-        zip_code_modal
-        redirect_to "/profile"
-      end
     # returning user
     elsif current_user && current_user.sign_in_count > 1
-      if current_user.update_lat_lng
-        redirect_to "/profile"
-      else
-        zip_code_modal
-        redirect_to "/feed"
-      end
-    # not registered
-
+      zip_code_modal unless current_user.update_lat_lng
+      redirect_to "/feed"
+    # user not registered
     else
       render 'index'
     end
