@@ -1,3 +1,23 @@
 // Place all the styles related to the swipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.swipe-left {
+  display:block;
+  height:130px;
+  width:130px;
+  margin: auto;
+}
+
+.swipe-right {
+  display:block;
+  height:130px;
+  width:130px;
+  margin: auto;
+}
+
+.footer-center{
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}

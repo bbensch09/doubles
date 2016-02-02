@@ -1,0 +1,39 @@
+.nav-button {
+  background-color: #383838;
+  border: none !important;
+}
+
+.fa {
+  color: white;
+  font-size: 2em !important;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+.fa-hand-pointer-o {
+  padding-right: 10%;
+}
+
+.fa-user {
+  padding-left: 15%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer button {
+  background-color: #383838;
+  color: white;
+  border-top: 2px solid #808080;
+  border-bottom: none !important;
+  border-right: 1px solid #808080;
+  border-left: 1px solid #808080;
+}
+
+.footer button a {
+  color: white;
+  font-size:1.3em;
+}

@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  include WelcomeHelper
 
   def facebook
     auth = request.env['omniauth.auth']
@@ -27,11 +28,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         else user.age = "Please share your age."
       end
 
-      if auth.extra.raw_info.location
-        p user.location = auth.extra.raw_info.location.name
-      else
-        user.location = "unknown"
-      end
+      # if auth.extra.raw_info.location
+      #   p user.location = auth.extra.raw_info.location.name
+      # else
+      #   user.location = "unknown"
+      # end
       p user.save!
       @user = user
       p "---------USER CREATED?"
@@ -45,7 +46,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # p GetGeoLocatorWorker.perform_async(current_user.id)
 
       sign_in(user)
-      @activity_blub = ActivityBlurb.new
+      # @activity_blub = ActivityBlurb.new
+      zip_code_modal unless current_user.update_lat_lng
+      p current_user.update_lat_lng
+      p current_user.zipcode
+      p flash
       redirect_to "/profile"
     end
 
