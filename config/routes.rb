@@ -24,11 +24,12 @@ Rails.application.routes.draw do
   get '/profile' => 'users#profile'
   get '/edit_profile' => 'users#edit_profile'
   put '/update_profile' => 'users#update'
+  put '/users/:id' => 'users#update'
   # Show a user all their matches
   get '/matches' => 'matches#index'
   get '/feed' => 'swipes#feed'
   #First-Time User Experience
-  get '/pick-sports' => 'activity_blurbs#index'
+  get '/pick-sports' => 'activity_blurbs#new'
   post '/pick-sports' => 'activity_blurbs#create'
 
   post 'swipes'=> 'swipes#create'
