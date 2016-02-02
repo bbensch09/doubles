@@ -1,21 +1,19 @@
-<div class="modal-header">
+
+<div class="modal-body zipcode-modal-body">
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h4 class="enter_zipcode_modal" id="zipcode_modal"></h4>
-</div>
-<div class="modal-body">
 
   <p>enter your zipcode</p>
   <%= form_for(current_user, url: '/update_profile', html: { method: :put }) do |f| %>
     <div class="actions">
-      <%= f.label :zipcode %>
-      <%= f.text_field :zipcode, autofocus: true, autocorrect: "off", pattern: "[0-9]*"%>
-      <%= f.submit "Update" %>
+
+      <%= f.text_field :zipcode, class: "form-control",autofocus: true, autocorrect: "off", pattern: "[0-9]*"%>
+      <%= f.submit "Update", class: "zipcode-submit" %>
     </div>
   <%end%>
 
 
 
 </div>
-<div class="modal-footer">
+<!-- <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-</div>
+</div> -->
