@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get 'index2' => 'welcome#index2'
   root 'welcome#index'
   get 'login' => 'welcome#force_login'
   get '/finish_profile' => 'users#finish_profile'
