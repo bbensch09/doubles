@@ -4,8 +4,15 @@ class ConversationsController < ApplicationController
   before_action :login_user
 
   def create
-    Message.create(match_id: params[:id], message_text: params[:text], user_id: params[:author], sender_name: User.find(params[:author]).first_name)
-    presenter = generate_presenter( {match_id: params[:id], sender_id: params[:author]} )
+    match = Match.find(params[:id])
+    Message.create(
+        match_id: match.id,
+        message_text: params[:text],
+        user_id: params[:author],
+        sender_name: User.find(params[:author]).first_name,
+        recipient_id: get_matched_user(match, current_user).id
+        )
+    presenter = generate_presenter( {match_id: match.id, sender_id: params[:author]} )
     render :json => presenter
   end
 

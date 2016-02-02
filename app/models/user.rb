@@ -102,7 +102,6 @@ def self.from_omniauth(auth)
   end
 end
 
-
 private
 
 def update_access_token!
