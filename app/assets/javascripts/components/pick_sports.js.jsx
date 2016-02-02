@@ -15,15 +15,6 @@ var find_sport = function(wordToMatch, array_of_objects_to_query) {
   return results
 }
 
-  // saveSport: function(sport_object_id) {
-  //   $.post( '/activity_blurbs',
-  //           {activity_id: sport_object_id, text: " "},
-  //           function(data) {
-  //       console.log(data);
-  //     });
-  //   }
-
-
 var PickSports = React.createClass({
   getInitialState: function() {
     return {value: '', mySports: []};
@@ -48,9 +39,21 @@ var PickSports = React.createClass({
         </div>
         <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
         <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
-        <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport"/>
+        <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport" saveSport={this.saveSport}/>
       </div>
       )
+  },
+  saveSport: function(skill_level) {
+    var chosenSport = this.state.chosenSport;
+    $.post( '/activity_blurbs',
+            {activity_id: chosenSport.id, text: skill_level},
+            function(data) {
+        console.log(data);
+        this.backToProfile
+      });
+  },
+  backToProfile: function() {
+    // CLOSE MODAL
   }
 })
 
@@ -95,7 +98,7 @@ var ChosenSport = React.createClass({
               What is your skill level?
             </h2>
           </div>
-        <SkillLevel ref="SkillLevel"/>
+        <SkillLevel ref="SkillLevel" saveSport={this.props.saveSport}/>
         </div>
        )
     } else { return null };
@@ -111,15 +114,16 @@ var SkillLevel = React.createClass({
   render: function() {
       return(
       <div className="row activity_level">
-        <button id="beginner" className="col-xs-4 alert-success">Beginner</button>
-        <button id="intermediate" className="col-xs-4 alert-info">Intermediate</button>
-        <button id="advanced" className="col-xs-4 alert-warning">Advanced</button>
+        <button id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4 alert-success">Beginner</button>
+        <button id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4 alert-info">Intermediate</button>
+        <button id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4 alert-warning">Advanced</button>
       </div>
        )
   },
-  handleClick: function(i) {
-
+  handleClick: function(skill_level) {
+    this.props.saveSport(skill_level)
   }
 });
+
 
 

@@ -14,7 +14,7 @@ class ActivityBlurbsController < ApplicationController
 
     def create
       @user = current_user
-      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_blurb][:activity_id], text: params[:activity_blurb][:text], user_id: @user.id)
+      @activity_blurb = ActivityBlurb.new(activity_id: params[:activity_id], text: params[:text], user_id: @user.id)
 
       if request.xhr?
         render json: @activity_blurb
