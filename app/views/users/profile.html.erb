@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1><%=flash[:modal_to_show]%></h1>
 
 <div>
@@ -18,6 +19,13 @@
   <p><u>About me</u>: <%= @user.bio %></p>
 </div>
 <div class="row footer">
+=======
+
+<%= render 'profile_pic_name_and_age' %>
+<%= render 'profile_bio' %>
+<%= render 'profile_sports' %>
+<div class="footer">
+>>>>>>> 2260f31dab1da9facc5f1c928149e42e36db7ace
 <button class="col-xs-6"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></button>
 <button class="col-xs-6"><%= link_to "Edit Profile", '/edit_profile' %></button>
 </div>
