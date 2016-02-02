@@ -24,10 +24,11 @@ class ActivityBlurbsController < ApplicationController
         render json: @activity_blurb
       else
         if @activity_blurb.save
-          redirect_to activity_blurbs_path
+          redirect_to '/profile'
         else
           @errors = @activity_blurb.errors
-          redirect_to activity_blurbs_path
+          # redirect_to activity_blurbs_path
+          redirect_to '/profile'
         end
       end
     end
