@@ -17,6 +17,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p user.last_name = auth.info.last_name
       p user.profile_picture_url = auth.info.image
       p user.gender = auth.extra.raw_info.gender
+      p user.uid = auth.uid
       if auth.extra.raw_info.birthday
         birthday_string = auth.extra.raw_info.birthday
         birthday = Date.strptime(birthday_string,"%m/%d/%Y")
@@ -31,7 +32,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         user.location = "unknown"
       end
-
       p user.save!
       @user = user
       p "---------USER CREATED?"

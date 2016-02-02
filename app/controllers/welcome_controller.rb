@@ -14,4 +14,8 @@ class WelcomeController < ApplicationController
     render 'force_login'
   end
 
+
+  def index2
+  end
+
 end
