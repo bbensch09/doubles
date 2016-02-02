@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.integer  "age"
     t.string   "gender"
     t.string   "location"
+    t.integer  "zipcode"
     t.decimal  "latitude",               precision: 7, scale: 4
     t.decimal  "longitude",              precision: 7, scale: 4
     t.text     "bio"
