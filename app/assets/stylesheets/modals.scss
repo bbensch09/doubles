@@ -10,10 +10,11 @@
 }
 
 .zipcode-modal-body {
+  padding: 0px !important;
+
   .close {
     margin-right: 10px;
   }
-  padding: 0px !important;
   p {
     margin-top: 10px;
     margin-left: 10px;
@@ -29,8 +30,6 @@
     height: 2em;
     margin-left: auto;
     margin-right: auto;
-
-
   }
   .zipcode-submit {
   height: 70px;
@@ -49,5 +48,4 @@
   font-size:1.5em;
   border-top: 0px !important;
   }
-
 }
