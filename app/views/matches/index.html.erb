@@ -13,7 +13,7 @@
 <div class="match-row">
 <img class="img-circle" src="<%= matched_user.profile_picture_url %>"/>
   <div class="match-name"><%= matched_user.first_name %> </div>
-  <%= link_to "Chat with #{matched_user.first_name}", "/matches/#{match.id}/chat", :class=>"btn btn-primary btn-match btn-xs" %>
+  <%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"bubble btn" %>
 </div>
   <% end %>
 
