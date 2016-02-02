@@ -8,4 +8,8 @@
     <div class="sports-advanced"><%= activity_blurb.activity.name %></div>
   <% end %>
 <% end %>
+
+<% if show_add_button %>
+  <a href="/pick-sports"><span class="fa fa-plus-circle"></span></a>
+<% end %>
 </div>
