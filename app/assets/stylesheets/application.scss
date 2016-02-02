@@ -153,7 +153,6 @@ $green-highlight: #11AD09;
 }
 
 body {
-  background: url(/assets/field_background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -232,18 +231,12 @@ color:#4cae4c;
 }
 
 
+.message-left {
+  float: left;
+  display: block;
+}
 
-
-.bubble {
-  position: relative;
-  top: 152.5px;
-  width: 90px;
-  height: 45px;
-  background: #fff;
-  border: #bbb solid 0;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 9px;
-  border-width: 3px;
-  margin: 0 auto;
+.message-right {
+  float: right;
+  display: block;
 }
