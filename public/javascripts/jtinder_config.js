@@ -1,12 +1,13 @@
 var totalSwipes = 0
-console.log(totalSwipes);
+var totalCards = $('#cards ul li').length
 
 function checkForMore() {
-  if (totalSwipes == 5) {
+  if (totalSwipes == totalCards) {
     $.ajax({
-      url: '/swipes/more',
+      url: '/feed',
       type: 'GET',
       success: function(data) {
+        // $('#cards ul').append(data);
         console.log(data);
       },
       error: function(data) {
