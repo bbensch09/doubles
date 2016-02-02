@@ -22,7 +22,8 @@ $("#cards").jTinder({
       type: 'POST',
       data: {type: "yes", user_id: item.attr('id')},
       success: function(data) {
-        console.log(data);
+        $('.modal-body').html(data);
+        $('#matchModal').modal('show');
       },
       error: function(data) {
         console.log(data);
