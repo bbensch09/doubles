@@ -15,7 +15,7 @@ class SwipesController < ApplicationController
       @next_five_users = current_user.narrow_users[0..4] if current_user
       if request.xhr?
         if @next_five_users.empty?
-
+          render :text => "<h2 class='text-center'>No people matching your interests near you. Please check back soon!</h2>"
         else
           # send back all the rendered cards and their count to the ajax call as json
           {num_cards: @next_five_users.length,
