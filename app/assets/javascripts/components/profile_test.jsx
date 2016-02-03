@@ -271,6 +271,7 @@ var SaveButton = React.createClass({
     request.done(function(data) {
         console.log(data);
         console.log("successfully saved via ajax");
+        location.reload();
     });
   },
 });
