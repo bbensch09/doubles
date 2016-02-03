@@ -5,6 +5,7 @@ $(document).ready(function(){
 var totalSwipes = 0;
 var totalCards = $('#cards ul li').length;
 
+console.log("totalSwipes: " + totalSwipes);
 console.log("totalCards: " + totalCards);
 
 function checkForMore() {
@@ -15,14 +16,15 @@ function checkForMore() {
       success: function(data) {
         $('#cards ul').append(data);
         initJTinder();
+        console.log("loading more...");
       },
       error: function(data) {
         console.error(data);
       },
     });
-    totalSwipes = 0;
   }
   totalCards = $('#cards ul li').length;
+  console.log("totalSwipes: " + totalSwipes);
   console.log("totalCards: " + totalCards);
 };
 
