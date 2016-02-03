@@ -17,10 +17,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-$light: #C2C2C2;
-$medium: #808080;
-$dark: #383838;
-$green-highlight: #11AD09;
+$cream: #FEFEE7;
+$light-teal: #A4D0C4;
+$teal: #72C4B9;
+$gray: #9A9C9F;
+$black: #0F0F0D;
 
 * {
   -webkit-box-sizing: border-box;
@@ -29,10 +30,13 @@ $green-highlight: #11AD09;
   font-family: 'Raleway', sans-serif;
 }
 
+body {
+  padding-top: 7.5vh !important;
+}
+
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
-    background-color: #EBEBEB;
 }
 
 a:hover, a:active{
@@ -42,3 +46,4 @@ a:hover, a:active{
 .hide {
   display:none;
 }
+

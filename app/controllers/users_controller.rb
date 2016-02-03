@@ -12,6 +12,9 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    already_chosen_activities = @user.activities
+    @all_sports = Activity.all - already_chosen_activities
+    @activity_blurb = ActivityBlurb.new
 
     if flash[:show_modal]
       render 'profile'
@@ -23,9 +26,6 @@ class UsersController < ApplicationController
       # render 'profile'
 
     elsif @user.activities.empty?
-      already_chosen_activities = @user.activities
-      @all_sports = Activity.all - already_chosen_activities
-      @activity_blurb = ActivityBlurb.new
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/pick_sports'
       p "-------activity modal set--------"
