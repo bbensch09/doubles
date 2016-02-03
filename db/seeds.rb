@@ -354,11 +354,11 @@ yogie = User.create!({
   })
 
 #Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
-activity_ids = (1..22).to_a
+activity_ids = (1..Activity.count).to_a
 activity_ids.each do |activity_id|
   activity_name = Activity.find(activity_id).name
   ActivityBlurb.create!({
-    text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
+    text: ['beginner','intermediate','advanced'].sample,
     activity_id: activity_id,
     user_id: activity_id
     })
