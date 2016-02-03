@@ -1,11 +1,10 @@
 $(document).ready(function(){
-  initJTinder();
+  geolocator();
+  // initJTinder();
 });
 
 var totalSwipes = 0;
 var totalCards = $('#cards ul li').length;
-
-console.log("totalCards: " + totalCards);
 
 function checkForMore() {
   if (totalSwipes == totalCards) {
@@ -20,14 +19,11 @@ function checkForMore() {
         console.error(data);
       },
     });
-    totalSwipes = 0;
   }
   totalCards = $('#cards ul li').length;
-  console.log("totalCards: " + totalCards);
 };
 
 function initJTinder() {
-  console.log("initJTinder");
   $("#cards").jTinder({
 
   	// dislike callback
@@ -39,10 +35,9 @@ function initJTinder() {
         type: 'POST',
         data: {type: "no", user_id: item.attr('id')},
         success: function(data) {
-          console.log(data);
         },
         error: function(data) {
-          console.log(data);
+          console.error(data);
         },
       });
       checkForMore();
@@ -56,11 +51,8 @@ function initJTinder() {
         data: {type: "yes", user_id: item.attr('id')},
         success: function(data) {
           $('.modal-body').html(data);
-          $('#matchModal').modal('show');
-        },
-        error: function(data) {
-          console.log(data);
-        },
+          $('#feedModal').modal('show');
+        }
       });
       checkForMore();
     },
