@@ -66,11 +66,11 @@
   min-height: 30px;
   margin-right: 25px;
   padding: 2px;
-  background: #399603;
+  background: #72C4B9;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: #399603 solid 3px;
+  border: #72C4B9 solid 3px;
   float: right;
   color: white;
 }
@@ -81,7 +81,7 @@ content: '';
 position: absolute;
 border-style: solid;
 border-width: 8px 0 8px 12px;
-border-color: transparent #399603;
+border-color: transparent #72C4B9;
 display: block;
 width: 0;
 z-index: 1;
@@ -124,6 +124,10 @@ top: 7%;
   clear: both;
 }
 
+.chat-box {
+  border-color: #9A9C9F !important;
+}
+
 .input-group {
   clear: both;
   position:fixed !important;
@@ -145,6 +149,11 @@ top: 7%;
   margin-top: 1px !important;
 }
 
+.input-btn {
+  background-color: #72C4B9 !important;
+  border-color: #9A9C9F !important;
+  border-left: none !important;
+}
 
 .message-list, .message-box {
   overflow: auto;
