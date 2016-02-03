@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
+  validates_format_of :zipcode, :with => /\A\d{5}\z/, :message => "should be in the form 12345", :allow_blank => true
 
   has_many :swipes, :foreign_key => "swiper_id", :class_name => "Swipe"
   has_many :swipees, through: :swipes, :foreign_key => "swipee_id", :class_name => "User"
@@ -34,32 +35,6 @@ def reset_swipes
   p "swipes deleted"
   self.everyone_swipes_you
   p "errbody swiped you"
-end
-
-
-def update_lat_lng
-  # FOR HEROKU - TEMP DISABLE LAT LONG BY GEO
-  # if lat_lng_by_geolocation
-  #   p "successfully pulled lat-long from users' geolcation"
-  #   true
-  # elsif self.zipcode
-  # UPON RESTORE LAT-LONG REPLACE LINE 39 with LINE 37
-  if self.zipcode
-    lat_lng_by_zipcode
-    p "successfully pulled lat-long from users' inputted zipcode"
-  else
-    false
-  end
-end
-
-def lat_lng_by_geolocation
-  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
-  response = api_response.parsed_response
-  if response["location"]
-    lat = response["location"]["lat"]
-    lng = response["location"]["lng"]
-    return true if self.update_attributes(:latitude => lat, :longitude => lng)
-  end
 end
 
 def lat_lng_by_zipcode

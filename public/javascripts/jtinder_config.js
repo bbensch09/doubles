@@ -1,6 +1,5 @@
 $(document).ready(function(){
   geolocator();
-  // initJTinder();
 });
 
 var totalSwipes = 0;
@@ -12,8 +11,10 @@ function checkForMore() {
       url: '/feed',
       type: 'GET',
       success: function(data) {
+        $('#cards').hide();
         $('#cards ul').append(data);
         initJTinder();
+        $('#cards').show();
       },
       error: function(data) {
         console.error(data);
@@ -50,7 +51,7 @@ function initJTinder() {
         type: 'POST',
         data: {type: "yes", user_id: item.attr('id')},
         success: function(data) {
-          $('.modal-body').html(data);
+          $('.modal-content').html(data);
           $('#feedModal').modal('show');
         }
       });
