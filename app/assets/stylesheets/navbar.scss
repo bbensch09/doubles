@@ -17,26 +17,21 @@
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  button, input {
+    background-color: #383838;
+    color: white;
+    border-top: 2px solid #808080;
+    border-bottom: none !important;
+    border-right: 1px solid #808080;
+    border-left: 1px solid #808080;
+    height: 7vh;
+    a {
+      color: white;
+      font-size:1.3em;
+    }
+  }
 }
 
-.footer .col-xs-6 {
-  background-color: #383838;
-  color: white;
-  border-top: 2px solid #808080;
-  border-bottom: none !important;
-  border-right: 1px solid #808080;
-  border-left: 1px solid #808080;
-  height: 7vh;
-}
-
-.footer .highlight {
-  background-color: #72C4B9;
-}
-
-.footer .col-xs-6 a {
-  color: white;
-  font-size:1.3em;
-}

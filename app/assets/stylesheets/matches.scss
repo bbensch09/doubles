@@ -7,34 +7,41 @@
   width: 60px;
   margin-top: auto;
 }
+
 .match-row {
   margin-bottom: 4px;
   margin-top: 4px;
   padding-left: 5px;
-  height:75px;
+  height: 75px;
   border-bottom: 1px solid #808080;
 }
-.profile-container{
+
+.profile-container {
   padding-left:3px !important;
   display: inline-block;
-  float:left;
+  float: left;
 }
-.link-area{
+
+.link-area {
   width:80%;
   padding-right: 2px !important;
 }
-.name-and-text{
-  width:72%;
+
+.name-and-text {
+  width: 72%;
 }
+
 .last-message{
   text-align: left;
   line-height: 1em;
 }
+
 .name {
   padding-top: 5px;
   font-size:1.4em;
   font-weight: bold;
 }
+
 .chat-icon{
   position:absolute;
   right:0
@@ -47,6 +54,7 @@
   border-bottom: 1px solid #808080;
   font-size: 1.3em;
 }
+
 .btn-blank{
   border: none !important;
 }
