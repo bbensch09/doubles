@@ -1,5 +1,4 @@
-<div>
-<h1 class="page-head">All Your Matches</h1>
+<h1 class="text-center">All Your Matches</h1>
 
 <div class="text-center">
   <% if @matches.length == 0 %>
@@ -12,18 +11,8 @@
 <% @matches.each do |match| %>
 <% matched_user = get_matched_user(match, current_user) %>
 <div class="match-row">
-  <h2> <u>Name</u>: <%= matched_user.first_name %> </h2>
-  <h4> <u>Activities</u>:
-    <% matched_user.activities.each do |activity| %>
-    <button class="btn btn-xs disable-button btn-success" disabled>
-      <span class="activity-button">
-        <%= activity.name %>
-      </span>
-    </button>
-        <% end %>
-  </h4>
-        <h5> <u>Bio</u>: <%= matched_user.bio %> </h5>
-        <%= link_to "Chat with #{matched_user.first_name}", "/matches/#{match.id}/chat", :class=>"btn btn-primary btn-sm" %>
+<img class="img-circle" src="<%= matched_user.profile_picture_url %>"/>
+  <div class="match-name"><%= matched_user.first_name %></div>
+  <%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"bubble btn" %>
 </div>
-<% end %>
-</div>
+  <% end %>

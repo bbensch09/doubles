@@ -20,28 +20,28 @@ activity_names.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
-#Create Tom
-# tom = User.create!({
-#                     first_name: "Tom",
-#                     last_name: "Likes Everyone",
-#                     email: 'tom@myspace.com',
-#                     gender: 'male',
-#                     age: 40,
-#                     bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-#                     location: "San Francisco",
-#                     latitude: 37.7576792,
-#                     longitude: -122.5078123,
-#                     profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-#                     password: 'password'
-#                       })
-#
-# activities.each_with_index do |activity, index|
-#   ActivityBlurb.create!({
-#       text: "I've been playing #{activity} since 1999.",
-#       activity_id: index,
-#       user_id: 1
-#       })
-# end
+# Create Tom
+tom = User.create!({
+                    first_name: "Tom",
+                    last_name: "Likes Everyone",
+                    email: 'tom@myspace.com',
+                    gender: 'male',
+                    age: 40,
+                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+                    location: "San Francisco",
+                    latitude: 37.7576792,
+                    longitude: -122.5078123,
+                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+                    password: 'password'
+                      })
+
+activities.each_with_index do |activity, index|
+  ActivityBlurb.create!({
+      text: "I've been playing #{activity} since 1999.",
+      activity_id: index,
+      user_id: 1
+      })
+end
 
 # Create other users
 
@@ -51,7 +51,7 @@ billiards_bill = User.create!({
     email: "billiards_bill@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -65,7 +65,7 @@ bocce_britney = User.create!({
     email: "bocce_britney@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -79,7 +79,7 @@ bowling_bernie = User.create!({
     email: "bowling_bernie@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -93,7 +93,7 @@ cycling_cat = User.create!({
     email: "cycling_cat@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -107,7 +107,7 @@ darts_dan = User.create!({
     email: "darts_dan@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -121,7 +121,7 @@ scubasteve = User.create!({
     email: "scubasteve@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -135,7 +135,7 @@ frisbee_golfer = User.create!({
     email: "frisbee_golfer@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -149,7 +149,7 @@ golf_girl = User.create!({
     email: "golf_girl@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -163,7 +163,7 @@ handball_hannah = User.create!({
     email: "handball_hannah@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -177,7 +177,7 @@ hiking_harry = User.create!({
     email: "hiking_harry@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -191,7 +191,7 @@ ping_pong = User.create!({
     email: "ping_pong@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -205,7 +205,7 @@ racquet_roger = User.create!({
     email: "racquet_roger@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -219,7 +219,7 @@ rock_climing_rachel = User.create!({
     email: "rock_climing_rachel@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -233,7 +233,7 @@ running_rena = User.create!({
     email: "running_rena@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -247,7 +247,7 @@ sailing_sam = User.create!({
     email: "sailing_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -261,7 +261,7 @@ skiergal = User.create!({
     email: "skiergal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -275,7 +275,7 @@ snowboard_gal = User.create!({
     email: "snowboard_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -289,7 +289,7 @@ squash_snap = User.create!({
     email: "squash_snap@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -303,7 +303,7 @@ surfer_sam = User.create!({
     email: "surfer_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -317,7 +317,7 @@ tennis_gal = User.create!({
     email: "tennis_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -331,7 +331,7 @@ wrestling_will = User.create!({
     email: "wrestling_will@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -345,7 +345,7 @@ yogie = User.create!({
     email: "yogie@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: Faker::Hipster.sentences(2).join(' '),
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -391,6 +391,18 @@ def everyone_swipes_you
   end
 end
 
+def tom_likes_everyone
+  seed_users = User.where("id > 1")
+  seed_users.each do |user|
+      Swipe.create!({
+        swiped_yes: true,
+        swiper_id: 1,
+        swipee_id: user.id
+        })
+  end
+end
+
+=begin
 #create Brian
 brian = User.create!({
                   first_name: "Brian",
@@ -408,11 +420,11 @@ brian = User.create!({
 
 ActivityBlurb.create!({
     text: "I've been skiing since I was 5 and rent a Tahoe house near Squaw every winter.",
-    activity_id: 15,
+    activity_id: 16,
     user_id: brian.id
     })
 
-(1..14).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -438,7 +450,7 @@ nil_thacker = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -464,7 +476,7 @@ trevor = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -490,7 +502,7 @@ abe = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -515,7 +527,7 @@ greg = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -543,3 +555,5 @@ end
     swipee_id: 23
     })
 end
+tom_likes_everyone
+=end

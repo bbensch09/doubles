@@ -1,9 +1,53 @@
 .input {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
+  height: 50px;
+  font-size: 1.5em;
 }
 
 .sport_options {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
+  line-height: 1.5em;
 }
+
+.sport_item {
+  height: 50px;
+  font-size: 1.5em;
+}
+
+.sport-highlight {
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+
+.flex {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#beginner {
+  border: 0;
+  height: 50px;
+  background-color: #8AC1A1;
+  border: 2px solid #8AC1A1;
+}
+
+#intermediate {
+height: 50px;
+border: 0;
+background-color: #348A5D;
+border: 2px solid #348A5D;
+}
+
+#advanced {
+height: 50px;
+border: 0;
+background-color: #016844;
+border: 2px solid #016844;
+}
+
+

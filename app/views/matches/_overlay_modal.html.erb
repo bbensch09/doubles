@@ -1,0 +1,8 @@
+<div class="text-center">
+<h1>You found a Double!</h1>
+<img src="<%=@matched_user.profile_picture_url%>" style="height: 200px; border-radius: 20px;">
+<h2><%=@matched_user.first_name%></h2>
+<% @matched_user.activities.each do |activity| %>
+<button class="btn disable-button btn-xs btn-success" disable><%=activity.name%></button>
+<% end %>
+</div>

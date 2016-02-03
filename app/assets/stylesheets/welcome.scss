@@ -1,3 +1,71 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.logo {
+  margin-top:-10vh;
+  margin-left: auto;
+}
+
+.btn-wide {
+  width: 100vw;
+}
+
+#background-img{
+  background-image: url("tennis_frontpage_blur.jpg");
+  background-size: 100% 100%;
+  height: 90vh;
+  background-repeat: no-repeat;
+  // background-image: url("tennis.jpeg");
+}
+.swiper-container{
+  height:90vh !important;
+
+}
+
+
+.home-bottom-div-10{
+  position:fixed;
+  bottom:0;
+  width: 100vw;
+  height: 11.5vh;
+}
+
+.home-footer-cta{
+  text-align: center;
+  color: black !important;
+  vertical-align: middle;
+  font-size: 2.5em;
+  padding-top: .2em;
+  height: 100%;
+}
+
+.carousel-control{
+  margin-top: 85vh;
+}
+.carousel-inner div div span{
+color:#72C4B9;
+}
+
+.home-subtitle {
+  text-align: center;
+  color: white;
+  font-size: 1.7em;
+    text-shadow: 2px 1px 1px black;
+  text-decoration: none;
+}
+
+#home-title {
+  text-align: center;
+  margin-top: -5vh;
+  margin-bottom: 2vh;
+  font-size: 3em;
+  text-shadow: 3px 3px 2px black;
+  color:white;
+}
+
+.start-btn {
+  background-color: #72C4B9 !important;
+  padding-top: 2%;
+}

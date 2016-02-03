@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  include WelcomeHelper
 
   def facebook
     auth = request.env['omniauth.auth']
@@ -17,6 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p user.last_name = auth.info.last_name
       p user.profile_picture_url = auth.info.image
       p user.gender = auth.extra.raw_info.gender
+      p user.uid = auth.uid
       if auth.extra.raw_info.birthday
         birthday_string = auth.extra.raw_info.birthday
         birthday = Date.strptime(birthday_string,"%m/%d/%Y")
@@ -26,18 +28,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         else user.age = "Please share your age."
       end
 
-      if auth.extra.raw_info.location
-        p user.location = auth.extra.raw_info.location.name
-      else
-        user.location = "unknown"
-      end
-
+      # if auth.extra.raw_info.location
+      #   p user.location = auth.extra.raw_info.location.name
+      # else
+      #   user.location = "unknown"
+      # end
       p user.save!
       @user = user
       p "---------USER CREATED?"
       p "the user from FB Data is #{user}"
       p session[:user_id] = user.id
-      p flash[:success] = "Welcome, #{user.email}!"
+      flash[:success] = "Welcome, #{user.email}!"
       current_user = @user
 
       # p "=============background_process================="
@@ -45,8 +46,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # p GetGeoLocatorWorker.perform_async(current_user.id)
 
       sign_in(user)
-      @activity_blub = ActivityBlurb.new
-      redirect_to "/pick-sports"
+      # @activity_blub = ActivityBlurb.new
+      zip_code_modal unless current_user.update_lat_lng
+      p current_user.update_lat_lng
+      p current_user.zipcode
+      p flash
+      redirect_to "/profile"
     end
 
   end

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # add geokit within radius method used in User#users_within_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
-  after_create :update_access_token!, :update_geolocation
+  after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
 
@@ -28,19 +28,50 @@ def everyone_swipes_you
   return "everyone swiped you!"
 end
 
+# HACKY_SHIT cuz nil is tired of manually doing things
+def reset_swipes
+  self.swipes.each {|swipe| swipe.destroy}
+  p "swipes deleted"
+  self.everyone_swipes_you
+  p "errbody swiped you"
+end
 
-# this method just for testing purposes. plan to move to background worker
-def update_geolocation
+
+def update_lat_lng
+  # FOR HEROKU - TEMP DISABLE LAT LONG BY GEO
+  # if lat_lng_by_geolocation
+  #   p "successfully pulled lat-long from users' geolcation"
+  #   true
+  # elsif self.zipcode
+  # UPON RESTORE LAT-LONG REPLACE LINE 39 with LINE 37
+  if self.zipcode
+    lat_lng_by_zipcode
+    p "successfully pulled lat-long from users' inputted zipcode"
+  else
+    false
+  end
+end
+
+def lat_lng_by_geolocation
   api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
-      response = api_response.parsed_response
-  if response.empty?
-      lat = response["location"]["lat"]
-      lng = response["location"]["lng"]
-      self.update_attributes(:latitude => lat, :longitude => lng)
-  else #set location to DevBootcamp in SF
-    lat = "37.4705"
-    lng = "-122.2349"
-    self.update_attributes(:latitude => lat, :longitude => lng)
+  response = api_response.parsed_response
+  if response["location"]
+    lat = response["location"]["lat"]
+    lng = response["location"]["lng"]
+    return true if self.update_attributes(:latitude => lat, :longitude => lng)
+  end
+end
+
+def lat_lng_by_zipcode
+  api_response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.zipcode}&key=#{ENV['GOOGLE_API']}")
+  response = api_response.parsed_response
+
+  if response["status"] == "OK"
+    lat = response["results"][0]["geometry"]["location"]["lat"]
+    lng = response["results"][0]["geometry"]["location"]["lng"]
+    return true if self.update_attributes(:latitude => lat, :longitude => lng)
+  else
+    false
   end
 end
 
@@ -83,7 +114,6 @@ def self.from_omniauth(auth)
     user.image = auth.info.image # assuming the user model has an image
   end
 end
-
 
 private
 

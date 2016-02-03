@@ -53,7 +53,7 @@ var MessageBox = React.createClass({
 var MessageList = React.createClass({
   render: function () {
     var messageNodes = this.props.messages.map(function ( message ) {
-      return <Message author={ message.sender_name } text={ message.message_text } key={ message.id } />
+      return <Message cssBubble={ message.css_bubble } cssClass={ message.css_class } author={ message.sender_name } text={ message.message_text } key={ message.id } />
     });
 
     return (
@@ -93,7 +93,7 @@ var MessageForm = React.createClass({
           <input type="hidden" name={ this.props.form.csrf_param } value={ this.props.form.csrf_token } />
           <input type="hidden" ref="author" name="message[author]" value={this.state.author} readOnly />
           <input type="hidden" ref="matched_user_id" name="message[matched_user_id]" value={this.state.matched_user_id} readOnly />
-          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control input-md" required="" value={this.state.text} onChange={this.handleTextChange} />
+          <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control chat-box input-md" required="" value={this.state.text} onChange={this.handleTextChange} autofocus/>
           <span className="input-group-btn">
             <button id="submit" type="submit" name="submit" className="btn btn-success">Send</button>
           </span>
@@ -106,9 +106,9 @@ var MessageForm = React.createClass({
 var Message = React.createClass({
   render: function () {
     return (
-      <div>
-        <h4>{ this.props.author } said:</h4>
-        <p>{ this.props.text }</p>
+      <div className={ this.props.cssClass }>
+        <h4 className="chat-author"><u>{ this.props.author } said</u>:</h4>
+        <p className={ this.props.cssBubble }>{ this.props.text }</p>
       </div>
     )
   }
