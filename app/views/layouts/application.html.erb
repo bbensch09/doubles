@@ -15,11 +15,16 @@
 </head>
 <body>
     <!-- INSERT NAV ICON / OPTIONS HERE -->
+    <header class="navbar navbar-fixed-top" role="banner">
     <% if current_user %>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></button>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></button>
-      <button id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
-    </button>
+    <nav>
+    <ul class="nav navbar-nav">
+      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
+      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/matches" %></li>
+      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/feed" %></li>
+    </ul>
+  </nav>
+  </header>
     <% else %>
     <% end %>
 <% if flash[:success] %>
