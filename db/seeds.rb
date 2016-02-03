@@ -214,7 +214,7 @@ running_rena = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.runningshoesguru.com/wp-content/uploads/2014/10/runningmag1.jpg",
+    profile_picture_url: "http://www.active.com/Assets/Running/580/timing-your-run-580.jpg",
     password: 'password'
   })
 
@@ -228,7 +228,7 @@ sailing_sam = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.active.com/Assets/Running/580/timing-your-run-580.jpg",
+    profile_picture_url: "http://global.ralphlauren.com/SiteCollectionImages/polo/style/questions/0809_summerwhites_lg.jpg",
     password: 'password'
   })
 
