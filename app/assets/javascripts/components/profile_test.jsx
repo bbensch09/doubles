@@ -20,10 +20,14 @@ var ProfileTest = React.createClass({
   openChooseSportsDialog: function() {
     this.setState({search_sports: true});
   },
+  closeSearch: function() {
+    this.setState({search_sports: false});
+    console.log('got here');
+  },
   render: function() {
     return(
       <div>
-          <SearchSports search_sports={this.state.search_sports} user={this.props.user} sports={this.props.all_sports} />
+          <SearchSports search_sports={this.state.search_sports} user={this.props.user} sports={this.props.all_sports} closeSearch={this.closeSearch} />
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
          <p className="profile-text name-age">
@@ -199,7 +203,7 @@ var SearchSports = React.createClass({
       return(
         <div>
           <hr />
-            <PickSports user={this.props.user} sports={this.props.sports} />
+            <PickSports user={this.props.user} sports={this.props.sports} closeSearch={this.props.closeSearch} />
           <hr />
         </div>
         )
