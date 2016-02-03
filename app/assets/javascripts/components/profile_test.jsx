@@ -14,6 +14,7 @@ var ProfileTest = React.createClass({
   updateSaveNeeded: function() {
     this.state.save_needed = true;
     $('#save_button').prop("disabled", false);
+    $('#save_button').addClass('highlight');
   },
   render: function() {
     return(
