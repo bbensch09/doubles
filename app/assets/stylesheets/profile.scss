@@ -78,12 +78,16 @@
   border: 2px solid white;
 }
 
- input[type="text"]{
+.inline {
         border: none;
         background: transparent;
         color: #000;
         display: inline;
     }
+
+.number_form {
+  width: 65px;
+}
 
 .add_sports_helper {
   font-size: 1.5em;
