@@ -13,21 +13,21 @@
 <% message = Message.where(match_id: match.id).last %>
 
 <div class="match-row cl-b">
-  <div class="col-xs-3">
+  <div class="profile-container">
     <a href=<%="/users/#{matched_user.id}"%> >
       <img class="img-circle" src="<%= matched_user.profile_picture_url %>" alt="profile"/>
     </a>
   </div>
-    <a class="btn btn-default btn-blank col-xs-9" role="button" href=<%="/matches/#{match.id}/chat"%> >
+    <a class="btn btn-default btn-blank link-area" role="button" href=<%="/matches/#{match.id}/chat"%> >
       <div class="bubble btn chat-box">Chat</div>
-    <div class="fixed-width">
-      <div class="name-and-text">
+    <div class="name-and-text">
+      <div class="">
         <p class="last-message name"><%= matched_user.first_name %></p>
         <p class="last-message">
           <% if message.nil? %>
           send a message!
           <% else %>
-          <%= message.message_text[0..30] %>...
+          <%= message.message_text[0..25] %>...
           <% end %>
         </p>
       </div>
