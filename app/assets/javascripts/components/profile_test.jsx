@@ -82,7 +82,8 @@ var Sports = React.createClass({
 var Name = React.createClass({
   getInitialState: function() {
     return { form: false,
-              first_name: this.props.first_name};
+              first_name: this.props.first_name,
+              size: this.props.first_name.length};
   },
   onClick: function() {
     var current_form = this.state.form
@@ -90,13 +91,13 @@ var Name = React.createClass({
     console.log('click')
   },
   handleChange: function() {
-    this.setState({first_name: this.refs.first_name.value});
+    this.setState({first_name: this.refs.first_name.value, size: this.refs.first_name.value.length});
   },
   render: function() {
     if (this.state.form) {
       return(
         <div>
-          <input type="text" ref="first_name" id='first_name' size="4" onChange={this.handleChange} value={this.state.first_name}></input>
+          <input type="text" ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} value={this.state.first_name}></input>
         </div>
         );
         } else {
