@@ -4,6 +4,7 @@ var ProfileTest = React.createClass({
     return {save_needed: false,
             bio: this.props.user.bio,
             sports: this.props.sports,
+            activityBlurbs: this.props.activity_blurbs,
             first_name: this.props.user.first_name,
             age: this.props.user.age,
             search_sports: false};
@@ -20,9 +21,16 @@ var ProfileTest = React.createClass({
   openChooseSportsDialog: function() {
     this.setState({search_sports: true});
   },
-  closeSearch: function() {
+  closeSearch: function(chosenSport, activity_blurb_object) {
+    this.appendSport(chosenSport, activity_blurb_object);
     this.setState({search_sports: false});
-    console.log('got here');
+  },
+  appendSport: function(chosenSport, activity_blurb_object) {
+    var newSportsArray = this.state.sports.slice();
+    newSportsArray.push(chosenSport);
+    var newActivityBlurbsArray = this.state.activityBlurbs.slice();
+    newActivityBlurbsArray.push(activity_blurb_object);
+    this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
   },
   render: function() {
     return(
@@ -36,7 +44,7 @@ var ProfileTest = React.createClass({
          <p id="profile_text" className="profile-text">
          <Bio bio={this.state.bio} changeToSave={this.updateSaveNeeded}/>
          </p>
-         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} changeToSave={this.updateSaveNeeded} add_sport={this.openChooseSportsDialog}/>
+         <Sports sports={this.state.sports} activityBlurbs={this.state.activityBlurbs} changeToSave={this.updateSaveNeeded} add_sport={this.openChooseSportsDialog}/>
        </form>
        <div className="footer">
         <button className="col-xs-6">Logout</button>
@@ -49,8 +57,10 @@ var ProfileTest = React.createClass({
 
 var Sports = React.createClass({
   handleClick: function(event) {
-    console.log('GOt it')
     this.props.add_sport();
+  },
+  deleteSport: function() {
+
   },
   render: function() {
     if (this.props.sports.length > 0) {
@@ -59,20 +69,22 @@ var Sports = React.createClass({
         <div className="sport-button-container">
           {this.props.sports.map(function(sport, i) {
               var sportClass
-              switch(this.props.activity_blurbs[i].text) {
+              console.log('blurbs' + this.props.activityBlurbs.length);
+              console.log('sports' + this.props.sports.length);
+              switch(this.props.activityBlurbs[i].text) {
                 case 'beginner':
                   sportClass = "sports-beginner sports"
-                  break;
-                case 'intermediate':
-                  sportClass = 'sports-intermediate sports'
                   break;
                 case 'advanced':
                   sportClass = 'sports-advanced sports'
                   break;
+                default:
+                  sportClass = 'sports-intermediate sports'
+                  break;
               }
 
               return (
-                <div type="button" className={sportClass} key={i}>{sport.name}</div>
+                <div type="button" className={sportClass} key={i} name={sport.id}>{sport.name}</div>
                 );
               }, this)}
           </div>
@@ -215,8 +227,6 @@ var SearchSports = React.createClass({
 
 
 
-// $('#omniModal').modal('show');
-
 // Save disabled until able to save
 // Save grabs everything and sends an update
-// Sports are also sent at this time?
+
