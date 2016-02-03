@@ -51,7 +51,7 @@ color:#72C4B9;
 .home-subtitle {
   text-align: center;
   color: white;
-  font-size: 1.7em;
+  font-size: 1.5em;
     text-shadow: 2px 1px 1px black;
   text-decoration: none;
 }
@@ -68,11 +68,17 @@ color:#72C4B9;
 
 .start-btn {
   background-color: #72C4B9 !important;
-  padding-top: 2%;
+  padding-top: 4%;
+  font-size: 2em !important;
+  border-top: 1px solid #0F0F0D;
 }
 
 .fixed-zindex-to-top {
   position: fixed;
   z-index: 100;
+}
+
+.item span {
+  line-height: 1.3em;
 }
 
