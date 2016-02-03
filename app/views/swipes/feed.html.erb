@@ -3,11 +3,7 @@
 <% if @next_five_users.length > 0 %>
 <div id="cards">
   <ul>
-    <% @next_five_users.each do |user| %>
-    <li id="<%= user.id %>">
-      <%= render :partial => "users/show_card", :locals => {:user => user } %>
-    </li>
-    <% end %>
+    <%= render :partial => "swipes/generate_cards", :locals => {:users => @next_five_users } %>
   </ul>
 </div>
 <!-- <div class="actions">
@@ -20,3 +16,15 @@
 <% else %>
 <h2 class="text-center">No people matching your interests near you.</h2>
 <% end %>
+<div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="matchModal" id="matchModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <a href="/matches" style="width: 49%" class="btn btn-primary pull-left">Send Message</a>
+        <button type="button" style="width: 49%" class="btn btn-warning" data-dismiss="modal">Continue Swiping</button>
+      </div>
+    </div>
+  </div>
+</div>
