@@ -22,9 +22,11 @@ Rails.application.routes.draw do
 
   #Normal user-profile CRUD abilities (outside of devise to keep all in one place) of full profile
   get '/profile' => 'users#profile'
-  get '/edit_profile' => 'users#edit_profile'
-  put '/update_profile' => 'users#update'
+  get '/profile/edit' => 'users#edit_profile'
+  get '/profile/add-zipcode' => 'users#add_zipcode'
+   put '/update_profile' => 'users#update'
   put '/users/:id' => 'users#update'
+
   # Show a user all their matches
   get '/matches' => 'matches#index'
   get '/feed' => 'swipes#feed'

@@ -22,15 +22,16 @@ class UsersController < ApplicationController
     elsif  @user.bio.nil?
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/add_bio'
+      flash[:required_modal] = true
       p "-------bio modal set--------"
       # render 'profile'
 
     elsif @user.activities.empty?
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/pick_sports'
+      flash[:required_modal] = true
       p "-------activity modal set--------"
     end
-
   end
 
   def edit_profile
@@ -48,7 +49,8 @@ class UsersController < ApplicationController
       @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
       render json: @user
     elsif @user.update(profile_update_params)
-      redirect_to '/profile'
+      p "updating zipcode"
+      redirect_to '/feed'
     else
       p "could not save updates"
       render 'edit'
@@ -59,6 +61,15 @@ class UsersController < ApplicationController
     session[:walkthrough_status] = 'completed'
     puts "walkthrough status now completed"
     redirect_to '/feed'
+  end
+
+  def add_zipcode
+    if current_user.zipcode
+      current_user.lat_lng_by_zipcode
+      render :text => "true"
+    else
+      render partial: 'users/enter_zipcode'
+    end
   end
 
   def profile_update_params
