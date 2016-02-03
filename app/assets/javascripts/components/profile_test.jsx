@@ -16,6 +16,7 @@ var ProfileTest = React.createClass({
   updateBio: function(new_bio){
     this.setState({displayEditBio: true, bio: new_bio});
     console.log('updated')
+    console.log(this.state.displayEditBio)
   },
   updateName: function(first_name){
     this.setState({first_name: first_name})
@@ -140,7 +141,7 @@ var Name = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-          <input type="text" autoFocus ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} value={this.state.first_name}></input>
+          <input type="text" autoFocus ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} defaultValue={this.state.first_name}></input>
         );
         } else {
           return(<span id='first_name' onClick={this.onClick} >{this.state.first_name}</span>);
@@ -160,13 +161,13 @@ var Age = React.createClass({
   },
   handleChange: function() {
     this.setState({age: event.target.value});
-    this.props.updateName(this.refs.age.value)
+    this.props.updateAge(this.refs.age.value)
     this.props.changeToSave();
   },
   render: function() {
     if (this.state.form) {
       return(
-          <input type="text" autoFocus ref="age" id='age' size={this.state.size} onChange={this.handleChange} value={this.state.age}></input>
+          <input type="text" autoFocus ref="age" id='age' size={this.state.size} onChange={this.handleChange} defaultValue={this.state.age}></input>
         );
         } else {
           return(<span id='age' onClick={this.onClick}>{this.state.age}</span>);
