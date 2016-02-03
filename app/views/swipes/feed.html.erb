@@ -1,32 +1,21 @@
 <link rel="stylesheet" href="/stylesheets/jTinder.css">
-
-<% if @next_five_users.length > 0 %>
-<div id="cards">
-  <ul>
-    <%= render :partial => "swipes/generate_cards", :locals => {:users => @next_five_users } %>
-  </ul>
-</div>
-<!-- <div class="actions">
-  <a href="#" class="dislike"><i></i></a>
-  <a href="#" class="like"><i></i></a>
-</div> -->
 <script type="text/javascript" src="/javascripts/geolocation.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.transform2d.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.jTinder.js"></script>
 <script type="text/javascript" src="/javascripts/jtinder_config.js"></script>
 
-<% else %>
-<h2 class="text-center">No people matching your interests near you.</h2>
-<% end %>
+<div id="loading" class="text-center feed-loading">
+  <i class="fa fa-futbol-o fa-5x fa-spin" style="font-size: 5em !important; color: black; margin-left: 0 !important; margin-top: 25%;"></i>
+</div>
+<div id="cards" style="display: hidden">
+  <ul>
+  </ul>
+</div>
 <div class="modal fade modal-tiny" tabindex="-1" role="dialog" aria-labelledby="feedModal" id="feedModal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <a href="/matches" style="width: 49%" class="btn btn-primary pull-left">Send Message</a>
-        <button type="button" style="width: 49%" class="btn btn-warning" data-dismiss="modal">Continue Swiping</button>
-      </div>
     </div>
   </div>
 </div>
+
+
