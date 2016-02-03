@@ -20,29 +20,6 @@ activity_names.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
-# Create Tom
-tom = User.create!({
-                    first_name: "Tom",
-                    last_name: "Likes Everyone",
-                    email: 'tom@myspace.com',
-                    gender: 'male',
-                    age: 40,
-                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-                    location: "San Francisco",
-                    latitude: 37.7576792,
-                    longitude: -122.5078123,
-                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-                    password: 'password'
-                      })
-
-activities.each_with_index do |activity, index|
-  ActivityBlurb.create!({
-      text: "I've been playing #{activity} since 1999.",
-      activity_id: index,
-      user_id: 1
-      })
-end
-
 # Create other users
 
 billiards_bill = User.create!({
@@ -384,6 +361,29 @@ new_activities.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
+# Create Tom
+tom = User.create!({
+                    first_name: "Tom",
+                    last_name: "Likes Everyone",
+                    email: 'tom@myspace.com',
+                    gender: 'male',
+                    age: 40,
+                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+                    location: "San Francisco",
+                    latitude: 37.7576792,
+                    longitude: -122.5078123,
+                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+                    password: 'password'
+                      })
+
+activities.each_with_index do |activity, index|
+  ActivityBlurb.create!({
+      text: "I've been playing #{activity} since 1999.",
+      activity_id: index,
+      user_id: 1
+      })
+end
+
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
   seed_users = User.where("id <= 22")
@@ -398,11 +398,11 @@ def everyone_swipes_you
 end
 
 def tom_likes_everyone
-  seed_users = User.where("id > 1")
+  seed_users = User.where.not(id: 23)
   seed_users.each do |user|
       Swipe.create!({
         swiped_yes: true,
-        swiper_id: 1,
+        swiper_id: 23,
         swipee_id: user.id
         })
   end
@@ -410,8 +410,8 @@ end
 
 #create Brian's Test FB Account
 test_user = User.create!({
-                  first_name: "Walker, DBC Ranger",
-                  last_name: "Sherrif",
+                  first_name: "Sherrif Walker",
+                  last_name: "DBC Ranger",
                   email: "rentmasters.sf@gmail.com",
                   gender: "male",
                   age: rand(25..35),
@@ -419,7 +419,7 @@ test_user = User.create!({
                   location: "San Francisco",
                   latitude: 37.7576792,
                   longitude: -122.5078123,
-                  profile_picture_url: "https://pbs.twimg.com/profile_images/634740140003295234/bpnVhq8Z.jpg",
+                  profile_picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALDAAAAJDI1MGQ0ZDFhLWM5MTktNDY3Yy04MDE1LWFlYTRjYzZhOGQ5MA.jpg",
                   password: 'password'
                     })
 
@@ -579,37 +579,39 @@ tom_likes_everyone
 #TEST_USER likes Tom
 Swipe.create!({
     swiped_yes: true,
-    swiper_id: 23, #test_user id
-    swipee_id: 1 #Tom
+    swiper_id: 24, #test_user id
+    swipee_id: 23 #Tom
     })
 
 #Tom and Test User exchange a bunch of messages
+matched_activity = Activity.select("name").sample.name
+
 Message.create!(
     match_id:1,
-    message_text: "Hi #{test_user.first_name}, want to play #{Activity.select("name").sample} this weekend?",
-    user_id:1,
+    message_text: "Hi #{test_user.first_name}, want to play #{matched_activity} this weekend?",
+    user_id:23,
     sender_name:"Tom")
 
 Message.create!(
     match_id:1,
-    message_text: "Hi #{tom.first_name}, I could be interested. What's your background in #{Activity.select("name").sample}?",
-    user_id:23,
+    message_text: "Hi #{tom.first_name}, I could be interested. What's your background in #{matched_activity}?",
+    user_id:24,
     sender_name:"Walker, DBC Ranger")
 
 Message.create!(
     match_id:1,
-    message_text: "I started playing #{Activity.select("name").sample} in 2007 when it was cool, and never moved on.",
-    user_id:1,
+    message_text: "I started playing #{matched_activity} in 2007 when it was cool, and never moved on.",
+    user_id:23,
     sender_name:"Tom")
 
 Message.create!(
     match_id:1,
     message_text: "Interesting. I'm a complete newb, but would love to learn more.",
-    user_id:23,
+    user_id:24,
     sender_name:"Walker, DBC Ranger")
 
 Message.create!(
     match_id:1,
     message_text: "How's tomorrow?",
-    user_id:1,
+    user_id:23,
     sender_name:"Tom")
