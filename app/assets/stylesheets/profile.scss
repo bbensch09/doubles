@@ -42,15 +42,16 @@
   font-size: 1.5em;
   line-height: 50px;
   padding: 0 20px;
-
 }
+
+
 
 .fa-plus-circle {
   color: #337AB7;
 }
 
 .add_sport {
-  display: inline-block;
+  display: block;
   height: 50px;
   margin-left: 10px;
   padding: 10 20px;
@@ -92,8 +93,25 @@
   line-height: 40px;
 }
 
+.menu-container {
+  position: relative;
+}
+
+.sport_options {
+  display: block;
+  position: relative;
+}
+
 .glyphicon-hand-left {
   margin-right: 10px;
+}
+
+.search-bar {
+ width: 100%;
+}
+
+.list_plus {
+  margin-left: 0;
 }
 
 
