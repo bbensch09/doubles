@@ -47,3 +47,6 @@ a:hover, a:active{
   display:none;
 }
 
+.feed-loading {
+position: absolute; z-index: -50; margin-left: 40%; margin-top: 25%;
+}

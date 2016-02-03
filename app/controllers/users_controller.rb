@@ -46,11 +46,8 @@ class UsersController < ApplicationController
     if request.xhr?
       @user.update(bio: params[:bio]) if params[:bio]
       @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
-      current_user.update_lat_lng
-      puts 'success!!!!!!!!!!!!!!!!!!'
       render json: @user
     elsif @user.update(profile_update_params)
-      current_user.update_lat_lng
       redirect_to '/profile'
     else
       p "could not save updates"

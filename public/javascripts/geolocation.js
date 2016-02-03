@@ -12,6 +12,7 @@ var geolocator = function(){
         data: data
       })
       .done(function(response){
+        checkForMore();
         initJTinder();
       })
       .fail(function(xhr, error, unknown){
@@ -20,8 +21,18 @@ var geolocator = function(){
     };
     error = function(errorMessage) {
       // _enter_zipcode partial goes inside html
-      $('.modal-body').html(errorMessage);
-      $('#feedModal').modal('show');
+      // make ajax call to get zipcode partial
+      $.ajax({
+        url: '/swipes',
+        type: 'POST',
+        success: function(data) {
+          $('.modal-content').html(errorMessage);
+          $('#feedModal').modal('show');
+        },
+        error: function(data) {
+          console.error(data);
+        },
+      });
     };
     window.navigator.geolocation.getCurrentPosition(success, error, {
       maximumAge: Infinity,
