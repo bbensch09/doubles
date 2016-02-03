@@ -157,6 +157,9 @@ top: 43%;
 
 .input-group {
   clear: both;
+  position:fixed !important;
+  bottom: 0;
+  width: 100vw;
 }
 
 .chat-header {
@@ -171,4 +174,9 @@ top: 43%;
   color: #C2C2C2;
   text-align: center;
   margin-top: 1px !important;
+}
+
+
+.message-list, .message-box {
+  overflow: auto;
 }
