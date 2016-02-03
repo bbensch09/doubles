@@ -64,8 +64,14 @@ color:#72C4B9;
   text-shadow: 3px 3px 2px black;
   color:white;
 }
+<<<<<<< HEAD
 
 .start-btn {
   background-color: #72C4B9 !important;
   padding-top: 2%;
+=======
+.fixed-zindex-to-top {
+  position: fixed;
+  z-index: 100;
+>>>>>>> c65558f04b956ac2558404cd479684f8368bd255
 }
