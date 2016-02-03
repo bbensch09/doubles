@@ -11,11 +11,12 @@ var ProfileTest = React.createClass({
     this.setState({ name_form: true});
   },
   updateSaveNeeded: function() {
-    // If state has changed and the requirements are met, show save button
+    if( this.props.bio != this.state.bio )
+      {console.log('Save Needed')};
   },
   render: function() {
     return(
-      <div className="row">
+      <div>
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
          <p className="profile-text name-age">
@@ -24,8 +25,8 @@ var ProfileTest = React.createClass({
          <p id="profile_text" className="profile-text">
          <Bio bio={this.state.bio} />
          </p>
-         <Sports sports={this.state.sports}/>
-         <Save done={this.state.done}/>
+         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} />
+         <Save done={this.state.done} />
        </form>
       </div>
       )
@@ -37,12 +38,12 @@ var Sports = React.createClass({
     if (this.props.sports.length > 0) {
       return(
         <div>
-          <ul>
+        <div className="sport-button-container">
           {this.props.sports.map(function(sport, i) {
               var sportClass
-              switch(sport.name) {
+              switch(this.props.activity_blurbs[i].text) {
                 case 'beginner':
-                  sportClass = 'sports-beginner sports'
+                  sportClass = "sports-beginner sports"
                   break;
                 case 'intermediate':
                   sportClass = 'sports-intermediate sports'
@@ -53,10 +54,10 @@ var Sports = React.createClass({
               }
 
               return (
-                <li type="button" className="{sportClass}" key={i}>{sport.name}</li>
+                <div type="button" className={sportClass} key={i}>{sport.name}</div>
                 );
               }, this)}
-          </ul>
+          </div>
             <a href="#">
               <div className="add_sport">
                 <span className="fa fa-plus-circle"></span>
@@ -89,13 +90,13 @@ var Name = React.createClass({
     console.log('click')
   },
   handleChange: function() {
-    this.setState({first_name: event.target.value});
+    this.setState({first_name: this.refs.first_name.value});
   },
   render: function() {
     if (this.state.form) {
       return(
         <div>
-          <input type="text" id='first_name' onChange={this.handleChange} value={this.state.first_name}></input>
+          <input type="text" ref="first_name" id='first_name' size="4" onChange={this.handleChange} value={this.state.first_name}></input>
         </div>
         );
         } else {

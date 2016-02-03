@@ -71,6 +71,7 @@ class UsersController < ApplicationController
     @user = current_user
     @already_chosen_activities = @user.activities
     @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurbs = @user.activity_blurbs
     @activity_blurb = ActivityBlurb.new
   end
 
