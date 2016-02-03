@@ -44,12 +44,24 @@ li {
     cursor: default;
     overflow: hidden;
 }
+#profile-img-container{
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    margin: auto;
+    top: 10px;
+    position: relative;
+}
 
 #cards li img {
-    max-width: 90%;
-    max-height: 40%;
-    height: auto;
-    width: auto;
+  position: absolute;
+  margin: auto;
+  height:250px;
+  /*min-width: 50%;*/
+  left: -100%;
+  right: -100%;
+  top: -100%;
+  bottom: -100%;
 }
 
 /* Image text */

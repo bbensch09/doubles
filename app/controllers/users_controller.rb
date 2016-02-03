@@ -12,26 +12,12 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    already_chosen_activities = @user.activities
-    @all_sports = Activity.all - already_chosen_activities
+    @already_chosen_activities = @user.activities
+    @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurbs = @user.activity_blurbs
     @activity_blurb = ActivityBlurb.new
-
-    if flash[:show_modal]
-      render 'profile'
-      p "-------modal was true; profile rendered--------"
-    elsif  @user.bio.nil?
-      flash[:show_modal] = true
-      flash[:modal_to_show] = '/users/add_bio'
-      flash[:required_modal] = true
-      p "-------bio modal set--------"
-      # render 'profile'
-
-    elsif @user.activities.empty?
-      flash[:show_modal] = true
-      flash[:modal_to_show] = '/users/pick_sports'
-      flash[:required_modal] = true
-      p "-------activity modal set--------"
-    end
+    @first_visit = current_user.sign_in_count == 1
+    render 'profile'
   end
 
   def edit_profile
@@ -47,6 +33,7 @@ class UsersController < ApplicationController
     if request.xhr?
       @user.update(bio: params[:bio]) if params[:bio]
       @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
+      @user.update(bio: params[:bio], age: params[:age], first_name: params[:first_name]) if params[:bio]
       render json: @user
     elsif @user.update(profile_update_params)
       p "updating zipcode"
@@ -74,6 +61,15 @@ class UsersController < ApplicationController
 
   def profile_update_params
     params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email, :zipcode)
+  end
+
+  def profile_test
+    @user = current_user
+    @already_chosen_activities = @user.activities
+    @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurbs = @user.activity_blurbs
+    @activity_blurb = ActivityBlurb.new
+    @first_visit = current_user.sign_in_count == 1
   end
 
 end

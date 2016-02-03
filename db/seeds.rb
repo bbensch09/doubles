@@ -23,12 +23,12 @@ end
 # Create other users
 
 billiards_bill = User.create!({
-    first_name: "Bill",
+    first_name: "Billiards Bill",
     last_name: "Poolshark",
     email: "billiards_bill@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "My favorite pool bar is Jillians in downtown. I grew up in the East Bay and love swindling i-bankers out of their money.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -37,26 +37,26 @@ billiards_bill = User.create!({
   })
 
 bocce_britney = User.create!({
-    first_name: "Britney",
-    last_name: "Boccelli",
+    first_name: "Britney Boccelli",
+    last_name: "Smith",
     email: "bocce_britney@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "After four years in Santa Barbara, I recently left the beach and moved to SF. IMO, Nothing beats a Sunday afternoon of bocce ball and Bacardi.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.outmotoring.com/images/D/MIN_bocce_detail_1.jpg",
+    profile_picture_url: "http://media3.popsugar-assets.com/files/2012/08/32/3/301/3019466/4e7ed63c60510f0c_0b18b9d0d8ff11e1ba8122000a1e88a8_7.xxxlarge/i/Play-Bocce-Ball.jpg",
     password: 'password'
   })
 
 bowling_bernie = User.create!({
-    first_name: "Bernie",
-    last_name: "Bowler",
+    first_name: "Bernie Bowler",
+    last_name: "Smith",
     email: "bowling_bernie@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I've lived in SF since 1970, back when bowling was cool. Looking for others who feel the bern to bowl.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -65,27 +65,27 @@ bowling_bernie = User.create!({
   })
 
 cycling_cat = User.create!({
-    first_name: "Catwheel",
-    last_name: "Cycleton",
+    first_name: "Catwheel Cycleton",
+    last_name: "Smith",
     email: "cycling_cat@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I commute every day into the city from Marin on my carbon-frame Cannondale. Love long Saturday rides to Stinson beach.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/0904_cyclist.jpg",
+    profile_picture_url: "http://cdn.images.express.co.uk/img/dynamic/11/590x/Woman-cycling-550375.jpg",
     password: 'password'
   })
 
 darts_dan = User.create!({
-    first_name: "Dan",
-    last_name: "Dartsmouth",
+    first_name: "Dan Dartsmouth",
+    last_name: "Smith",
     email: "darts_dan@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
-    location: "San Francisco",
+    bio: "I'm a regular at the Albatross in Berkeley. I love darts and drinking, and am always up for creating new variations on the classic darts scoring.",
+    location: "Berkeley, CA",
     latitude: 37.7576792,
     longitude: -122.5078123,
     profile_picture_url: "http://prexamples.com/wp-content/uploads/2012/12/foxy-bingo-hair-dye-peter-wright.jpg",
@@ -93,26 +93,26 @@ darts_dan = User.create!({
   })
 
 scubasteve = User.create!({
-    first_name: "Steve",
-    last_name: "Scuber",
+    first_name: "Scuba Stephanie",
+    last_name: "Smith",
     email: "scubasteve@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I've gone scuba diving in 4 continents, but recently moved to SF, where the options are limited. Would love to find someone to plan a trip with.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "https://manchebo-674702.c.cdn77.org/photos/Aruba-Scuba-Diver-Turtle.jpg",
+    profile_picture_url: "http://www.excursionphotos.com/wp-content/uploads/2014/12/scuba-diver-large.jpg",
     password: 'password'
   })
 
 frisbee_golfer = User.create!({
-    first_name: "Fris",
-    last_name: "Begolfer",
+    first_name: "Fris Begolfer",
+    last_name: "Smith",
     email: "frisbee_golfer@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I was introduced to Frisbee golf while at Brown, and am looking to find folks to play in Golden Gate Park on weekends when its not foggy and 40 degrees.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -121,12 +121,12 @@ frisbee_golfer = User.create!({
   })
 
 golf_girl = User.create!({
-    first_name: "Felicia",
-    last_name: "Fairway",
+    first_name: "Felicia Fairway",
+    last_name: "Smith ",
     email: "golf_girl@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I played high school golf with Jordan Spieth, and just graduated from Stanford. Looking to play casual games with other avid golfers. Handicap: +2",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -135,26 +135,26 @@ golf_girl = User.create!({
   })
 
 handball_hannah = User.create!({
-    first_name: "Hannah",
-    last_name: "Handball",
+    first_name: "Henry Handball",
+    last_name: "Smith",
     email: "handball_hannah@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "Just moved to SF from Hungary, and hoping to find friends and gym space for some friendly handball games.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.olympic.org/Assets/MediaPlayer/Videos/2008/08/23/lot1-2008%20handball%20w%20final/Handball_Video_BIG_630.jpg",
+    profile_picture_url: "http://www.olympic.org/Assets/MediaPlayer/Photos/2012/London/Handball/04_08_12_handball_01_sd.jpg",
     password: 'password'
   })
 
 hiking_harry = User.create!({
-    first_name: "Harry",
-    last_name: "Hikerberry",
+    first_name: "Harry Hiker",
+    last_name: "Smith",
     email: "hiking_harry@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I spent last summer hiking the Appalachian trail, and just moved to the city. Looking for friends to explore the local trails in Marin and the east bay.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -163,12 +163,12 @@ hiking_harry = User.create!({
   })
 
 ping_pong = User.create!({
-    first_name: "Ping",
-    last_name: "Pong",
+    first_name: "Ping Pong",
+    last_name: "Smith",
     email: "ping_pong@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I was captain of the Ping Pong club in college.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -177,26 +177,26 @@ ping_pong = User.create!({
   })
 
 racquet_roger = User.create!({
-    first_name: "Rocket",
-    last_name: "Roger",
+    first_name: "Rocket Roger",
+    last_name: "Smith",
     email: "racquet_roger@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I've reserved court time at the Olympic Club every Thursday at 7pm, and would love to find a few other racquetball enthusiasts.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.rowan.edu/studentaffairs/rec/intramurals/images/racquetball-01.jpg",
+    profile_picture_url: "http://www.jewishjournal.com/images/featured/Art_Shay_Kill_Shot_ChicagoSide.jpg",
     password: 'password'
   })
 
 rock_climing_rachel = User.create!({
-    first_name: "Rachel",
-    last_name: "Roche",
+    first_name: "Rachel Roche",
+    last_name: "Smith",
     email: "rock_climing_rachel@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "You can find me most weeknights at Planet Granite in the Marina, but I'm really interested in finding some outdoor climbing partners.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -205,40 +205,40 @@ rock_climing_rachel = User.create!({
   })
 
 running_rena = User.create!({
-    first_name: "Rena",
-    last_name: "Runner",
+    first_name: "Rena Runner",
+    last_name: "Smith",
     email: "running_rena@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "Currently training for the Nike Women's marathon in October.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.runningshoesguru.com/wp-content/uploads/2014/10/runningmag1.jpg",
+    profile_picture_url: "http://www.active.com/Assets/Running/580/timing-your-run-580.jpg",
     password: 'password'
   })
 
 sailing_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Sailor",
+    first_name: "Sailor Sam",
+    last_name: "Smith",
     email: "sailing_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I live on my yacht. It gets lonely.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.freedomsailingadventures.com/wp-content/uploads/2012/01/the_captain_7_300w.jpg",
+    profile_picture_url: "http://global.ralphlauren.com/SiteCollectionImages/polo/style/questions/0809_summerwhites_lg.jpg",
     password: 'password'
   })
 
 skiergal = User.create!({
-    first_name: "Lindsey",
-    last_name: "VonnSkier",
+    first_name: "Lindsey VonnSkier",
+    last_name: "Smith",
     email: "skiergal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "So excited that Tahoe finally has snow again this year. I have a pass at Squaw Valley, and stay in a ski lease in Tahoe Donner.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -252,7 +252,7 @@ snowboard_gal = User.create!({
     email: "snowboard_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "Grew up in Park City, UT. Just moved to the east bay and looking to do a few weekends in Tahoe this winter.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -261,26 +261,26 @@ snowboard_gal = User.create!({
   })
 
 squash_snap = User.create!({
-    first_name: "SnapThat",
-    last_name: "squash",
+    first_name: "Snap That Squash",
+    last_name: "Smith",
     email: "squash_snap@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I started a company that teenagers love, but what I really love is playing squash. Finding cour time used to be hard, so I built myself a court in my backyard in Pac Heights.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.squashnz.co.nz/content/images/players/evanwilliams/Evan%20Williams%20photoshoot%202011%202.jpg",
+    profile_picture_url: "http://www.timeoutabudhabi.com/images/content/squash_in_abu_dhabi/innerbig/2013_1_squash_innerbig.jpg",
     password: 'password'
   })
 
 surfer_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Mavericks",
+    first_name: "Surfer Sal",
+    last_name: "Smith",
     email: "surfer_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I graduated from UC Santa Cruz in 2015, and spend my weekends chasing swells.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -289,12 +289,12 @@ surfer_sam = User.create!({
   })
 
 tennis_gal = User.create!({
-    first_name: "Tanya",
-    last_name: "Tenis",
+    first_name: "Tanya Tenis",
+    last_name: "Smith",
     email: "tennis_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "I played varsity tennis in high school in Houston, and moved to SF after college in 2010...",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -303,12 +303,12 @@ tennis_gal = User.create!({
   })
 
 wrestling_will = User.create!({
-    first_name: "Will",
-    last_name: "Wrestler",
+    first_name: "Lucha Libre",
+    last_name: "Smith",
     email: "wrestling_will@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "While I no longer wear sweat suits like I did for high school wrestling, I still love the sport and have entered in a few adult league tournaments over the past few years.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -317,16 +317,16 @@ wrestling_will = User.create!({
   })
 
 yogie = User.create!({
-    first_name: "Yasmine",
-    last_name: "Yogie",
+    first_name: "Ysabel Yogie",
+    last_name: "Smith",
     email: "yogie@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(2).join(' '),
+    bio: "Restorative yoga saved my life in 2008, and I love finding new friends to share my passion.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://hotlantayoga.com/wp-content/uploads/2014/01/yoga-mp-balatsinos.png",
+    profile_picture_url: "http://data.whicdn.com/images/47685733/superthumb.jpg",
     password: 'password'
   })
 
@@ -378,7 +378,8 @@ tom = User.create!({
 
 activities.each_with_index do |activity, index|
   ActivityBlurb.create!({
-      text: "I've been playing #{activity} since 1999.",
+      # text: "I've been playing #{activity} since 1999.",
+      text: ['beginner','intermediate','advanced'].sample,
       activity_id: index,
       user_id: 1
       })
@@ -408,6 +409,28 @@ def tom_likes_everyone
   end
 end
 
+#create Nil's Test FB Account PHOTOS
+nil_thacker = User.create!({
+                  first_name: "Nil",
+                  last_name: "Thacker",
+                  email: "nil@nil.gs",
+                  gender: "male",
+                  age: rand(25..35),
+                  bio: "Learned to code and play at DBC.",
+                  location: "San Francisco",
+                  latitude: 37.7576792,
+                  longitude: -122.5078123,
+                  profile_picture_url: "http://graph.facebook.com/10153470272907149/picture?type=large",
+                  password: 'password'
+                    })
+
+(1..3).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: activity_id,
+    user_id: nil_thacker.id
+    })
+  end
 #create Brian's Test FB Account
 test_user = User.create!({
                   first_name: "Sherrif Walker",
