@@ -74,7 +74,7 @@ cycling_cat = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/0904_cyclist.jpg",
+    profile_picture_url: "http://cdn.images.express.co.uk/img/dynamic/11/590x/Woman-cycling-550375.jpg",
     password: 'password'
   })
 
