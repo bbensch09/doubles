@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # sign_in_and_redirect_to root_path @user, :event => :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       sign_in(@user)
-      redirect_to root_path
+      redirect_to '/feed'
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
