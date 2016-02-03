@@ -66,7 +66,7 @@ var ProfileTest = React.createClass({
        </form>
        <div className="footer">
         <button className="col-xs-6">Logout</button>
-        <SaveButton />
+        <SaveButton firstVisit={this.props.first_visit}/>
         </div>
       </div>
       )
@@ -246,9 +246,22 @@ var SearchSports = React.createClass({
 
 var SaveButton = React.createClass({
   getInitialState: function() {
-  render: (
-    <input type="submit" name="/edit_profile" ref="save_button" id="save_button" className="col-xs-6" value="Save Changes"></input>
+    return { buttonText: 'Save changes' };
+  },
+  componentDidMount: function() {
+    if(this.props.firstVisit) {
+      this.setState({buttonText: 'Start Swiping!'})
+    } else {
+      this.setState({buttonText: 'Save Changes'})
+    }
+  },
+  render: function() {
+    return (
+    <input type="submit" name="/edit_profile" id="save_button" className="col-xs-6" value={this.state.buttonText}></input>
     )
+  },
+  changeText: function() {
+
   }
 });
 

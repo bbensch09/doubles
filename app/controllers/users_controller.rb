@@ -82,6 +82,11 @@ class UsersController < ApplicationController
     @all_sports = Activity.all - @already_chosen_activities
     @activity_blurbs = @user.activity_blurbs
     @activity_blurb = ActivityBlurb.new
+    @first_visit = current_user.sign_in_count == 1
+    p '+++++++++++++++++++++++++++'
+    p current_user.sign_in_count
+    p current_user.sign_in_count == 1
+    p '+++++++++++++++++++++++++++'
   end
 
 end
