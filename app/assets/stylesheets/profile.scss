@@ -42,15 +42,16 @@
   font-size: 1.5em;
   line-height: 50px;
   padding: 0 20px;
-
 }
+
+
 
 .fa-plus-circle {
   color: #337AB7;
 }
 
 .add_sport {
-  display: inline-block;
+  display: block;
   height: 50px;
   margin-left: 10px;
   padding: 10 20px;
@@ -76,6 +77,43 @@
   border: 2px solid #016844;
   border: 2px solid white;
 }
+
+ input[type="text"]{
+        border: none;
+        background: transparent;
+        color: #000;
+        display: inline;
+    }
+
+.add_sports_helper {
+  font-size: 1.5em;
+  margin-left: 60px;
+  color: #A94442;
+  height: 40px;
+  line-height: 40px;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.sport_options {
+  display: block;
+  position: relative;
+}
+
+.glyphicon-hand-left {
+  margin-right: 10px;
+}
+
+.search-bar {
+ width: 100%;
+}
+
+.list_plus {
+  margin-left: 0;
+}
+
 
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */
