@@ -25,6 +25,7 @@ var MessageBox = React.createClass({
       dataType: "json",
       success: function ( data ) {
         this.setState(data);
+        window.scrollTo(0,document.body.scrollHeight);
       }.bind(this)
     });
   },
@@ -95,7 +96,7 @@ var MessageForm = React.createClass({
           <input type="hidden" ref="matched_user_id" name="message[matched_user_id]" value={this.state.matched_user_id} readOnly />
           <input id="message" name="message[text]" ref="text" type="text" placeholder="Hi there!" className="form-control chat-box input-md" required="" value={this.state.text} onChange={this.handleTextChange} autofocus/>
           <span className="input-group-btn">
-            <button id="submit" type="submit" name="submit" className="btn btn-success">Send</button>
+            <button id="submit" type="submit" name="submit" className="input-btn btn btn-success">Send</button>
           </span>
         </div>
       </form>
@@ -104,10 +105,14 @@ var MessageForm = React.createClass({
 });
 
 var Message = React.createClass({
-  render: function () {
+  componentDidMount: function() {
+    window.scrollTo(0,document.body.scrollHeight);
+  },
+
+  render: function() {
     return (
       <div className={ this.props.cssClass }>
-        <h4 className="chat-author"><u>{ this.props.author } said</u>:</h4>
+        <h4 className="chat-author"></h4>
         <p className={ this.props.cssBubble }>{ this.props.text }</p>
       </div>
     )

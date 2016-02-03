@@ -13,6 +13,7 @@ class ActivityBlurbsController < ApplicationController
       @activity_blurb = ActivityBlurb.new
       flash[:show_modal] = true
       flash[:modal_to_show] = '/users/pick_sports'
+      flash[:required_modal] = true
       redirect_to '/profile'
     end
 

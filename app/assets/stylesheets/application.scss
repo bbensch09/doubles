@@ -29,6 +29,9 @@ $black: #0F0F0D;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
+textarea {
+    resize: none;
+}
 
 body {
   padding-top: 3.2em !important;
@@ -47,3 +50,6 @@ a:hover, a:active{
   display:none;
 }
 
+.feed-loading {
+position: absolute; z-index: -50; margin-left: 40%; margin-top: 25%;
+}
