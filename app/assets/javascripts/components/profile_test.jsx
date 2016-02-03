@@ -11,8 +11,7 @@ var ProfileTest = React.createClass({
     this.setState({ name_form: true});
   },
   updateSaveNeeded: function() {
-    if( this.props.bio != this.state.bio )
-      {console.log('Save Needed')};
+    console.log('Save Needed');
   },
   render: function() {
     return(
@@ -20,15 +19,12 @@ var ProfileTest = React.createClass({
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
          <p className="profile-text name-age">
-           <Name first_name={this.state.first_name} />, <Age age={this.state.age} />
+           <Name first_name={this.state.first_name} changeToSave={this.updateSaveNeeded} />, <Age age={this.state.age} changeToSave={this.updateSaveNeeded}/>
          </p>
          <p id="profile_text" className="profile-text">
-         <Bio bio={this.state.bio} />
+         <Bio bio={this.state.bio} changeToSave={this.updateSaveNeeded}/>
          </p>
-         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} />
-         <Save done={this.state.done} />
-         <div class="footer">
-        </div>
+         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} changeToSave={this.updateSaveNeeded}/>
        </form>
       </div>
       )
@@ -145,6 +141,7 @@ var Bio = React.createClass({
   },
   handleChange: function() {
     this.setState({bio: event.target.value});
+    this.props.changeToSave();
   },
   render: function() {
     if (this.state.form) {
@@ -166,20 +163,7 @@ var Bio = React.createClass({
   }
 })
 
-var Save = React.createClass({
-  getInitialState: function() {
-    return { form: false};
-  },
-  onClick: function() {
-    console.log('Save')
-  },
-  render: function() {
-    if (this.props.done) {
-      return(
-             <input type="submit" className="Save">Save</input>
-          );
-        } else {
-          return (<div></div>)
-        }
-  }
-})
+
+// Save disabled until able to save, turn green
+// Save grabs everything and sends an update
+// Sports are also sent at this time?
