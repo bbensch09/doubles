@@ -12,26 +12,27 @@ class SwipesController < ApplicationController
     end
 
     def feed
-      # p current_user
-      # p current_user.narrow_users
+      @next_five_users = current_user.narrow_users[0..4] if current_user
+      if request.xhr?
+        if @next_five_users.empty?
 
-      # send all unswiped users near you with shared activity
-      # @available_users = current_user.narrow_users
-
-      # send just first unswiped user near you with shared act...
-      if current_user.bio.nil?
-        redirect_to '/finish_profile'
-      elsif
-        unless session[:swipes_explanation] || (current_user.swipes.count > 0)
-          # redirect_to '/walkthrough'
-          flash[:show_modal] = true
-          flash[:modal_to_show]= 'users/swipes_explanation'
-          session[:swipes_explanation] = true;
-          @next_five_users = current_user.narrow_users[0..4]
+        else
+          # send back all the rendered cards and their count to the ajax call as json
+          {num_cards: @next_five_users.length,
+          cards: (render :partial => 'swipes/generate_cards', :locals => {:users => @next_five_users })
+          }.to_json
         end
-        # send just first unswiped user near you with shared act...
+
       else
-        @next_five_users = current_user.narrow_users[0..4]
+        if current_user.bio.nil?
+          redirect_to '/finish_profile'
+        else
+          unless session[:swipes_explanation] || (current_user.swipes.count > 0)
+            flash[:show_modal] = true
+            flash[:modal_to_show]= 'users/swipes_explanation'
+            session[:swipes_explanation] = true;
+          end
+        end
       end
     end
 
@@ -40,12 +41,12 @@ class SwipesController < ApplicationController
     def swipe_yes
       new_swipe = current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: true)
       match_found = User.find(params[:user_id]).swipes.where(swipee_id: current_user.id, swiped_yes: true).length > 0
+      @matched_user = User.find(params[:user_id]) if match_found
 
       if request.xhr?
-        render :text => match_found ? "match!" : "yes"
+        render :partial => 'matches/overlay_modal'
       else
-        if matched_user
-          @matched_user = User.find(params[:user_id])
+        if match_found
           render '/matches/overlay' and return if match_found
         else
           redirect_to "/feed"
@@ -56,7 +57,7 @@ class SwipesController < ApplicationController
     def swipe_no
       current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: false)
       if request.xhr?
-        render :text => "no"
+        head :ok, content_type: "text/html"
       else
         redirect_to "/feed"
       end
