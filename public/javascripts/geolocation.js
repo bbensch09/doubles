@@ -23,11 +23,21 @@ var geolocator = function(){
       // _enter_zipcode partial goes inside html
       // make ajax call to get zipcode partial
       $.ajax({
-        url: '/swipes',
-        type: 'POST',
+        url: '/profile/add-zipcode',
+        type: 'GET',
         success: function(data) {
-          $('.modal-content').html(errorMessage);
-          $('#feedModal').modal('show');
+          if (data != "true") {
+            $('.modal-content').html(data);
+            $('#feedModal').modal({
+                keyboard: false,
+                backdrop: 'static'
+              });
+            $('#feedModal').modal('show');
+          }
+          else {
+            checkForMore();
+            initJTinder();
+          }
         },
         error: function(data) {
           console.error(data);

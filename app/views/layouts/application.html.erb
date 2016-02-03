@@ -69,10 +69,17 @@
   </div>
 </div>
 <script>
+<% if flash[:required_modal] %>
+$('#omniModal').modal({
+  keyboard: false,
+  backdrop: 'static'
+});
+<% end %>
 $('#omniModal').modal('show');
 </script>
 <% flash.discard(:show_modal) %>
 <% flash.discard(:modal_to_show) %>
+<% flash.discard(:required_modal) %>
 <% end %>
 </body>
 </html>
