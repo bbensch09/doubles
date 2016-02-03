@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  initJTinder();
+  geolocator();
+  // initJTinder();
 });
 
 var totalSwipes = 0;
@@ -50,11 +51,8 @@ function initJTinder() {
         data: {type: "yes", user_id: item.attr('id')},
         success: function(data) {
           $('.modal-body').html(data);
-          $('#matchModal').modal('show');
-        },
-        error: function(data) {
-          console.error(data);
-        },
+          $('#feedModal').modal('show');
+        }
       });
       checkForMore();
     },
