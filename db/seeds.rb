@@ -410,7 +410,7 @@ def tom_likes_everyone
 end
 
 #create Nil's Test FB Account PHOTOS
-test_user = User.create!({
+nil_thacker = User.create!({
                   first_name: "Nil",
                   last_name: "Thacker",
                   email: "nil@nil.gs",
@@ -424,11 +424,11 @@ test_user = User.create!({
                   password: 'password'
                     })
 
-(1..10).to_a.each do |activity_id|
+(1..3).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
     activity_id: activity_id,
-    user_id: test_user.id
+    user_id: nil_thacker.id
     })
   end
 #create Brian's Test FB Account
