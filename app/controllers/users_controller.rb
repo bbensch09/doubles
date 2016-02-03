@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if request.xhr?
-      @user.update(bio: params[:bio])
+      @user.update(bio: params[:bio]) if params[:bio]
+      @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
       current_user.update_lat_lng
       puts 'success!!!!!!!!!!!!!!!!!!'
       render json: @user
