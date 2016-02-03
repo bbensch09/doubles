@@ -6,12 +6,14 @@ var ProfileTest = React.createClass({
             sports: this.props.sports,
             first_name: this.props.user.first_name,
             age: this.props.user.age};
+    $("#save_button").prop("disabled",true);
   },
   onClick: function() {
     this.setState({ name_form: true});
   },
   updateSaveNeeded: function() {
-    console.log('Save Needed');
+    this.state.save_needed = true;
+    $('#save_button').prop("disabled", false);
   },
   render: function() {
     return(
@@ -26,6 +28,10 @@ var ProfileTest = React.createClass({
          </p>
          <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} changeToSave={this.updateSaveNeeded}/>
        </form>
+       <div className="footer">
+        <button className="col-xs-6">Logout</button>
+        <input type="submit" name="/edit_profile" id="save_button" className="col-xs-6" value="Save Changes"></input>
+        </div>
       </div>
       )
   }
@@ -93,6 +99,7 @@ var Name = React.createClass({
   },
   handleChange: function() {
     this.setState({first_name: this.refs.first_name.value, size: this.refs.first_name.value.length});
+    this.props.changeToSave();
   },
   render: function() {
     if (this.state.form) {
@@ -118,6 +125,7 @@ var Age = React.createClass({
   },
   handleChange: function() {
     this.setState({age: event.target.value});
+    this.props.changeToSave();
   },
   render: function() {
     if (this.state.form) {
