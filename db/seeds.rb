@@ -14,33 +14,10 @@ Message.delete_all
 
 # Create activities
 activity_names = [
-"billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
+"billiards / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 activity_names.each do |activity|
   activities << Activity.create!(name: activity)
-end
-
-# Create Tom
-tom = User.create!({
-                    first_name: "Tom",
-                    last_name: "Likes Everyone",
-                    email: 'tom@myspace.com',
-                    gender: 'male',
-                    age: 40,
-                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-                    location: "San Francisco",
-                    latitude: 37.7576792,
-                    longitude: -122.5078123,
-                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-                    password: 'password'
-                      })
-
-activities.each_with_index do |activity, index|
-  ActivityBlurb.create!({
-      text: "I've been playing #{activity} since 1999.",
-      activity_id: index,
-      user_id: 1
-      })
 end
 
 # Create other users
@@ -97,7 +74,7 @@ cycling_cat = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://img2.timeinc.net/ew/dynamic/imgs/060126/145251__kingpin_l.jpg",
+    profile_picture_url: "http://www.womenshealthmag.com/sites/womenshealthmag.com/files/images/0904_cyclist.jpg",
     password: 'password'
   })
 
@@ -354,28 +331,57 @@ yogie = User.create!({
   })
 
 #Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
-activity_ids = (1..Activity.count).to_a
-activity_ids.each do |activity_id|
-  activity_name = Activity.find(activity_id).name
-  ActivityBlurb.create!({
+seed_activity_ids = (1..22).to_a
+seed_activity_ids.each do |activity_id|
+    activity_name = Activity.find(activity_id).name
+    ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
     activity_id: activity_id,
     user_id: activity_id
     })
-  current_activity = []
-  current_activity.push(activity_id)
-  other_activity_ids = activity_ids - current_activity
-  2.times do ActivityBlurb.create!({
-    text: "I'm just a beginner looking to learn more.",
-    activity_id: other_activity_ids.sample,
-    user_id: activity_id
-    })
-  end
+    current_activity = []
+    current_activity.push(activity_id)
+    other_activity_ids = seed_activity_ids - current_activity
+    2.times do ActivityBlurb.create!({
+      text: ['beginner','intermediate','advanced'].sample,
+      activity_id: other_activity_ids.sample,
+      user_id: activity_id
+      })
+      end
+    ActivityBlurb.create!({
+      text: ['beginner','intermediate','advanced'].sample,
+      activity_id: 1,
+      user_id: activity_id
+      })
+end
+
+new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing / snowboarding','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
+
+new_activities.each do |activity|
+  activities << Activity.create!(name: activity)
+end
+
+# Create Tom
+tom = User.create!({
+                    first_name: "Tom",
+                    last_name: "Likes Everyone",
+                    email: 'tom@myspace.com',
+                    gender: 'male',
+                    age: 40,
+                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+                    location: "San Francisco",
+                    latitude: 37.7576792,
+                    longitude: -122.5078123,
+                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+                    password: 'password'
+                      })
+
+activities.each_with_index do |activity, index|
   ActivityBlurb.create!({
-    text: "Like everyone else, I love drinking & billiards.",
-    activity_id: 1,
-    user_id: activity_id
-    })
+      text: "I've been playing #{activity} since 1999.",
+      activity_id: index,
+      user_id: 1
+      })
 end
 
 #everyone swipes on you (run for each seeded team member)
@@ -392,17 +398,44 @@ def everyone_swipes_you
 end
 
 def tom_likes_everyone
-  seed_users = User.where("id > 1")
+  seed_users = User.where.not(id: 23)
   seed_users.each do |user|
       Swipe.create!({
         swiped_yes: true,
-        swiper_id: 1,
+        swiper_id: 23,
         swipee_id: user.id
         })
   end
 end
 
+#create Brian's Test FB Account
+test_user = User.create!({
+                  first_name: "Sherrif Walker",
+                  last_name: "DBC Ranger",
+                  email: "rentmasters.sf@gmail.com",
+                  gender: "male",
+                  age: rand(25..35),
+                  bio: "Learned to code and play at DBC.",
+                  location: "San Francisco",
+                  latitude: 37.7576792,
+                  longitude: -122.5078123,
+                  profile_picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALDAAAAJDI1MGQ0ZDFhLWM5MTktNDY3Yy04MDE1LWFlYTRjYzZhOGQ5MA.jpg",
+                  password: 'password'
+                    })
+
+(1..10).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: activity_id,
+    user_id: test_user.id
+    })
+  end
+
+  #everyone swipes Test
+  everyone_swipes_you
+
 =begin
+
 #create Brian
 brian = User.create!({
                   first_name: "Brian",
@@ -538,22 +571,47 @@ greg = User.create!({
 #everyone swipes Greg
 everyone_swipes_you
 
-#FORCE MATCHES AMONG TEAM MEMBERS
-#brian likes everyone
-(24..27).to_a.each do |user_id|
-  Swipe.create!({
-    swiped_yes: true,
-    swiper_id: 23,
-    swipee_id: user_id
-    })
-end
-#everyone else likes brian
-(24..27).to_a.each do |user_id|
-  Swipe.create!({
-    swiped_yes: true,
-    swiper_id: user_id,
-    swipee_id: 23
-    })
-end
-tom_likes_everyone
 =end
+
+#SEED MATCHES AMONG TEST_USER and Tom
+tom_likes_everyone
+
+#TEST_USER likes Tom
+Swipe.create!({
+    swiped_yes: true,
+    swiper_id: 24, #test_user id
+    swipee_id: 23 #Tom
+    })
+
+#Tom and Test User exchange a bunch of messages
+matched_activity = Activity.select("name").sample.name
+
+Message.create!(
+    match_id:1,
+    message_text: "Hi #{test_user.first_name}, want to play #{matched_activity} this weekend?",
+    user_id:23,
+    sender_name:"Tom")
+
+Message.create!(
+    match_id:1,
+    message_text: "Hi #{tom.first_name}, I could be interested. What's your background in #{matched_activity}?",
+    user_id:24,
+    sender_name:"Walker, DBC Ranger")
+
+Message.create!(
+    match_id:1,
+    message_text: "I started playing #{matched_activity} in 2007 when it was cool, and never moved on.",
+    user_id:23,
+    sender_name:"Tom")
+
+Message.create!(
+    match_id:1,
+    message_text: "Interesting. I'm a complete newb, but would love to learn more.",
+    user_id:24,
+    sender_name:"Walker, DBC Ranger")
+
+Message.create!(
+    match_id:1,
+    message_text: "How's tomorrow?",
+    user_id:23,
+    sender_name:"Tom")
