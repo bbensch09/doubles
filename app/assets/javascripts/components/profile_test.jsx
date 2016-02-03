@@ -22,10 +22,11 @@ var ProfileTest = React.createClass({
     this.setState({age: age})
   },
   updateSaveNeeded: function() {
+    if (this.state.sports.length > 0 && this.state.bio && this.state.bio.length > 6) {
       this.setState({save_needed: true});
       $('#save_button').prop("disabled", false);
       $('#save_button').addClass('highlight');
-      $("#save_button").prop("disabled",false);
+    }
   },
   openChooseSportsDialog: function() {
     this.setState({search_sports: true});
@@ -68,6 +69,7 @@ var ProfileTest = React.createClass({
 var Sports = React.createClass({
   handleClick: function(event) {
     this.props.add_sport();
+    this.props.changeToSave();
   },
   deleteSport: function() {
 
