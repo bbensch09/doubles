@@ -27,7 +27,6 @@ function checkForMore() {
 };
 
 function initJTinder() {
-  console.log("initJTinder");
   $("#cards").jTinder({
 
   	// dislike callback
