@@ -1,4 +1,6 @@
-<img src="<%=user.profile_picture_url%>">
+<div id="profile-img-container">
+  <img src="<%=user.profile_picture_url%>">
+</div>
 <h1><%= user.first_name %></h1>
 <p><%= user.bio %></p>
 <% user.activities.each do |activity| %>
