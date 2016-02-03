@@ -27,6 +27,8 @@ var ProfileTest = React.createClass({
          </p>
          <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} />
          <Save done={this.state.done} />
+         <div class="footer">
+        </div>
        </form>
       </div>
       )
