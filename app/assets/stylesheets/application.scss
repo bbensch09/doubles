@@ -31,7 +31,7 @@ $black: #0F0F0D;
 }
 
 body {
-  padding-top: 3em !important;
+  padding-top: 3.2em !important;
 }
 
 .container-fluid {
@@ -47,3 +47,6 @@ a:hover, a:active{
   display:none;
 }
 
+.feed-loading {
+position: absolute; z-index: -50; margin-left: 40%; margin-top: 25%;
+}

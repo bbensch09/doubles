@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
+  # validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "should be in the form 12345 or 12345-1234"
 
   has_many :swipes, :foreign_key => "swiper_id", :class_name => "Swipe"
   has_many :swipees, through: :swipes, :foreign_key => "swipee_id", :class_name => "User"

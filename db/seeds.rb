@@ -14,7 +14,7 @@ Message.delete_all
 
 # Create activities
 activity_names = [
-"billiards / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
+"pool / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 activity_names.each do |activity|
   activities << Activity.create!(name: activity)
