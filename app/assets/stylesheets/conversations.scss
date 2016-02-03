@@ -55,9 +55,6 @@
   z-index: 0;
 }
 
-
-
-
 .bubble2 {
   position: relative;
   width: auto;
@@ -132,7 +129,7 @@ top: 7%;
   clear: both;
   position:fixed !important;
   bottom: 0;
-  width: 100vw;
+  width: 101vw;
 }
 
 .chat-header {
@@ -153,6 +150,7 @@ top: 7%;
   background-color: #72C4B9 !important;
   border-color: #9A9C9F !important;
   border-left: none !important;
+  border-radius: 0px !important;
 }
 
 .message-list, .message-box {
