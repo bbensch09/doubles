@@ -6,28 +6,24 @@ var ProfileTest = React.createClass({
             sports: this.props.sports,
             first_name: this.props.user.first_name,
             age: this.props.user.age,
-            search_sports: true};
+            search_sports: false};
     $("#save_button").prop("disabled",true);
   },
   onClick: function() {
     this.setState({ name_form: true});
   },
   updateSaveNeeded: function() {
-    this.state.save_needed = true;
+    this.setState({save_needed: true});
     $('#save_button').prop("disabled", false);
     $('#save_button').addClass('highlight');
   },
   openChooseSportsDialog: function() {
-    this.state.search_sports = true
+    this.setState({search_sports: true});
   },
   render: function() {
     return(
       <div>
-        <div className="search-bar">
-        <hr />
-          <PickSports user={this.props.user} sports={this.props.all_sports} />
-        <hr />
-        </div>
+          <SearchSports search_sports={this.state.search_sports} user={this.props.user} sports={this.props.all_sports} />
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
          <p className="profile-text name-age">
@@ -48,7 +44,8 @@ var ProfileTest = React.createClass({
 })
 
 var Sports = React.createClass({
-  handleClick: function() {
+  handleClick: function(event) {
+    console.log('GOt it')
     this.props.add_sport();
   },
   render: function() {
@@ -84,11 +81,11 @@ var Sports = React.createClass({
       )} else {
         return(
           <div>
-          <a href="#">
-            <div className="add_sport">
-              <span className="fa fa-plus-circle"></span>
-            </div>
-          </a>
+            <a id="add_sports" href="#" onClick={this.handleClick}>
+              <div className="add_sport">
+                <span className="fa fa-plus-circle"></span>
+              </div>
+            </a>
           <div className="add_sports_helper">
             <span className="glyphicon glyphicon-hand-left"></span>
             <span>Add some sports!</span>
@@ -193,19 +190,24 @@ var Bio = React.createClass({
   }
 })
 
-// var SearchSports = React.createClass({
-//   getInitialState: function() {
-//     return { renderPartial: false };
-//   },
-//   render: function() {
-//       if (this.props.search_sports){
-//         return(
-//           );
-//       } else {
-//         return(null);
-//       };
-// }
-// });
+var SearchSports = React.createClass({
+  getInitialState: function() {
+    return { renderPartial: false };
+  },
+  render: function() {
+    if (this.props.search_sports){
+      return(
+        <div>
+          <hr />
+            <PickSports user={this.props.user} sports={this.props.sports} />
+          <hr />
+        </div>
+        )
+    } else {
+      return(null)
+    }
+  }
+});
 
 
 
