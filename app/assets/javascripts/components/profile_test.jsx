@@ -254,7 +254,7 @@ var SaveButton = React.createClass({
     )
   },
   onClick: function() {
-    if (this.props.sports.length > 0) {
+    if (this.props.sports.length > 0 && this.props.bio.length > 5) {
       console.log('standards met')
       this.saveForm()
     } else {
