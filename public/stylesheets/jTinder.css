@@ -57,7 +57,7 @@ li {
   position: absolute;
   margin: auto;
   min-height: 100%;
-  min-width: 100%;
+  min-width: 50%;
   left: -100%;
   right: -100%;
   top: -100%;
