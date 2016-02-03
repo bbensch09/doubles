@@ -44,7 +44,6 @@ var MessageBox = React.createClass({
     return (
       <div className="message-box">
         <MessageList messages={ this.state.messages } />
-        <hr />
         <MessageForm form={ this.state.form } onMessageSubmit={ this.handleMessageSubmit } />
       </div>
     );
