@@ -72,7 +72,21 @@
         border: none;
         background: transparent;
         color: #000;
+        display: inline;
     }
+
+.add_sports_helper {
+  font-size: 1.5em;
+  margin-left: 50px;
+  color: #A94442;
+  height: 40px;
+  line-height: 40px;
+}
+
+.glyphicon-hand-left {
+  margin-right: 10px;
+}
+
 
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */

@@ -72,7 +72,10 @@ var Sports = React.createClass({
               <span className="fa fa-plus-circle"></span>
             </div>
           </a>
-          <span>Please add some sports!</span>
+          <div className="add_sports_helper">
+            <span className="glyphicon glyphicon-hand-left"></span>
+            <span>Add some sports!</span>
+          </div>
         </div>
       )}
   },
@@ -96,9 +99,7 @@ var Name = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-        <div>
           <input type="text" ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} value={this.state.first_name}></input>
-        </div>
         );
         } else {
           return(<span id='first_name' onClick={this.onClick} >{this.state.first_name}</span>);
@@ -109,7 +110,8 @@ var Name = React.createClass({
 var Age = React.createClass({
   getInitialState: function() {
     return { form: false,
-              age: this.props.age};
+              age: this.props.age,
+              size: 2};
   },
   onClick: function() {
     var current_form = this.state.form
@@ -122,12 +124,10 @@ var Age = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-        <div>
-          <input type="text" id='age' value={this.state.age}></input>
-        </div>
+          <input type="text" ref="age" id='age' size={this.state.size} onChange={this.handleChange} value={this.state.age}></input>
         );
         } else {
-          return(<span id='age' onClick={this.onClick} onChange={this.handleChange}>{this.state.age}</span>);
+          return(<span id='age' onClick={this.onClick}>{this.state.age}</span>);
         }
   }
 })
@@ -148,15 +148,13 @@ var Bio = React.createClass({
     if (this.state.form) {
       return(
         <div>
-          <textarea id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio}></textarea>
-          <input className="submit" type="submit" value="Ok" ></input>
+          <textarea className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio}></textarea>
         </div>
         );
         } else if (!this.props.bio){
           return(
-            <div>
-              <textarea id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio}>
-                Please write your profile information here!
+            <div className="form-group has-error">
+              <textarea className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio} placeholder="Please write your profile information here!">
               </textarea>
             </div>
           );
@@ -176,11 +174,7 @@ var Save = React.createClass({
   render: function() {
     if (this.props.done) {
       return(
-          <div>
-             <hr />
-             <hr />
              <input type="submit" className="Save">Save</input>
-          </div>
           );
         } else {
           return (<div></div>)
