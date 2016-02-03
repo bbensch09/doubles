@@ -37,8 +37,8 @@ billiards_bill = User.create!({
   })
 
 bocce_britney = User.create!({
-    first_name: "Britney",
-    last_name: "Boccelli",
+    first_name: "Britney Boccelli",
+    last_name: "Smith",
     email: "bocce_britney@example.com",
     gender: "female",
     age: rand(18..40),
@@ -46,13 +46,13 @@ bocce_britney = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.demotivationalposters.org/image/demotivational-poster/small/0909/bocce-ball-hot-bocce-ball-demotivational-poster-1253284908.jpg",
+    profile_picture_url: "http://media3.popsugar-assets.com/files/2012/08/32/3/301/3019466/4e7ed63c60510f0c_0b18b9d0d8ff11e1ba8122000a1e88a8_7.xxxlarge/i/Play-Bocce-Ball.jpg",
     password: 'password'
   })
 
 bowling_bernie = User.create!({
-    first_name: "Bernie",
-    last_name: "Bowler",
+    first_name: "Bernie Bowler",
+    last_name: "Smith",
     email: "bowling_bernie@example.com",
     gender: "male",
     age: rand(18..40),
@@ -65,8 +65,8 @@ bowling_bernie = User.create!({
   })
 
 cycling_cat = User.create!({
-    first_name: "Catwheel",
-    last_name: "Cycleton",
+    first_name: "Catwheel Cycleton",
+    last_name: "Smith",
     email: "cycling_cat@example.com",
     gender: "male",
     age: rand(18..40),
@@ -79,8 +79,8 @@ cycling_cat = User.create!({
   })
 
 darts_dan = User.create!({
-    first_name: "Dan",
-    last_name: "Dartsmouth",
+    first_name: "Dan Dartsmouth",
+    last_name: "Smith",
     email: "darts_dan@example.com",
     gender: "male",
     age: rand(18..40),
@@ -93,8 +93,8 @@ darts_dan = User.create!({
   })
 
 scubasteve = User.create!({
-    first_name: "Steve",
-    last_name: "Scuber",
+    first_name: "Scuba Stephanie",
+    last_name: "Smith",
     email: "scubasteve@example.com",
     gender: "male",
     age: rand(18..40),
@@ -102,13 +102,13 @@ scubasteve = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "https://manchebo-674702.c.cdn77.org/photos/Aruba-Scuba-Diver-Turtle.jpg",
+    profile_picture_url: "http://www.excursionphotos.com/wp-content/uploads/2014/12/scuba-diver-large.jpg",
     password: 'password'
   })
 
 frisbee_golfer = User.create!({
-    first_name: "Fris",
-    last_name: "Begolfer",
+    first_name: "Fris Begolfer",
+    last_name: "Smith",
     email: "frisbee_golfer@example.com",
     gender: "male",
     age: rand(18..40),
@@ -121,8 +121,8 @@ frisbee_golfer = User.create!({
   })
 
 golf_girl = User.create!({
-    first_name: "Felicia",
-    last_name: "Fairway",
+    first_name: "Felicia Fairway",
+    last_name: "Smith ",
     email: "golf_girl@example.com",
     gender: "male",
     age: rand(18..40),
@@ -135,8 +135,8 @@ golf_girl = User.create!({
   })
 
 handball_hannah = User.create!({
-    first_name: "Henry",
-    last_name: "Handball",
+    first_name: "Henry Handball",
+    last_name: "Smith",
     email: "handball_hannah@example.com",
     gender: "female",
     age: rand(18..40),
@@ -149,8 +149,8 @@ handball_hannah = User.create!({
   })
 
 hiking_harry = User.create!({
-    first_name: "Harry",
-    last_name: "Hikerberry",
+    first_name: "Harry Hiker",
+    last_name: "Smith",
     email: "hiking_harry@example.com",
     gender: "female",
     age: rand(18..40),
@@ -163,8 +163,8 @@ hiking_harry = User.create!({
   })
 
 ping_pong = User.create!({
-    first_name: "Ping",
-    last_name: "Pong",
+    first_name: "Ping Pong",
+    last_name: "Smith",
     email: "ping_pong@example.com",
     gender: "male",
     age: rand(18..40),
@@ -177,8 +177,8 @@ ping_pong = User.create!({
   })
 
 racquet_roger = User.create!({
-    first_name: "Rocket",
-    last_name: "Roger",
+    first_name: "Rocket Roger",
+    last_name: "Smith",
     email: "racquet_roger@example.com",
     gender: "male",
     age: rand(18..40),
@@ -186,13 +186,13 @@ racquet_roger = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.rowan.edu/studentaffairs/rec/intramurals/images/racquetball-01.jpg",
+    profile_picture_url: "http://www.jewishjournal.com/images/featured/Art_Shay_Kill_Shot_ChicagoSide.jpg",
     password: 'password'
   })
 
 rock_climing_rachel = User.create!({
-    first_name: "Rachel",
-    last_name: "Roche",
+    first_name: "Rachel Roche",
+    last_name: "Smith",
     email: "rock_climing_rachel@example.com",
     gender: "female",
     age: rand(18..40),
@@ -205,8 +205,8 @@ rock_climing_rachel = User.create!({
   })
 
 running_rena = User.create!({
-    first_name: "Rena",
-    last_name: "Runner",
+    first_name: "Rena Runner",
+    last_name: "Smith",
     email: "running_rena@example.com",
     gender: "female",
     age: rand(18..40),
@@ -219,8 +219,8 @@ running_rena = User.create!({
   })
 
 sailing_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Sailor",
+    first_name: "Sailor Sam",
+    last_name: "Smith",
     email: "sailing_sam@example.com",
     gender: "male",
     age: rand(18..40),
@@ -228,13 +228,13 @@ sailing_sam = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://global.ralphlauren.com/SiteCollectionImages/polo/style/questions/0809_summerwhites_lg.jpg",
+    profile_picture_url: "http://www.active.com/Assets/Running/580/timing-your-run-580.jpg",
     password: 'password'
   })
 
 skiergal = User.create!({
-    first_name: "Lindsey",
-    last_name: "VonnSkier",
+    first_name: "Lindsey VonnSkier",
+    last_name: "Smith",
     email: "skiergal@example.com",
     gender: "female",
     age: rand(18..40),
@@ -261,8 +261,8 @@ snowboard_gal = User.create!({
   })
 
 squash_snap = User.create!({
-    first_name: "SnapThat",
-    last_name: "squash",
+    first_name: "Snap That Squash",
+    last_name: "Smith",
     email: "squash_snap@example.com",
     gender: "male",
     age: rand(18..40),
@@ -275,8 +275,8 @@ squash_snap = User.create!({
   })
 
 surfer_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Mavericks",
+    first_name: "Surfer Sal",
+    last_name: "Smith",
     email: "surfer_sam@example.com",
     gender: "male",
     age: rand(18..40),
@@ -289,8 +289,8 @@ surfer_sam = User.create!({
   })
 
 tennis_gal = User.create!({
-    first_name: "Tanya",
-    last_name: "Tenis",
+    first_name: "Tanya Tenis",
+    last_name: "Smith",
     email: "tennis_gal@example.com",
     gender: "female",
     age: rand(18..40),
@@ -303,8 +303,8 @@ tennis_gal = User.create!({
   })
 
 wrestling_will = User.create!({
-    first_name: "Will",
-    last_name: "Wrestler",
+    first_name: "Lucha Libre",
+    last_name: "Smith",
     email: "wrestling_will@example.com",
     gender: "male",
     age: rand(18..40),
@@ -317,8 +317,8 @@ wrestling_will = User.create!({
   })
 
 yogie = User.create!({
-    first_name: "Yasmine",
-    last_name: "Yogie",
+    first_name: "Ysabel Yogie",
+    last_name: "Smith",
     email: "yogie@example.com",
     gender: "female",
     age: rand(18..40),
@@ -326,7 +326,7 @@ yogie = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://hotlantayoga.com/wp-content/uploads/2014/01/yoga-mp-balatsinos.png",
+    profile_picture_url: "http://data.whicdn.com/images/47685733/superthumb.jpg",
     password: 'password'
   })
 
