@@ -1,9 +1,3 @@
-$(document).ready(function(){
-  $(document).on('submit', '.message-form', function() {
-  });
-});
-
-
 var MessageBox = React.createClass({
   loadMessagesFromServer: function() {
     $.ajax({
