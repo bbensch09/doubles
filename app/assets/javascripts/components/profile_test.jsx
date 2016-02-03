@@ -141,27 +141,36 @@ var Age = React.createClass({
 
 var Bio = React.createClass({
   getInitialState: function() {
-    return { form: false, bio: this.props.bio};
+    return { form: false,
+              bio: this.props.bio,
+              color_class: 'has-error',
+            };
   },
   onClick: function() {
     var current_form = this.state.form
     this.setState({ form: !current_form});
     console.log('click')
   },
-  handleChange: function() {
+  handleChange: function(event) {
     this.setState({bio: event.target.value});
     this.props.changeToSave();
+    console.log(event.target.value);
+    if (event.target.value.length > 5) {
+      this.setState({color_class: ''})
+    } else {
+      this.setState({color_class: 'has-error'})
+    };
   },
   render: function() {
     if (this.state.form) {
       return(
         <div>
-          <textarea className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio}></textarea>
+          <textarea className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange(this)} value={this.state.bio}></textarea>
         </div>
         );
         } else if (!this.props.bio){
           return(
-            <div className="form-group has-error">
+            <div className={this.state.color_class}>
               <textarea className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio} placeholder="Please write your profile information here!">
               </textarea>
             </div>
