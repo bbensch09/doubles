@@ -5,7 +5,8 @@ var ProfileTest = React.createClass({
             bio: this.props.user.bio,
             sports: this.props.sports,
             first_name: this.props.user.first_name,
-            age: this.props.user.age};
+            age: this.props.user.age,
+            search_sports: true};
     $("#save_button").prop("disabled",true);
   },
   onClick: function() {
@@ -16,9 +17,17 @@ var ProfileTest = React.createClass({
     $('#save_button').prop("disabled", false);
     $('#save_button').addClass('highlight');
   },
+  openChooseSportsDialog: function() {
+    this.state.search_sports = true
+  },
   render: function() {
     return(
       <div>
+        <div className="search-bar">
+        <hr />
+          <PickSports user={this.props.user} sports={this.props.all_sports} />
+        <hr />
+        </div>
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
          <p className="profile-text name-age">
@@ -27,7 +36,7 @@ var ProfileTest = React.createClass({
          <p id="profile_text" className="profile-text">
          <Bio bio={this.state.bio} changeToSave={this.updateSaveNeeded}/>
          </p>
-         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} changeToSave={this.updateSaveNeeded}/>
+         <Sports sports={this.state.sports} activity_blurbs={this.props.activity_blurbs} changeToSave={this.updateSaveNeeded} add_sport={this.openChooseSportsDialog}/>
        </form>
        <div className="footer">
         <button className="col-xs-6">Logout</button>
@@ -39,6 +48,9 @@ var ProfileTest = React.createClass({
 })
 
 var Sports = React.createClass({
+  handleClick: function() {
+    this.props.add_sport();
+  },
   render: function() {
     if (this.props.sports.length > 0) {
       return(
@@ -63,7 +75,7 @@ var Sports = React.createClass({
                 );
               }, this)}
           </div>
-            <a href="#">
+            <a id="add_sports" href="#" onClick={this.handleClick}>
               <div className="add_sport">
                 <span className="fa fa-plus-circle"></span>
               </div>
@@ -181,7 +193,24 @@ var Bio = React.createClass({
   }
 })
 
+// var SearchSports = React.createClass({
+//   getInitialState: function() {
+//     return { renderPartial: false };
+//   },
+//   render: function() {
+//       if (this.props.search_sports){
+//         return(
+//           );
+//       } else {
+//         return(null);
+//       };
+// }
+// });
 
-// Save disabled until able to save, turn green
+
+
+// $('#omniModal').modal('show');
+
+// Save disabled until able to save
 // Save grabs everything and sends an update
 // Sports are also sent at this time?

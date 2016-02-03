@@ -35,7 +35,7 @@ var PickSports = React.createClass({
     return(
       <div>
         <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
-        <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
+          <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
         <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport" saveSport={this.saveSport}/>
       </div>
       )
@@ -63,11 +63,11 @@ var SportsOptions = React.createClass({
   render: function() {
       if(this.state.sports.length) {
       return(
-          <ul>{this.state.sports.map(function(sport, i) {
+          <ul className="menu-container">{this.state.sports.map(function(sport, i) {
               return (
                 <li type="button" className="btn btn-info sport_options" key={i} onClick={this.handleClick.bind(this, i)}>
-                <span className="pull-left icon fa fa-plus-circle"></span>
-                <span className="pull-left sport_item">{sport.name}</span>
+                  <span className="pull-left icon fa fa-plus-circle list_plus"></span>
+                  <span className="pull-left sport_item">{sport.name}</span>
                 </li>
                 );
               }, this)}
