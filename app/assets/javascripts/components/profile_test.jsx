@@ -141,7 +141,7 @@ var Name = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-          <input type="text" autoFocus ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} defaultValue={this.state.first_name}></input>
+          <input type="text" className="inline" autoFocus ref="first_name" id='first_name' size={this.state.size} onChange={this.handleChange} defaultValue={this.state.first_name}></input>
         );
         } else {
           return(<span id='first_name' onClick={this.onClick} >{this.state.first_name}</span>);
@@ -167,7 +167,7 @@ var Age = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-          <input type="text" autoFocus ref="age" id='age' size={this.state.size} onChange={this.handleChange} defaultValue={this.state.age}></input>
+          <input className="inline number_form" type="number" autoFocus ref="age" id='age' max="99" onChange={this.handleChange} defaultValue={this.state.age}></input>
         );
         } else {
           return(<span id='age' onClick={this.onClick}>{this.state.age}</span>);
@@ -263,6 +263,7 @@ var SaveButton = React.createClass({
   },
   saveForm: function(){
     console.log(this.props.first_name, this.props.age, this.props.bio)
+    var firstVisit = this.props.firstVisit
     var request = $.ajax({
                     url: '/update_profile',
                     type: "PUT",
@@ -272,7 +273,11 @@ var SaveButton = React.createClass({
     request.done(function(data) {
         console.log(data);
         console.log("successfully saved via ajax");
+        if(firstVisit) {
+          location.href = '/feed';
+        } else {
         location.reload();
+        }
     });
   },
 });
