@@ -2,7 +2,6 @@
 var ProfileTest = React.createClass({
   getInitialState: function() {
     return {save_needed: false,
-            displayEditBio: false,
             bio: this.props.user.bio,
             sports: this.props.sports,
             activityBlurbs: this.props.activity_blurbs,
@@ -14,9 +13,7 @@ var ProfileTest = React.createClass({
     this.setState({ name_form: true});
   },
   updateBio: function(new_bio){
-    this.setState({displayEditBio: true, bio: new_bio});
-    console.log('updated')
-    console.log(this.state.displayEditBio)
+    this.setState({bio: new_bio});
   },
   updateName: function(first_name){
     this.setState({first_name: first_name})
@@ -61,7 +58,7 @@ var ProfileTest = React.createClass({
        </form>
        <div className="footer">
         <a href="users/sign_out"><button className="col-xs-6">Logout</button></a>
-        <SaveButton displayEditBio={this.state.displayEditBio} firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
+        <SaveButton firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
         </div>
        </div>
       )
@@ -179,41 +176,49 @@ var Bio = React.createClass({
   getInitialState: function() {
     return {  bio: this.props.bio,
               color_class: 'has-error',
-              form: this.props.displayEditBio
+              form: false
             };
+  },
+  componentDidMount: function() {
+    if(this.props.firstVisit || !this.props.bio || this.props.bio.length < 6) {
+      this.setState({form: true});
+    } else {
+      this.setState({form: false});
+    }
   },
   onClick: function() {
     var current_form = this.state.form
     this.setState({ form: !current_form});
   },
   handleChange: function(event) {
-    console.log(event)
-    this.setState({bio: event.target.value});
     this.props.updateBio(event.target.value);
     if (event.target.value.length > 5) {
       this.props.changeToSave();
-      this.setState({color_class: ''});
+      this.setState({color_class: '', bio: event.target.value});
     } else {
-      this.setState({color_class: 'has-error'})
+      this.setState({color_class: 'has-error', bio: event.target.value})
     };
   },
   render: function() {
-    if (this.state.form) {
+    let maybe_red_form = (!this.props.bio || this.props.bio.length < 6) ?
+                          this.state.color_class :
+                          '';
+    let placeholderText = 'I played varsity tennis in high school in Houston, and moved to SF after college in 2010...';
+    if (this.state.form ) {
       return(
-        <div>
-          <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} defaultValue={this.state.bio}></textarea>
+        <div className={maybe_red_form}>
+          <textarea autoFocus
+            id='bio' rows="4" columns="20"
+            className="form-control"
+            onChange={this.handleChange}
+            placeholder={placeholderText} >
+              {this.state.bio}
+            </textarea>
         </div>
-        );
-        } else if (!this.props.bio || this.props.bio.length < 6){
-          return(
-            <div className={this.state.color_class}>
-              <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} defaultValue={this.state.bio} placeholder="I played varsity tennis in high school in Houston, and moved to SF after college in 2010...">
-              </textarea>
-            </div>
-          );
-        } else {
-          return(<span id='bio' onClick={this.onClick} >{this.state.bio}</span>);
-        }
+      );
+    } else {
+      return(<span id='bio' onClick={this.onClick} >{this.state.bio}</span>);
+    }
   }
 })
 
