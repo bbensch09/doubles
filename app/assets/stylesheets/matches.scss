@@ -3,30 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .img-circle {
-  height: 75px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
+  margin-top: auto;
 }
 .match-row {
   margin-bottom: 4px;
   margin-top: 4px;
   padding-left: 5px;
-  height:80px;
+  height:75px;
   border-bottom: 1px solid #808080;
 }
-.fixed-width{
-  width:70%;
-  overflow: hidden;
+.profile-container{
+  padding-left:3px !important;
+  display: inline-block;
+  float:left;
+}
+.link-area{
+  width:80%;
+  padding-right: 2px !important;
+}
+.name-and-text{
+  width:72%;
 }
 .last-message{
   text-align: left;
-  line-height: 1.1em;
+  line-height: 1em;
 }
 .name {
   padding-top: 5px;
   font-size:1.4em;
   font-weight: bold;
 }
-.chat-icon{  float:right;}
+.chat-icon{
+  position:absolute;
+  right:0
+}
 
 .header-box {
   display:block;
