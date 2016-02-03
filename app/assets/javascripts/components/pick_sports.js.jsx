@@ -113,9 +113,9 @@ var SkillLevel = React.createClass({
   render: function() {
       return(
       <div className="row activity_level">
-        <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4 alert-success">Beginner</button>
-        <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4 alert-info">Intermediate</button>
-        <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4 alert-warning">Advanced</button>
+        <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4">Beginner</button>
+        <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4">Intermediate</button>
+        <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4">Advanced</button>
       </div>
        )
   },

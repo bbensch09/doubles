@@ -2,10 +2,9 @@
 <%=flash[:modal_to_show]%>
 
 
-
 <%= render 'profile_pic_name_and_age' %>
 <%= render 'profile_bio' %>
-<%= render 'profile_sports' %>
+<%= render partial: 'profile_sports', locals: {show_add_button: true} %>
 <div class="footer">
 
 <button class="col-xs-6"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></button>

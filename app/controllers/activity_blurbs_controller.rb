@@ -11,8 +11,9 @@ class ActivityBlurbsController < ApplicationController
       already_chosen_activities = @user.activities
       @all_sports = Activity.all - already_chosen_activities
       @activity_blurb = ActivityBlurb.new
-
-      render '/users/pick-sports'
+      flash[:show_modal] = true
+      flash[:modal_to_show] = '/users/pick_sports'
+      redirect_to '/profile'
     end
 
     def create
