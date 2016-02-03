@@ -46,7 +46,7 @@ bocce_britney = User.create!({
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.outmotoring.com/images/D/MIN_bocce_detail_1.jpg",
+    profile_picture_url: "http://www.demotivationalposters.org/image/demotivational-poster/small/0909/bocce-ball-hot-bocce-ball-demotivational-poster-1253284908.jpg",
     password: 'password'
   })
 
