@@ -7,28 +7,6 @@
 <button class="col-xs-6"><%= link_to "Edit Profile", '/edit_profile' %></button>
 </div>
 
-<script>
-$(document).ready(function(){
-  if (window.navigator.geolocation) {
-    var error, success;
-    success = function(position) {
-      var lat, lng, data;
-      lat = position.coords.latitude;
-      lng = position.coords.longitude;
-      data = {lat: lat, lng: lng};
-      $.ajax({
-        url:"/update_profile",
-        method: "PUT",
-        data: data
-      }).done(function(response){console.log(response)});
-    };
-    error = function(message) {
-      return false;
-    };
-    window.navigator.geolocation.getCurrentPosition(success, error, {
-      maximumAge: Infinity,
-      timeout: 5000
-    });
-}
-})
-</script>
+
+
+
