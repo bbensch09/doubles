@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     if request.xhr?
       @user.update(bio: params[:bio]) if params[:bio]
       @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
+      @user.update(bio: params[:bio], age: params[:age], first_name: params[:first_name]) if params[:bio]
       render json: @user
     elsif @user.update(profile_update_params)
       p "updating zipcode"
