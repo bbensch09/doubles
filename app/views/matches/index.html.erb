@@ -1,6 +1,6 @@
 <h1 class="text-center">All Your Matches</h1>
 
-<div class="text-center">
+<div class="text-center header-box">
   <% if @matches.length == 0 %>
   Sorry, no matches yet, check back again later! To increase your odds, add more activities and keep swiping.
   <% else %>
@@ -8,18 +8,32 @@
   <% end %>
 </div>
 
-<% @matches.each do |match| %>
+<% @matches.each_with_index do |match,index| %>
 <% matched_user = get_matched_user(match, current_user) %>
-<div class="match-row">
+<% message = Message.where(match_id: match.id).last %>
+
+<div class="match-row cl-b">
   <div class="col-xs-3">
-    <img class="img-circle" src="<%= matched_user.profile_picture_url %>"/>
-  </div>
-  <div class="col-xs-9">
-    <a href=<%="/matches/#{match.id}/chat"%> >
-      <div class="match-name"><%= matched_user.first_name %></div>
-      <%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"bubble btn" %>
-      <!-- <%= link_to "Chat", "/matches/#{match.id}/chat", :class=>"bubble btn" %> -->
+    <a href=<%="/users/#{matched_user.id}"%> >
+      <img class="img-circle" src="<%= matched_user.profile_picture_url %>" alt="profile"/>
     </a>
   </div>
+    <a class="btn btn-default btn-blank col-xs-9" role="button" href=<%="/matches/#{match.id}/chat"%> >
+      <div class="bubble btn chat-box">Chat</div>
+    <div class="fixed-width">
+      <div class="name-and-text">
+        <p class="last-message name"><%= matched_user.first_name %></p>
+        <p class="last-message">
+          <% if message.nil? %>
+          send a message!
+          <% else %>
+          <%= message.message_text[0..30] %>...
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </a>
 </div>
-  <% end %>
+
+
+<% end %>

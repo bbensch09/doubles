@@ -2,25 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .img-circle {
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
 }
-
 .match-row {
-  padding-bottom: 4px;
-  padding-top: 4px;
+  margin-bottom: 4px;
+  margin-top: 4px;
   padding-left: 5px;
+  height:80px;
   border-bottom: 1px solid #808080;
 }
-
-.match-name {
-  font-size: 1.5em;
-  display: inline-block;
+.fixed-width{
+  width:70%;
+  overflow: hidden;
 }
+.last-message{
+  text-align: left;
+  line-height: 1.1em;
+}
+.name {
+  padding-top: 5px;
+  font-size:1.4em;
+  font-weight: bold;
+}
+.chat-icon{  float:right;}
 
-.btn-match {
-  float: right;
-  margin-top: 6vh;
+.header-box {
+  display:block;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #808080;
+  font-size: 1.3em;
+}
+.btn-blank{
+  border: none !important;
 }
