@@ -5,8 +5,6 @@ $(document).ready(function(){
 var totalSwipes = 0;
 var totalCards = $('#cards ul li').length;
 
-console.log("totalCards: " + totalCards);
-
 function checkForMore() {
   if (totalSwipes == totalCards) {
     $.ajax({
@@ -20,14 +18,11 @@ function checkForMore() {
         console.error(data);
       },
     });
-    totalSwipes = 0;
   }
   totalCards = $('#cards ul li').length;
-  console.log("totalCards: " + totalCards);
 };
 
 function initJTinder() {
-  console.log("initJTinder");
   $("#cards").jTinder({
 
   	// dislike callback
@@ -39,10 +34,9 @@ function initJTinder() {
         type: 'POST',
         data: {type: "no", user_id: item.attr('id')},
         success: function(data) {
-          console.log(data);
         },
         error: function(data) {
-          console.log(data);
+          console.error(data);
         },
       });
       checkForMore();
@@ -59,7 +53,7 @@ function initJTinder() {
           $('#matchModal').modal('show');
         },
         error: function(data) {
-          console.log(data);
+          console.error(data);
         },
       });
       checkForMore();
