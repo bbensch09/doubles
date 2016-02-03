@@ -1,21 +1,22 @@
 .nav-button {
-  background-color: #383838;
+  background-color: #0F0F0D;
   border: none !important;
+  height: 9vh;
+}
+
+.navbar{
+  margin-top: -1.5vh;
 }
 
 .fa {
   color: white;
-  font-size: 2em !important;
-  padding-top: 3px;
-  padding-bottom: 1px;
+  font-size: 2.5em !important;
+  margin-left: 25%;
+  margin-top: 3px;
 }
 
 .fa-hand-pointer-o {
-  padding-right: 10%;
-}
-
-.fa-user {
-  padding-left: 15%;
+  color: #72C4B9;
 }
 
 .footer {
@@ -31,6 +32,7 @@
   border-bottom: none !important;
   border-right: 1px solid #808080;
   border-left: 1px solid #808080;
+  height: 7vh;
 }
 
 .footer button a {

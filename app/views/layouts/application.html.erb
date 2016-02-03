@@ -14,16 +14,19 @@
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-  <div class="row">
     <!-- INSERT NAV ICON / OPTIONS HERE -->
+    <header class="navbar navbar-fixed-top" role="banner">
     <% if current_user %>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></button>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></button>
-      <button class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></button>
-    </button>
+    <nav>
+    <ul class="nav navbar-nav">
+      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
+      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
+      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></li>
+    </ul>
+  </nav>
+  </header>
     <% else %>
     <% end %>
-  </div>
 <% if flash[:success] %>
 <div class="alert alert-success" role="alert">
   <%= flash[:success] %>

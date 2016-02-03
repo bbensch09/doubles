@@ -71,3 +71,7 @@ color:#11AD09;
   text-shadow: 3px 3px 2px black;
   color:white;
 }
+.fixed-zindex-to-top {
+  position: fixed;
+  z-index: 100;
+}
