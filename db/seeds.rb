@@ -354,7 +354,29 @@ yogie = User.create!({
   })
 
 #Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
- 
+activity_ids = (1..22).to_a
+activity_ids.each do |activity_id|
+  activity_name = Activity.find(activity_id).name
+  ActivityBlurb.create!({
+    text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
+    activity_id: activity_id,
+    user_id: activity_id
+    })
+  current_activity = []
+  current_activity.push(activity_id)
+  other_activity_ids = activity_ids - current_activity
+  2.times do ActivityBlurb.create!({
+    text: "I'm just a beginner looking to learn more.",
+    activity_id: other_activity_ids.sample,
+    user_id: activity_id
+    })
+  end
+  ActivityBlurb.create!({
+    text: "Like everyone else, I love drinking & billiards.",
+    activity_id: 1,
+    user_id: activity_id
+    })
+end
 
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
