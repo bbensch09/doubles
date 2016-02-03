@@ -1,9 +1,9 @@
-$("#save_button").prop("disabled",true);
 
 var ProfileTest = React.createClass({
   getInitialState: function() {
     return {save_needed: false,
-            bio: this.props.bio,
+            displayEditBio: false,
+            bio: this.props.user.bio,
             sports: this.props.sports,
             activityBlurbs: this.props.activity_blurbs,
             first_name: this.props.user.first_name,
@@ -14,7 +14,8 @@ var ProfileTest = React.createClass({
     this.setState({ name_form: true});
   },
   updateBio: function(new_bio){
-    this.setState({bio: new_bio});
+    this.setState({displayEditBio: true, bio: new_bio});
+    console.log('updated')
   },
   updateName: function(first_name){
     this.setState({first_name: first_name})
@@ -27,13 +28,6 @@ var ProfileTest = React.createClass({
       $('#save_button').prop("disabled", false);
       $('#save_button').addClass('highlight');
       $("#save_button").prop("disabled",false);
-  },
-  saveForm: function(){
-    $.post( '/users' + this.props.user.id,
-            {first_name: this.state.first_name, age: this.state.age, bio: this.state.bio},
-            function() {
-        console.log('successful update')
-      });
   },
   openChooseSportsDialog: function() {
     this.setState({search_sports: true});
@@ -56,19 +50,19 @@ var ProfileTest = React.createClass({
           <SearchSports search_sports={this.state.search_sports} user={this.props.user} sports={this.props.all_sports} closeSearch={this.closeSearch} />
         <form>
          <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
-         <p className="profile-text name-age">
+         <div className="profile-text name-age">
            <Name updateName={this.updateName} first_name={this.state.first_name} changeToSave={this.updateSaveNeeded} />, <Age updateAge={this.updateAge} age={this.state.age} changeToSave={this.updateSaveNeeded}/>
-         </p>
-         <p id="profile_text" className="profile-text">
+         </div>
+         <div id="profile_text" className="profile-text">
          <Bio updateBio={this.updateBio} bio={this.state.bio} changeToSave={this.updateSaveNeeded}/>
-         </p>
+         </div>
          <Sports sports={this.state.sports} activityBlurbs={this.state.activityBlurbs} changeToSave={this.updateSaveNeeded} add_sport={this.openChooseSportsDialog}/>
        </form>
        <div className="footer">
-        <button className="col-xs-6">Logout</button>
-        <SaveButton firstVisit={this.props.first_visit}/>
+        <a href="users/sign_out"><button className="col-xs-6">Logout</button></a>
+        <SaveButton displayEditBio={this.state.displayEditBio} firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
         </div>
-      </div>
+       </div>
       )
   }
 })
@@ -87,8 +81,6 @@ var Sports = React.createClass({
         <div className="sport-button-container">
           {this.props.sports.map(function(sport, i) {
               var sportClass
-              console.log('blurbs' + this.props.activityBlurbs.length);
-              console.log('sports' + this.props.sports.length);
               switch(this.props.activityBlurbs[i].text) {
                 case 'beginner':
                   sportClass = "sports-beginner sports"
@@ -139,7 +131,6 @@ var Name = React.createClass({
   onClick: function() {
     var current_form = this.state.form
     this.setState({ form: !current_form});
-    console.log('click')
   },
   handleChange: function() {
     this.setState({first_name: this.refs.first_name.value, size: this.refs.first_name.value.length});
@@ -166,7 +157,6 @@ var Age = React.createClass({
   onClick: function() {
     var current_form = this.state.form
     this.setState({ form: !current_form});
-    console.log('click')
   },
   handleChange: function() {
     this.setState({age: event.target.value});
@@ -186,9 +176,9 @@ var Age = React.createClass({
 
 var Bio = React.createClass({
   getInitialState: function() {
-    return { form: false,
-              bio: this.props.bio,
+    return {  bio: this.props.bio,
               color_class: 'has-error',
+              form: this.props.displayEditBio
             };
   },
   onClick: function() {
@@ -196,11 +186,12 @@ var Bio = React.createClass({
     this.setState({ form: !current_form});
   },
   handleChange: function(event) {
+    console.log(event)
     this.setState({bio: event.target.value});
+    this.props.updateBio(event.target.value);
     if (event.target.value.length > 5) {
-      this.setState({color_class: ''});
-      this.props.updateBio(event.target.value);
       this.props.changeToSave();
+      this.setState({color_class: ''});
     } else {
       this.setState({color_class: 'has-error'})
     };
@@ -209,13 +200,13 @@ var Bio = React.createClass({
     if (this.state.form) {
       return(
         <div>
-          <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange(this)} value={this.state.bio}></textarea>
+          <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} defaultValue={this.state.bio}></textarea>
         </div>
         );
-        } else if (!this.props.bio){
+        } else if (!this.props.bio || this.props.bio.length < 6){
           return(
             <div className={this.state.color_class}>
-              <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} value={this.state.bio} placeholder="I played varsity tennis in high school in Houston, and moved to SF after college in 2010...">
+              <textarea autoFocus className="form-control" id='bio' rows="4" columns="20" onChange={this.handleChange} defaultValue={this.state.bio} placeholder="I played varsity tennis in high school in Houston, and moved to SF after college in 2010...">
               </textarea>
             </div>
           );
@@ -246,7 +237,8 @@ var SearchSports = React.createClass({
 
 var SaveButton = React.createClass({
   getInitialState: function() {
-    return { buttonText: 'Save changes' };
+    return { buttonText: 'Save changes',
+              target: 'users/'};
   },
   componentDidMount: function() {
     if(this.props.firstVisit) {
@@ -257,12 +249,30 @@ var SaveButton = React.createClass({
   },
   render: function() {
     return (
-    <input type="submit" name="/edit_profile" id="save_button" className="col-xs-6" value={this.state.buttonText}></input>
+    <input onClick={this.onClick} type="submit" name="/edit_profile" id="save_button" className="col-xs-6" value={this.state.buttonText}></input>
     )
   },
-  changeText: function() {
+  onClick: function() {
+    if (this.props.sports.length > 0) {
+      console.log('standards met')
+      this.saveForm()
+    } else {
+      console.log('does not meet standard')
+    }
+  },
+  saveForm: function(){
+    console.log(this.props.first_name, this.props.age, this.props.bio)
+    var request = $.ajax({
+                    url: '/update_profile',
+                    type: "PUT",
+                    data: {first_name: this.props.first_name, age: this.props.age, bio: this.props.bio}
+                    });
 
-  }
+    request.done(function(data) {
+        console.log(data);
+        console.log("successfully saved via ajax");
+    });
+  },
 });
 
 
