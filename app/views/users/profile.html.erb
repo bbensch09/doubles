@@ -1,8 +1,5 @@
-<%= render 'profile_pic_name_and_age' %>
-<%= render 'profile_bio' %>
-<%= render partial: 'profile_sports', locals: {show_add_button: true} %>
-<div class="footer">
 
-<button class="col-xs-6"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></button>
-<button class="col-xs-6"><%= link_to "Edit Profile", '/profile/edit' %></button>
-</div>
+<%= react_component('ProfileTest',
+                    { user: @user, sports: @already_chosen_activities, activity_blurbs: @activity_blurbs,
+                      all_sports: @all_sports,
+                      first_visit: @first_visit}) %>
