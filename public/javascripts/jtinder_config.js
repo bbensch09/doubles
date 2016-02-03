@@ -5,9 +5,6 @@ $(document).ready(function(){
 var totalSwipes = 0;
 var totalCards = $('#cards ul li').length;
 
-console.log("totalSwipes: " + totalSwipes);
-console.log("totalCards: " + totalCards);
-
 function checkForMore() {
   if (totalSwipes == totalCards) {
     $.ajax({
@@ -16,7 +13,6 @@ function checkForMore() {
       success: function(data) {
         $('#cards ul').append(data);
         initJTinder();
-        console.log("loading more...");
       },
       error: function(data) {
         console.error(data);
@@ -24,8 +20,6 @@ function checkForMore() {
     });
   }
   totalCards = $('#cards ul li').length;
-  console.log("totalSwipes: " + totalSwipes);
-  console.log("totalCards: " + totalCards);
 };
 
 function initJTinder() {
@@ -40,10 +34,9 @@ function initJTinder() {
         type: 'POST',
         data: {type: "no", user_id: item.attr('id')},
         success: function(data) {
-          console.log(data);
         },
         error: function(data) {
-          console.log(data);
+          console.error(data);
         },
       });
       checkForMore();
@@ -60,7 +53,7 @@ function initJTinder() {
           $('#matchModal').modal('show');
         },
         error: function(data) {
-          console.log(data);
+          console.error(data);
         },
       });
       checkForMore();
