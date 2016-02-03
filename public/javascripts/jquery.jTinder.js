@@ -159,16 +159,22 @@
 					}
 					break;
 			}
-		}
+		},
+
+		bindNew: function(element){
+      panes = $(">ul>li", element);
+      pane_count = panes.length;
+      current_pane = panes.length - 1;
+    },
 	};
 
 	$.fn[ pluginName ] = function (options) {
 		this.each(function () {
 			if (!$.data(this, "plugin_" + pluginName)) {
 				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
-			}
-			else if ($.isFunction(Plugin.prototype[options])) {
-				$.data(this, 'plugin_' + pluginName)[options]();
+            }
+			else {
+        $.data(this, "plugin_" + pluginName).bindNew(this);
 		    }
 		});
 

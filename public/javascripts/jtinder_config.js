@@ -13,7 +13,7 @@ function checkForMore() {
       url: '/feed',
       type: 'GET',
       success: function(data) {
-        $('#cards ul').prepend(data);
+        $('#cards ul').append(data);
         initJTinder();
       },
       error: function(data) {
