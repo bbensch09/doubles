@@ -30,6 +30,7 @@ var ProfileTest = React.createClass({
     newSportsArray.push(chosenSport);
     var newActivityBlurbsArray = this.state.activityBlurbs.slice();
     newActivityBlurbsArray.push(activity_blurb_object);
+    this.updateSaveNeeded();
     this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
   },
   render: function() {
