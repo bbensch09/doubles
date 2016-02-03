@@ -42,17 +42,14 @@ var PickSports = React.createClass({
   },
   saveSport: function(skill_level) {
     var chosenSport = this.state.chosenSport;
+    var closeSearch = this.props.closeSearch();
     $.post( '/activity_blurbs',
             {activity_id: chosenSport.id, text: skill_level},
             function(data) {
         console.log(data);
         console.log("activity successfully updated via react");
-        location.reload();
-        this.backToProfile
+        closeSearch;
       });
-  },
-  backToProfile: function() {
-    $('#omniModal').modal('hide')
   }
 })
 
