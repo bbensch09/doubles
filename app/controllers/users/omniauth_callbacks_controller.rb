@@ -24,8 +24,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         birthday = Date.strptime(birthday_string,"%m/%d/%Y")
         now = Time.now.to_date
         age = now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
-        p user.age = age
-        else user.age = "Please share your age."
+        user.age = age
+        if age == 0
+          user.age = nil
+        end
+      else
+        user.age = nil
       end
 
       # if auth.extra.raw_info.location
