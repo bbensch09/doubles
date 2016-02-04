@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
         redirect_to "/profile"
     # user not registered
     else
-      render 'index'
+      render 'index', :layout => false
     end
   end
 

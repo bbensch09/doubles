@@ -2,50 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.welcome-body {
+  position: relative;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: block;
+  overflow: auto;
+}
+.welcome-container-fluid {
+  // height: 100% !important;
+}
 
 #background-img {
   background-image: url("tennis_frontpage_blur.jpg");
   background-size: 100% 100%;
-  height: 88.5vh !important;
+  height: 100vh;
   background-repeat: no-repeat;
 }
 
 .swiper-container {
-  height:90vh !important;
+  height:100% !important;
+  // width: 100% !important;
 
   .walkthrough-slide {
     background-color: white;
     .walkthrough {
-      height: 88%;
-
+      height: 80%;
+      margin-bottom: 50px;
     }
   }
-}
-
-
-.home-bottom-div-10 {
-  position:fixed;
-  bottom:0;
-  width: 100vw;
-  height: 10vh;
-}
-
-.home-footer-cta {
-  text-align: center;
-  color: black !important;
-  vertical-align: middle;
-  font-size: 2.5em;
-  padding-top: .2em;
-  height: 100%;
-}
-.swiper-container {
-  height: 100% !important;
+  .swiper-pagination-bullets{
+    margin-bottom: 11.5vh;
+  }
   .front-page {
     width: 100%;
     #home-title {
+      margin-top: -5vh;
       font-family: 'Raleway', sans-serif !important;
       text-align: center;
-      margin-top: -5vh;
+      // margin-top: -5vh;
       margin-bottom: 0vh;
       font-size: 3em;
       text-shadow: 3px 3px 2px black;
@@ -60,11 +55,11 @@
       text-decoration: none;
     }
     .logo {
-      margin-top:-15vh;
+      margin-top:-25vh;
       margin-left: auto;
     }
     .carousel-control{
-      margin-top: 85vh;
+      // margin-top: 85vh;
     }
     .carousel-inner {
       height: 1.3em;
@@ -80,16 +75,17 @@
 }
 
 .home-bottom-div-10 {
-  position:fixed;
+  position:absolute;
   bottom:0;
   width: 100vw;
   height: 11.5vh;
-  position: fixed;
   z-index: 100;
   .start-btn {
-    font-family: 'Raleway', sans-serif !important;
-    background-color: #72C4B9 !important;
     padding-top: 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif !important;
+    color: black !important;
+    background-color: #72C4B9 !important;
     line-height: 11.5vh;
     font-size: 2.5em !important;
     border-top: 1px solid #0F0F0D;
@@ -97,19 +93,3 @@
   }
 }
 
-.start-btn {
-  background-color: #72C4B9 !important;
-  padding-top: 4%;
-  font-size: 2em !important;
-  border-top: 1px solid #0F0F0D;
-  text-shadow: 3px 2px 2px #A4D0C4;
-}
-
-.item span {
-  line-height: 1.3em;
-}
-
-.walkthrough{
-  height:100%;
-  // min-width: 80%;
-}
