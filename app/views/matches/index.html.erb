@@ -24,18 +24,28 @@
         <span class="fa-stack fa-2x fl-r">
           <i class="fa fa-comment fa-stack-2x new-bubble"></i>
             <span class="fa-stack-1x unread-count">
-              <%= current_user.unread_messages(match) %> <!-- INSERT UREAD COUNT  -->
-          </span>
+              <% unread_messages = current_user.unread_messages_in_match(match) %>
+              <% if unread_messages > 0 %>
+              <%= unread_messages %>
+              <% end %>
+            </span>
         </span>
     <!-- <div class="bubble btn"></div> -->
     <div class="name-and-text">
       <div class="">
         <p class="last-message name"><%= matched_user.first_name %></p>
-        <p class="last-message">
-          <% if !message.nil? %>
+        <% if !message.nil? %>
+          <% if message.unread %>
+          <p class="last-message-unread">
           <%= message.message_text[0..25] %>...
+          </p>
+          <% else %>
+          <p class="last-message">
+          <%= message.message_text[0..25] %>...
+          </p>
           <% end %>
-        </p>
+        <% end %>
+      </p>
       </div>
     </div>
   </a>

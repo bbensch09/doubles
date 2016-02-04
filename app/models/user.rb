@@ -90,10 +90,12 @@ def self.from_omniauth(auth)
   end
 end
 
-def unread_messages(match)
-  # messages to this user for this match
-  unread_messages = Message.where(match_id: match.id, recipient_id: self.id, unread: true)
-  return unread_messages.count
+def unread_messages_in_match(match)
+  return Message.where(match_id: match.id, recipient_id: self.id, unread: true).count
+end
+
+def user_unread_messages
+  return Message.where(recipient_id: self.id, unread: true).count
 end
 
 private
