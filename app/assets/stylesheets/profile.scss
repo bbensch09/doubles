@@ -123,14 +123,6 @@
   position: relative;
 }
 
-.sport_options {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  clear: both;
-}
-
 .glyphicon-hand-left {
   margin-right: 10px;
 }
@@ -155,5 +147,12 @@
   background-color: 72C4B9;
 }
 
+.btn-skill {
+  margin: 1%;
+  height: 40px;
+  color: white;
+  width: 30%;
+  border-radius: 6px;
+}
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */

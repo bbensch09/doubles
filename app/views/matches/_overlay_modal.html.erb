@@ -4,14 +4,14 @@
   <img class="profile-pic" src="<%=@matched_user.profile_picture_url%>">
   <h2><%=@matched_user.first_name%></h2>
   <% @matched_user.activity_blurbs.each do |blurb| %>
-  <% if blurb.text == "beginner" %>
-    <button class="sport_card sports-beginner-card"><%= Activity.find(blurb.id).name %></button>
-  <% elsif blurb.text == "intermediate" %>
-    <button class="sport_card sports-intermediate-card"><%= Activity.find(blurb.id).name %></button>
-  <% else %>
-    <button class="sport_card sports-advanced-card"><%= Activity.find(blurb.id).name %></button>
+    <% if blurb.text == "beginner" %>
+      <button class="sport_card sports-beginner-card"><%= Activity.find(blurb.id).name %></button>
+    <% elsif blurb.text == "intermediate" %>
+      <button class="sport_card sports-intermediate-card"><%= Activity.find(blurb.id).name %></button>
+    <% else %>
+      <button class="sport_card sports-advanced-card"><%= Activity.find(blurb.id).name %></button>
     <%end%>
-    <%end%>
+  <%end%>
   </div>
 </div>
 <div class="modal-footer">
