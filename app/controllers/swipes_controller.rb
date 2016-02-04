@@ -25,7 +25,7 @@ class SwipesController < ApplicationController
 
       else
         if current_user.bio.nil?
-          redirect_to '/finish_profile'
+          redirect_to '/profile'
         else
           unless session[:swipes_explanation] || (current_user.swipes.count > 0)
             flash[:show_modal] = true
