@@ -4,17 +4,17 @@
 
 .welcome-body {
   padding-top: 0 !important;
-  padding-bottom: 11.5% !important;
+  padding-bottom: 11.5vh !important;
 }
 
 #background-img {
   background-image: url("tennis_frontpage_blur.jpg");
-  height: 88.5% !important;
+  height: 88.5vh !important;
   background-repeat: no-repeat;
 }
 
 .swiper-container {
-  height:88.5% !important;
+  height:88.5vh !important;
 
   .walkthrough-slide {
     background-color: white;
@@ -65,7 +65,7 @@
   position:fixed;
   bottom:0;
   width: 100vw;
-  height: 11.5%;
+  height: 11.5vh;
   position: fixed;
   z-index: 100;
   .start-btn {
@@ -74,7 +74,7 @@
     font-family: 'Raleway', sans-serif !important;
     color: black !important;
     background-color: #72C4B9 !important;
-    line-height: 11.5%;
+    line-height: 11.5vh;
     font-size: 2.5em !important;
     border-top: 1px solid #0F0F0D;
     text-shadow: 3px 2px 2px #A4D0C4;
