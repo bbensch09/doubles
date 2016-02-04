@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .welcome-body {
+  position: relative;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   display: block;
   overflow: auto;
 }
 .welcome-container-fluid {
-  height: 100% !important;
+  // height: 100% !important;
 }
 
 #background-img {
@@ -27,6 +28,7 @@
     background-color: white;
     .walkthrough {
       height: 80%;
+      margin-bottom: 50px;
     }
   }
   .swiper-pagination-bullets{
@@ -35,9 +37,10 @@
   .front-page {
     width: 100%;
     #home-title {
+      margin-top: -5vh;
       font-family: 'Raleway', sans-serif !important;
       text-align: center;
-      margin-top: -5vh;
+      // margin-top: -5vh;
       margin-bottom: 0vh;
       font-size: 3em;
       text-shadow: 3px 3px 2px black;
@@ -72,11 +75,10 @@
 }
 
 .home-bottom-div-10 {
-  position:fixed;
+  position:absolute;
   bottom:0;
   width: 100vw;
   height: 11.5vh;
-  position: fixed;
   z-index: 100;
   .start-btn {
     padding-top: 0;
