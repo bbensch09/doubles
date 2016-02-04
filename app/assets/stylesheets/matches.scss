@@ -50,3 +50,31 @@
 .btn-blank{
   border: none !important;
 }
+.empty-matches{
+  font-size: 3vh;
+  text-align: left;
+  vertical-align: middle;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  // background-color: #9A9C9F;
+}
+.prompt-message{
+  font-style: italic;
+}
+.link-area-text{
+  vertical-align: middle;
+  color: #72C4B9;
+  padding-bottom:10px;
+}
+.matches_add_sports_helper {
+  font-size: 1.1em;
+  height: 40px;
+  line-height: 40px;
+  margin-left: auto;
+}
+.override-matches{
+  margin-left:20px !important;
+  color: #72C4B9 !important;
+}
