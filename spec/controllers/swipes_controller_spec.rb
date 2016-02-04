@@ -24,14 +24,15 @@ RSpec.describe SwipesController, :type => :controller do
     end
 
 
-    context "feed action" do
+
+    context "when user goes to swipes page" do
       it "should be able to route to feed action" do
         expect(:get => "feed").
         to route_to(:controller => "swipes", :action => "feed")
       end
       it "should render feed view" do
         get 'feed'
-        expect(response).to render_template(:'swipes/feed')
+        expect(response).to redirect_to 'http://test.host/walkthrough'
       end
       # it "should asign next user to instance variable" do
       #   get 'feed'

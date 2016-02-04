@@ -1,18 +1,11 @@
-<img src="<%=user.profile_picture_url%>">
+<div id="profile-img-container">
+  <img src="<%=user.profile_picture_url%>">
+</div>
 <h1><%= user.first_name %></h1>
 <p><%= user.bio %></p>
 <% user.activities.each do |activity| %>
-<button class="btn btn-xs disable-button btn-success" disabled><%= activity.name %></button>
+<button class="sport_card sports-beginner-card"><%= activity.name %></button>
 <% end %>
-<div class="like"></div>
+
 <div class="dislike"></div>
-
-<!-- <a href="/swipe_yes/<%=user.id%>">
-<div class="card-swipe-yes">
-</div>
-</a>
-
-<a href="/swipe_no/<%=user.id%>">
-<div class="card-swipe-no">
-</div>
-</a> -->
+<div class="like"></div>

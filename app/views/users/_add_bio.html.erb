@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h2 className="large_center">Add Your Personal Description</h2>
+</div>
+<div class="modal-body">
+  <form id="update_bio" target="put" action="/users/<%="#{@user.id}"%>">
+    <input type="hidden" name="_method" value="update" >
+    <input type="hidden" id="user_id" value="<%= @user.id %>" >
+    <textarea id="bio" name="bio" class="form-control" rows"8" cols="50" form="update_profile"></textarea>
+    <hr />
+    <input class="full-button btn btn-success" type="submit" value="Save" >
+  </form>
+</div>
