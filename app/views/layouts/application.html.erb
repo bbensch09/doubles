@@ -31,6 +31,7 @@
   </header>
     <% else %>
     <% end %>
+
 <% if flash[:success] %>
 <div class="alert alert-success" role="alert">
   <%= flash[:success] %>
@@ -85,5 +86,7 @@ $('#omniModal').modal('show');
 <% flash.discard(:modal_to_show) %>
 <% flash.discard(:required_modal) %>
 <% end %>
+</div>
+<div class="spacer"></div>
 </body>
 </html>
