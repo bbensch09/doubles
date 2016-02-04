@@ -43,6 +43,16 @@ var ProfileTest = React.createClass({
     this.updateSaveNeeded();
     this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
   },
+
+  logout: function() {
+    $.ajax({
+      url: '/users/sign_out',
+      type: 'DELETE',
+      success: function(data) {
+        window.location.replace('/');
+      }.bind(this)
+    });
+  },
   render: function() {
     return(
       <div>
@@ -60,7 +70,7 @@ var ProfileTest = React.createClass({
          <Sports sports={this.state.sports} activityBlurbs={this.state.activityBlurbs} changeToSave={this.updateSaveNeeded} add_sport={this.openChooseSportsDialog}/>
        </form>
        <div className="footer">
-        <a href="users/sign_out"><button className="col-xs-6">Logout</button></a>
+       <button className="col-xs-6" onClick={this.logout}>Logout</button>
         <SaveButton firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
         </div>
        </div>
