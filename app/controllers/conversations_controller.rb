@@ -33,6 +33,13 @@ class ConversationsController < ApplicationController
     sender = User.find( options.fetch(:sender_id) )
     matched_user = get_matched_user(match, sender)
     raw_messages = Message.where(match_id: match.id).order('created_at ASC')
+
+    # mark messages as read once they're sent to the user
+    raw_messages.each do |message|
+      message.unread = false
+      message.save
+    end
+
     formatted_messages = []
     raw_messages.each do |message|
       formatted_messages << {
