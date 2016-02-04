@@ -42,7 +42,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p "---------USER CREATED?"
       p "the user from FB Data is #{user}"
       p session[:user_id] = user.id
-      flash[:success] = "Welcome, #{user.email}!"
+      # flash[:success] = "Welcome, #{user.email}!"
       current_user = @user
 
       sign_in(user)
