@@ -1,7 +1,8 @@
 #THIS SEED FILE CREATES THE FOLLOWING CONDITIONS
-#30 users, with the first user being Tom
-#Tom (user1) plays all activities, and has swiped yes on all users.
-#Mark (user2) plays Racquetball, and has liked Tom, so they are a match.
+#24 seeded users
+#The first 22 users are themed based on specific sprots
+#User 23 is Tom, and liks all sports and all people.
+#User 24 is Walker, who likes Tom, and has begun a conversation with him.
 
 User.delete_all
 Activity.delete_all
@@ -10,48 +11,32 @@ Swipe.delete_all
 Match.delete_all
 Message.delete_all
 
-
-
-# Create activities
-activity_names = [
-"billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
+# CREATE LIST OF ACTIVITIES
+initial_activity_names = ["pool / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
-activity_names.each do |activity|
+initial_activity_names.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
-#Create Tom
-# tom = User.create!({
-#                     first_name: "Tom",
-#                     last_name: "Likes Everyone",
-#                     email: 'tom@myspace.com',
-#                     gender: 'male',
-#                     age: 40,
-#                     bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-#                     location: "San Francisco",
-#                     latitude: 37.7576792,
-#                     longitude: -122.5078123,
-#                     profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-#                     password: 'password'
-#                       })
-#
-# activities.each_with_index do |activity, index|
-#   ActivityBlurb.create!({
-#       text: "I've been playing #{activity} since 1999.",
-#       activity_id: index,
-#       user_id: 1
-#       })
-# end
+puts "Activities create: #{Activity.count}"
 
-# Create other users
+new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
+
+new_activities.each do |activity|
+  Activity.create!(name: activity)
+end
+
+puts "Activities create: #{Activity.count}"
+
+# CREATE 22 SEED USERS
 
 billiards_bill = User.create!({
-    first_name: "Bill",
+    first_name: "Billiards Bill",
     last_name: "Poolshark",
     email: "billiards_bill@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "My favorite pool bar is Jillians in downtown. I grew up in the East Bay and love swindling i-bankers out of their money.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -60,26 +45,26 @@ billiards_bill = User.create!({
   })
 
 bocce_britney = User.create!({
-    first_name: "Britney",
-    last_name: "Boccelli",
+    first_name: "Britney Boccelli",
+    last_name: "Smith",
     email: "bocce_britney@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "After four years in Santa Barbara, I recently left the beach and moved to SF. IMO, Nothing beats a Sunday afternoon of bocce ball and Bacardi.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.outmotoring.com/images/D/MIN_bocce_detail_1.jpg",
+    profile_picture_url: "http://media3.popsugar-assets.com/files/2012/08/32/3/301/3019466/4e7ed63c60510f0c_0b18b9d0d8ff11e1ba8122000a1e88a8_7.xxxlarge/i/Play-Bocce-Ball.jpg",
     password: 'password'
   })
 
 bowling_bernie = User.create!({
-    first_name: "Bernie",
-    last_name: "Bowler",
+    first_name: "Bernie Bowler",
+    last_name: "Smith",
     email: "bowling_bernie@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I've lived in SF since 1970, back when bowling was cool. Looking for others who feel the bern to bowl.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -88,27 +73,27 @@ bowling_bernie = User.create!({
   })
 
 cycling_cat = User.create!({
-    first_name: "Catwheel",
-    last_name: "Cycleton",
+    first_name: "Catwheel Cycleton",
+    last_name: "Smith",
     email: "cycling_cat@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I commute every day into the city from Marin on my carbon-frame Cannondale. Love long Saturday rides to Stinson beach.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://img2.timeinc.net/ew/dynamic/imgs/060126/145251__kingpin_l.jpg",
+    profile_picture_url: "http://cdn.images.express.co.uk/img/dynamic/11/590x/Woman-cycling-550375.jpg",
     password: 'password'
   })
 
 darts_dan = User.create!({
-    first_name: "Dan",
-    last_name: "Dartsmouth",
+    first_name: "Dan Dartsmouth",
+    last_name: "Smith",
     email: "darts_dan@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
-    location: "San Francisco",
+    bio: "I'm a regular at the Albatross in Berkeley. I love darts and drinking, and am always up for creating new variations on the classic darts scoring.",
+    location: "Berkeley, CA",
     latitude: 37.7576792,
     longitude: -122.5078123,
     profile_picture_url: "http://prexamples.com/wp-content/uploads/2012/12/foxy-bingo-hair-dye-peter-wright.jpg",
@@ -116,26 +101,26 @@ darts_dan = User.create!({
   })
 
 scubasteve = User.create!({
-    first_name: "Steve",
-    last_name: "Scuber",
+    first_name: "Scuba Stephanie",
+    last_name: "Smith",
     email: "scubasteve@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I've gone scuba diving in 4 continents, but recently moved to SF, where the options are limited. Would love to find someone to plan a trip with.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "https://manchebo-674702.c.cdn77.org/photos/Aruba-Scuba-Diver-Turtle.jpg",
+    profile_picture_url: "http://www.excursionphotos.com/wp-content/uploads/2014/12/scuba-diver-large.jpg",
     password: 'password'
   })
 
 frisbee_golfer = User.create!({
-    first_name: "Fris",
-    last_name: "Begolfer",
+    first_name: "Fris Begolfer",
+    last_name: "Smith",
     email: "frisbee_golfer@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I was introduced to Frisbee golf while at Brown, and am looking to find folks to play in Golden Gate Park on weekends when its not foggy and 40 degrees.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -144,12 +129,12 @@ frisbee_golfer = User.create!({
   })
 
 golf_girl = User.create!({
-    first_name: "Felicia",
-    last_name: "Fairway",
+    first_name: "Felicia Fairway",
+    last_name: "Smith ",
     email: "golf_girl@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I played high school golf with Jordan Spieth, and just graduated from Stanford. Looking to play casual games with other avid golfers. Handicap: +2",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -158,26 +143,26 @@ golf_girl = User.create!({
   })
 
 handball_hannah = User.create!({
-    first_name: "Hannah",
-    last_name: "Handball",
+    first_name: "Henry Handball",
+    last_name: "Smith",
     email: "handball_hannah@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "Just moved to SF from Hungary, and hoping to find friends and gym space for some friendly handball games.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.olympic.org/Assets/MediaPlayer/Videos/2008/08/23/lot1-2008%20handball%20w%20final/Handball_Video_BIG_630.jpg",
+    profile_picture_url: "http://www.olympic.org/Assets/MediaPlayer/Photos/2012/London/Handball/04_08_12_handball_01_sd.jpg",
     password: 'password'
   })
 
 hiking_harry = User.create!({
-    first_name: "Harry",
-    last_name: "Hikerberry",
+    first_name: "Harry Hiker",
+    last_name: "Smith",
     email: "hiking_harry@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I spent last summer hiking the Appalachian trail, and just moved to the city. Looking for friends to explore the local trails in Marin and the east bay.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -186,12 +171,12 @@ hiking_harry = User.create!({
   })
 
 ping_pong = User.create!({
-    first_name: "Ping",
-    last_name: "Pong",
+    first_name: "Ping Pong",
+    last_name: "Smith",
     email: "ping_pong@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I was captain of the Ping Pong club in college.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -200,26 +185,26 @@ ping_pong = User.create!({
   })
 
 racquet_roger = User.create!({
-    first_name: "Rocket",
-    last_name: "Roger",
+    first_name: "Rocket Roger",
+    last_name: "Smith",
     email: "racquet_roger@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I've reserved court time at the Olympic Club every Thursday at 7pm, and would love to find a few other racquetball enthusiasts.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.rowan.edu/studentaffairs/rec/intramurals/images/racquetball-01.jpg",
+    profile_picture_url: "http://www.jewishjournal.com/images/featured/Art_Shay_Kill_Shot_ChicagoSide.jpg",
     password: 'password'
   })
 
 rock_climing_rachel = User.create!({
-    first_name: "Rachel",
-    last_name: "Roche",
+    first_name: "Rachel Roche",
+    last_name: "Smith",
     email: "rock_climing_rachel@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "You can find me most weeknights at Planet Granite in the Marina, but I'm really interested in finding some outdoor climbing partners.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -228,40 +213,40 @@ rock_climing_rachel = User.create!({
   })
 
 running_rena = User.create!({
-    first_name: "Rena",
-    last_name: "Runner",
+    first_name: "Rena Runner",
+    last_name: "Smith",
     email: "running_rena@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "Currently training for the Nike Women's marathon in October.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.runningshoesguru.com/wp-content/uploads/2014/10/runningmag1.jpg",
+    profile_picture_url: "http://www.active.com/Assets/Running/580/timing-your-run-580.jpg",
     password: 'password'
   })
 
 sailing_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Sailor",
+    first_name: "Sailor Sam",
+    last_name: "Smith",
     email: "sailing_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I live on my yacht. It gets lonely.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.freedomsailingadventures.com/wp-content/uploads/2012/01/the_captain_7_300w.jpg",
+    profile_picture_url: "http://global.ralphlauren.com/SiteCollectionImages/polo/style/questions/0809_summerwhites_lg.jpg",
     password: 'password'
   })
 
 skiergal = User.create!({
-    first_name: "Lindsey",
-    last_name: "VonnSkier",
+    first_name: "Lindsey VonnSkier",
+    last_name: "Smith",
     email: "skiergal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "So excited that Tahoe finally has snow again this year. I have a pass at Squaw Valley, and stay in a ski lease in Tahoe Donner.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -275,7 +260,7 @@ snowboard_gal = User.create!({
     email: "snowboard_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "Grew up in Park City, UT. Just moved to the east bay and looking to do a few weekends in Tahoe this winter.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -284,26 +269,26 @@ snowboard_gal = User.create!({
   })
 
 squash_snap = User.create!({
-    first_name: "SnapThat",
-    last_name: "squash",
+    first_name: "Snap That Squash",
+    last_name: "Smith",
     email: "squash_snap@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I started a company that teenagers love, but what I really love is playing squash. Finding cour time used to be hard, so I built myself a court in my backyard in Pac Heights.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://www.squashnz.co.nz/content/images/players/evanwilliams/Evan%20Williams%20photoshoot%202011%202.jpg",
+    profile_picture_url: "http://www.timeoutabudhabi.com/images/content/squash_in_abu_dhabi/innerbig/2013_1_squash_innerbig.jpg",
     password: 'password'
   })
 
 surfer_sam = User.create!({
-    first_name: "Sam",
-    last_name: "Mavericks",
+    first_name: "Surfer Sal",
+    last_name: "Smith",
     email: "surfer_sam@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I graduated from UC Santa Cruz in 2015, and spend my weekends chasing swells.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -312,12 +297,12 @@ surfer_sam = User.create!({
   })
 
 tennis_gal = User.create!({
-    first_name: "Tanya",
-    last_name: "Tenis",
+    first_name: "Tanya Tenis",
+    last_name: "Smith",
     email: "tennis_gal@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "I played varsity tennis in high school in Houston, and moved to SF after college in 2010...",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -326,12 +311,12 @@ tennis_gal = User.create!({
   })
 
 wrestling_will = User.create!({
-    first_name: "Will",
-    last_name: "Wrestler",
+    first_name: "Lucha Libre",
+    last_name: "Smith",
     email: "wrestling_will@example.com",
     gender: "male",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "While I no longer wear sweat suits like I did for high school wrestling, I still love the sport and have entered in a few adult league tournaments over the past few years.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
@@ -340,44 +325,78 @@ wrestling_will = User.create!({
   })
 
 yogie = User.create!({
-    first_name: "Yasmine",
-    last_name: "Yogie",
+    first_name: "Ysabel Yogie",
+    last_name: "Smith",
     email: "yogie@example.com",
     gender: "female",
     age: rand(18..40),
-    bio: Faker::Hipster.sentences(4).join(' '),
+    bio: "Restorative yoga saved my life in 2008, and I love finding new friends to share my passion.",
     location: "San Francisco",
     latitude: 37.7576792,
     longitude: -122.5078123,
-    profile_picture_url: "http://hotlantayoga.com/wp-content/uploads/2014/01/yoga-mp-balatsinos.png",
+    profile_picture_url: "http://data.whicdn.com/images/47685733/superthumb.jpg",
     password: 'password'
   })
 
-#Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
-activity_ids = (1..22).to_a
-activity_ids.each do |activity_id|
-  activity_name = Activity.find(activity_id).name
-  ActivityBlurb.create!({
-    text: "I've been playing#{activity_name} since I was a kid, and love to play on weekends.",
+puts "22 seed users created"
+#CREATE SEED ACTIVITIES FOR SEED USERS (their natural sport, billiards, and two other random ones.)
+seed_activity_ids = (1..22).to_a
+seed_activity_ids.each do |activity_id|
+    ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
     activity_id: activity_id,
     user_id: activity_id
     })
-  current_activity = []
-  current_activity.push(activity_id)
-  other_activity_ids = activity_ids - current_activity
-  2.times do ActivityBlurb.create!({
-    text: "I'm just a beginner looking to learn more.",
-    activity_id: other_activity_ids.sample,
-    user_id: activity_id
-    })
-  end
-  ActivityBlurb.create!({
-    text: "Like everyone else, I love drinking & billiards.",
-    activity_id: 1,
-    user_id: activity_id
-    })
+
+    #In addition to their core activity, seed users like 2 other sports too.
+    current_activity = []
+    current_activity.push(activity_id)
+    other_activity_ids = seed_activity_ids - current_activity
+    2.times do ActivityBlurb.create!({
+      text: ['beginner','intermediate','advanced'].sample,
+      activity_id: other_activity_ids.sample,
+      user_id: activity_id
+      })
+      end
+    #In addition to their core activity, all users also like billiards.
+    ActivityBlurb.create!({
+      text: ['beginner','intermediate','advanced'].sample,
+      activity_id: 1,
+      user_id: activity_id
+      })
 end
 
+puts "all seed users have 4 activities; their natural sport, billiards, and two random ones."
+# CREATE TOM
+tom = User.create!({
+      first_name: "Tom",
+      last_name: "Likes Everyone",
+      email: 'tom@myspace.com',
+      gender: 'male',
+      age: 40,
+      bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+      location: "San Francisco",
+      latitude: 37.7576792,
+      longitude: -122.5078123,
+      profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+      password: 'password'
+        })
+
+puts "Tom is created."
+
+#TOM LIKES THE FIRST 22 ACTIVITIES
+    activities = Activity.where("id <= 22")
+    activities.each do |activity|
+      ActivityBlurb.create!({
+          text: ['beginner','intermediate','advanced'].sample,
+          activity_id: activity.id,
+          user_id: 23
+          })
+    end
+
+puts "Tom likes all 22 original activities"
+
+=begin
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
   seed_users = User.where("id <= 22")
@@ -390,6 +409,37 @@ def everyone_swipes_you
         })
   end
 end
+
+
+# #create Nil's Test FB Account PHOTOS
+# nil_thacker = User.create!({
+#                   first_name: "Nil",
+#                   last_name: "Thacker",
+#                   email: "nil@nil.gs",
+#                   gender: "male",
+#                   age: rand(25..35),
+#                   bio: "Learned to code and play at DBC.",
+#                   location: "San Francisco",
+#                   latitude: 37.7576792,
+#                   longitude: -122.5078123,
+#                   profile_picture_url: "http://graph.facebook.com/10153470272907149/picture?type=large",
+#                   password: 'password'
+#                     })
+#
+# (1..3).to_a.each do |activity_id|
+#   ActivityBlurb.create!({
+#     text: ['beginner','intermediate','advanced'].sample,
+#     activity_id: activity_id,
+#     user_id: nil_thacker.id
+#     })
+#   end
+#create Brian's Test FB Account
+
+
+  #everyone swipes Test
+  # everyone_swipes_you
+
+=begin
 
 #create Brian
 brian = User.create!({
@@ -408,11 +458,11 @@ brian = User.create!({
 
 ActivityBlurb.create!({
     text: "I've been skiing since I was 5 and rent a Tahoe house near Squaw every winter.",
-    activity_id: 15,
+    activity_id: 16,
     user_id: brian.id
     })
 
-(1..14).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -438,7 +488,7 @@ nil_thacker = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -464,7 +514,7 @@ trevor = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -490,7 +540,7 @@ abe = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -515,7 +565,7 @@ greg = User.create!({
                   password: 'password'
                     })
 
-(1..22).to_a.each do |activity_id|
+(1..1).to_a.each do |activity_id|
   ActivityBlurb.create!({
     text: "I'm really good at bar games, at least the drinking part.",
     activity_id: activity_id,
@@ -526,20 +576,101 @@ greg = User.create!({
 #everyone swipes Greg
 everyone_swipes_you
 
-#FORCE MATCHES AMONG TEAM MEMBERS
-#brian likes everyone
-(24..27).to_a.each do |user_id|
-  Swipe.create!({
-    swiped_yes: true,
-    swiper_id: 23,
-    swipee_id: user_id
-    })
+=end
+
+
+#SEED MATCHES AMONG TEST_USER and Tom
+
+def tom_likes_walker
+      Swipe.create!({
+        swiped_yes: true,
+        swiper_id: 23,
+        swipee_id: 24
+        })
 end
-#everyone else likes brian
-(24..27).to_a.each do |user_id|
-  Swipe.create!({
-    swiped_yes: true,
+
+def everyone_swipes_walker
+  seed_users = (1..22).to_a
+  seed_users.each do |user_id|
+  Swipe.create!(
+    swiped_yes: [true,false].sample,
     swiper_id: user_id,
-    swipee_id: 23
-    })
+    swipee_id: 24
+    )
+  end
 end
+
+walker = User.create!({
+                  first_name: "Sherrif Walker",
+                  last_name: "DBC Ranger",
+                  email: "rentmasters.sf@gmail.com",
+                  gender: "male",
+                  age: rand(25..35),
+                  bio: "Learned to code and play at DBC.",
+                  location: "San Francisco",
+                  latitude: 37.7576792,
+                  longitude: -122.5078123,
+                  profile_picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALDAAAAJDI1MGQ0ZDFhLWM5MTktNDY3Yy04MDE1LWFlYTRjYzZhOGQ5MA.jpg",
+                  password: 'password'
+                    })
+
+puts "Walker is created."
+#ALL SEED USERS SWIPE ON WALKER
+#WALKER PLAYS 5 RANDOM SPORTS
+5.times do
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: rand(1..100),
+    user_id: walker.id
+    })
+  end
+
+puts "Walker plays 5 sports."
+everyone_swipes_walker
+puts "Everyone swipes walker."
+tom_likes_walker
+puts "Tom likes Walker."
+
+
+#WALKER LIKES TOM
+Swipe.create!({
+    swiped_yes: true,
+    swiper_id: 24, #walker id
+    swipee_id: 23 #Tom
+    })
+
+puts "Walker likes Tom too."
+#Tom and Test User exchange a bunch of messages
+matched_activity = Activity.select("name").sample.name
+
+Message.create!(
+    match_id:1,
+    message_text: "Hi #{walker.first_name}, want to play #{matched_activity} this weekend?",
+    user_id:23,
+    unread: true)
+
+Message.create!(
+    match_id:1,
+    message_text: "Hi #{tom.first_name}, I could be interested. What's your background in #{matched_activity}?",
+    user_id:24,
+    unread: true)
+
+Message.create!(
+    match_id:1,
+    message_text: "I started playing #{matched_activity} in 2007 when it was cool, and never moved on.",
+    user_id:23,
+    unread: true)
+
+Message.create!(
+    match_id:1,
+    message_text: "Interesting. I'm a complete newb, but would love to learn more.",
+    user_id:24,
+    unread: true)
+
+Message.create!(
+    match_id:1,
+    message_text: "How's tomorrow? I'm free anytime after 3pm",
+    user_id:23,
+    unread: true)
+
+puts "Walker and Tom have a quick convo."
