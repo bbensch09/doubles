@@ -41,7 +41,7 @@ class SwipesController < ApplicationController
     def swipe_yes
       new_swipe = current_user.swipes.create(swipee_id: params[:user_id], swiped_yes: true)
       match_found = User.find(params[:user_id]).swipes.where(swipee_id: current_user.id, swiped_yes: true).length > 0
-      @matched_user = User.find(params[:user_id]) if match_found
+      p @matched_user = User.find(params[:user_id]) if match_found
 
       if request.xhr?
         render :partial => 'matches/overlay_modal' if @matched_user
