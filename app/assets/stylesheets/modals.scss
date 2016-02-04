@@ -4,9 +4,11 @@
   border-radius: 5px 5px 0px 0px;
   background-color: green;
   height: 15px;
+
   span {
     margin-top: -80px;
   }
+
 }
 
 .zipcode-modal-body {
@@ -15,14 +17,17 @@
   .close {
     margin-right: 10px;
   }
+
   p {
     margin-top: 10px;
     margin-left: 10px;
     font-size: 2em;
   }
+
   .form-control {
     margin-bottom: 30px;
   }
+
   input {
     display: block;
     font-size: 2em;
@@ -31,10 +36,12 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   div.zipcode-actions {
     width: 100%;
     margin: 0;
   }
+
   .zipcode-sub {
     height: 70px;
     width: 100%;

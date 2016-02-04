@@ -102,7 +102,7 @@ var Sports = React.createClass({
           </div>
             <a id="add_sports" href="#" onClick={this.handleClick}>
               <div className="add_sport">
-                <span className="fa fa-plus-circle"></span>
+                <span className="fa circle-fa fa-plus-circle"></span>
               </div>
             </a>
         </div>

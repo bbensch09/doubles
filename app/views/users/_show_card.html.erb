@@ -3,14 +3,9 @@
 </div>
 <h1><%= user.first_name %></h1>
 <p><%= user.bio %></p>
-<% user.activity_blurbs.each do |blurb| %>
-<% if blurb.text == "beginner" %>
-<button class="sport_card sports-beginner-card"><%= Activity.find(blurb.id).name %></button>
-<% elsif blurb.text == "intermediate" %>
-<button class="sport_card sports-intermediate-card"><%= Activity.find(blurb.id).name %></button>
-<% else %>
-<button class="sport_card sports-advanced-card"><%= Activity.find(blurb.id).name %></button>
+<% user.activities.each do |activity| %>
+<button class="sport_card sports-beginner-card"><%= activity.name %></button>
 <% end %>
-<% end %>
+
 <div class="dislike"></div>
 <div class="like"></div>
