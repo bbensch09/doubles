@@ -340,30 +340,37 @@ yogie = User.create!({
 
 puts "22 seed users created"
 #CREATE SEED ACTIVITIES FOR SEED USERS (their natural sport, billiards, and two other random ones.)
-seed_activity_ids = (1..22).to_a
-seed_activity_ids.each do |activity_id|
+seed_user_ids = (1..22).to_a
+seed_user_ids.each do |user_id|
     ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
-    activity_id: activity_id,
-    user_id: activity_id
+    activity_id: user_id,
+    user_id: user_id
     })
 
     #In addition to their core activity, seed users like 2 other sports too.
-    current_activity = []
-    current_activity.push(activity_id)
-    other_activity_ids = seed_activity_ids - current_activity
-    2.times do ActivityBlurb.create!({
-      text: ['beginner','intermediate','advanced'].sample,
-      activity_id: other_activity_ids.sample,
-      user_id: activity_id
-      })
-      end
-    #In addition to their core activity, all users also like billiards.
+    # current_activity = []
+    # current_activity.push(activity_id)
+    # other_activity_ids = seed_activity_ids - current_activity
     ActivityBlurb.create!({
       text: ['beginner','intermediate','advanced'].sample,
-      activity_id: 1,
-      user_id: activity_id
+      activity_id: rand(23..60),
+      user_id: user_id
       })
+    ActivityBlurb.create!({
+      text: ['beginner','intermediate','advanced'].sample,
+      activity_id: rand(61..100),
+      user_id: user_id
+      })
+end
+#In addition to their core activity, all users (except the first one) also decide they like the first activity, billiards.
+seed_users2_thru_22 = (2..22).to_a
+seed_users2_thru_22.each do |user_id|
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: 1,
+    user_id: user_id
+    })
 end
 
 puts "all seed users have 4 activities; their natural sport, billiards, and two random ones."
@@ -624,8 +631,13 @@ puts "Walker is created."
     user_id: walker.id
     })
   end
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: 1,
+    user_id: walker.id
+    })
 
-puts "Walker plays 5 sports."
+puts "Walker likes billiards, as well as 5 random sports."
 everyone_swipes_walker
 puts "Everyone swipes walker."
 tom_likes_walker
