@@ -18,6 +18,12 @@
 //= require components
 //= require_tree .
 
+var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+if(!is_mobile) {
+  window.location = "/preview";
+}
+
+
 if ($(window).width() > 400) location.href = "/preview";
 
 Array.prototype.remove = function() {
