@@ -1,14 +1,20 @@
 <div class="modal-body">
   <div class="text-center">
   <h1>You found a Double!</h1>
-  <img src="<%=@matched_user.profile_picture_url%>" style="height: 200px; border-radius: 20px;">
+  <img class="profile-pic" src="<%=@matched_user.profile_picture_url%>">
   <h2><%=@matched_user.first_name%></h2>
-  <% @matched_user.activities.each do |activity| %>
-  <button class="btn disable-button btn-xs btn-success" disable><%=activity.name%></button>
-  <% end %>
+  <% @matched_user.activity_blurbs.each do |blurb| %>
+  <% if blurb.text == "beginner" %>
+    <button class="sport_card sports-beginner-card"><%= Activity.find(blurb.id).name %></button>
+  <% elsif blurb.text == "intermediate" %>
+    <button class="sport_card sports-intermediate-card"><%= Activity.find(blurb.id).name %></button>
+  <% else %>
+    <button class="sport_card sports-advanced-card"><%= Activity.find(blurb.id).name %></button>
+    <%end%>
+    <%end%>
   </div>
 </div>
 <div class="modal-footer">
-  <a href="/matches" style="width: 49%" class="btn btn-primary pull-left">Send Message</a>
-  <button type="button" style="width: 49%" class="btn btn-warning" data-dismiss="modal">Continue Swiping</button>
+  <a href="/matches" style="width: 49%" class="btn msg-btn pull-left">Send Message</a>
+  <button type="button" style="width: 49%" class="btn swipe-btn" data-dismiss="modal">Continue Swiping</button>
 </div>
