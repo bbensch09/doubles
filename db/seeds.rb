@@ -409,28 +409,28 @@ def tom_likes_everyone
   end
 end
 
-#create Nil's Test FB Account PHOTOS
-nil_thacker = User.create!({
-                  first_name: "Nil",
-                  last_name: "Thacker",
-                  email: "nil@nil.gs",
-                  gender: "male",
-                  age: rand(25..35),
-                  bio: "Learned to code and play at DBC.",
-                  location: "San Francisco",
-                  latitude: 37.7576792,
-                  longitude: -122.5078123,
-                  profile_picture_url: "http://graph.facebook.com/10153470272907149/picture?type=large",
-                  password: 'password'
-                    })
-
-(1..3).to_a.each do |activity_id|
-  ActivityBlurb.create!({
-    text: ['beginner','intermediate','advanced'].sample,
-    activity_id: activity_id,
-    user_id: nil_thacker.id
-    })
-  end
+# #create Nil's Test FB Account PHOTOS
+# nil_thacker = User.create!({
+#                   first_name: "Nil",
+#                   last_name: "Thacker",
+#                   email: "nil@nil.gs",
+#                   gender: "male",
+#                   age: rand(25..35),
+#                   bio: "Learned to code and play at DBC.",
+#                   location: "San Francisco",
+#                   latitude: 37.7576792,
+#                   longitude: -122.5078123,
+#                   profile_picture_url: "http://graph.facebook.com/10153470272907149/picture?type=large",
+#                   password: 'password'
+#                     })
+#
+# (1..3).to_a.each do |activity_id|
+#   ActivityBlurb.create!({
+#     text: ['beginner','intermediate','advanced'].sample,
+#     activity_id: activity_id,
+#     user_id: nil_thacker.id
+#     })
+#   end
 #create Brian's Test FB Account
 test_user = User.create!({
                   first_name: "Sherrif Walker",
