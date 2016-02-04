@@ -28,6 +28,19 @@
 </header>
 <% else %>
 <% end %>
+<!-- INSERT NAV ICON / OPTIONS HERE -->
+<% if current_user %>
+<header class="navbar navbar-fixed-top" role="banner">
+<nav>
+<ul class="nav navbar-nav">
+  <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
+  <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
+  <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'>#{current_user.user_unread_messages}</i>"), "/matches" %></li>
+</ul>
+</nav>
+</header>
+<% else %>
+<% end %>
 <% if flash[:success] %>
 <div class="alert alert-success" role="alert">
   <%= flash[:success] %>
