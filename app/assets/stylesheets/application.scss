@@ -37,11 +37,22 @@ textarea {
 body {
   padding-top: 4.1em !important;
   padding-bottom: 6vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
+}
+
+.content {
+  height: 100%;
+}
+
+.spacer {
+  height: 1px;
 }
 
 a:hover, a:active{
