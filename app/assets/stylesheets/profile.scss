@@ -1,3 +1,20 @@
+.profile-show {
+  clear: both;
+  overflow: auto;
+  h1 {
+    margin-left: 20px;
+  }
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  div.profile-show-sports-container {
+    overflow: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .profile-pic {
   display: block;
   width: auto;
