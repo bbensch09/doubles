@@ -17,7 +17,9 @@ var find_sport = function(wordToMatch, array_of_objects_to_query) {
 
 var PickSports = React.createClass({
   getInitialState: function() {
-    return {value: '', mySports: []};
+    return {value: '',
+            mySports: [],
+            sports: this.props.sports};
   },
   componentDidMount: function() {
     this.refs.search.focus();
@@ -35,7 +37,7 @@ var PickSports = React.createClass({
     return(
       <div>
         <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
-          <SportsOptions sports={this.props.sports} ref="sports_list" onChange={this.setChosenSport}/>
+          <SportsOptions sports={this.state.sports} ref="sports_list" onChange={this.setChosenSport}/>
         <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport" saveSport={this.saveSport}/>
       </div>
       )
@@ -43,6 +45,8 @@ var PickSports = React.createClass({
   saveSport: function(skill_level) {
     var chosenSport = this.state.chosenSport;
     var closeSearch = this.props.closeSearch;
+    new_sports_array = this.state.sports.remove(this.state.chosenSport);
+    this.setState({sports: new_sports_array})
     $.post( '/activity_blurbs',
             {activity_id: chosenSport.id, text: skill_level},
             function(activity_blurb_object) {
