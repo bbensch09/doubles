@@ -173,6 +173,7 @@ top: 7%;
   border-radius: 0px !important;
 }
 
-.message-list, .message-box {
+.message-list{
   overflow: auto;
+  padding-bottom: 6vh;
 }
