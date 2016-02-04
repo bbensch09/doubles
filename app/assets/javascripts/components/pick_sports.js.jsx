@@ -86,17 +86,10 @@ var ChosenSport = React.createClass({
       if(this.props.chosenSport) {
       return(
         <div>
-          <div className="sport-highlight flex">
-            <h2 className="large_center">
-              {this.props.chosenSport.name}
-            </h2>
-            <br />
-            <br />
-          </div>
-          <div className="flex">
-            <h2 className="center ">
+          <div>
+            <h3 className="center skill-header">
               What is your skill level?
-            </h2>
+            </h3>
           </div>
         <SkillLevel ref="SkillLevel" saveSport={this.props.saveSport}/>
         </div>
@@ -114,9 +107,9 @@ var SkillLevel = React.createClass({
   render: function() {
       return(
       <div className="activity_level">
-        <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4">Beginner</button>
-        <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4">Intermediate</button>
-        <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4">Advanced</button>
+        <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="btn-skill pull-left">Beginner</button>
+        <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="btn-skill">Intermediate</button>
+        <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="btn-skill pull-right">Advanced</button>
       </div>
        )
   },
