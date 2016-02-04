@@ -15,13 +15,12 @@
   <%= csrf_meta_tags %>
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
-
-
-
+<div class="content">
 <body class="welcome-body">
   <div class="container-fluid welcome-container-fluid">
 
-    <!-- <div id="background-img"> -->
+    <div id="background-img">
+
       <!-- Swiper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -120,4 +119,6 @@
       <%= link_to "Get Started", user_omniauth_authorize_path(:facebook), :class=>"col-xs-12 home-footer-cta start-btn" %>
     </div>
   </div>
+</div>
+<div class="spacer"></div>
 </body>
