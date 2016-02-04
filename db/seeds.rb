@@ -608,7 +608,7 @@ def everyone_swipes_walker
 end
 
 walker = User.create!({
-                  first_name: "Sherrif Walker",
+                  first_name: "Sheriff Walker",
                   last_name: "DBC Ranger",
                   email: "rentmasters.sf@gmail.com",
                   gender: "male",
