@@ -81,5 +81,8 @@ $('#omniModal').modal('show');
 <% flash.discard(:modal_to_show) %>
 <% flash.discard(:required_modal) %>
 <% end %>
+if(window.innerHeight > window.innerWidth){
+    document.getElementsByTagName("body").style.transform = "rotate(90deg)";
+}
 </body>
 </html>
