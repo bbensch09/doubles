@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.welcome-body {
+  padding-top: 0 !important;
+  padding-bottom: 11.5vh !important;
+}
 
 #background-img {
   background-image: url("tennis_frontpage_blur.jpg");
