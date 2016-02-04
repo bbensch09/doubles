@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @displayed_user = User.find(params[:id])
-    @sports = @displayed_user.activities
+    @user = User.find(params[:id])
+    @sports = @user.activities
+    p "="*30
+    p @user
+    p @sports
   end
 
   def profile
