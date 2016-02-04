@@ -16,7 +16,7 @@ var geolocator = function(){
         initJTinder();
       })
       .fail(function(xhr, error, unknown){
-        console.error(error);
+        // console.error(error);
       });
     };
     error = function(errorMessage) {
