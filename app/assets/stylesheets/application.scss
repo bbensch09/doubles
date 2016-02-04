@@ -55,13 +55,3 @@ a:hover, a:active{
 .feed-loading {
 position: absolute; z-index: -50; margin-left: 40%; margin-top: 25%;
 }
-
-@media (orientation: landscape) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
