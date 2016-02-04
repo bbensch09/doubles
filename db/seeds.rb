@@ -11,17 +11,24 @@ Swipe.delete_all
 Match.delete_all
 Message.delete_all
 
-
-
-# Create activities
-activity_names = [
-"pool / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
+# CREATE LIST OF ACTIVITIES
+initial_activity_names = ["pool / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
-activity_names.each do |activity|
+initial_activity_names.each do |activity|
   activities << Activity.create!(name: activity)
 end
 
-# Create other users
+puts "Activities create: #{Activity.count}"
+
+new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
+
+new_activities.each do |activity|
+  Activity.create!(name: activity)
+end
+
+puts "Activities create: #{Activity.count}"
+
+# CREATE 22 SEED USERS
 
 billiards_bill = User.create!({
     first_name: "Billiards Bill",
@@ -331,7 +338,8 @@ yogie = User.create!({
     password: 'password'
   })
 
-#Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
+puts "22 seed users created"
+#CREATE SEED ACTIVITIES FOR SEED USERS (their natural sport, billiards, and two other random ones.)
 seed_activity_ids = (1..22).to_a
 seed_activity_ids.each do |activity_id|
     ActivityBlurb.create!({
@@ -339,6 +347,8 @@ seed_activity_ids.each do |activity_id|
     activity_id: activity_id,
     user_id: activity_id
     })
+
+    #In addition to their core activity, seed users like 2 other sports too.
     current_activity = []
     current_activity.push(activity_id)
     other_activity_ids = seed_activity_ids - current_activity
@@ -348,6 +358,7 @@ seed_activity_ids.each do |activity_id|
       user_id: activity_id
       })
       end
+    #In addition to their core activity, all users also like billiards.
     ActivityBlurb.create!({
       text: ['beginner','intermediate','advanced'].sample,
       activity_id: 1,
@@ -355,37 +366,35 @@ seed_activity_ids.each do |activity_id|
       })
 end
 
-new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
-
-new_activities.each do |activity|
-  Activity.create!(name: activity)
-end
-
-# Create Tom
+puts "all seed users have 4 activities; their natural sport, billiards, and two random ones."
+# CREATE TOM
 tom = User.create!({
-                    first_name: "Tom",
-                    last_name: "Likes Everyone",
-                    email: 'tom@myspace.com',
-                    gender: 'male',
-                    age: 40,
-                    bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
-                    location: "San Francisco",
-                    latitude: 37.7576792,
-                    longitude: -122.5078123,
-                    profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
-                    password: 'password'
-                      })
+      first_name: "Tom",
+      last_name: "Likes Everyone",
+      email: 'tom@myspace.com',
+      gender: 'male',
+      age: 40,
+      bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+      location: "San Francisco",
+      latitude: 37.7576792,
+      longitude: -122.5078123,
+      profile_picture_url: "http://www.eonline.com/eol_images/Entire_Site/2015518/rs_600x600-150618104510-600.tom-myspace.jw.61815_2.jpg",
+      password: 'password'
+        })
 
-#TOM LIKES ALL ACTIVITIES
-# activities = Activity.all
-# activities.each_with_index do |activity, index|
-#   ActivityBlurb.create!({
-#       # text: "I've been playing #{activity} since 1999.",
-#       text: ['beginner','intermediate','advanced'].sample,
-#       activity_id: index+1,
-#       user_id: 1
-#       })
-# end
+puts "Tom is created."
+
+#TOM LIKES THE FIRST 22 ACTIVITIES
+    activities = Activity.where("id <= 22")
+    activities.each do |activity|
+      ActivityBlurb.create!({
+          text: ['beginner','intermediate','advanced'].sample,
+          activity_id: activity.id,
+          user_id: 23
+          })
+    end
+
+puts "Tom likes all 22 original activities"
 
 =begin
 #everyone swipes on you (run for each seeded team member)
@@ -580,6 +589,17 @@ def tom_likes_walker
         })
 end
 
+def everyone_swipes_walker
+  seed_users = (1..22).to_a
+  seed_users.each do |user_id|
+  Swipe.create!(
+    swiped_yes: [true,false].sample,
+    swiper_id: user_id,
+    swipee_id: 24
+    )
+  end
+end
+
 walker = User.create!({
                   first_name: "Sherrif Walker",
                   last_name: "DBC Ranger",
@@ -594,24 +614,32 @@ walker = User.create!({
                   password: 'password'
                     })
 
-(1..10).to_a.each do |activity_id|
+puts "Walker is created."
+#ALL SEED USERS SWIPE ON WALKER
+#WALKER PLAYS 5 RANDOM SPORTS
+5.times do
   ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
-    activity_id: activity_id,
+    activity_id: rand(1..100),
     user_id: walker.id
     })
   end
 
+puts "Walker plays 5 sports."
+everyone_swipes_walker
+puts "Everyone swipes walker."
 tom_likes_walker
+puts "Tom likes Walker."
 
 
-#TEST_USER likes Tom
+#WALKER LIKES TOM
 Swipe.create!({
     swiped_yes: true,
     swiper_id: 24, #walker id
     swipee_id: 23 #Tom
     })
 
+puts "Walker likes Tom too."
 #Tom and Test User exchange a bunch of messages
 matched_activity = Activity.select("name").sample.name
 
@@ -644,3 +672,5 @@ Message.create!(
     message_text: "How's tomorrow? I'm free anytime after 3pm",
     user_id:23,
     unread: true)
+
+puts "Walker and Tom have a quick convo."
