@@ -10,6 +10,12 @@ var ProfileTest = React.createClass({
             search_sports: false,
             buttonColor: 'col-xs-6'};
   },
+  componentDidMount: function() {
+    var that = this
+    $(document).keyup(function() {
+      setTimeout(function(){that.refs.saveButton.quickSave()}, 400)
+      })
+  },
   updateButtonColor: function() {
     this.setState({ buttonColor: 'col-xs-6 can_save'});
   },
@@ -19,6 +25,8 @@ var ProfileTest = React.createClass({
   },
   updateBio: function(new_bio){
     this.setState({bio: new_bio});
+    console.log('BIO' + new_bio)
+    console.log('BIOSTATE' + this.state.bio)
     this.updateSaveNeeded()
   },
   updateName: function(first_name){
@@ -26,12 +34,10 @@ var ProfileTest = React.createClass({
     this.updateSaveNeeded()
   },
   updateAge: function(age){
-    console.log('updating age')
     this.setState({age: age})
     this.updateSaveNeeded()
   },
   updateSaveNeeded: function() {
-    this.refs.saveButton.quickSave();
     if ((this.state.sports.length > 0) && (this.state.bio) && (this.state.bio.length > 0)) {
       this.updateButtonColor();
       $('#save_button').prop("disabled", false);
@@ -260,12 +266,6 @@ var Bio = React.createClass({
   },
   handleChange: function(event) {
     this.props.updateBio(event.target.value);
-    if (event.target.value.length > 5) {
-      this.props.changeToSave();
-      this.setState({color_class: '', bio: event.target.value});
-    } else {
-      this.setState({color_class: 'has-error', bio: event.target.value})
-    };
   },
   render: function() {
     let maybe_red_form = (!this.props.bio || this.props.bio.length < 0) ?
