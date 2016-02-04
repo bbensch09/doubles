@@ -59,10 +59,25 @@
 .msg-btn {
   background-color: #72C4B9;
   color: black;
+  margin-top: 3px;
 }
 
 .swipe-btn {
   background-color: #A4D0C4;
   color: black;
+  margin-top: 3px;
 }
 
+.btn-overlay-row{
+  clear:both;
+}
+
+.overlay-header {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.overlay-body {
+  margin-top: 5px !important;
+  margin-bottom: 8px !important;
+}
