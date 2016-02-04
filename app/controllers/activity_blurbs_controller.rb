@@ -41,9 +41,9 @@ class ActivityBlurbsController < ApplicationController
     end
 
     def destroy
-      @activity_blurb = ActivityBlurb.find(params[:id])
+      @activity_blurb = ActivityBlurb.find(params[:sports_blurb_id])
       @activity_blurb.destroy
-      redirect_to edit_user_registration_path
+      render json: 'Success'
     end
 
     def activity_params
