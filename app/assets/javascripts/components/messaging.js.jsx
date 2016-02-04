@@ -53,7 +53,7 @@ var MessageBox = React.createClass({
 var MessageList = React.createClass({
   render: function () {
     var messageNodes = this.props.messages.map(function ( message ) {
-      return <Message cssBubble={ message.css_bubble } cssClass={ message.css_class } author={ message.sender_name } text={ message.message_text } key={ message.id } />
+      return <Message cssBubble={ message.css_bubble } cssClass={ message.css_class } text={ message.message_text } key={ message.id } />
     });
 
     return (

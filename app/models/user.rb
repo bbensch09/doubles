@@ -90,6 +90,14 @@ def self.from_omniauth(auth)
   end
 end
 
+def unread_messages_in_match(match)
+  return Message.where(match_id: match.id, recipient_id: self.id, unread: true).count
+end
+
+def user_unread_messages
+  return Message.where(recipient_id: self.id, unread: true).count
+end
+
 private
 
 def update_access_token!
