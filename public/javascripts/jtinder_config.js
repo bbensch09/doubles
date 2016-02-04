@@ -17,7 +17,7 @@ function checkForMore() {
         $('#cards').show();
       },
       error: function(data) {
-        console.error(data);
+        // console.error(data);
       },
     });
   }
