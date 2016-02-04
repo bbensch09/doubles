@@ -17,7 +17,7 @@ function checkForMore() {
         $('#cards').show();
       },
       error: function(data) {
-        // console.error(data);
+        console.error(data);
       },
     });
   }
@@ -38,7 +38,7 @@ function initJTinder() {
         success: function(data) {
         },
         error: function(data) {
-          console.error(data);
+          // console.error(data);
         },
       });
       checkForMore();
