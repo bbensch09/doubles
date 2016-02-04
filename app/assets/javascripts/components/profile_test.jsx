@@ -73,8 +73,29 @@ var Sports = React.createClass({
     this.props.add_sport();
     this.props.changeToSave();
   },
+  toggleDelete: function(event) {
+    dom_element = event.target;
+    sportID = $(dom_element).attr('name');
+    status = $(dom_element).attr('pending');
+    if (status == 'true') {
+      $(dom_element).remove();
+      this.deleteSport()
+    } else {
+      $(dom_element).addClass('warning');
+      $(dom_element).attr('pending', true);
+    }
+  },
   deleteSport: function() {
+    var request = $.ajax({
+                    url: '/remove_sport',
+                    type: "DELETE",
+                    data: {sports_blurb_id: sportID}
+                    });
 
+    request.done(function(data) {
+        console.log(data);
+        console.log("successfully deleted via ajax");
+    });
   },
   render: function() {
     if (this.props.sports.length > 0) {
@@ -96,7 +117,7 @@ var Sports = React.createClass({
               }
 
               return (
-                <div type="button" className={sportClass} key={i} name={sport.id}>{sport.name}</div>
+                <div type="button" pending="false"className={sportClass} key={i} name={this.props.activityBlurbs[i].id} onClick={this.toggleDelete}>{sport.name}</div>
                 );
               }, this)}
           </div>

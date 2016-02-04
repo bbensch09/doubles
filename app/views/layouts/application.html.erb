@@ -5,7 +5,7 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application' %>
@@ -21,7 +21,7 @@
     <ul class="nav navbar-nav">
       <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
       <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
-      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-comment"></i>'), "/matches" %></li>
+      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'>#{current_user.user_unread_messages}</i>"), "/matches" %></li>
     </ul>
   </nav>
   </header>

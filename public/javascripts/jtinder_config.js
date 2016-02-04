@@ -38,7 +38,7 @@ function initJTinder() {
         success: function(data) {
         },
         error: function(data) {
-          console.error(data);
+          // console.error(data);
         },
       });
       checkForMore();
