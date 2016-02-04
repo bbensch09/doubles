@@ -35,7 +35,11 @@
           <% if message.nil? %>
           send a message!
           <% else %>
-          <%= message.message_text[0..25] %>...
+            <% if message.message_text.length <=22 %>
+              <%= message.message_text %>
+              <% else %>
+              <%= message.message_text[0..22] %>...
+            <% end %>
           <% end %>
         </p>
       </div>
