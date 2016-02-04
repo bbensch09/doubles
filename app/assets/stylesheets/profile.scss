@@ -39,9 +39,8 @@
   text-align: center;
   float: left;
   background-color: black;
-  height: 50px;
-  font-size: 1.3em;
-  line-height: 45px;
+  height: 30px;
+  font-size: 1.2em;
   padding: 0 15px;
   color: white;
 }
@@ -120,6 +119,9 @@
   margin-left: 0;
 }
 
+.profile-body {
+  padding-bottom: 8vh;
+}
 
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */
