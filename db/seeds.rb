@@ -1,7 +1,8 @@
 #THIS SEED FILE CREATES THE FOLLOWING CONDITIONS
-#30 users, with the first user being Tom
-#Tom (user1) plays all activities, and has swiped yes on all users.
-#Mark (user2) plays Racquetball, and has liked Tom, so they are a match.
+#24 seeded users
+#The first 22 users are themed based on specific sprots
+#User 23 is Tom, and liks all sports and all people.
+#User 24 is Walker, who likes Tom, and has begun a conversation with him.
 
 User.delete_all
 Activity.delete_all
@@ -333,7 +334,6 @@ yogie = User.create!({
 #Add 3 activities for all seed athletes (their natural sport, billiards, and two other random ones.)
 seed_activity_ids = (1..22).to_a
 seed_activity_ids.each do |activity_id|
-    activity_name = Activity.find(activity_id).name
     ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
     activity_id: activity_id,
@@ -355,10 +355,10 @@ seed_activity_ids.each do |activity_id|
       })
 end
 
-new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing / snowboarding','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
+new_activities = ['archery','arm wrestling','atv','australian rules football','backcountry skiing','badminton','barre class','base jumping','baseball','basketball','beer pong','bmx','boardercross','bobsledding','boxing','broomball','canoeing','crew / rowing','cricket','croquet','cross-fit','curling','dirtbiking','dodgeball','dogsledding','fencing','field hockey','figure skating','fishing','flag football','four square','gaelic football','grand prix racing','gymnastics','hang gliding','high jump','hopscotch','horseback riding / equestrian','horseshoes','hunting','hurdles','hurling','ice climbing','ice dancing','ice hockey','javelin','judo','karate','kayaking','kickball','kickball','kickboxing','kite surfing','kung fu','lacrosse','laser tag','long jump','luge','lumberjack / woodsman','martial arts','motocross','mountain biking','nascar','nordic / cross-country skiing','paintball','parasailing','parkour','quidditch','roller derby','rugby','shot put / discus','skateboarding','skeet shooting','skiercross','skydiving','snorkeling','soccer','softball','speed skating','spikeball','swimming','taekwondo','triathalon','ultimate frisbee','volleyball','wakeboarding','water polo','water skiing','weightlifting','white water rafting','windsurfing']
 
 new_activities.each do |activity|
-  activities << Activity.create!(name: activity)
+  Activity.create!(name: activity)
 end
 
 # Create Tom
@@ -376,15 +376,18 @@ tom = User.create!({
                     password: 'password'
                       })
 
-activities.each_with_index do |activity, index|
-  ActivityBlurb.create!({
-      # text: "I've been playing #{activity} since 1999.",
-      text: ['beginner','intermediate','advanced'].sample,
-      activity_id: index,
-      user_id: 1
-      })
-end
+#TOM LIKES ALL ACTIVITIES
+# activities = Activity.all
+# activities.each_with_index do |activity, index|
+#   ActivityBlurb.create!({
+#       # text: "I've been playing #{activity} since 1999.",
+#       text: ['beginner','intermediate','advanced'].sample,
+#       activity_id: index+1,
+#       user_id: 1
+#       })
+# end
 
+=begin
 #everyone swipes on you (run for each seeded team member)
 def everyone_swipes_you
   seed_users = User.where("id <= 22")
@@ -398,16 +401,6 @@ def everyone_swipes_you
   end
 end
 
-def tom_likes_everyone
-  seed_users = User.where.not(id: 23)
-  seed_users.each do |user|
-      Swipe.create!({
-        swiped_yes: true,
-        swiper_id: 23,
-        swipee_id: user.id
-        })
-  end
-end
 
 # #create Nil's Test FB Account PHOTOS
 # nil_thacker = User.create!({
@@ -432,30 +425,10 @@ end
 #     })
 #   end
 #create Brian's Test FB Account
-test_user = User.create!({
-                  first_name: "Sherrif Walker",
-                  last_name: "DBC Ranger",
-                  email: "rentmasters.sf@gmail.com",
-                  gender: "male",
-                  age: rand(25..35),
-                  bio: "Learned to code and play at DBC.",
-                  location: "San Francisco",
-                  latitude: 37.7576792,
-                  longitude: -122.5078123,
-                  profile_picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALDAAAAJDI1MGQ0ZDFhLWM5MTktNDY3Yy04MDE1LWFlYTRjYzZhOGQ5MA.jpg",
-                  password: 'password'
-                    })
 
-(1..10).to_a.each do |activity_id|
-  ActivityBlurb.create!({
-    text: ['beginner','intermediate','advanced'].sample,
-    activity_id: activity_id,
-    user_id: test_user.id
-    })
-  end
 
   #everyone swipes Test
-  everyone_swipes_you
+  # everyone_swipes_you
 
 =begin
 
@@ -596,13 +569,46 @@ everyone_swipes_you
 
 =end
 
+
 #SEED MATCHES AMONG TEST_USER and Tom
-tom_likes_everyone
+
+def tom_likes_walker
+      Swipe.create!({
+        swiped_yes: true,
+        swiper_id: 23,
+        swipee_id: 24
+        })
+end
+
+walker = User.create!({
+                  first_name: "Sherrif Walker",
+                  last_name: "DBC Ranger",
+                  email: "rentmasters.sf@gmail.com",
+                  gender: "male",
+                  age: rand(25..35),
+                  bio: "Learned to code and play at DBC.",
+                  location: "San Francisco",
+                  latitude: 37.7576792,
+                  longitude: -122.5078123,
+                  profile_picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALDAAAAJDI1MGQ0ZDFhLWM5MTktNDY3Yy04MDE1LWFlYTRjYzZhOGQ5MA.jpg",
+                  password: 'password'
+                    })
+
+(1..10).to_a.each do |activity_id|
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: activity_id,
+    user_id: walker.id
+    })
+  end
+
+tom_likes_walker
+
 
 #TEST_USER likes Tom
 Swipe.create!({
     swiped_yes: true,
-    swiper_id: 24, #test_user id
+    swiper_id: 24, #walker id
     swipee_id: 23 #Tom
     })
 
@@ -611,7 +617,7 @@ matched_activity = Activity.select("name").sample.name
 
 Message.create!(
     match_id:1,
-    message_text: "Hi #{test_user.first_name}, want to play #{matched_activity} this weekend?",
+    message_text: "Hi #{walker.first_name}, want to play #{matched_activity} this weekend?",
     user_id:23,
     unread: true)
 
@@ -635,6 +641,6 @@ Message.create!(
 
 Message.create!(
     match_id:1,
-    message_text: "How's tomorrow?",
+    message_text: "How's tomorrow? I'm free anytime after 3pm",
     user_id:23,
     unread: true)
