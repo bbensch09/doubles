@@ -46,6 +46,7 @@ var ProfileTest = React.createClass({
   closeSearch: function(chosenSport, activity_blurb_object) {
     this.appendSport(chosenSport, activity_blurb_object);
     this.setState({search_sports: false});
+    this.updateSaveNeeded();
   },
   appendSport: function(chosenSport, activity_blurb_object) {
     var newSportsArray = this.state.sports.slice();
