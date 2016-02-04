@@ -14,19 +14,20 @@
   <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
 </head>
 <body>
-    <!-- INSERT NAV ICON / OPTIONS HERE -->
-    <header class="navbar navbar-fixed-top" role="banner">
-    <% if current_user %>
-    <nav>
-    <ul class="nav navbar-nav">
-      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
-      <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
-      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'>#{current_user.user_unread_messages}</i>"), "/matches" %></li>
-    </ul>
-  </nav>
-  </header>
-    <% else %>
-    <% end %>
+<div class="content">
+<!-- INSERT NAV ICON / OPTIONS HERE -->
+<header class="navbar navbar-fixed-top" role="banner">
+<% if current_user %>
+<nav>
+<ul class="nav navbar-nav">
+  <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
+  <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
+  <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'>#{current_user.user_unread_messages}</i>"), "/matches" %></li>
+</ul>
+</nav>
+</header>
+<% else %>
+<% end %>
 <% if flash[:success] %>
 <div class="alert alert-success" role="alert">
   <%= flash[:success] %>
@@ -81,5 +82,7 @@ $('#omniModal').modal('show');
 <% flash.discard(:modal_to_show) %>
 <% flash.discard(:required_modal) %>
 <% end %>
+</div>
+<div class="spacer"></div>
 </body>
 </html>
