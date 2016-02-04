@@ -23,10 +23,10 @@ var ProfileTest = React.createClass({
   },
   updateSaveNeeded: function() {
     if ((this.state.sports.length > 0) && (this.state.bio) && (this.state.bio.length > 6)) {
-      console.log($('#save_button'))
       $('#save_button').prop("disabled", false);
       $('#save_button').addClass('can_save');
       console.log('getting there');
+      this.refs.saveButton.quickSave();
       this.setState({save_needed: true});
     }
   },
@@ -44,6 +44,7 @@ var ProfileTest = React.createClass({
     newActivityBlurbsArray.push(activity_blurb_object);
     this.updateSaveNeeded;
     this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
+    window.scrollTo(0,document.body.scrollHeight);
   },
 
   logout: function() {
@@ -73,7 +74,7 @@ var ProfileTest = React.createClass({
        </form>
        <div className="footer">
        <button className="col-xs-6" onClick={this.logout}>Logout</button>
-        <SaveButton firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
+        <SaveButton ref="saveButton"firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
         </div>
        </div>
       )
@@ -148,7 +149,7 @@ var Sports = React.createClass({
       )} else {
         return(
           <div>
-            <a id="add_sports" href="#" onClick={this.handleClick}>
+            <a autofocus id="add_sports" href="#" onClick={this.handleClick}>
               <div className="add_sport">
                 <span className="fa fa-plus-circle"></span>
               </div>
@@ -322,6 +323,20 @@ var SaveButton = React.createClass({
       console.log('does not meet standard')
     }
   },
+  quickSave: function(){
+    console.log(this.props.first_name, this.props.age, this.props.bio)
+    var request = $.ajax({
+                    url: '/update_profile',
+                    type: "PUT",
+                    data: {first_name: this.props.first_name, age: this.props.age, bio: this.props.bio}
+                    });
+
+    request.done(function(data) {
+        console.log(data);
+        console.log("successfully saved via ajax");
+    });
+  },
+
   saveForm: function(){
     console.log(this.props.first_name, this.props.age, this.props.bio)
     var firstVisit = this.props.firstVisit
