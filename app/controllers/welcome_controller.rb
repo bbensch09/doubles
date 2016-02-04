@@ -15,4 +15,8 @@ class WelcomeController < ApplicationController
     render 'force_login'
   end
 
+  def iframe
+    render 'iframe', :layout => false
+  end
+
 end
