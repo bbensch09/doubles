@@ -36,8 +36,11 @@ class ConversationsController < ApplicationController
 
     # mark messages as read once they're sent to the user
     raw_messages.each do |message|
-      message.unread = false
-      message.save
+      if current_user.id != message.user_id
+        p message
+        message.unread = false
+        message.save
+      end
     end
 
     formatted_messages = []
