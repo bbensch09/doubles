@@ -9,11 +9,17 @@
   width: 100%;
   max-width: 500px;
   line-height: 1.5em;
+  border-bottom: 1px solid black !important;
+  border-radius: 0px !important;
 }
 
 .sport_item {
-  height: 50px;
-  font-size: 1.5em;
+  margin-top: 10px;
+  font-size: 1.25em;
+}
+
+.fa-plus-circle {
+  color: #72C4B9 !important;
 }
 
 .sport-highlight {
@@ -32,22 +38,25 @@
 #beginner {
   border: 0;
   height: 50px;
-  background-color: #8AC1A1;
-  border: 2px solid #8AC1A1;
+  color: white;
+  background-color: #0B800D;
+  border: 2px solid #0B800D;
 }
 
 #intermediate {
-height: 50px;
-border: 0;
-background-color: #348A5D;
-border: 2px solid #348A5D;
+  height: 50px;
+  border: 0;
+  color: white;
+  background-color: #4057D6;
+  border: 2px solid #4057D6;
 }
 
 #advanced {
-height: 50px;
-border: 0;
-background-color: #016844;
-border: 2px solid #016844;
+  height: 50px;
+  border: 0;
+  color: white;
+  background-color: #0F0F0D;
+  border: 2px solid #0F0F0D;
 }
 
 
