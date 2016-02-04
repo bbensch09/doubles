@@ -39,13 +39,11 @@
   text-align: center;
   float: left;
   background-color: black;
-  height: 50px;
-  font-size: 1.5em;
-  line-height: 50px;
-  padding: 0 20px;
+  height: 30px;
+  font-size: 1.2em;
+  padding: 0 15px;
+  color: white;
 }
-
-
 
 .fa-plus-circle {
   color: #337AB7;
@@ -58,33 +56,32 @@
   padding: 10 20px;
   line-height: 50px;
   float: left;
-
 }
 
 .sports-beginner {
-  background-color: #8AC1A1;
-  border: 2px solid #8AC1A1;
+  background-color: #0B800D;
   border: 2px solid white;
+  border-radius: 10px;
 }
 
 .sports-intermediate {
- background-color: #348A5D;
- border: 2px solid #348A5D;
+ background-color: #4057D6;
  border: 2px solid white;
+ border-radius: 10px;
 }
 
 .sports-advanced {
-  background-color: #016844;
-  border: 2px solid #016844;
+  background-color: #0F0F0D;
   border: 2px solid white;
+  border-radius: 10px;
 }
 
 .inline {
-        border: none;
-        background: transparent;
-        color: #000;
-        display: inline;
-    }
+  border: none;
+  background: transparent;
+  color: #000;
+  display: inline;
+}
 
 .number_form {
   width: 65px;
@@ -105,6 +102,9 @@
 .sport_options {
   display: block;
   position: relative;
+  width: 100%;
+  max-width: 500px;
+  clear: both;
 }
 
 .glyphicon-hand-left {
@@ -123,6 +123,9 @@
   background-color: #d9534f;
 }
 
+.profile-body {
+  padding-bottom: 8vh;
+}
 
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */
