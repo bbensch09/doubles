@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   # Look at another users' profile
   get 'users/:id' => 'users#show'
 
+  delete '/remove_sport' => 'activity_blurbs#destroy'
 
 
 
