@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
   # add geokit within radius method used in User#users_within_radius
   acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
 
-  after_create :update_access_token!, :update_geolocation
+  after_create :update_access_token!
 
   validates :email, presence: true, uniqueness: true
+  validates_format_of :zipcode, :with => /\A\d{5}\z/, :message => "should be in the form 12345", :allow_blank => true
 
   has_many :swipes, :foreign_key => "swiper_id", :class_name => "Swipe"
   has_many :swipees, through: :swipes, :foreign_key => "swipee_id", :class_name => "User"
@@ -28,19 +29,24 @@ def everyone_swipes_you
   return "everyone swiped you!"
 end
 
+# HACKY_SHIT cuz nil is tired of manually doing things
+def reset_swipes
+  self.swipes.each {|swipe| swipe.destroy}
+  p "swipes deleted"
+  self.everyone_swipes_you
+  p "errbody swiped you"
+end
 
-# this method just for testing purposes. plan to move to background worker
-def update_geolocation
-  api_response = HTTParty.post("https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API']}",{})
-      response = api_response.parsed_response
-  if response.empty?
-      lat = response["location"]["lat"]
-      lng = response["location"]["lng"]
-      self.update_attributes(:latitude => lat, :longitude => lng)
-  else #set location to DevBootcamp in SF
-    lat = "37.4705"
-    lng = "-122.2349"
-    self.update_attributes(:latitude => lat, :longitude => lng)
+def lat_lng_by_zipcode
+  api_response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.zipcode}&key=#{ENV['GOOGLE_API']}")
+  response = api_response.parsed_response
+
+  if response["status"] == "OK"
+    lat = response["results"][0]["geometry"]["location"]["lat"]
+    lng = response["results"][0]["geometry"]["location"]["lng"]
+    return true if self.update_attributes(:latitude => lat, :longitude => lng)
+  else
+    false
   end
 end
 
@@ -84,6 +90,13 @@ def self.from_omniauth(auth)
   end
 end
 
+def unread_messages_in_match(match)
+  return Message.where(match_id: match.id, recipient_id: self.id, unread: true).count
+end
+
+def user_unread_messages
+  return Message.where(recipient_id: self.id, unread: true).count
+end
 
 private
 

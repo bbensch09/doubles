@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131215714) do
+ActiveRecord::Schema.define(version: 20160204032035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.text     "text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "sport"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -43,7 +44,8 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "sender_name"
+    t.boolean  "unread"
+    t.integer  "recipient_id"
   end
 
   create_table "swipes", force: :cascade do |t|
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.integer  "age"
     t.string   "gender"
     t.string   "location"
+    t.integer  "zipcode"
     t.decimal  "latitude",               precision: 7, scale: 4
     t.decimal  "longitude",              precision: 7, scale: 4
     t.text     "bio"
