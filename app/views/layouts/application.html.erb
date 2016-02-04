@@ -21,7 +21,11 @@
     <ul class="nav navbar-nav">
       <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-user"></i>'), "/profile" %></li>
       <li class="col-xs-4 nav-button"><%= link_to raw('<i class="fa fa-hand-pointer-o"></i>'), "/feed" %></li>
-      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'>#{current_user.user_unread_messages}</i>"), "/matches" %></li>
+      <% if current_user.user_unread_messages == 0 %>
+      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa fa-comment'></i>"), "/matches" %></li>
+      <% else %>
+      <li id="swipe-btn" class="col-xs-4 nav-button"><%= link_to raw("<i class='fa blue-bubble fa-comments'></i>"), "/matches" %></li>
+      <% end %>
     </ul>
   </nav>
   </header>
