@@ -4,23 +4,33 @@
 
 .welcome-body {
   padding-top: 0 !important;
-  padding-bottom: 11.5vh !important;
+  padding-bottom: 0 !important;
+  display: block;
+  overflow: auto;
+}
+.welcome-container-fluid {
+  height: 100% !important;
 }
 
 #background-img {
   background-image: url("tennis_frontpage_blur.jpg");
-  height: 88.5vh !important;
+  background-size: 100% 100%;
+  height: 100vh;
   background-repeat: no-repeat;
 }
 
 .swiper-container {
-  height:88.5vh !important;
+  height:100% !important;
+  // width: 100% !important;
 
   .walkthrough-slide {
     background-color: white;
     .walkthrough {
-      height: 88%;
+      height: 80%;
     }
+  }
+  .swiper-pagination-bullets{
+    margin-bottom: 11.5vh;
   }
   .front-page {
     width: 100%;
@@ -42,11 +52,11 @@
       text-decoration: none;
     }
     .logo {
-      margin-top:-15vh;
+      margin-top:-25vh;
       margin-left: auto;
     }
     .carousel-control{
-      margin-top: 85vh;
+      // margin-top: 85vh;
     }
     .carousel-inner {
       height: 1.3em;
