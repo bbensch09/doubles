@@ -298,7 +298,6 @@ var SearchSports = React.createClass({
     if (this.props.search_sports){
       return(
         <div>
-          <hr />
             <PickSports user={this.props.user} sports={this.props.sports} closeSearch={this.props.closeSearch} />
           <hr />
         </div>
