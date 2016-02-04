@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.integer  "user_id",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "sender_name"
     t.integer  "recipient_id"
   end
 
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160131215714) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "last_pageview_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

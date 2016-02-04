@@ -9,7 +9,6 @@ class ConversationsController < ApplicationController
         match_id: match.id,
         message_text: params[:text],
         user_id: params[:author],
-        sender_name: User.find(params[:author]).first_name,
         recipient_id: get_matched_user(match, current_user).id
         )
     presenter = generate_presenter( {match_id: match.id, sender_id: params[:author]} )
@@ -38,7 +37,6 @@ class ConversationsController < ApplicationController
       formatted_messages << {
         id: message.id,
         message_text: message.message_text,
-        sender_name: message.sender_name,
         created_at: message.created_at,
         css_class: current_user.id == message.user_id ? "message-right" : "message-left",
         css_bubble: current_user.id == message.user_id ? "bubble2" : "bubble3"
