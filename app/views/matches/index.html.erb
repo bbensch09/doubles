@@ -23,7 +23,7 @@
     <a class="btn btn-default btn-blank link-area" role="button" href=<%="/matches/#{match.id}/chat"%> >
         <% unread_messages = current_user.unread_messages_in_match(match) %>
           <% if unread_messages > 0 %>
-            <span class="badge"><%= unread_messages %></span>
+            <span class="unread-badge badge"><%= unread_messages %></span>
         <% end %>
     <div class="name-and-text">
       <div class="">
