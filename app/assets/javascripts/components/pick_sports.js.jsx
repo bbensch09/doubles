@@ -62,7 +62,7 @@ var SportsOptions = React.createClass({
       return(
           <ul className="menu-container">{this.state.sports.map(function(sport, i) {
               return (
-                <li type="button" className="btn btn-info sport_options" key={i} onClick={this.handleClick.bind(this, i)}>
+                <li type="button" className="btn sport_options" key={i} onClick={this.handleClick.bind(this, i)}>
                   <span className="pull-left icon fa fa-plus-circle list_plus"></span>
                   <span className="pull-left sport_item">{sport.name}</span>
                 </li>
@@ -109,7 +109,7 @@ var SkillLevel = React.createClass({
     },
   render: function() {
       return(
-      <div className="row activity_level">
+      <div className="activity_level">
         <button data-dismiss="modal" id="beginner" onClick={this.handleClick.bind(this, 'beginner')} className="col-xs-4">Beginner</button>
         <button data-dismiss="modal" id="intermediate" onClick={this.handleClick.bind(this, 'intermediate')} className="col-xs-4">Intermediate</button>
         <button data-dismiss="modal" id="advanced" onClick={this.handleClick.bind(this, 'advanced')} className="col-xs-4">Advanced</button>
