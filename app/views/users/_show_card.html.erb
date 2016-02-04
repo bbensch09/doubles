@@ -3,6 +3,7 @@
 </div>
 <h1><%= user.first_name %></h1>
 <p><%= user.bio %></p>
+<<<<<<< HEAD
 <% user.activity_blurbs.each do |blurb| %>
   <% if blurb.text == "beginner" %>
     <button class="sport_card sports-beginner-card"><%= Activity.find(blurb.id).name %></button>
@@ -12,5 +13,8 @@
     <button class="sport_card sports-advanced-card"><%= Activity.find(blurb.id).name %></button>
   <% end %>
 <% end %>
+=======
+
+>>>>>>> cbab0472a1c6ac0b3092ab812c65d28742285f6b
 <div class="dislike"></div>
 <div class="like"></div>

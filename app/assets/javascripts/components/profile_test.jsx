@@ -22,10 +22,12 @@ var ProfileTest = React.createClass({
     this.setState({age: age})
   },
   updateSaveNeeded: function() {
-    if (this.state.sports.length > 0 && this.state.bio && this.state.bio.length > 6) {
-      this.setState({save_needed: true});
+    if ((this.state.sports.length > 0) && (this.state.bio) && (this.state.bio.length > 6)) {
+      console.log($('#save_button'))
       $('#save_button').prop("disabled", false);
-      $('#save_button').addClass('highlight');
+      $('#save_button').addClass('can_save');
+      console.log('getting there');
+      this.setState({save_needed: true});
     }
   },
   openChooseSportsDialog: function() {
@@ -40,7 +42,7 @@ var ProfileTest = React.createClass({
     newSportsArray.push(chosenSport);
     var newActivityBlurbsArray = this.state.activityBlurbs.slice();
     newActivityBlurbsArray.push(activity_blurb_object);
-    this.updateSaveNeeded();
+    this.updateSaveNeeded;
     this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
   },
 
@@ -81,7 +83,13 @@ var ProfileTest = React.createClass({
 var Sports = React.createClass({
   handleClick: function(event) {
     this.props.add_sport();
-    this.props.changeToSave();
+    this.props.changeToSave;
+  },
+  componentDidMount: function() {
+    number_of_sports = this.props.sports.length
+    if (number_of_sports > 0) {
+      this.props.changeToSave;
+    };
   },
   toggleDelete: function(event) {
     dom_element = event.target;
@@ -187,6 +195,11 @@ var Age = React.createClass({
               age: this.props.age,
               size: 2};
   },
+  componentDidMount: function() {
+    if (this.props.age == "" || !this.props.age) {
+      this.setState({form: true});
+    }
+  },
   onClick: function() {
     var current_form = this.state.form
     this.setState({ form: !current_form});
@@ -207,7 +220,7 @@ var Age = React.createClass({
   render: function() {
     if (this.state.form) {
       return(
-          <input className="inline number_form" type="number" autoFocus ref="age" id='age' maxLength="2" max="99" onChange={this.handleChange} defaultValue={this.state.age}></input>
+          <input className="inline number_form" type="number" autoFocus ref="age" id='age' maxLength="2" max="99" onChange={this.handleChange} defaultValue={this.state.age} placeholder="age"></input>
         );
         } else {
           return(<span id='age' onClick={this.onClick}>{this.state.age}</span>);
@@ -331,6 +344,4 @@ var SaveButton = React.createClass({
 });
 
 
-// Save disabled until able to save
-// Save grabs everything and sends an update
 
