@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  include WelcomeHelper
 
   def facebook
     auth = request.env['omniauth.auth']
@@ -7,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # sign_in_and_redirect_to root_path @user, :event => :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       sign_in(@user)
-      redirect_to root_path
+      redirect_to '/feed'
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider'])
@@ -17,36 +18,36 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       p user.last_name = auth.info.last_name
       p user.profile_picture_url = auth.info.image
       p user.gender = auth.extra.raw_info.gender
+      p user.uid = auth.uid
       if auth.extra.raw_info.birthday
         birthday_string = auth.extra.raw_info.birthday
         birthday = Date.strptime(birthday_string,"%m/%d/%Y")
         now = Time.now.to_date
         age = now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
-        p user.age = age
-        else user.age = "Please share your age."
-      end
-
-      if auth.extra.raw_info.location
-        p user.location = auth.extra.raw_info.location.name
+        user.age = age
+        if age == 0
+          user.age = nil
+        end
       else
-        user.location = "unknown"
+        user.age = nil
       end
 
+      # if auth.extra.raw_info.location
+      #   p user.location = auth.extra.raw_info.location.name
+      # else
+      #   user.location = "unknown"
+      # end
       p user.save!
       @user = user
       p "---------USER CREATED?"
       p "the user from FB Data is #{user}"
       p session[:user_id] = user.id
-      p flash[:success] = "Welcome, #{user.email}!"
+      flash[:success] = "Welcome, #{user.email}!"
       current_user = @user
 
-      # p "=============background_process================="
-      # background-process
-      # p GetGeoLocatorWorker.perform_async(current_user.id)
-
       sign_in(user)
-      @activity_blub = ActivityBlurb.new
-      redirect_to "/pick-sports"
+      # @activity_blub = ActivityBlurb.new
+      redirect_to "/profile"
     end
 
   end

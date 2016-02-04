@@ -12,6 +12,12 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @already_chosen_activities = @user.activities
+    @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurbs = @user.activity_blurbs
+    @activity_blurb = ActivityBlurb.new
+    @first_visit = current_user.sign_in_count == 1
+    render 'profile'
   end
 
   def edit_profile
@@ -24,7 +30,13 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(profile_update_params)
+    if request.xhr?
+      @user.update(bio: params[:bio]) if params[:bio]
+      @user.update(latitude: params[:lat], longitude: params[:lng]) if params[:lat]
+      @user.update(bio: params[:bio], age: params[:age], first_name: params[:first_name]) if params[:bio]
+      render json: @user
+    elsif @user.update(profile_update_params)
+      p "updating zipcode"
       redirect_to '/feed'
     else
       p "could not save updates"
@@ -38,8 +50,26 @@ class UsersController < ApplicationController
     redirect_to '/feed'
   end
 
+  def add_zipcode
+    if current_user.zipcode
+      current_user.lat_lng_by_zipcode
+      render :text => "true"
+    else
+      render partial: 'users/enter_zipcode'
+    end
+  end
+
   def profile_update_params
-    params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email)
+    params.require(:user).permit(:first_name, :last_name, :bio, :age, :gender, :profile_picture_url, :email, :zipcode)
+  end
+
+  def profile_test
+    @user = current_user
+    @already_chosen_activities = @user.activities
+    @all_sports = Activity.all - @already_chosen_activities
+    @activity_blurbs = @user.activity_blurbs
+    @activity_blurb = ActivityBlurb.new
+    @first_visit = current_user.sign_in_count == 1
   end
 
 end

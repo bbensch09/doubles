@@ -1,0 +1,55 @@
+.zipcode-form-header {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: green;
+  height: 15px;
+  span {
+    margin-top: -80px;
+  }
+}
+
+.zipcode-modal-body {
+  padding: 0px !important;
+
+  .close {
+    margin-right: 10px;
+  }
+  p {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 2em;
+  }
+  .form-control {
+    margin-bottom: 30px;
+  }
+  input {
+    display: block;
+    font-size: 2em;
+    width: 90%;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.zipcode-actions {
+    width: 100%;
+    margin: 0;
+  }
+  .zipcode-sub {
+    height: 70px;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    cursor:pointer;
+    padding:5px 10px;
+    background:#35b128;
+    border:1px solid #33842a;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+    color:#f3f3f3;
+    font-size:1.5em;
+    border-top: 0px !important;
+  }
+}

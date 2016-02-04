@@ -1,0 +1,37 @@
+.nav-button {
+  background-color: #0F0F0D;
+  border: none !important;
+  height: 4.5em;
+  margin-top: -2.4vh;
+}
+
+.fa {
+  color: white;
+  font-size: 2.5em !important;
+  margin-left: 25%;
+  margin-top: 7px;
+}
+
+.fa-hand-pointer-o {
+  color: #72C4B9;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  button, input {
+    background-color: #383838;
+    color: white;
+    border-top: 2px solid #808080;
+    border-bottom: none !important;
+    border-right: 1px solid #808080;
+    border-left: 1px solid #808080;
+    height: 7vh;
+    a {
+      color: white;
+      font-size:1.3em;
+    }
+  }
+}
+

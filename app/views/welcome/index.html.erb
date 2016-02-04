@@ -1,23 +1,105 @@
-<div>
-<div class="front-page">
-<h1 id="home-title">TeamUp</h1>
-<h4 class="home-subtitle">Finding a person to do a thing with.™</h4>
+<link rel="stylesheet" href="/stylesheets/swiper.min.css">
+<link rel="stylesheet" href="/stylesheets/swiper_config.css">
 
+<div id="background-img">
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="front-page">
+          <a href="/users/auth/facebook">
+          <img src="assets/my_logo.png" class="logo">
+          </a>
+          <h1 id="home-title">Doubles</h1>
+          <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
+          <h4 class="home-subtitle"> Find your next
+            <div id="activityCarousel" class=" slide" data-ride="carousel" data-interval="2300">
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <div class="">
+                    <span>tennis partner</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>golf pair</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>basketball bud</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>racquetball rival</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>quidditch chum</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>belay buddy</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>hiking homie</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>bowling bro</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>running mate</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>bocce buddy</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>archery associate</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="">
+                    <span>karate comrade</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span> in just a few swipes</span>
+          </h4>
+          <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
+        </div>
+      </div>
+      <div class="swiper-slide"><img src="assets/tinder-1.jpeg"></div>
+      <div class="swiper-slide"><img src="assets/tinder-2.jpeg"></div>
+      <div class="swiper-slide"><img src="assets/tinder-3.jpeg"></div>
+      <div class="swiper-slide"><img src="assets/tinder-4.jpeg"></div>
+      <div class="swiper-slide"><img src="assets/tinder-5.jpeg"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
 
-<div class="center">
-<%= link_to "Get Started", user_omniauth_authorize_path(:facebook), :class=>"btn btn-success btn-lg" %>
-</div>
+  </div>
 
-<div class="down-arrow text-center">
-<span class="glyphicon glyphicon-chevron-down"></span>
+  <!-- Swiper JS -->
+  <script src="/javascripts/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script src="/javascripts/swiper_config.js"></script>
+
 </div>
-</div>
-<div class="clearfix home-text">
-  <img class="home-pic pull-left" src="/assets/playing_tennis.jpg"/>
-  After signing up and telling us what sports and activities you enjoy, TeamUp takes your location and finds people close to you that share those same interests.
-</div>
-<div class="clearfix home-text">
-  <img class="home-pic pull-right" src="/assets/playing_golf.jpg"/>
-  You then can choose from those people and find the ones who most interest you. After you match you can jump into our chat room and start communicating!
-</div>
+<div class="home-bottom-div-10 fixed-zindex-to-top">
+    <%= link_to "Get Started", user_omniauth_authorize_path(:facebook), :class=>"col-xs-12 home-footer-cta start-btn" %>
 </div>

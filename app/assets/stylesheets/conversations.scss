@@ -1,0 +1,159 @@
+// Place all the styles related to the Conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-left {
+  text-align: left;
+  padding-left: 5px;
+}
+
+.message-right {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.bubble {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  padding: 0px;
+  background: #399603;
+  border: #68876a solid 2px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  float: right;
+  margin-right: 15px !important;
+  margin-top: 20px !important;
+  padding-top: 4px !important;
+  padding-left: 8px !important;
+  color: white;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 5px;
+  border-style: solid;
+  border-width: 11px 8px 0;
+  border-color: #399603 transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+}
+
+.bubble:before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 12px;
+  border-width: 12px 9px 0;
+  border-color: #399603 transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+}
+
+.bubble2 {
+  position: relative;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  min-height: 30px;
+  margin-right: 25px;
+  padding: 2px;
+  background: #72C4B9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: #72C4B9 solid 3px;
+  float: right;
+  color: white;
+}
+
+.bubble2:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 8px 0 8px 12px;
+border-color: transparent #72C4B9;
+display: block;
+width: 0;
+z-index: 1;
+right: -12px;
+top: 7%;
+}
+
+.bubble3 {
+  position: relative;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  min-height: 30px;
+  margin-left: 25px;
+  padding: 2px;
+  background: #9A9C9F;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: #9A9C9F solid 3px;
+  float: left;
+  color: white;
+}
+
+.bubble3:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 8px 12px 8px 0;
+  border-color: transparent #9A9C9F;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -12px;
+  top: 7%;
+}
+
+.chat-author {
+  width: 100%;
+  clear: both;
+}
+
+.chat-box {
+  border-color: #9A9C9F !important;
+}
+
+.input-group {
+  clear: both;
+  position:fixed !important;
+  bottom: 0;
+  width: 101vw;
+}
+
+.chat-header {
+  text-align: center;
+  margin-top: 10px !important;
+  text-decoration: underline;
+  margin-bottom: 1px !important;
+}
+
+.chat-small {
+  font-size: 12px;
+  color: #C2C2C2;
+  text-align: center;
+  margin-top: 1px !important;
+}
+
+.input-btn {
+  background-color: #72C4B9 !important;
+  border-color: #9A9C9F !important;
+  border-left: none !important;
+  border-radius: 0px !important;
+}
+
+.message-list{
+  overflow: auto;
+  padding-bottom: 6vh;
+}
