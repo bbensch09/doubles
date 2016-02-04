@@ -18,15 +18,30 @@
 //= require components
 //= require_tree .
 
-//   var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry|Opera Mini|IEMobile/ig) || false;
-//   console.log(is_mobile)
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 
-// if(!is_mobile) {
-//   // if (window.confirm("Looks like are on a desktop device, is that correct?")) {
-//     window.location = "/preview";
-//   // }
-// }
-
+if(!window.isMobile.any() {
+  window.location = "/preview";
+}
 
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
