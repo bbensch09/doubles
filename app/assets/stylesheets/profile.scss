@@ -1,6 +1,10 @@
+// OPP, 'other people's profiles'
 .profile-show {
   clear: both;
   overflow: auto;
+  img {
+    margin: 0 auto;
+  }
   h1 {
     margin-left: 20px;
   }
@@ -14,6 +18,7 @@
     padding-right: 10px;
   }
 }
+
 
 .profile-pic {
   display: block;
