@@ -1,0 +1,14 @@
+<div class="sport-button-container">
+<% if @user.activity_blurbs %>
+<% @user.activity_blurbs.each do |activity_blurb| %>
+  <% if activity_blurb.text == "beginner" %>
+    <button class="sports-beginner-card sport_card"><%= activity_blurb.activity.name %></button>
+  <% elsif activity_blurb.text == "intermediate" %>
+    <button class="sports-intermediate-card sport_card"><%= activity_blurb.activity.name %></button>
+  <% else %>
+    <button class="sports-advanced-card sport_card"><%= activity_blurb.activity.name %></button>
+  <% end %>
+<% end %>
+<% end %>
+</div>
+

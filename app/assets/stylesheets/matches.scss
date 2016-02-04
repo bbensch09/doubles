@@ -1,3 +1,94 @@
 // Place all the styles related to the matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img-circle {
+  height: 60px;
+  width: 60px;
+  margin-top: auto;
+}
+
+.match-row {
+  margin-bottom: 4px;
+  margin-top: 4px;
+  padding-left: 5px;
+  height: 75px;
+  border-bottom: 1px solid #808080;
+}
+
+.profile-container {
+  padding-left:3px !important;
+  display: inline-block;
+  float: left;
+}
+
+.link-area {
+  width:80%;
+  padding-right: 2px !important;
+}
+
+.name-and-text {
+  width: 72%;
+}
+
+.last-message{
+  text-align: left;
+  line-height: 1em;
+}
+
+.last-message-unread {
+  text-align: left;
+  line-height: 1em;
+  font-weight: 900;
+}
+
+.name {
+  padding-top: 5px;
+  font-size:1.4em;
+  font-weight: bold;
+}
+
+.chat-icon{
+  position:absolute;
+  right:0
+}
+
+.header-box {
+  display:block;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #808080;
+  font-size: 1.3em;
+}
+
+.btn-blank{
+  border: none !important;
+}
+.empty-matches{
+  font-size: 3vh;
+  text-align: left;
+  vertical-align: middle;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  // background-color: #9A9C9F;
+}
+.prompt-message{
+  font-style: italic;
+}
+.link-area-text{
+  vertical-align: middle;
+  color: #72C4B9;
+  padding-bottom:10px;
+}
+.matches_add_sports_helper {
+  font-size: 1.1em;
+  height: 40px;
+  line-height: 40px;
+  margin-left: auto;
+}
+.override-matches{
+  margin-left:20px !important;
+  color: #72C4B9 !important;
+}

@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$cream: #FEFEE7;
+$light-teal: #A4D0C4;
+$teal: #72C4B9;
+$gray: #9A9C9F;
+$black: #0F0F0D;
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+  padding-top: 4.1em !important;
+  padding-bottom: 6vh;
+}
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+a:hover, a:active{
+  text-decoration: none !important;
+}
+
+.hide {
+  display:none;
+}
+
+.feed-loading {
+position: absolute; z-index: -50; margin-left: 40%; margin-top: 25%;
+}
