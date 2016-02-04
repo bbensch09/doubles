@@ -9,8 +9,8 @@ class ConversationsController < ApplicationController
         match_id: match.id,
         message_text: params[:text],
         user_id: params[:author],
-        sender_name: User.find(params[:author]).first_name,
-        recipient_id: get_matched_user(match, current_user).id
+        recipient_id: get_matched_user(match, current_user).id,
+        unread: true
         )
     presenter = generate_presenter( {match_id: match.id, sender_id: params[:author]} )
     render :json => presenter
@@ -33,12 +33,18 @@ class ConversationsController < ApplicationController
     sender = User.find( options.fetch(:sender_id) )
     matched_user = get_matched_user(match, sender)
     raw_messages = Message.where(match_id: match.id).order('created_at ASC')
+
+    # mark messages as read once they're sent to the user
+    raw_messages.each do |message|
+      message.unread = false
+      message.save
+    end
+
     formatted_messages = []
     raw_messages.each do |message|
       formatted_messages << {
         id: message.id,
         message_text: message.message_text,
-        sender_name: message.sender_name,
         created_at: message.created_at,
         css_class: current_user.id == message.user_id ? "message-right" : "message-left",
         css_bubble: current_user.id == message.user_id ? "bubble2" : "bubble3"
