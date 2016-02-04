@@ -12,7 +12,16 @@
 
 .swiper-container {
   height:90vh !important;
+
+  .walkthrough-slide {
+    background-color: white;
+    .walkthrough {
+      height: 88%;
+
+    }
+  }
 }
+
 
 .home-bottom-div-10 {
   position:fixed;
@@ -75,10 +84,8 @@
   bottom:0;
   width: 100vw;
   height: 11.5vh;
-  .fixed-zindex-to-top {
-    position: fixed;
-    z-index: 100;
-  }
+  position: fixed;
+  z-index: 100;
   .start-btn {
     font-family: 'Raleway', sans-serif !important;
     background-color: #72C4B9 !important;
@@ -102,4 +109,7 @@
   line-height: 1.3em;
 }
 
-
+.walkthrough{
+  height:100%;
+  // min-width: 80%;
+}
