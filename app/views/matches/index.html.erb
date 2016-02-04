@@ -8,6 +8,8 @@
   <% end %>
 </div>
 
+
+
 <% @matches.each_with_index do |match,index| %>
 <% matched_user = get_matched_user(match, current_user) %>
 <% message = Message.where(match_id: match.id).last %>
@@ -19,7 +21,13 @@
     </a>
   </div>
     <a class="btn btn-default btn-blank link-area" role="button" href=<%="/matches/#{match.id}/chat"%> >
-      <div class="bubble btn chat-box">Chat</div>
+        <span class="fa-stack fa-2x fl-r">
+          <i class="fa fa-comment fa-stack-2x new-bubble"></i>
+            <span class="fa-stack-1x unread-count">
+              <%= rand(1..5) %> <!-- INSERT UREAD COUNT  -->
+          </span>
+        </span>
+    <!-- <div class="bubble btn"></div> -->
     <div class="name-and-text">
       <div class="">
         <p class="last-message name"><%= matched_user.first_name %></p>

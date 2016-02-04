@@ -48,9 +48,11 @@ var ProfileTest = React.createClass({
       <div>
           <SearchSports search_sports={this.state.search_sports} user={this.props.user} sports={this.props.all_sports} closeSearch={this.closeSearch} />
         <form>
-         <img className="profile_pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
-         <div className="profile-text name-age">
-           <Name updateName={this.updateName} first_name={this.state.first_name} changeToSave={this.updateSaveNeeded} />, <Age updateAge={this.updateAge} age={this.state.age} changeToSave={this.updateSaveNeeded}/>
+        <div className="profile-row">
+           <img className="profile-pic" src={this.props.user.profile_picture_url} alt="Profile Picture" />
+           <div className="profile-text name-age">
+             <Name updateName={this.updateName} first_name={this.state.first_name} changeToSave={this.updateSaveNeeded} />, <Age updateAge={this.updateAge} age={this.state.age} changeToSave={this.updateSaveNeeded}/>
+           </div>
          </div>
          <div id="profile_text" className="profile-text">
          <Bio updateBio={this.updateBio} bio={this.state.bio} changeToSave={this.updateSaveNeeded}/>
@@ -132,7 +134,7 @@ var Name = React.createClass({
     var current_form = this.state.form
     this.setState({ form: !current_form});
   },
-  handleChange: function() {
+  handleChange: function(event) {
     this.setState({first_name: this.refs.first_name.value, size: this.refs.first_name.value.length});
     this.props.updateName(this.refs.first_name.value)
     this.props.changeToSave();
@@ -158,15 +160,23 @@ var Age = React.createClass({
     var current_form = this.state.form
     this.setState({ form: !current_form});
   },
-  handleChange: function() {
+  handleChange: function(event) {
+    if (event.target.value.length > 2) {
+      var new_age = event.target.value.slice(0,2)
+      console.log(new_age)
+      this.setState({age: new_age});
+      this.props.updateAge(new_age)
+      this.props.changeToSave();
+    } else {
     this.setState({age: event.target.value});
     this.props.updateAge(this.refs.age.value)
     this.props.changeToSave();
+    }
   },
   render: function() {
     if (this.state.form) {
       return(
-          <input className="inline number_form" type="number" autoFocus ref="age" id='age' max="99" onChange={this.handleChange} defaultValue={this.state.age}></input>
+          <input className="inline number_form" type="number" autoFocus ref="age" id='age' maxLength="2" max="99" onChange={this.handleChange} defaultValue={this.state.age}></input>
         );
         } else {
           return(<span id='age' onClick={this.onClick}>{this.state.age}</span>);
