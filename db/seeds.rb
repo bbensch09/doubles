@@ -31,7 +31,7 @@ puts "Activities create: #{Activity.count}"
 # CREATE 22 SEED USERS
 
 billiards_bill = User.create!({
-    first_name: "Billiards Bill",
+    first_name: "Bill",
     last_name: "Poolshark",
     email: "billiards_bill@example.com",
     gender: "male",
@@ -45,7 +45,7 @@ billiards_bill = User.create!({
   })
 
 bocce_britney = User.create!({
-    first_name: "Britney Boccelli",
+    first_name: "Britney",
     last_name: "Smith",
     email: "bocce_britney@example.com",
     gender: "female",
@@ -59,7 +59,7 @@ bocce_britney = User.create!({
   })
 
 bowling_bernie = User.create!({
-    first_name: "Bernie Bowler",
+    first_name: "Bernie",
     last_name: "Smith",
     email: "bowling_bernie@example.com",
     gender: "male",
@@ -73,7 +73,7 @@ bowling_bernie = User.create!({
   })
 
 cycling_cat = User.create!({
-    first_name: "Catwheel Cycleton",
+    first_name: "Catwheel",
     last_name: "Smith",
     email: "cycling_cat@example.com",
     gender: "male",
@@ -87,7 +87,7 @@ cycling_cat = User.create!({
   })
 
 darts_dan = User.create!({
-    first_name: "Dan Dartsmouth",
+    first_name: "Dan",
     last_name: "Smith",
     email: "darts_dan@example.com",
     gender: "male",
@@ -101,7 +101,7 @@ darts_dan = User.create!({
   })
 
 scubasteve = User.create!({
-    first_name: "Scuba Stephanie",
+    first_name: "Scuber",
     last_name: "Smith",
     email: "scubasteve@example.com",
     gender: "male",
@@ -129,7 +129,7 @@ frisbee_golfer = User.create!({
   })
 
 golf_girl = User.create!({
-    first_name: "Felicia Fairway",
+    first_name: "Felicia",
     last_name: "Smith ",
     email: "golf_girl@example.com",
     gender: "male",
@@ -143,7 +143,7 @@ golf_girl = User.create!({
   })
 
 handball_hannah = User.create!({
-    first_name: "Henry Handball",
+    first_name: "Henry",
     last_name: "Smith",
     email: "handball_hannah@example.com",
     gender: "female",
@@ -157,7 +157,7 @@ handball_hannah = User.create!({
   })
 
 hiking_harry = User.create!({
-    first_name: "Harry Hiker",
+    first_name: "Harry",
     last_name: "Smith",
     email: "hiking_harry@example.com",
     gender: "female",
@@ -171,7 +171,7 @@ hiking_harry = User.create!({
   })
 
 ping_pong = User.create!({
-    first_name: "Ping Pong",
+    first_name: "Ping",
     last_name: "Smith",
     email: "ping_pong@example.com",
     gender: "male",
@@ -185,7 +185,7 @@ ping_pong = User.create!({
   })
 
 racquet_roger = User.create!({
-    first_name: "Rocket Roger",
+    first_name: "Rocket",
     last_name: "Smith",
     email: "racquet_roger@example.com",
     gender: "male",
@@ -199,7 +199,7 @@ racquet_roger = User.create!({
   })
 
 rock_climing_rachel = User.create!({
-    first_name: "Rachel Roche",
+    first_name: "Rachel",
     last_name: "Smith",
     email: "rock_climing_rachel@example.com",
     gender: "female",
@@ -213,7 +213,7 @@ rock_climing_rachel = User.create!({
   })
 
 running_rena = User.create!({
-    first_name: "Rena Runner",
+    first_name: "Rena",
     last_name: "Smith",
     email: "running_rena@example.com",
     gender: "female",
@@ -227,7 +227,7 @@ running_rena = User.create!({
   })
 
 sailing_sam = User.create!({
-    first_name: "Sailor Sam",
+    first_name: "Sam",
     last_name: "Smith",
     email: "sailing_sam@example.com",
     gender: "male",
@@ -241,7 +241,7 @@ sailing_sam = User.create!({
   })
 
 skiergal = User.create!({
-    first_name: "Lindsey VonnSkier",
+    first_name: "Lindsey",
     last_name: "Smith",
     email: "skiergal@example.com",
     gender: "female",
@@ -269,7 +269,7 @@ snowboard_gal = User.create!({
   })
 
 squash_snap = User.create!({
-    first_name: "Snap That Squash",
+    first_name: "Snap",
     last_name: "Smith",
     email: "squash_snap@example.com",
     gender: "male",
@@ -283,7 +283,7 @@ squash_snap = User.create!({
   })
 
 surfer_sam = User.create!({
-    first_name: "Surfer Sal",
+    first_name: "Sal",
     last_name: "Smith",
     email: "surfer_sam@example.com",
     gender: "male",
@@ -297,7 +297,7 @@ surfer_sam = User.create!({
   })
 
 tennis_gal = User.create!({
-    first_name: "Tanya Tenis",
+    first_name: "Tanya",
     last_name: "Smith",
     email: "tennis_gal@example.com",
     gender: "female",
@@ -325,7 +325,7 @@ wrestling_will = User.create!({
   })
 
 yogie = User.create!({
-    first_name: "Ysabel Yogie",
+    first_name: "Ysabel",
     last_name: "Smith",
     email: "yogie@example.com",
     gender: "female",
