@@ -3,6 +3,8 @@
   clear: both;
   overflow: auto;
   img {
+    display: block;
+    max-height: 350px;
     margin: 0 auto;
   }
   h1 {
