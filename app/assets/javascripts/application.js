@@ -18,7 +18,5 @@
 //= require components
 //= require_tree .
 
+if ($(window).width() > 400) location.href = "/preview";
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
