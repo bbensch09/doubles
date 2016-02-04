@@ -1,8 +1,32 @@
+// OPP, 'other people's profiles'
+.profile-show {
+  clear: both;
+  overflow: auto;
+  img {
+    display: block;
+    max-height: 350px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin-left: 20px;
+  }
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  div.profile-show-sports-container {
+    overflow: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
 .profile-pic {
   display: block;
   width: auto;
   height: auto;
-  max-width: 90%;
+  max-width: 100%;
   max-height: 40vh;
   margin-left: auto;
   margin-right: auto;
@@ -84,7 +108,7 @@
 }
 
 .number_form {
-  width: 65px;
+  width: 75px;
 }
 
 .add_sports_helper {
@@ -125,6 +149,10 @@
 
 .profile-body {
   padding-bottom: 8vh;
+}
+
+.can_save {
+  background-color: 72C4B9;
 }
 
 /* Bootstrap colors */
