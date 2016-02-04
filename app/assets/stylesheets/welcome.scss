@@ -3,15 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#background-img{
+#background-img {
   background-image: url("tennis_frontpage_blur.jpg");
   background-size: 100% 100%;
   height: 88.5vh !important;
   background-repeat: no-repeat;
-  // background-image: url("tennis.jpeg");
 }
 
-.home-footer-cta{
+.swiper-container {
+  height:90vh !important;
+}
+
+.home-bottom-div-10 {
+  position:fixed;
+  bottom:0;
+  width: 100vw;
+  height: 10vh;
+}
+
+.home-footer-cta {
   text-align: center;
   color: black !important;
   vertical-align: middle;
@@ -19,13 +29,10 @@
   padding-top: .2em;
   height: 100%;
 }
-.swiper-container{
-
+.swiper-container {
   height: 100% !important;
-
   .front-page {
     width: 100%;
-
     #home-title {
       font-family: 'Raleway', sans-serif !important;
       text-align: center;
@@ -42,7 +49,6 @@
       font-size: 1.3em;
       text-shadow: 2px 1px 1px black;
       text-decoration: none;
-
     }
     .logo {
       margin-top:-15vh;
@@ -52,30 +58,23 @@
       margin-top: 85vh;
     }
     .carousel-inner {
-
       height: 1.2em;
       div div span{
-
         color:#72C4B9;
         width: 100%;
-
         .item span {
-
           line-height: 1.3em;
         }
       }
     }
-
   }
-
 }
 
-.home-bottom-div-10{
+.home-bottom-div-10 {
   position:fixed;
   bottom:0;
   width: 100vw;
   height: 11.5vh;
-
   .fixed-zindex-to-top {
     position: fixed;
     z-index: 100;
@@ -91,10 +90,14 @@
   }
 }
 
+.start-btn {
+  background-color: #72C4B9 !important;
+  padding-top: 4%;
+  font-size: 2em !important;
+  border-top: 1px solid #0F0F0D;
+  text-shadow: 3px 2px 2px #A4D0C4;
+}
 
-
-
-
-
-
-
+.item span {
+  line-height: 1.3em;
+}
