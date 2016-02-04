@@ -1,2 +1,16 @@
-<%= react_component('Profile',
-                    { user: @displayed_user, sports: @sports }) %>
+<!-- <link rel="stylesheet" href="/stylesheets/jTinder.css"> -->
+<div id="cards" class="profile-show" style="display: hidden">
+
+  <ul>
+    <li>
+      <%= render partial: 'users/show_card', layout: false, locals: {user: @user} %>
+      <div class="profile-show-sports-container">
+      <%= render partial: 'users/profile_sports', layout: false, locals: {user: @user} %>
+      </div>
+    </li>
+  </ul>
+
+
+</div>
+
+
