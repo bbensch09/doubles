@@ -21,3 +21,31 @@
   margin-right:auto;
   text-align: center;
 }
+
+.sport_card {
+  display: inline-block;
+  text-align: center;
+  float: left;
+  background-color: black;
+  height: 22px;
+  font-size: .8em;
+  color: white;
+}
+
+.sports-beginner-card {
+  background-color: #0B800D;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.sports-intermediate-card {
+ background-color: #4057D6;
+ border: 2px solid white;
+ border-radius: 5px;
+}
+
+.sports-advanced-card {
+  background-color: #0F0F0D;
+  border: 2px solid white;
+  border-radius: 5px;
+}
