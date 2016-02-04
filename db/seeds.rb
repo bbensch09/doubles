@@ -612,24 +612,29 @@ matched_activity = Activity.select("name").sample.name
 Message.create!(
     match_id:1,
     message_text: "Hi #{test_user.first_name}, want to play #{matched_activity} this weekend?",
-    user_id:23)
+    user_id:23,
+    unread: true)
 
 Message.create!(
     match_id:1,
     message_text: "Hi #{tom.first_name}, I could be interested. What's your background in #{matched_activity}?",
-    user_id:24)
+    user_id:24,
+    unread: true)
 
 Message.create!(
     match_id:1,
     message_text: "I started playing #{matched_activity} in 2007 when it was cool, and never moved on.",
-    user_id:23)
+    user_id:23,
+    unread: true)
 
 Message.create!(
     match_id:1,
     message_text: "Interesting. I'm a complete newb, but would love to learn more.",
-    user_id:24)
+    user_id:24,
+    unread: true)
 
 Message.create!(
     match_id:1,
     message_text: "How's tomorrow?",
-    user_id:23)
+    user_id:23,
+    unread: true)

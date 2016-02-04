@@ -9,7 +9,8 @@ class ConversationsController < ApplicationController
         match_id: match.id,
         message_text: params[:text],
         user_id: params[:author],
-        recipient_id: get_matched_user(match, current_user).id
+        recipient_id: get_matched_user(match, current_user).id,
+        unread: true
         )
     presenter = generate_presenter( {match_id: match.id, sender_id: params[:author]} )
     render :json => presenter
