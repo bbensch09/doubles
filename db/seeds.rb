@@ -381,7 +381,7 @@ tom = User.create!({
       email: 'tom@myspace.com',
       gender: 'male',
       age: 40,
-      bio: 'Welcome to EverythingButSex. I will be your friend for everything but sex.',
+      bio: "I've been making friends online online since before the internets were actually cool. I like lots of sports.",
       location: "San Francisco",
       latitude: 37.7576792,
       longitude: -122.5078123,
