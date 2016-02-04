@@ -2,7 +2,7 @@
 
 <div class="text-center header-box">
   <% if @matches.length == 0 %>
-  Sorry, no matches yet, check back again later! To increase your odds, add more activities and keep swiping.
+  Sorry, you don't have any matches yet!
   <% else %>
   Congrats, you have <%= @matches.length %> matches!
   <% end %>
@@ -37,11 +37,19 @@
         <% if !message.nil? %>
           <% if message.unread %>
           <p class="last-message-unread">
-          <%= message.message_text[0..25] %>...
+            <% if message.message_text.length <=22 %>
+              <%= message.message_text %>
+              <% else %>
+              <%= message.message_text[0..22] %>...
+            <% end %>
           </p>
           <% else %>
-          <p class="last-message">
-          <%= message.message_text[0..25] %>...
+          <p class="last-message-unread">
+            <% if message.message_text.length <=22 %>
+              <%= message.message_text %>
+              <% else %>
+              <%= message.message_text[0..22] %>...
+            <% end %>
           </p>
           <% end %>
         <% end %>
@@ -51,5 +59,21 @@
   </a>
 </div>
 
+<% end %>
+
+<% if @matches.count == 0 %>
+
+<div class="empty-matches">
+  <p class="prompt-message">
+    Potential matches are determined based on location and your shared interests. To increase your odds, add more sports and keep swiping.
+  </p>
+  <a href="/profile" class="link-area" role="button" >
+    <div class="matches_add_sports_helper">
+      <span class="fa fa-plus-circle override-matches"></span>
+      <span class="glyphicon glyphicon-hand-left override-matches"></span>
+      <span class="link-area-text"> Add more sports!</span>
+    </div>
+  </a>
+</div>
 
 <% end %>
