@@ -39,9 +39,9 @@ var isMobile = {
     }
 };
 
-if(!window.isMobile.any() {
+if(!window.isMobile.any()) {
   window.location = "/preview";
-}
+};
 
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
