@@ -19,4 +19,8 @@ class WelcomeController < ApplicationController
     render 'iframe', :layout => false
   end
 
+  def iframe_source
+    render 'index', :layout => false
+  end
+
 end
