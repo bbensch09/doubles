@@ -17,14 +17,13 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-
-window.addEventListener("load",function() {
-    // Set a timeout...
+$(document).ready(function(){
     setTimeout(function(){
         // Hide the address bar!
-        window.scrollTo(0, 1);
-    }, 0);
+        window.scrollTo(0, 5);
+    }, 500);
 });
+
 
 var isMobile = {
     Android: function() {
