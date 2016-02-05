@@ -20,10 +20,10 @@
 $(document).ready(function(){
     setTimeout(function(){
         // Hide the address bar!
-        window.scrollTo(0, 5);
+        window.scrollTo(0, 100);
     }, 500);
 });
-
+// x
 
 var isMobile = {
     Android: function() {
