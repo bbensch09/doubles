@@ -17,7 +17,7 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-$(document).ready(function(){
+$('#welcome-body').on ('load', function(){
     setTimeout(function(){
         // Hide the address bar!
         window.scrollTo(0, 100);
