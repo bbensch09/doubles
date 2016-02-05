@@ -15,7 +15,6 @@
     padding-right: 20px;
   }
   div.profile-show-sports-container {
-    overflow: auto;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -27,10 +26,9 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 40vh;
+  max-height: 35vh;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 15px !important;
 }
 
 .profile-row {
@@ -123,14 +121,6 @@
   position: relative;
 }
 
-.sport_options {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  clear: both;
-}
-
 .glyphicon-hand-left {
   margin-right: 10px;
 }
@@ -152,8 +142,15 @@
 }
 
 .can_save {
-  background-color: 72C4B9;
+  background-color: #72C4B9 !important;
 }
 
+.btn-skill {
+  margin: 1%;
+  height: 40px;
+  color: white;
+  width: 30%;
+  border-radius: 6px;
+}
 /* Bootstrap colors */
 /* #DFF0D8, #DFF0D8, #D9EDF7, #C3EAF2, #FCF8E3, #FAEBCC */

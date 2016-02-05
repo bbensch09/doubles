@@ -7,23 +7,39 @@ var ProfileTest = React.createClass({
             activityBlurbs: this.props.activity_blurbs,
             first_name: this.props.user.first_name,
             age: this.props.user.age,
-            search_sports: false};
+            search_sports: false,
+            buttonColor: 'col-xs-6'};
+  },
+  componentDidMount: function() {
+    var that = this
+    $(document).keyup(function() {
+      setTimeout(function(){that.refs.saveButton.quickSave()}, 400)
+      })
+  },
+  updateButtonColor: function() {
+    this.setState({ buttonColor: 'col-xs-6 can_save'});
   },
   onClick: function() {
     this.setState({ name_form: true});
+    this.updateSaveNeeded()
   },
   updateBio: function(new_bio){
     this.setState({bio: new_bio});
+    console.log('BIO' + new_bio)
+    console.log('BIOSTATE' + this.state.bio)
+    this.updateSaveNeeded()
   },
   updateName: function(first_name){
     this.setState({first_name: first_name})
+    this.updateSaveNeeded()
   },
   updateAge: function(age){
     this.setState({age: age})
+    this.updateSaveNeeded()
   },
   updateSaveNeeded: function() {
-    if ((this.state.sports.length > 0) && (this.state.bio) && (this.state.bio.length > 6)) {
-      console.log($('#save_button'))
+    if ((this.state.sports.length > 0) && (this.state.bio) && (this.state.bio.length > 0)) {
+      this.updateButtonColor();
       $('#save_button').prop("disabled", false);
       $('#save_button').addClass('can_save');
       console.log('getting there');
@@ -36,6 +52,7 @@ var ProfileTest = React.createClass({
   closeSearch: function(chosenSport, activity_blurb_object) {
     this.appendSport(chosenSport, activity_blurb_object);
     this.setState({search_sports: false});
+    this.updateSaveNeeded();
   },
   appendSport: function(chosenSport, activity_blurb_object) {
     var newSportsArray = this.state.sports.slice();
@@ -44,6 +61,7 @@ var ProfileTest = React.createClass({
     newActivityBlurbsArray.push(activity_blurb_object);
     this.updateSaveNeeded;
     this.setState({sports: newSportsArray, activityBlurbs: newActivityBlurbsArray});
+    window.scrollTo(0,document.body.scrollHeight);
   },
 
   logout: function() {
@@ -73,7 +91,7 @@ var ProfileTest = React.createClass({
        </form>
        <div className="footer">
        <button className="col-xs-6" onClick={this.logout}>Logout</button>
-        <SaveButton firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
+        <SaveButton buttonColor={this.state.buttonColor} ref="saveButton" firstVisit={this.props.first_visit} userId={this.props.user.id} bio={this.state.bio} first_name={this.state.first_name} age={this.state.age} sports={this.state.sports}/>
         </div>
        </div>
       )
@@ -148,7 +166,7 @@ var Sports = React.createClass({
       )} else {
         return(
           <div>
-            <a id="add_sports" href="#" onClick={this.handleClick}>
+            <a autofocus id="add_sports" href="#" onClick={this.handleClick}>
               <div className="add_sport">
                 <span className="fa fa-plus-circle"></span>
               </div>
@@ -236,7 +254,7 @@ var Bio = React.createClass({
             };
   },
   componentDidMount: function() {
-    if(this.props.firstVisit || !this.props.bio || this.props.bio.length < 6) {
+    if(this.props.firstVisit || !this.props.bio || this.props.bio.length < 0) {
       this.setState({form: true});
     } else {
       this.setState({form: false});
@@ -248,15 +266,9 @@ var Bio = React.createClass({
   },
   handleChange: function(event) {
     this.props.updateBio(event.target.value);
-    if (event.target.value.length > 5) {
-      this.props.changeToSave();
-      this.setState({color_class: '', bio: event.target.value});
-    } else {
-      this.setState({color_class: 'has-error', bio: event.target.value})
-    };
   },
   render: function() {
-    let maybe_red_form = (!this.props.bio || this.props.bio.length < 6) ?
+    let maybe_red_form = (!this.props.bio || this.props.bio.length < 0) ?
                           this.state.color_class :
                           '';
     let placeholderText = 'I played varsity tennis in high school in Houston, and moved to SF after college in 2010...';
@@ -286,7 +298,6 @@ var SearchSports = React.createClass({
     if (this.props.search_sports){
       return(
         <div>
-          <hr />
             <PickSports user={this.props.user} sports={this.props.sports} closeSearch={this.props.closeSearch} />
           <hr />
         </div>
@@ -303,6 +314,7 @@ var SaveButton = React.createClass({
               target: 'users/'};
   },
   componentDidMount: function() {
+    this.quickSave();
     if(this.props.firstVisit) {
       this.setState({buttonText: 'Start Swiping!'})
     } else {
@@ -311,17 +323,31 @@ var SaveButton = React.createClass({
   },
   render: function() {
     return (
-    <input onClick={this.onClick} type="submit" name="/edit_profile" id="save_button" className="col-xs-6" value={this.state.buttonText}></input>
+    <input onClick={this.onClick} type="submit" name="/edit_profile" id="save_button" className={this.props.buttonColor} value={this.state.buttonText}></input>
     )
   },
   onClick: function() {
-    if (this.props.sports.length > 0 && this.props.bio.length > 5) {
+    if (this.props.sports.length > 0 && this.props.bio.length > 0) {
       console.log('standards met')
       this.saveForm()
     } else {
       console.log('does not meet standard')
     }
   },
+  quickSave: function(){
+    console.log(this.props.first_name, this.props.age, this.props.bio)
+    var request = $.ajax({
+                    url: '/update_profile',
+                    type: "PUT",
+                    data: {first_name: this.props.first_name, age: this.props.age, bio: this.props.bio}
+                    });
+
+    request.done(function(data) {
+        console.log(data);
+        console.log("successfully saved via ajax");
+    });
+  },
+
   saveForm: function(){
     console.log(this.props.first_name, this.props.age, this.props.bio)
     var firstVisit = this.props.firstVisit
