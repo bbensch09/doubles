@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get '/preview' => 'welcome#iframe'
-
+  get '/iframe_source' => 'welcome#iframe_source'
   # You can have the root of your site routed with "root"
   get 'profile_test' => 'users#profile_test'
 
