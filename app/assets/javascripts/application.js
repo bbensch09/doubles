@@ -18,6 +18,14 @@
 //= require components
 //= require_tree .
 
+window.addEventListener("load",function() {
+    // Set a timeout...
+    setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
