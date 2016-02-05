@@ -343,7 +343,7 @@ puts "22 seed users created"
 seed_user_ids = (1..22).to_a
 seed_user_ids.each do |user_id|
     ActivityBlurb.create!({
-    text: ['beginner','intermediate','advanced'].sample,
+    text: ['advanced'].sample,
     activity_id: user_id,
     user_id: user_id
     })
