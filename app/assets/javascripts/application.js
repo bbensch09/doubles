@@ -43,6 +43,7 @@ if(window.location.pathname == '/') {
     window.location = "/preview";
   };
 
+
 }
 
 Array.prototype.remove = function() {
