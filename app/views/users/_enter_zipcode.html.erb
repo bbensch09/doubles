@@ -2,7 +2,7 @@
   <p>Please enter your zip code to continue:</p>
   <%= form_for(current_user, url: '/update_profile', html: { method: :put }) do |f| %>
     <div class="actions zipcode-actions">
-      <%= f.text_field :zipcode, class: "form-control",autofocus: true, autocorrect: "off", pattern: "[0-9]*", maxlength:"5", minlength:"5", required: true%>
+      <%= f.text_field :zipcode, class: "form-control",autofocus: true, autocorrect: "off", pattern: "[0-9]*", maxlength:"5", minlength:"5", required: true, autofocus: true%>
       <%= f.submit "Update", class: "zipcode-submit" %>
     </div>
   <%end%>
