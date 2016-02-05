@@ -25,6 +25,7 @@
 .link-area {
   width:80%;
   padding-right: 2px !important;
+  height: 5em;
 }
 
 .name-and-text {
@@ -91,4 +92,10 @@
 .override-matches{
   margin-left:20px !important;
   color: #72C4B9 !important;
+}
+
+.unread-badge {
+  float: right;
+  background-color: #72C4B9 !important;
+  font-size: 1.1em !important;
 }

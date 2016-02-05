@@ -1,101 +1,124 @@
-<link rel="stylesheet" href="/stylesheets/swiper.min.css">
-<link rel="stylesheet" href="/stylesheets/swiper_config.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doubles</title>
 
-<div id="background-img">
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="front-page">
-          <a href="/users/auth/facebook">
-          <img src="assets/my_logo.png" class="logo">
-          </a>
-          <h1 id="home-title">Doubles</h1>
-          <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
-          <h4 class="home-subtitle"> Find your next
-            <div id="activityCarousel" class=" slide" data-ride="carousel" data-interval="2300">
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <div class="">
-                    <span>tennis partner</span>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <%= javascript_include_tag 'application' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/swiper.min.css">
+  <link rel="stylesheet" href="/stylesheets/swiper_config.css">
+  <%= csrf_meta_tags %>
+  <%= render :partial => 'layouts/ios_fullscreen_web_app_config' %>
+</head>
+<div class="content">
+<body class="welcome-body">
+  <div class="container-fluid welcome-container-fluid">
+
+    <div id="background-img">
+
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="front-page">
+              <a href="/users/auth/facebook">
+                <img src="assets/my_logo.png" class="logo">
+              </a>
+              <h1 id="home-title">Doubles</h1>
+              <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
+              <h4 class="home-subtitle"> Find your next
+                <div id="activityCarousel" class=" slide" data-ride="carousel" data-interval="2300">
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <div class="">
+                        <span>tennis partner</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>golf pair</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>basketball bud</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>racquetball rival</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>belay buddy</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>hiking homie</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>bowling bro</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>running mate</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>bocce buddy</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>archery associate</span>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="">
+                        <span>karate comrade</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="">
-                    <span>golf pair</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>basketball bud</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>racquetball rival</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>belay buddy</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>hiking homie</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>bowling bro</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>running mate</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>bocce buddy</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>archery associate</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="">
-                    <span>karate comrade</span>
-                  </div>
-                </div>
-              </div>
+                <span> in just a few swipes</span>
+              </h4>
+              <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
             </div>
-            <span> in just a few swipes</span>
-          </h4>
-          <!-- INNER SLIDER FOR ROTATING SPORT NAMES -->
+          </div>
+          <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-1.png"></div>
+          <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-2.png"></div>
+          <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-3.png"></div>
+          <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-4.png"></div>
+          <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-5.png"></div>
         </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+
       </div>
-      <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-1.png"></div>
-      <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-2.png"></div>
-      <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-3.png"></div>
-      <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-4.png"></div>
-      <div class="swiper-slide walkthrough-slide"><img class="walkthrough" src="assets/doubles-5.png"></div>
+
+      <!-- Swiper JS -->
+      <script src="/javascripts/swiper.min.js"></script>
+      <!-- Initialize Swiper -->
+      <script src="/javascripts/swiper_config.js"></script>
+
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
 
+    <div class="home-bottom-div-10 fixed-zindex-to-top">
+      <%= link_to "Get Started", user_omniauth_authorize_path(:facebook), :class=>"col-xs-12 home-footer-cta start-btn" %>
+    </div>
   </div>
-
-  <!-- Swiper JS -->
-  <script src="/javascripts/swiper.min.js"></script>
-  <!-- Initialize Swiper -->
-  <script src="/javascripts/swiper_config.js"></script>
-
 </div>
-
-<div class="home-bottom-div-10 fixed-zindex-to-top">
-    <%= link_to "Get Started", user_omniauth_authorize_path(:facebook), :class=>"col-xs-12 home-footer-cta start-btn" %>
-</div>
+<div class="spacer"></div>
+</body>
