@@ -12,7 +12,7 @@ Match.delete_all
 Message.delete_all
 
 # CREATE LIST OF ACTIVITIES
-initial_activity_names = ["pool / billiards","darts","bocce ball","bowling","cycling","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
+initial_activity_names = ["pool / billiards","bocce ball","bowling","cycling","darts","diving","frisbee golf","golf","handball","hiking","ping pong","racquetball","rock-climbing","running","sailing","skiing"," snowboarding","squash","surfing","tennis","wrestling","yoga"]
 activities = []
 initial_activity_names.each do |activity|
   activities << Activity.create!(name: activity)
@@ -631,6 +631,11 @@ puts "Walker is created."
     user_id: walker.id
     })
   end
+  ActivityBlurb.create!({
+    text: ['beginner','intermediate','advanced'].sample,
+    activity_id: 4,
+    user_id: walker.id
+    })
   ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
     activity_id: 1,
