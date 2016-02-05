@@ -1,7 +1,7 @@
 <div id="profile-img-container">
   <img src="<%=user.profile_picture_url%>">
 </div>
-<h1><%= user.first_name %></h1>
+<h1 class="card-title"><%= user.first_name %></h1>
 <p><%= user.bio %></p>
 <% user.activity_blurbs.each do |blurb| %>
   <% if blurb.text == "beginner" %>
