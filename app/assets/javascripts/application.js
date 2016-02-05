@@ -17,12 +17,7 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-$('#welcome-body').on ('load', function(){
-    setTimeout(function(){
-        // Hide the address bar!
-        window.scrollTo(0, 100);
-    }, 0);
-});
+
 
 
 var isMobile = {
