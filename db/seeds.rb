@@ -343,7 +343,7 @@ puts "22 seed users created"
 seed_user_ids = (1..22).to_a
 seed_user_ids.each do |user_id|
     ActivityBlurb.create!({
-    text: ['beginner','intermediate','advanced'].sample,
+    text: ['advanced'].sample,
     activity_id: user_id,
     user_id: user_id
     })
@@ -381,7 +381,7 @@ tom = User.create!({
       email: 'tom@myspace.com',
       gender: 'male',
       age: 40,
-      bio: "I've been making friends online online since before the internets were actually cool. I like lots of sports.",
+      bio: "I've been making friends online since before the internets were actually cool. I like lots of sports.",
       location: "San Francisco",
       latitude: 37.7576792,
       longitude: -122.5078123,
