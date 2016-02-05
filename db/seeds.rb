@@ -633,7 +633,7 @@ puts "Walker is created."
   end
   ActivityBlurb.create!({
     text: ['beginner','intermediate','advanced'].sample,
-    activity_id: 4,
+    activity_id: 21,
     user_id: walker.id
     })
   ActivityBlurb.create!({
