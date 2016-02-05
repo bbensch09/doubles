@@ -36,7 +36,7 @@ var PickSports = React.createClass({
   render: function() {
     return(
       <div>
-        <input className="input center" type="text" ref="search" placeholder="Search for your sport" value={this.state.value} onChange={this.handleChange} />
+        <input className="input center" type="text" ref="search" placeholder="Search for your sport" autocapitalize="off" autocorrect="off" value={this.state.value} onChange={this.handleChange} />
           <SportsOptions sports={this.state.sports} ref="sports_list" onChange={this.setChosenSport}/>
         <ChosenSport chosenSport={this.state.chosenSport} ref="chosenSport" saveSport={this.saveSport}/>
       </div>
