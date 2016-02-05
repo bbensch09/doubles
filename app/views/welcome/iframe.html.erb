@@ -1,7 +1,8 @@
 <div class="flex">
-  <div class="holder">
+  <div class="iframe_holder">
     <img id="iphone_desktop" src="assets/iphone.png">
-    <iframe id="iframe_desktop" src="/" width="347" height="613" scrolling="auto"></iframe>
+    <iframe id="iframe_desktop" src="/iframe_source" width="347" height="613" scrolling="no"></iframe>
+    <button id="iphoneHomeButton"></button>
   </div>
 </div>
 
@@ -19,6 +20,8 @@
     border-radius: 8px;
     border: 0;
     overflow:hidden;
+    width: 347px;
+    height: 613px;
   }
 
   .flex {
@@ -27,10 +30,29 @@
     justify-content: center;
   }
 
-  .holder {
+  .iframe_holder {
     position: relative;
     width: 500px;
   }
 
+  #iphoneHomeButton {
+    background-color: rgba(0,0,0,.1) !important;
+    border: 0 !important;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 740;
+    left: 220;
+    border-radius: 20px;
+  }
+
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+$(document).on('click', '#iphoneHomeButton', function(){
+  $('.iframe_holder').hide();
+  $('.flex').append('<iframe width="840" height="630" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+  $('iframe').click()
+});
+</script>
