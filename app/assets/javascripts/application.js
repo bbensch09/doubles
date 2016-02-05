@@ -23,7 +23,7 @@ $(document).ready(function(){
         window.scrollTo(0, 100);
     }, 500);
 });
-
+// x
 
 var isMobile = {
     Android: function() {
