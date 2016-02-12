@@ -1,5 +1,13 @@
-This repostitory holds the final project contents for our Dev Bootcamp Island Foxes cohort which graduated in February 2015.
+Doubles connects local sport enthusiasts. It is a hybrid of Tinder and Meetup. We used a Ruby on Rails backend and taught ourselves React for the key front end features. Doubles was our DBC final project
 
-Heroku Dev Branch: https://doubles.herokuapp.com/
+Live on Heroku: https://doubles.herokuapp.com/
 
-Heroku Product Branch: TBD
+!['Screen Shot 1'](https://github.com/bbensch09/doubles/blob/development/app/assets/images/doubles-1.png)
+
+!['Screen Shot 2'](https://github.com/bbensch09/doubles/blob/development/app/assets/images/doubles-2.png)
+
+!['Screen Shot 3'](https://github.com/bbensch09/doubles/blob/development/app/assets/images/doubles-3.png)
+
+!['Screen Shot 4'](https://github.com/bbensch09/doubles/blob/development/app/assets/images/doubles-4.png)
+
+!['Screen Shot 5'](https://github.com/bbensch09/doubles/blob/development/app/assets/images/doubles-5.png)
