@@ -1,4 +1,8 @@
 <div class="flex">
+  <div class="mobile-notice">
+    <h1>Please view Doubles on your mobile device</h1>
+    <%= image_tag('qrcode')%>
+  </div>
   <div class="iframe_holder">
     <img id="iphone_desktop" src="assets/iphone.png">
     <iframe id="iframe_desktop" src="/iframe_source" width="347" height="613" scrolling="no"></iframe>
@@ -7,6 +11,17 @@
 </div>
 
 <style>
+.mobile-notice {
+  max-width: 200px;
+  border: 1px solid black;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  box-shadow:  -2px 2px 10px 2px;
+}
+.mobile-notice > h1 {
+  font-weight: 200;
+  margin-bottom: 0;
+}
 
   #iphone_desktop {
     position: relative;
