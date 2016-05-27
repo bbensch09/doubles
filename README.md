@@ -2,13 +2,6 @@
  
 Doubles connects local sport enthusiasts. It is a hybrid of Tinder and Meetup. 
 
-### The team:
-* [Brian Bensch](https://github.com/bbensch09)
-* [Abe Clark](https://github.com/abeaclark)
-* [Trevor Newcomb](https://github.com/tnewcomb0)
-* [Nil Thacker](https://github.com/nilthacker)
-* [Greg Wehmeier](https://github.com/mrYakamoto)
-
 ### User Story:
 
 Whether you are a newcomer to a community or a local veteran, it is hard to find new people to play sports with. People want a simple way to sift through local athletes and connect with people they would like to meet to play a game.
@@ -38,6 +31,13 @@ https://doubles.herokuapp.com/
 * Doubles was created as a final project for Dev Bootcamp in February, 2016
 * There are no immediate plans to add functionality or continue to maintain the code base
 * If you are interested in contributing, please reach out
+
+### The Team:
+* [Brian Bensch](https://github.com/bbensch09)
+* [Abe Clark](https://github.com/abeaclark)
+* [Trevor Newcomb](https://github.com/tnewcomb0)
+* [Nil Thacker](https://github.com/nilthacker)
+* [Greg Wehmeier](https://github.com/mrYakamoto)
 
 
 ### User Interface:
